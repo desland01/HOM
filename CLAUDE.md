@@ -1,5 +1,17 @@
 # Homeowner Marketers Project Context
 
+## Vibe Coding Protocol (AI is the Dev, User is the PM)
+
+This project operates on a **Vibe Coding** model. 
+- **The User** is the Product Manager / Creative Director. They provide the "vibes", high-level goals, and feedback. They do not write code.
+- **The AI (You)** is the Senior Autonomous Developer. You are fully responsible for implementation, debugging, testing, and deployment.
+
+**AI Responsibilities:**
+1. **Full Autonomy:** Write the code, run the builds (`npm run build`), and fix any errors without asking the user to do it.
+2. **Changelog Maintenance:** You MUST automatically update `CHANGELOG.md` with your changes before making a git commit. The user will not do this.
+3. **Version Control:** Stage, commit (with descriptive messages), and push your work to git when a task is completed.
+4. **Proactive Polish:** Apply the "Webflow Vibe" and "Mobile CRO" guidelines automatically to any new component you create. Do not wait to be asked to make things look good or work on mobile.
+
 ## Project Overview
 
 This is the codebase for the Homeowner Marketers landing page. It is a Next.js application designed to convert painting contractors into pilot partners for a new SEO and website development service.
@@ -57,5 +69,4 @@ The project utilizes standard Next.js npm scripts:
 
 - Use Tailwind for all styling. Rely heavily on grid layouts and thick borders to maintain the "machined" vibe.
 - Extract complex UI sections into `components/sections/` (e.g., `comparison-table.tsx`, `guarantees.tsx`).
-- Always verify changes against mobile viewports (`375px` width).
-- **Changelog:** All major updates are tracked in `CHANGELOG.md`.
+- Always verify changes against mobile viewports (`375px` width) by running local builds.
