@@ -15,6 +15,14 @@ const config: Config = {
           charcoal: '#1C1C1C',
         }
       },
+      fontSize: {
+        '10xl': '10rem',
+        '11xl': '12rem',
+        '12xl': '14rem',
+      },
+      letterSpacing: {
+        'tighter-extreme': '-0.05em',
+      },
       fontFamily: {
         sora: ['var(--font-sora)', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],

@@ -4,6 +4,31 @@
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sora;
+    @apply font-sora tracking-tighter-extreme;
+  }
+  
+  body {
+    @apply text-[16px] selection:bg-brand-mustard selection:text-brand-charcoal;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Webflow-style scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F5F3EF;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1C1C1C;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C9A227;
   }
 }
