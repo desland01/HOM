@@ -1,0 +1,34 @@
+import type { Metadata } from 'next'
+import { Sora, Inter } from 'next/font/google'
+import './globals.css'
+
+const sora = Sora({ 
+  subsets: ['latin'], 
+  variable: '--font-sora',
+  weight: ['400', '500', '600', '700', '800'] 
+})
+
+const inter = Inter({ 
+  subsets: ['latin'], 
+  variable: '--font-inter',
+  weight: ['300', '400', '500', '600']
+})
+
+export const metadata: Metadata = {
+  title: 'Homeowner Marketers - Prove It First, Dominate Later',
+  description: 'A Geo-Silo website and SEO engine built exclusively for painting companies.',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className="scroll-smooth">
+      <body className={`${sora.variable} ${inter.variable} font-inter bg-brand-ivory text-brand-charcoal antialiased pt-12`}>
+        {children}
+      </body>
+    </html>
+  )
+}
