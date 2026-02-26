@@ -71,14 +71,14 @@ export default function Home() {
             </FadeIn>
 
             <TextReveal 
-              text="PROVE IT FIRST. DOMINATE LATER." 
+              text="WE BUILD THE MACHINE. YOU COUNT THE LEADS." 
               className="text-5xl sm:text-7xl lg:text-9xl xl:text-10xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme mb-12 max-w-[15ch] text-left" 
             />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-end">
               <FadeIn delay={0.4} className="lg:col-span-6">
                 <p className="text-xl sm:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-10">
-                  A Geo-Silo SEO engine built exclusively for painters. We build it in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove it for <span className="text-brand-charcoal font-extrabold">90 days</span>, and you only commit when you see the leads.
+                  How to dominate your local painting market without signing a 12-month contract. We build the site in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove it for <span className="text-brand-charcoal font-extrabold">90 days</span>, and you only commit when the phone rings.
                 </p>
                 <Magnetic strength={10}>
                   <Link href="#tiers" className="group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-xl uppercase tracking-widest">
@@ -142,11 +142,11 @@ export default function Home() {
           <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit">
             <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Problem</FadeIn>
             <TextReveal 
-              text="YOU'VE BEEN BURNED BEFORE." 
+              text="EVERY AGENCY SELLS HOPE." 
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8"
             />
             <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
-              Standard agencies sell you hope. We sell you a high-performance system that actually works.
+              You don't need more hype. You don't need a prettier logo. You need a system that predictably prints cash.
             </FadeIn>
           </div>
 
@@ -180,7 +180,7 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-12 mb-12 relative z-10 text-center">
           <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Solution</FadeIn>
           <TextReveal 
-            text="A SYSTEM THAT PROVES ITSELF." 
+            text="THE ANTI-AGENCY PROTOCOL." 
             className="text-5xl sm:text-7xl lg:text-9xl font-sora font-extrabold leading-[0.85] tracking-tighter-extreme uppercase justify-center" 
           />
         </div>
@@ -196,11 +196,11 @@ export default function Home() {
           <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit">
             <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Pilot Packages</FadeIn>
             <TextReveal 
-              text="CHOOSE YOUR TERRITORY." 
+              text="CLAIM YOUR TERRITORY." 
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8" 
             />
             <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
-              Every tier ships in 14 days with a 90+ PageSpeed guarantee. Your upfront investment covers the full build plus 90 days of management.
+              Here is exactly what you get. No hidden fees. No 12-month lock-ins. Pick the system that matches your ambition.
             </FadeIn>
           </div>
 
