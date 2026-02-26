@@ -50,7 +50,7 @@ export const ComparisonTable = () => {
             <tbody className="text-brand-charcoal/80">
               
               {/* THE BUILD */}
-              <tr className="bg-brand-charcoal text-brand-ivory text-[10px] font-sora font-extrabold tracking-[0.3em] uppercase">
+              <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
                 <td colSpan={4} className="p-4 lg:px-8">The Build</td>
               </tr>
               
@@ -67,7 +67,7 @@ export const ComparisonTable = () => {
               <TableRow title="Delivery Timeline" t1="14 Days" t2="14 Days" t3="14 Days" isPop borderBottom />
 
               {/* MONTHLY ENGINE */}
-              <tr className="bg-brand-charcoal text-brand-ivory text-[10px] font-sora font-extrabold tracking-[0.3em] uppercase">
+              <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
                 <td colSpan={4} className="p-4 lg:px-8">Monthly Engine</td>
               </tr>
 
@@ -82,7 +82,7 @@ export const ComparisonTable = () => {
               <TableRow title="Dedicated Slack Channel" t1={xmark} t2={xmark} t3={check} isPop borderBottom />
 
               {/* TECHNICAL */}
-              <tr className="bg-brand-charcoal text-brand-ivory text-[10px] font-sora font-extrabold tracking-[0.3em] uppercase">
+              <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
                 <td colSpan={4} className="p-4 lg:px-8">Technical</td>
               </tr>
               

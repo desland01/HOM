@@ -19,7 +19,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip">
+    <main className="min-h-[100dvh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip">
       {/* STICKY TOP BANNER */}
       <AnimatePresence>
         {showBanner && (
@@ -27,7 +27,7 @@ export default function Home() {
             initial={{ y: -50 }} animate={{ y: 0 }} exit={{ y: -50 }}
             className="fixed top-0 left-0 right-0 h-14 bg-brand-mustard flex items-center justify-center z-[100] px-12 border-b border-brand-charcoal/10"
           >
-            <span className="text-brand-charcoal font-sora font-extrabold text-[10px] sm:text-xs tracking-[0.2em] uppercase text-center">
+            <span className="text-brand-charcoal font-sora font-extrabold text-xs sm:text-sm tracking-[0.2em] uppercase text-center">
               PILOT OFFER: 50% OFF — Only 5 Spots Available
             </span>
             <button 
@@ -55,13 +55,13 @@ export default function Home() {
                 className="h-8 sm:h-12 w-auto object-contain invert"
               />
               <div className="h-6 w-px bg-brand-charcoal/10 hidden sm:block" />
-              <div className="text-[10px] sm:text-xs font-sora font-extrabold tracking-[0.3em] uppercase text-brand-charcoal/40 hidden sm:block">
+              <div className="text-xs sm:text-sm font-sora font-extrabold tracking-[0.3em] uppercase text-brand-charcoal/40 hidden sm:block">
                 Geo-Silo SEO Engine
               </div>
             </FadeIn>
             
             <FadeIn delay={0.2} className="flex flex-col items-start gap-2 mb-10">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-mustard/30 bg-brand-mustard/5 text-brand-mustard text-[10px] sm:text-xs font-sora font-extrabold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-mustard/30 bg-brand-mustard/5 text-brand-mustard text-xs sm:text-sm font-sora font-extrabold uppercase tracking-widest">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mustard opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-mustard"></span>
@@ -72,7 +72,7 @@ export default function Home() {
 
             <TextReveal 
               text="PROVE IT FIRST. DOMINATE LATER." 
-              className="text-6xl sm:text-8xl md:text-9xl lg:text-10xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme mb-12 max-w-[15ch] text-left" 
+              className="text-5xl sm:text-7xl lg:text-9xl xl:text-10xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme mb-12 max-w-[15ch] text-left" 
             />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-end">
@@ -103,7 +103,7 @@ export default function Home() {
                     style={{ transformStyle: "preserve-3d" }}
                   >
                     <motion.div 
-                      className="text-6xl sm:text-8xl font-sora font-extrabold leading-none tracking-tighter-extreme"
+                      className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold leading-none tracking-tighter-extreme"
                       style={{ transform: "translateZ(50px)" }}
                     >
                       50% OFF
@@ -283,7 +283,7 @@ export default function Home() {
             
             <TextReveal 
               text="CLAIM YOUR SPOT." 
-              className="text-6xl sm:text-8xl lg:text-11xl font-sora font-extrabold leading-[0.8] tracking-tighter-extreme uppercase mb-16 max-w-[10ch]" 
+              className="text-5xl sm:text-8xl lg:text-11xl font-sora font-extrabold leading-[0.8] tracking-tighter-extreme uppercase mb-16 max-w-[10ch]" 
             />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
@@ -346,13 +346,13 @@ function TierCard({ name, title, revenue, save, original, price, buildFeatures, 
   return (
     <div className={`relative p-10 lg:p-12 border-2 ${isPopular ? 'bg-brand-charcoal text-brand-ivory border-brand-charcoal' : 'bg-white text-brand-charcoal border-brand-charcoal/5'} flex flex-col h-full group hover:-translate-y-2 transition-transform duration-500`}>
       {isPopular && (
-        <div className="absolute -top-4 left-10 bg-brand-mustard text-brand-charcoal text-[10px] font-sora font-extrabold tracking-[0.2em] uppercase px-4 py-2 rounded-none shadow-xl">
+        <div className="absolute -top-4 left-10 bg-brand-mustard text-brand-charcoal text-xs font-sora font-extrabold tracking-[0.2em] uppercase px-4 py-2 rounded-none shadow-xl">
           Most Popular
         </div>
       )}
 
       <div className="mb-12">
-        <div className="text-[10px] font-sora font-extrabold tracking-[0.4em] uppercase opacity-40 mb-2">{name}</div>
+        <div className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase opacity-40 mb-2">{name}</div>
         <h3 className="text-3xl font-sora font-extrabold mb-4 uppercase tracking-tight">{title}</h3>
         <div className={`text-sm font-medium ${isPopular ? 'text-brand-ivory/50' : 'text-brand-charcoal/50'} mb-10`}>{revenue}</div>
         
@@ -361,14 +361,14 @@ function TierCard({ name, title, revenue, save, original, price, buildFeatures, 
             <span className={`text-sm font-sora font-extrabold uppercase tracking-widest ${isPopular ? 'text-brand-mustard' : 'text-brand-mustard'}`}>SAVE {save}</span>
             <span className={`text-xl font-sora font-extrabold line-through opacity-20`}>{original}</span>
           </div>
-          <div className="text-6xl font-sora font-extrabold tracking-tighter-extreme">{price}</div>
+          <div className="text-5xl sm:text-6xl font-sora font-extrabold tracking-tighter-extreme">{price}</div>
           <div className={`text-xs font-bold uppercase tracking-widest mt-2 ${isPopular ? 'text-brand-ivory/40' : 'text-brand-charcoal/40'}`}>Upfront Investment</div>
         </div>
       </div>
 
       <div className="space-y-12 flex-grow">
         <div>
-          <div className={`text-[10px] font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>14-Day Build</div>
+          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>14-Day Build</div>
           <ul className="space-y-4">
             {buildFeatures.map((f: string, i: number) => (
               <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed">
@@ -380,7 +380,7 @@ function TierCard({ name, title, revenue, save, original, price, buildFeatures, 
         </div>
 
         <div>
-          <div className={`text-[10px] font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>90-Day Engine</div>
+          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>90-Day Engine</div>
           <ul className="space-y-4">
             {monthlyFeatures.map((f: string, i: number) => (
               <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed">
