@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Established the **Vibe Coding Protocol** in `GEMINI.md` and `CLAUDE.md`, officially designating the User as the Product Manager/Creative Director and the AI as the Senior Autonomous Developer.
 - Created `CHANGELOG.md` to track project history.
 - Set up a git post-commit hook to automatically encourage changelog updates or log git activity.
 - Created `components/ui/animations.tsx` to act as a centralized, Webflow-inspired animation library (Framer Motion).
