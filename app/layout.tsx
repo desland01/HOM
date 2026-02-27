@@ -16,7 +16,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Homeowner Marketers - Prove It First, Dominate Later',
-  description: 'A Geo-Silo website and SEO engine built exclusively for painting companies.',
+  description: 'Premium websites and SEO built exclusively for painting companies.',
 }
 
 export default function RootLayout({

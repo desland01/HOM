@@ -6,39 +6,39 @@ import { FeatureModal, FeatureDetail } from '@/components/ui/feature-modal'
 
 const featureDetails: Record<string, FeatureDetail> = {
   "geo-silos": {
-    title: "Next-Gen AI SEO",
-    description: "We build a location-first architecture that doesn't just rank you on traditional Google maps, but structures your data so AI search engines (like ChatGPT) recognize you as the definitive local authority.",
+    title: "Your City, Your Territory",
+    description: "When a homeowner in your area searches for a painter, your name should be the first one they see. We build your site so both Google and the new AI search engines treat you as the go-to authority in every neighborhood you serve.",
     tiers: {
-      t1: "1 Primary Target City Hub + 4 Core Service Pages.",
-      t2: "Adds 3 Secondary Location Hubs (for high-net-worth suburbs) + 12 Nested Service Pages.",
-      t3: "Adds 6 Location Hubs for complete metro domination + Unlimited Nested Service Pages."
+      t1: "Locks down your primary city. Your core services rank in the one market that matters most to your bottom line right now.",
+      t2: "Expands into 3 surrounding suburbs where high-value homeowners live. You show up in every search across your real service area.",
+      t3: "Full metro takeover. Every city, every suburb, every neighborhood in your region points back to you. Your competitors fight over scraps."
     }
   },
   "proof-engine": {
-    title: "14-Day Build & 90-Day Proof",
-    description: "You are paying for speed and precision. Your initial investment covers the entire build and 90 days of aggressive management. We prove the system works, and then transition you into a 12-month growth plan.",
+    title: "Built Fast, Proven In 90 Days",
+    description: "Your site goes live in 14 days. Then we run the engine hard for 90 days to prove it works. If the phone does not ring, we hand you your old site back and part as friends. Zero risk.",
     tiers: {
-      t1: "2 blog posts/mo + Monthly GBP sync + DataForSEO tracking.",
-      t2: "4 blog posts/mo + Weekly GBP optimization + Review responses.",
-      t3: "8 blog posts/mo + Automated review sequences + Competitor gap analysis."
+      t1: "Foundational growth engine. 2 fresh content pieces per month, monthly Google profile updates, and full lead tracking so you see exactly where calls come from.",
+      t2: "Aggressive growth mode. 4 content pieces per month, weekly Google profile optimization, and active review management to build your reputation fast.",
+      t3: "Total market saturation. 8 content pieces per month, automated review outreach, and competitor gap reports showing you exactly where to take their leads."
     }
   },
   "ai-web-apps": {
-    title: "Filter The Tire-Kickers",
-    description: "We replace standard, boring contact forms with interactive funnels and calculators. This positions you as a premium contractor, filters out the lowest-bid shoppers, and hands you qualified leads.",
+    title: "Premium Leads Only",
+    description: "Your website should act as a bouncer. Instead of a generic contact form that attracts every bargain hunter, we build smart tools that qualify homeowners before they ever hit your inbox. You only talk to people ready to pay for quality.",
     tiers: {
-      t1: "Standard lead funnel integration (Quote forms to Email/CRM).",
-      t2: "Adds an Interactive Project Gallery (Filterable & location-tagged).",
-      t3: "Custom Interactive Paint Cost Calculator + Multi-step logic-based qualification funnels."
+      t1: "Smart quote request forms that route qualified leads straight to your email or CRM. No more junk submissions clogging your inbox.",
+      t2: "Adds a filterable project showcase so homeowners see your best work by type and location. They sell themselves before they even call you.",
+      t3: "Adds an interactive cost estimator and multi-step qualification flow. Price shoppers drop off. Serious buyers fill out every field."
     }
   },
   "page-speed": {
-    title: "Lightning-Fast Load Times",
-    description: "Homeowners have zero patience. If your site is slow, they leave. We build your site on the fastest enterprise infrastructure available, ensuring your site loads instantly on any phone.",
+    title: "Loads Before They Blink",
+    description: "Homeowners bounce in 3 seconds if your site is slow. Every second of delay costs you real leads. Your site will load instantly on any phone, any connection, every single time.",
     tiers: {
-      t1: "Instant Edge Deployment & 90+ Score Guaranteed.",
-      t2: "Instant Edge Deployment & 90+ Score Guaranteed.",
-      t3: "Instant Edge Deployment & 90+ Score Guaranteed."
+      t1: "Premium hosting on the fastest infrastructure available. Your site scores 90+ on speed tests and loads in under 2 seconds on any device.",
+      t2: "Adds advanced image compression, smart browser caching, and lazy loading so your gallery pages with 50+ photos still load instantly.",
+      t3: "Adds real-time performance monitoring, custom network fine-tuning, and monthly speed audits. Your site stays the fastest painter site in your market, permanently."
     }
   }
 }
@@ -54,32 +54,32 @@ export const StickyFeatures = () => {
 
   const features = [
     {
-      title: "Next-Gen SEO",
-      description: "We don't just optimize for standard Google searches. We build the infrastructure so that massive new AI search engines (like ChatGPT and Google AI) actually recommend your painting business over the competition.",
+      title: "Own Your City",
+      description: "Google is not the only search engine anymore. ChatGPT, Google AI, and Siri are all recommending painters now. Your site will be built so every single one of them sends homeowners to you first.",
       color: "bg-brand-charcoal",
       textColor: "text-brand-ivory",
       number: "01",
       featureKey: "geo-silos"
     },
     {
-      title: "Speed Out Of The Gate",
-      description: "You are paying for immediate momentum. We use cutting-edge AI tools to build your system in 14 days, run the engine for 90 days, and then lock in a recurring 12-month plan to dominate your local market.",
+      title: "Live In 14 Days",
+      description: "Your custom site launches in 2 weeks, not 2 months. Then we run it hard for 90 days to prove it works. You see real leads before most agencies finish their first draft.",
       color: "bg-brand-mustard",
       textColor: "text-brand-charcoal",
       number: "02",
       featureKey: "proof-engine"
     },
     {
-      title: "Filter The Tire-Kickers",
-      description: "Stop haggling. Your website should act as a filter. We build custom calculators and interactive funnels that attract homeowners willing to pay for top-tier work, and immediately weed out the price-shoppers.",
+      title: "Repel Price Shoppers",
+      description: "Your site should scare off the cheapest-bid crowd and attract homeowners who value quality. Smart forms and tools qualify every lead before they ever reach your phone.",
       color: "bg-white",
       textColor: "text-brand-charcoal",
       number: "03",
       featureKey: "ai-web-apps"
     },
     {
-      title: "Lightning-Fast Loads",
-      description: "A slow site kills leads. Homeowners bounce in 3 seconds if it doesn't load instantly. We build your site on the fastest infrastructure available so you capture every single click.",
+      title: "Instant Load Speed",
+      description: "3 seconds. That is how long a homeowner waits before they leave a slow site and call your competitor. Your site loads instantly on any phone, every time. Zero leads lost to lag.",
       color: "bg-brand-charcoal",
       textColor: "text-brand-ivory",
       number: "04",

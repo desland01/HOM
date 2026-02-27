@@ -144,7 +144,7 @@ export const ComparisonTable = () => {
               <TableRow title="Review Response Management" t1={xmark} t2={check} t3={check} isPop />
               <TableRow title="Automated Review Sequences" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
               <TableRow title="Competitor Gap Analysis" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
-              <TableRow title="DataForSEO Tracking" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
+              <TableRow title="Keyword Rank Tracking" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
               <TableRow title="Strategy Calls" t1="Quarterly" t2="Bi-Monthly" t3="Monthly" isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
               <TableRow title="Dedicated Slack Channel" t1={xmark} t2={xmark} t3={check} isPop borderBottom />
 
