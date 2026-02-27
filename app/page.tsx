@@ -54,7 +54,7 @@ export default function Home() {
               <img 
                 src="/HM-Logo.png" 
                 alt="Homeowner Marketers" 
-                className="h-8 sm:h-12 w-auto object-contain invert"
+                className="h-12 sm:h-20 w-auto object-contain invert"
               />
               <div className="h-6 w-px bg-brand-charcoal/10 hidden sm:block" />
               <div className="text-xs sm:text-sm font-sora font-extrabold tracking-[0.3em] uppercase text-brand-charcoal/40 hidden sm:block">
@@ -318,7 +318,7 @@ export default function Home() {
       <footer className="py-24 px-6 sm:px-12 bg-white border-t border-brand-charcoal/5">
         <FadeIn className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
           <div className="flex flex-col gap-6">
-            <img src="/HM-Logo.png" alt="Homeowner Marketers" className="h-8 object-contain invert opacity-80 self-start" />
+            <img src="/HM-Logo.png" alt="Homeowner Marketers" className="h-12 sm:h-16 object-contain invert opacity-80 self-start" />
             <p className="text-brand-charcoal/40 font-medium text-sm">&copy; 2026 Homeowner Marketers. Premium websites for painters who refuse to compete on price.</p>
           </div>
           <div className="flex flex-wrap gap-8 text-xs font-sora font-extrabold uppercase tracking-[0.2em] text-brand-charcoal/60">
