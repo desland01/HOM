@@ -6,19 +6,14 @@ import { FadeIn, TextReveal, ScaleReveal } from '@/components/ui/animations'
 
 const websites = [
   {
-    name: "Apex Painting",
-    url: "apexpainting.com",
-    src: "https://example.com" // Placeholder for actual website URL
+    name: "Grove Street Painting",
+    url: "grovestreetpainting.com",
+    src: "https://grovestreetpainting.com"
   },
   {
-    name: "Precision Coats",
-    url: "precisioncoats.com",
-    src: "https://example.org" // Placeholder for actual website URL
-  },
-  {
-    name: "Elite Finish",
-    url: "elitefinish.com",
-    src: "https://example.com" // Placeholder for actual website URL
+    name: "Shape of Paint",
+    url: "shape-of-paint.vercel.app",
+    src: "https://shape-of-paint.vercel.app/"
   }
 ]
 
@@ -53,7 +48,7 @@ export function PortfolioViewports() {
 
         <div 
           ref={containerRef}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto"
         >
           {websites.map((site, index) => (
             <ScaleReveal key={index} delay={index * 0.1} className="flex flex-col">
