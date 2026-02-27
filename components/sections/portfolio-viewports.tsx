@@ -59,38 +59,39 @@ export function PortfolioViewports() {
               
               {/* Browser Viewport Window */}
               <motion.div 
-                className="w-full h-[500px] lg:h-[600px] bg-[#121212] rounded-xl border-2 border-brand-ivory/10 overflow-hidden flex flex-col shadow-2xl relative group"
+                className="w-full aspect-video bg-[#121212] rounded-xl border-2 border-brand-ivory/10 overflow-hidden flex flex-col shadow-2xl relative group"
                 whileHover={{ y: -10, borderColor: "rgba(201,162,39,0.3)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 {/* Browser Header */}
-                <div className="h-12 bg-[#1A1A1A] flex items-center px-4 gap-4 border-b border-brand-ivory/10 shrink-0">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#FF5F56] border border-black/10"></div>
-                    <div className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-black/10"></div>
-                    <div className="w-3 h-3 rounded-full bg-[#27C93F] border border-black/10"></div>
+                <div className="h-8 sm:h-10 bg-[#1A1A1A] flex items-center px-4 gap-4 border-b border-brand-ivory/10 shrink-0">
+                  <div className="flex gap-1.5 sm:gap-2">
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF5F56] border border-black/10"></div>
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E] border border-black/10"></div>
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27C93F] border border-black/10"></div>
                   </div>
                   <div className="flex-1 flex justify-center">
-                    <div className="bg-black/30 px-6 py-1.5 rounded-md text-[10px] sm:text-xs font-sora font-medium text-brand-ivory/40 tracking-widest truncate max-w-full border border-white/5 group-hover:text-brand-ivory/80 transition-colors">
+                    <div className="bg-black/30 px-4 sm:px-6 py-1 sm:py-1.5 rounded-md text-[8px] sm:text-[10px] font-sora font-medium text-brand-ivory/40 tracking-widest truncate max-w-full border border-white/5 group-hover:text-brand-ivory/80 transition-colors">
                       {site.url}
                     </div>
                   </div>
-                  <div className="w-[52px]"></div> {/* Spacer to balance dots */}
+                  <div className="w-[42px] sm:w-[52px]"></div> {/* Spacer to balance dots */}
                 </div>
                 
                 {/* Scrollable Iframe Area */}
-                <div className="flex-1 bg-white relative w-full overflow-hidden">
+                <div className="flex-1 bg-white relative w-full overflow-hidden group/iframe">
                   <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] z-10" />
                   <iframe 
                     src={site.src} 
-                    className="w-full h-full border-none" 
+                    className="absolute top-0 left-0 border-none origin-top-left"
+                    style={{ width: '300%', height: '300%', transform: 'scale(0.333333)' }}
                     title={site.name}
                     loading="lazy"
                     sandbox="allow-scripts allow-same-origin"
                   />
                   
                   {/* Overlay prompt to scroll */}
-                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-brand-charcoal text-brand-mustard px-4 py-2 rounded-full text-[10px] font-sora font-extrabold uppercase tracking-widest shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 flex items-center gap-2 border border-brand-mustard/20">
+                  <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 bg-brand-charcoal text-brand-mustard px-4 py-2 rounded-full text-[8px] sm:text-[10px] font-sora font-extrabold uppercase tracking-widest shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 flex items-center gap-2 border border-brand-mustard/20">
                     <span className="animate-bounce">↓</span> Scroll Site
                   </div>
                 </div>
