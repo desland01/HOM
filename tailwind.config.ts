@@ -37,8 +37,8 @@ const config: Config = {
           '100%': { transform: 'translateX(-100%)' },
         },
         ember: {
-          '0%, 100%': { opacity: '0.3', filter: 'blur(10px)', transform: 'scale(1)' },
-          '50%': { opacity: '0.8', filter: 'blur(14px)', transform: 'scale(1.1)' },
+          '0%, 100%': { opacity: '0.1', filter: 'blur(4px)', transform: 'scale(1.02)' },
+          '50%': { opacity: '0.5', filter: 'blur(6px)', transform: 'scale(1.05)' },
         }
       }
     },
