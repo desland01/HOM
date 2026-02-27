@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Created `docs/offer-options.md` synthesizing all components of the "Pilot Offer" from existing project documents (Next.js build details, 90-day proof period, and pricing tiers).
+
+### Added
 - Added `components/ui/feature-modal.tsx` to handle progressive disclosure of tier-specific feature details.
 - Added `components/ui/guarantee-modal.tsx` with a 3-step animated carousel (page-turn on desktop, swipe on mobile) to explain guarantees in depth.
 - Imported `SITE-STRUCTURE-PLAN.md` into the `docs` folder as a reference artifact.
