@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- **Problem Cards Transition (page.tsx):** Refactored the "Your Website is costing you money" cards to use a centralized scroll event listener (`ProblemCardsList`). Replaced individual `useInView` triggers with a unified system that calculates distance to the viewport center, ensuring that **only one card** transitions to the active/dark state at a time, creating a smoother reading experience.
+
+### Fixed
+- **Sticky Stacking Cards Broken by Overflow (page.tsx):** Changed `overflow-hidden` to `overflow-clip` on the "The Solution" parent section. `overflow-hidden` creates a new scroll container which confines `position: sticky` to that container instead of the viewport, completely breaking the stacking card animation on both mobile and desktop. `overflow-clip` still clips decorative background elements but does not create a scroll container, allowing sticky positioning to work correctly against the viewport.
 - **Mobile Sticky Feature Complete Rebuild (sticky-features.tsx):** Scrapped the Framer Motion `useScroll` mapping math entirely due to lingering cross-device layout bugs. Rebuilt the stacking card animation from scratch using native CSS `position: sticky`. Implemented oversized `h-[130dvh]` scrolling wrappers per card to control reading pacing perfectly without JS layout thrashing. Cards now slide up and stick sequentially at offset `top` values using pure CSS, guaranteeing buttery smooth native performance on all mobile browsers regardless of address bar resizing. Added deep custom drop shadows to separate overlapping cards natively.
 - **Mobile Problem Cards Hover (page.tsx):** Replaced static desktop `hover` classes with Framer Motion's `useInView` to automatically trigger the dark/light card transition on mobile devices when a card scrolls into the middle 40% of the viewport. Preserved standard hover interactions on desktop viewports.
 

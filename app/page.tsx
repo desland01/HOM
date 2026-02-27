@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, forwardRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -158,22 +158,13 @@ export default function Home() {
           </div>
 
           <div className="lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-px bg-brand-charcoal/5 border border-brand-charcoal/5">
-            {[
-              { title: "You Look Cheap Online", desc: "Your site looks like every other painter on page one. A homeowner cannot tell you apart from the guy working out of his garage.", icon: "x" },
-              { title: "Price Shoppers Only", desc: "Your inbox is full of people asking 'what is your cheapest price?' because nothing on your site says premium.", icon: "x" },
-              { title: "Agency Black Hole", desc: "You pay $1,500 a month and have no idea what they do. They say 'SEO takes time' while your phone stays quiet.", icon: "x" },
-              { title: "6 Months to Launch", desc: "Your last agency took half a year to build a basic site. You lost thousands in jobs while they 'finalized the design.'", icon: "x" },
-              { title: "Slow Site, Lost Leads", desc: "Your site takes 5+ seconds to load. By then the homeowner already called your competitor.", icon: "x" },
-              { title: "Brochure, Not a Closer", desc: "Your site is a digital business card. It does not qualify leads, show pricing, or give homeowners a reason to pick you.", icon: "x" }
-            ].map((item, i) => (
-              <ProblemCard key={i} item={item} i={i} />
-            ))}
+            <ProblemCardsList />
           </div>
         </div>
       </section>
 
       {/* THE SOLUTION — STICKY STACKING CARDS */}
-      <section className="py-24 lg:py-40 bg-brand-charcoal text-brand-ivory relative overflow-hidden">
+      <section className="py-24 lg:py-40 bg-brand-charcoal text-brand-ivory relative overflow-clip">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05] pointer-events-none" />
         
         <div className="max-w-[1440px] mx-auto px-6 sm:px-12 mb-24 lg:mb-40 relative z-10 text-center">
@@ -403,12 +394,64 @@ function TierCard({ name, title, revenue, save, original, price, buildFeatures, 
   )
 }
 
-function ProblemCard({ item, i }: { item: { title: string, desc: string, icon: string }, i: number }) {
-  const ref = useRef<HTMLDivElement>(null)
-  // Triggers when the card crosses the middle 40% of the viewport.
-  // On desktop, we still use group-hover so the user can hover around freely.
-  const isInView = useInView(ref, { margin: "-30% 0px -30% 0px", amount: "some" })
+function ProblemCardsList() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowCenterY = window.innerHeight / 2
+      let minDistance = Infinity
+      let newActiveIndex = null
+
+      cardRefs.current.forEach((el, index) => {
+        if (!el) return
+        const rect = el.getBoundingClientRect()
+        // Calculate the center of the element
+        const elementCenterY = rect.top + rect.height / 2
+        const distance = Math.abs(windowCenterY - elementCenterY)
+        
+        // Threshold: Must be somewhat near the center to be active
+        if (distance < minDistance && distance < window.innerHeight / 1.5) {
+          minDistance = distance
+          newActiveIndex = index
+        }
+      })
+
+      setActiveIndex(newActiveIndex)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // initial check
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const items = [
+    { title: "You Look Cheap Online", desc: "Your site looks like every other painter on page one. A homeowner cannot tell you apart from the guy working out of his garage.", icon: "x" },
+    { title: "Price Shoppers Only", desc: "Your inbox is full of people asking 'what is your cheapest price?' because nothing on your site says premium.", icon: "x" },
+    { title: "Agency Black Hole", desc: "You pay $1,500 a month and have no idea what they do. They say 'SEO takes time' while your phone stays quiet.", icon: "x" },
+    { title: "6 Months to Launch", desc: "Your last agency took half a year to build a basic site. You lost thousands in jobs while they 'finalized the design.'", icon: "x" },
+    { title: "Slow Site, Lost Leads", desc: "Your site takes 5+ seconds to load. By then the homeowner already called your competitor.", icon: "x" },
+    { title: "Brochure, Not a Closer", desc: "Your site is a digital business card. It does not qualify leads, show pricing, or give homeowners a reason to pick you.", icon: "x" }
+  ]
+
+  return (
+    <>
+      {items.map((item, i) => (
+        <ProblemCard 
+          key={i} 
+          item={item} 
+          i={i} 
+          isActive={activeIndex === i} 
+          ref={(el) => { cardRefs.current[i] = el }} 
+        />
+      ))}
+    </>
+  )
+}
+
+const ProblemCard = forwardRef<HTMLDivElement, { item: { title: string, desc: string, icon: string }, i: number, isActive: boolean }>(({ item, i, isActive }, ref) => {
   return (
     <motion.div
       ref={ref}
@@ -417,12 +460,13 @@ function ProblemCard({ item, i }: { item: { title: string, desc: string, icon: s
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
       className={`group p-10 transition-colors duration-500 h-full cursor-pointer
-        ${isInView ? 'bg-brand-charcoal text-brand-ivory' : 'bg-brand-ivory text-brand-charcoal lg:hover:bg-brand-charcoal lg:hover:text-brand-ivory'}`}
+        ${isActive ? 'bg-brand-charcoal text-brand-ivory' : 'bg-brand-ivory text-brand-charcoal lg:hover:bg-brand-charcoal lg:hover:text-brand-ivory'}`}
     >
-      <div className={`text-4xl font-sora font-extrabold mb-12 transition-transform duration-500 ${isInView ? 'scale-110 text-brand-mustard' : 'text-brand-mustard lg:group-hover:scale-110'}`}>{item.icon}</div>
+      <div className={`text-4xl font-sora font-extrabold mb-12 transition-transform duration-500 ${isActive ? 'scale-110 text-brand-mustard' : 'text-brand-mustard lg:group-hover:scale-110'}`}>{item.icon}</div>
       <h4 className="text-2xl font-sora font-extrabold mb-4 uppercase tracking-tight">{item.title}</h4>
-      <p className={`leading-relaxed font-medium transition-colors duration-500 ${isInView ? 'text-brand-ivory/60' : 'text-brand-charcoal/60 lg:group-hover:text-brand-ivory/60'}`}>{item.desc}</p>
+      <p className={`leading-relaxed font-medium transition-colors duration-500 ${isActive ? 'text-brand-ivory/60' : 'text-brand-charcoal/60 lg:group-hover:text-brand-ivory/60'}`}>{item.desc}</p>
     </motion.div>
   )
-}
+})
+ProblemCard.displayName = 'ProblemCard'
 
