@@ -45,7 +45,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* OVERSIZED HERO */}
-      <section className={`relative ${showBanner ? 'pt-20' : 'pt-8'} pb-8 ${showBanner ? 'lg:pt-28' : 'lg:pt-16'} lg:pb-12 px-6 sm:px-12 flex flex-col items-start overflow-hidden border-b border-brand-charcoal/5 transition-[padding] duration-300`}>
+      <section className={`relative ${showBanner ? 'pt-20' : 'pt-8'} pb-8 ${showBanner ? 'lg:pt-20' : 'lg:pt-16'} lg:pb-6 px-6 sm:px-12 flex flex-col items-start overflow-hidden border-b border-brand-charcoal/5 transition-[padding] duration-300`}>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015] pointer-events-none" />
         
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
             </FadeIn>
             
-            <FadeIn delay={0.2} className="flex flex-col items-start gap-2 mb-4">
+            <FadeIn delay={0.2} className="flex flex-col items-start gap-2 mb-3">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-mustard/30 bg-brand-mustard/5 text-brand-mustard text-xs sm:text-sm font-sora font-extrabold uppercase tracking-widest">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mustard opacity-75"></span>
@@ -79,12 +79,12 @@ export default function Home() {
 
             <TextReveal 
               text="STOP LOOKING CHEAP. START CHARGING MORE." 
-              className="text-4xl sm:text-7xl lg:text-9xl xl:text-10xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme mb-6 lg:mb-8 max-w-[15ch] text-left" 
+              className="text-4xl sm:text-7xl lg:text-7xl xl:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme mb-4 lg:mb-4 max-w-[15ch] lg:max-w-[25ch] text-left" 
             />
             
-            <div className="grid grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-8 w-full items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-6 w-full items-center">
               <FadeIn delay={0} className="col-span-2 lg:col-span-6">
-                <p className="text-lg sm:text-xl lg:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-6">
+                <p className="text-lg sm:text-xl lg:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-4">
                   Your website makes you look like every other painter in town. That is why you keep getting price shoppers. We build you a premium site in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove it pulls quality leads for <span className="text-brand-charcoal font-extrabold">90 days</span>, or you walk away with zero risk.
                 </p>
                 <Magnetic strength={10}>
@@ -106,7 +106,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-brand-charcoal/20 blur-xl translate-y-8 scale-90 group-hover:opacity-100 transition-opacity opacity-0 duration-500"></div>
                   <div className="absolute inset-0 bg-brand-mustard translate-x-2 translate-y-2 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-300"></div>
                   <motion.div 
-                    className="relative flex flex-col items-center justify-center bg-brand-mustard text-brand-charcoal px-6 py-4 sm:px-10 sm:py-8 border-2 border-brand-charcoal rotate-[-2deg] group-hover:rotate-0 transition-all duration-300 shadow-[0_20px_50px_rgba(201,162,39,0.2)]"
+                    className="relative flex flex-col items-center justify-center bg-brand-mustard text-brand-charcoal px-6 py-3 sm:px-10 sm:py-8 border-2 border-brand-charcoal rotate-[-2deg] group-hover:rotate-0 transition-all duration-300 shadow-[0_20px_50px_rgba(201,162,39,0.2)]"
                     style={{ transformStyle: "preserve-3d" }}
                   >
                     <motion.div 
@@ -115,7 +115,7 @@ export default function Home() {
                     >
                       50% OFF
                     </motion.div>
-                    <div className="h-px w-full bg-brand-charcoal/20 my-2 sm:my-4" style={{ transform: "translateZ(30px)" }}></div>
+                    <div className="h-px w-full bg-brand-charcoal/20 my-1 sm:my-4" style={{ transform: "translateZ(30px)" }}></div>
                     <div className="text-sm sm:text-lg font-sora font-extrabold tracking-[0.2em] uppercase" style={{ transform: "translateZ(20px)" }}>
                       First 5 Painters Only
                     </div>
