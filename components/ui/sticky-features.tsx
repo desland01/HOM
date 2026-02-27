@@ -150,13 +150,13 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
     <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-4 sm:px-12 snap-start">
       <motion.div 
         style={{ scale, opacity, top: `calc(-10vh + ${i * 25}px)` }} 
-        className={`relative flex flex-col items-start p-6 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85dvh] sm:min-h-[60dvh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden flex-grow ${color} ${textColor}`}
+        className={`relative flex flex-col flex-grow items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85dvh] sm:min-h-[60dvh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
       >
         <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 w-full h-full flex-grow">
           <div className="lg:w-2/3 flex flex-col items-start w-full h-full flex-grow">
-            <div className={`text-sm font-sora font-extrabold tracking-[0.2em] mb-4 sm:mb-8 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
-            <h3 className="text-4xl sm:text-6xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-4 sm:mb-6">{title}</h3>
-            <p className={`text-lg sm:text-2xl font-medium leading-relaxed mb-8 sm:mb-10 flex-grow ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
+            <div className={`text-base sm:text-sm font-sora font-extrabold tracking-[0.3em] sm:tracking-[0.2em] mb-8 sm:mb-8 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
+            <h3 className="text-5xl sm:text-6xl font-sora font-extrabold leading-[1.1] sm:leading-[0.9] tracking-tighter-extreme uppercase mb-8 sm:mb-8">{title}</h3>
+            <p className={`text-xl sm:text-2xl leading-loose sm:leading-relaxed font-medium flex-grow mb-6 sm:mb-10 ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
               {description}
             </p>
             <button
