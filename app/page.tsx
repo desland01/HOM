@@ -79,7 +79,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-end">
               <FadeIn delay={0.4} className="lg:col-span-6">
                 <p className="text-xl sm:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-10">
-                  How to dominate your local painting market with maximum velocity. You're paying for speed and precision. We build the system in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove its impact for <span className="text-brand-charcoal font-extrabold">90 days</span>, and set the foundation for long-term growth.
+                  Stop looking like the guy with a van. You're paying for speed and premium positioning. We build a high-demand system in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove it attracts quality leads for <span className="text-brand-charcoal font-extrabold">90 days</span>, and set the foundation for long-term growth.
                 </p>
                 <Magnetic strength={10}>
                   <Link href="#tiers" className="group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-xl uppercase tracking-widest">
@@ -147,18 +147,18 @@ export default function Home() {
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8"
             />
             <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
-              You don't need more hype. You don't need a prettier logo. You need a system that predictably prints cash.
+              You don't need more hype. You need to stop looking like a commodity and start attracting homeowners willing to pay for top-tier work.
             </FadeIn>
           </div>
 
           <div className="lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-px bg-brand-charcoal/5 border border-brand-charcoal/5">
             {[
-              { title: "Unfocused Strategy", desc: "Trying to be everything to everyone instead of dominating specific local neighborhoods.", icon: "×" },
-              { title: "Cookie-Cutter Sites", desc: "Template websites that look like every other painter in your city. Google ignores them.", icon: "×" },
-              { title: "Vague Reporting", desc: "Monthly PDFs full of impressions and clicks. Zero clarity on actual booked jobs.", icon: "×" },
-              { title: "Slow Timelines", desc: "3-6 months before anything happens. Meanwhile you're still paying.", icon: "×" },
-              { title: "Hidden Fees", desc: "Surprise charges for every minor change. You're held hostage by your own site.", icon: "×" },
-              { title: "No Ownership", desc: "You leave, you lose the site. They own your domain, your content, your leads.", icon: "×" }
+              { title: "The Commodity Trap", desc: "Cookie-cutter websites that make your $2M company look exactly like Cousin Joe painting on weekends.", icon: "×" },
+              { title: "Tire-Kickers", desc: "An inbox full of people haggling over price because your digital presence doesn't show your true value.", icon: "×" },
+              { title: "The SEO Black Box", desc: "Handing over a monthly retainer and getting zero clarity on what the agency actually does.", icon: "×" },
+              { title: "Unacceptable Delays", desc: "Waiting 3 to 6 months for a traditional agency to finally launch a simple website.", icon: "×" },
+              { title: "Slow Load Times", desc: "A slow site kills leads. Homeowners bounce in 3 seconds if it doesn't load instantly.", icon: "×" },
+              { title: "No Interactive Value", desc: "Boring brochure sites instead of modern funnels with pricing calculators and interactive quotes.", icon: "×" }
             ].map((item, i) => (
               <ScaleReveal 
                 key={i}
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-12 mb-12 relative z-10 text-center">
           <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Solution</FadeIn>
           <TextReveal 
-            text="THE ANTI-AGENCY PROTOCOL." 
+            text="THE DE-COMMODITIZER." 
             className="text-5xl sm:text-7xl lg:text-9xl font-sora font-extrabold leading-[0.85] tracking-tighter-extreme uppercase justify-center" 
           />
         </div>
@@ -201,7 +201,7 @@ export default function Home() {
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8" 
             />
             <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
-              The upfront fee reflects the build and the speed to connect everything. Pick the system that matches your ambition, then scale up your recurrence when you're ready.
+              The upfront fee covers the build and 90 days of marketing. Pick the engine that matches your ambition, then scale up your recurrence when you're ready.
             </FadeIn>
           </div>
 
@@ -211,10 +211,10 @@ export default function Home() {
                 name="Tier 01" title="Local Authority" revenue="$250k - $500k painters"
                 save="$2,250" original="$4,500" price="$2,250"
                 buildFeatures={[
-                  "Custom Next.js web application",
+                  "Custom high-performance website",
                   "1 primary target city location hub",
                   "4 core service pages",
-                  "PaintingContractor JSON-LD schema",
+                  "Advanced local SEO data mapping",
                   "Lead funnel integration"
                 ]}
                 monthlyFeatures={[
@@ -254,7 +254,7 @@ export default function Home() {
                   "Unlimited service pages",
                   "Custom paint cost calculator",
                   "Multi-step qualification funnels",
-                  "Full FAQ schema mapping"
+                  "Advanced trust & authority signals"
                 ]}
                 monthlyFeatures={[
                   "8x reverse-silo blog posts / mo",

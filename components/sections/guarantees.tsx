@@ -17,10 +17,10 @@ const guaranteeDetails: Record<string, FeatureDetail> = {
   },
   "pagespeed": {
     title: "90+ PageSpeed Guarantee",
-    description: "A slow website kills both your Google rankings and your conversion rate. We build exclusively on Next.js and host on Vercel's Edge Network. We guarantee that your site will score 90 or above on Google PageSpeed Insights for both mobile and desktop.",
+    description: "A slow website kills both your Google rankings and your conversion rate. We build exclusively on high-performance architecture and host on a global edge network. We guarantee that your site will score 90 or above on Google PageSpeed Insights for both mobile and desktop.",
     tiers: {
-      s1: { title: "Step 1: Next.js Architecture", content: "We completely ditch bloated platforms like WordPress. Your site is built using Next.js—a modern framework that statically generates pages for instantaneous loading." },
-      s2: { title: "Step 2: Vercel Edge Hosting", content: "Your site doesn't live on a single slow server. It's deployed to Vercel's Edge Network, meaning it gets served from the data center physically closest to your customer, resulting in sub-second load times." },
+      s1: { title: "Step 1: High-Performance Architecture", content: "We completely ditch bloated, slow platforms like WordPress. Your site is built using modern frameworks that generate pages for instantaneous loading." },
+      s2: { title: "Step 2: Instant Edge Hosting", content: "Your site doesn't live on a single slow server. It's deployed to an edge network, meaning it gets served from the data center physically closest to your customer, resulting in sub-second load times." },
       s3: { title: "Step 3: The Penalty", content: "After launch, we run a live Google PageSpeed Insights audit. If it scores below a 90 on mobile or desktop, our engineering team works for free to optimize the code until it passes." }
     }
   },

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- **Global Copy Rewrite:** Stripped out tech jargon (Next.js, Vercel, React, JSON-LD) across `app/page.tsx`, `components/ui/sticky-features.tsx`, `components/sections/comparison-table.tsx`, and `components/sections/guarantees.tsx`. Realigned all user-facing text to speak directly to painting contractors (e.g. "Stop looking like the guy with a van", "Filter the tire-kickers", "High-Performance Architecture").
 - Rewrote `docs/core-message.md` to aggressively strip out tech jargon (Agentic Engineering, Netflix-tier, etc.) and realign the messaging to speak directly to blue-collar painting business owners.
 - Restructured `docs/core-message.md` into a formal brand messaging architecture, highlighting de-commoditization, Agentic Engineering USPs, and the funnel architecture.
 - **Messaging Pivot:** Shifted core offer messaging from "no 12-month lock-ins" to "paying for speed and precision." Emphasized that 90-day proof engine transitions into a mandatory 12-month recurring growth plan.

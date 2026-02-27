@@ -24,12 +24,12 @@ const featureDetails: Record<string, FeatureDetail> = {
     }
   },
   "page-speed": {
-    title: "90+ PageSpeed & Edge Hosting",
-    description: "Sub-second load times are critical for conversions and SEO. Your site is built on Next.js and deployed to Vercel's global edge network—the same infrastructure used by Fortune 500 companies. We guarantee a 90+ score on Google PageSpeed Insights.",
+    title: "Lightning-Fast Load Times",
+    description: "Homeowners bounce in 3 seconds if a site doesn't load. Your site is built on the fastest enterprise infrastructure available—the same tech used by Fortune 500 companies. We guarantee instant loads on any device.",
     tiers: {
-      t1: "Next.js Edge Deployment & 90+ Score Guaranteed.",
-      t2: "Next.js Edge Deployment & 90+ Score Guaranteed.",
-      t3: "Next.js Edge Deployment & 90+ Score Guaranteed."
+      t1: "Instant Edge Deployment & 90+ Score Guaranteed.",
+      t2: "Instant Edge Deployment & 90+ Score Guaranteed.",
+      t3: "Instant Edge Deployment & 90+ Score Guaranteed."
     }
   },
   "gbp-management": {
@@ -56,7 +56,7 @@ const featureDetails: Record<string, FeatureDetail> = {
     tiers: {
       t1: "Standard lead funnel integration (Quote forms to Email/CRM).",
       t2: "Adds an Interactive Project Gallery (Filterable & location-tagged).",
-      t3: "Custom React-based Paint Cost Calculator + Multi-step logic-based qualification funnels."
+      t3: "Custom Interactive Paint Cost Calculator + Multi-step logic-based qualification funnels."
     }
   }
 }
@@ -125,12 +125,12 @@ export const ComparisonTable = () => {
               <TableRow title="Secondary Location Hubs" t1={xmark} t2="3" t3="6" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
               <TableRow title="Core Service Pages" t1="4" t2="4" t3="Unlimited" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
               <TableRow title="Nested Service Pages" t1={xmark} t2="12" t3="Unlimited" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
-              <TableRow title="Custom Next.js Application" t1={check} t2={check} t3={check} isPop />
+              <TableRow title="Custom High-Performance Site" t1={check} t2={check} t3={check} isPop />
               <TableRow title="Interactive Project Gallery" t1={xmark} t2={check} t3={check} isPop />
               <TableRow title="Interlinking Matrix" t1={xmark} t2={check} t3={check} isPop />
               <TableRow title="Paint Cost Calculator" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
               <TableRow title="Multi-Step Funnels" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
-              <TableRow title="FAQ Schema Mapping" t1={xmark} t2={xmark} t3={check} isPop />
+              <TableRow title="Advanced Trust Signals" t1={xmark} t2={xmark} t3={check} isPop />
               <TableRow title="Delivery Timeline" t1="14 Days" t2="14 Days" t3="14 Days" isPop borderBottom />
 
               {/* MONTHLY ENGINE */}
@@ -154,8 +154,8 @@ export const ComparisonTable = () => {
               </tr>
               
               <TableRow title="90+ PageSpeed Guarantee" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
-              <TableRow title="Vercel Edge Hosting" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
-              <TableRow title="JSON-LD Schema" t1="Basic" t2="Advanced" t3="Full Suite" isPop />
+              <TableRow title="Instant Edge Hosting" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
+              <TableRow title="Local SEO Data Structure" t1="Basic" t2="Advanced" t3="Full Suite" isPop />
               <TableRow title="Conversion Architecture" t1={check} t2={check} t3={check} isPop borderBottom={false} />
 
             </tbody>

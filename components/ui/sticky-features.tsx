@@ -6,8 +6,8 @@ import { FeatureModal, FeatureDetail } from '@/components/ui/feature-modal'
 
 const featureDetails: Record<string, FeatureDetail> = {
   "geo-silos": {
-    title: "Geo-Silo Architecture",
-    description: "A Location-First URL architecture designed to dominate local search. Instead of generic service pages, we nest specific services directly under the location they serve (e.g., /sarasota/exterior-painting). This establishes high topical authority and allows scalable expansion into new municipalities.",
+    title: "Next-Gen AI SEO",
+    description: "We build a location-first architecture that doesn't just rank you on traditional Google maps, but structures your data so AI search engines (like ChatGPT) recognize you as the definitive local authority.",
     tiers: {
       t1: "1 Primary Target City Hub + 4 Core Service Pages.",
       t2: "Adds 3 Secondary Location Hubs (for high-net-worth suburbs) + 12 Nested Service Pages.",
@@ -15,7 +15,7 @@ const featureDetails: Record<string, FeatureDetail> = {
     }
   },
   "proof-engine": {
-    title: "90-Day Proof Engine & Management",
+    title: "14-Day Build & 90-Day Proof",
     description: "You are paying for speed and precision. Your initial investment covers the entire build and 90 days of aggressive management. We prove the system works, and then transition you into a 12-month growth plan.",
     tiers: {
       t1: "2 blog posts/mo + Monthly GBP sync + DataForSEO tracking.",
@@ -24,21 +24,21 @@ const featureDetails: Record<string, FeatureDetail> = {
     }
   },
   "ai-web-apps": {
-    title: "Interactive Conversion Architecture",
-    description: "We replace static contact forms with dynamic, multi-step qualification funnels and custom calculators. This filters out tire-kickers, increases conversion rates, and captures rich lead data before they ever talk to your sales team.",
+    title: "Filter The Tire-Kickers",
+    description: "We replace standard, boring contact forms with interactive funnels and calculators. This positions you as a premium contractor, filters out the lowest-bid shoppers, and hands you qualified leads.",
     tiers: {
       t1: "Standard lead funnel integration (Quote forms to Email/CRM).",
       t2: "Adds an Interactive Project Gallery (Filterable & location-tagged).",
-      t3: "Custom React-based Paint Cost Calculator + Multi-step logic-based qualification funnels."
+      t3: "Custom Interactive Paint Cost Calculator + Multi-step logic-based qualification funnels."
     }
   },
   "page-speed": {
-    title: "90+ PageSpeed & Edge Hosting",
-    description: "Sub-second load times are critical for conversions and SEO. Your site is built on Next.js and deployed to Vercel's global edge network—the same infrastructure used by Fortune 500 companies. We guarantee a 90+ score on Google PageSpeed Insights.",
+    title: "Lightning-Fast Load Times",
+    description: "Homeowners have zero patience. If your site is slow, they leave. We build your site on the fastest enterprise infrastructure available, ensuring your site loads instantly on any phone.",
     tiers: {
-      t1: "Next.js Edge Deployment & 90+ Score Guaranteed.",
-      t2: "Next.js Edge Deployment & 90+ Score Guaranteed.",
-      t3: "Next.js Edge Deployment & 90+ Score Guaranteed."
+      t1: "Instant Edge Deployment & 90+ Score Guaranteed.",
+      t2: "Instant Edge Deployment & 90+ Score Guaranteed.",
+      t3: "Instant Edge Deployment & 90+ Score Guaranteed."
     }
   }
 }
@@ -54,8 +54,8 @@ export const StickyFeatures = () => {
 
   const features = [
     {
-      title: "The Local Loophole",
-      description: "Everyone says you need a shiny homepage. They're wrong. We build a 'Geo-Silo' net across your entire city. We don't just rank where your office is—we rank everywhere the money is.",
+      title: "Next-Gen SEO",
+      description: "We don't just optimize for standard Google searches. We build the infrastructure so that massive new AI search engines (like ChatGPT and Google AI) actually recommend your painting business over the competition.",
       color: "bg-brand-charcoal",
       textColor: "text-brand-ivory",
       number: "01",
@@ -63,23 +63,23 @@ export const StickyFeatures = () => {
     },
     {
       title: "Speed Out Of The Gate",
-      description: "You are paying for immediate momentum. We build your system in 14 days, run the engine for 90 days, and then lock in a recurring 12-month plan to dominate your local market.",
+      description: "You are paying for immediate momentum. We use cutting-edge AI tools to build your system in 14 days, run the engine for 90 days, and then lock in a recurring 12-month plan to dominate your local market.",
       color: "bg-brand-mustard",
       textColor: "text-brand-charcoal",
       number: "02",
       featureKey: "proof-engine"
     },
     {
-      title: "Stop Paying For Tire-Kickers",
-      description: "Traffic is a vanity metric. Booked jobs put cash in the bank. Our multi-step qualification funnels filter out the price-shoppers and deliver high-intent homeowners straight to your inbox.",
+      title: "Filter The Tire-Kickers",
+      description: "Stop haggling. Your website should act as a filter. We build custom calculators and interactive funnels that attract homeowners willing to pay for top-tier work, and immediately weed out the price-shoppers.",
       color: "bg-white",
       textColor: "text-brand-charcoal",
       number: "03",
       featureKey: "ai-web-apps"
     },
     {
-      title: "The 1-Second Rule",
-      description: "If your site takes 3 seconds to load, you've already lost the job. We deploy your site on the same edge network Fortune 500 companies use. Sub-second load times. Guaranteed.",
+      title: "Lightning-Fast Loads",
+      description: "A slow site kills leads. Homeowners bounce in 3 seconds if it doesn't load instantly. We build your site on the fastest infrastructure available so you capture every single click.",
       color: "bg-brand-charcoal",
       textColor: "text-brand-ivory",
       number: "04",

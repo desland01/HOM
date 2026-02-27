@@ -95,7 +95,7 @@ export function AddOnsAndBundles() {
             className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8" 
           />
           <FadeIn className="text-xl text-brand-charcoal/50 font-medium max-w-2xl">
-            From essential maintenance to AI-powered lead generation. Add the tools you need to dominate your market.
+            From essential maintenance to automated lead generation. Add the tools you need to dominate your market.
           </FadeIn>
         </div>
 
@@ -179,7 +179,7 @@ export function AddOnsAndBundles() {
               {/* 3. AI Tools */}
               <div>
                 <FadeIn className="flex items-center gap-4 mb-8">
-                  <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">AI Tools SaaS<br/><span className="text-brand-charcoal/40">AI-Powered Lead Gen</span></h3>
+                  <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">AI Automation<br/><span className="text-brand-charcoal/40">Lead Generation</span></h3>
                 </FadeIn>
                 <div className="flex flex-col gap-4">
                   {AI_TOOLS.map((tool, i) => (
