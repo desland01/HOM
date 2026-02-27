@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Added `components/sections/add-ons-and-bundles.tsx` to showcase optional upgrades like Website Maintenance, SEO Growth Plans, AI Tools, Bundles, and A La Carte services.
 - Created `docs/offer-options.md` synthesizing all components of the "Pilot Offer" from existing project documents (Next.js build details, 90-day proof period, and pricing tiers).
 - Copied `docs/offer-options.md` to `~/.claude/` to serve as a shared global context.
 

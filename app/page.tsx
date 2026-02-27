@@ -7,6 +7,7 @@ import { FadeIn, TextReveal, Parallax, Magnetic, ScaleReveal } from '@/component
 import { StickyFeatures } from '@/components/ui/sticky-features'
 import { ComparisonTable } from '@/components/sections/comparison-table'
 import { Guarantees } from '@/components/sections/guarantees'
+import { AddOnsAndBundles } from '@/components/sections/add-ons-and-bundles'
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true)
@@ -268,6 +269,7 @@ export default function Home() {
         </div>
       </section>
 
+      <AddOnsAndBundles />
       <ComparisonTable />
       <Guarantees />
 
