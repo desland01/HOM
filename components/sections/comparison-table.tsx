@@ -6,57 +6,57 @@ import { FeatureModal, FeatureDetail } from '@/components/ui/feature-modal'
 
 const featureDetails: Record<string, FeatureDetail> = {
   "geo-silos": {
-    title: "Geo-Silo Architecture",
-    description: "A Location-First URL architecture designed to dominate local search. Instead of generic service pages, we nest specific services directly under the location they serve (e.g., /sarasota/exterior-painting). This establishes high topical authority and allows scalable expansion into new municipalities.",
+    title: "Own Your City on Google",
+    description: "Most painters have one generic website that tries to rank everywhere and ends up ranking nowhere. We build dedicated pages for every city and service you offer so Google knows exactly where you work and what you do. More pages means more chances to show up when homeowners search.",
     tiers: {
-      t1: "1 Primary Target City Hub + 4 Core Service Pages.",
-      t2: "Adds 3 Secondary Location Hubs (for high-net-worth suburbs) + 12 Nested Service Pages.",
-      t3: "Adds 6 Location Hubs for complete metro domination + Unlimited Nested Service Pages."
+      t1: "Your home city locked down. 1 city hub + 4 service pages so you own the search results where you already work.",
+      t2: "Expands into 3 wealthy surrounding suburbs with 12 dedicated service pages. You start pulling jobs from the high-value neighborhoods next door.",
+      t3: "Full metro domination. 6 city hubs with unlimited service pages. Your competitors cannot show up without seeing your name first."
     }
   },
   "reverse-silos": {
-    title: "Reverse-Silo Content Strategy",
-    description: "A strategic content system using highly optimized blog posts targeting situational and scenario-based long-tail keywords. Link equity is concentrated upward to support your primary and secondary location service pages.",
+    title: "Blog Content That Brings in Leads",
+    description: "Every blog post we write answers a real question homeowners are typing into Google right now. Things like 'how much does it cost to paint a house in [your city]' or 'best exterior paint colors for resale.' Each post points readers straight back to your service pages so they call you, not your competitor.",
     tiers: {
-      t1: "2 highly-optimized reverse-silo posts per month.",
-      t2: "4 highly-optimized reverse-silo posts per month.",
-      t3: "8 highly-optimized reverse-silo posts per month."
+      t1: "2 posts per month. Builds your foundation so Google starts seeing you as the local painting authority.",
+      t2: "4 posts per month. Aggressive growth mode. You start ranking for 'painters near me' and long-tail searches that bring ready-to-buy homeowners.",
+      t3: "8 posts per month. Market saturation. Your content pushes competitors off page 1 and makes you the obvious choice in your entire metro."
     }
   },
   "page-speed": {
-    title: "Lightning-Fast Load Times",
-    description: "Homeowners bounce in 3 seconds if a site doesn't load. Your site is built on the fastest enterprise infrastructure available—the same tech used by Fortune 500 companies. We guarantee instant loads on any device.",
+    title: "A Website That Loads Instantly",
+    description: "Homeowners bounce in 3 seconds if your site is slow. Every lost visitor is a lost estimate. We build your site on the fastest hosting available and guarantee a 90+ speed score so you never lose a lead to a loading spinner.",
     tiers: {
-      t1: "Instant Edge Deployment & 90+ Score Guaranteed.",
-      t2: "Instant Edge Deployment & 90+ Score Guaranteed.",
-      t3: "Instant Edge Deployment & 90+ Score Guaranteed."
+      t1: "Premium hosting, optimized images, and a guaranteed 90+ speed score. Your site loads fast on every device.",
+      t2: "Everything in Tier 1 plus advanced caching, automatic image compression, and priority support if your scores ever dip.",
+      t3: "Everything in Tier 2 plus real-time performance monitoring, automatic optimization, and a dedicated speed engineer on call for your site."
     }
   },
   "gbp-management": {
-    title: "Google Business Profile Engine",
-    description: "Direct synchronization between your website's location data and your Google Business Profile. We maintain consistent NAP data and drive proactive local signals to push you into the Google Map Pack.",
+    title: "Get Into the Google Map Pack",
+    description: "When homeowners search 'painters near me,' Google shows a map with 3 businesses. That is the Map Pack, and it gets more clicks than anything else on the page. We keep your Google Business Profile optimized, active, and loaded with reviews so you stay in those top 3 spots.",
     tiers: {
-      t1: "Monthly GBP entity synchronization + ongoing management.",
-      t2: "Weekly GBP optimization with geo-tagged photos and review response management.",
-      t3: "Adds Automated Review Generation Sequences to continuously capture positive signals."
+      t1: "Monthly updates keep your listing accurate and active. Your business info stays consistent everywhere Google looks.",
+      t2: "Weekly optimization with fresh photos and review responses. Builds momentum so Google sees you as the most engaged painter in your area.",
+      t3: "Automated review generation creates a flywheel of 5-star signals. More reviews means more trust, more clicks, and more estimates booked."
     }
   },
   "reports": {
-    title: "Advanced Reporting & Strategy",
-    description: "We use enterprise-grade tools like DataForSEO for precise, localized keyword tracking. No vague PDFs—just pure data on where you rank and what we are doing to grow your territory.",
+    title: "Know Exactly Where You Rank",
+    description: "No more vague PDFs or 'trust us, it is working.' You see the real numbers: where you rank, how many people found you, and what we are doing next. Complete transparency so you always know your money is working.",
     tiers: {
-      t1: "DataForSEO keyword tracking + Quarterly strategy calls.",
-      t2: "DataForSEO keyword tracking + Bi-monthly strategy calls.",
-      t3: "DataForSEO tracking + Direct competitor gap analysis + Monthly strategy calls + Dedicated Slack channel."
+      t1: "You see where you rank for every keyword. Quarterly strategy calls to review progress and plan the next push.",
+      t2: "Deeper data with bi-monthly calls. We spot trends faster and pivot your strategy before your competitors even notice.",
+      t3: "Full competitive intelligence plus monthly war-room calls. You get a dedicated communication channel so nothing slows us down."
     }
   },
   "ai-web-apps": {
-    title: "Interactive Conversion Tools",
-    description: "We replace static contact forms with dynamic, multi-step qualification funnels and custom calculators. This filters out tire-kickers, increases conversion rates, and captures rich lead data before they ever talk to your sales team.",
+    title: "Turn Visitors Into Booked Estimates",
+    description: "A basic contact form loses most of your visitors. We build smart tools that keep homeowners engaged, filter out the tire-kickers, and capture the details you need before they ever pick up the phone. Better leads, less wasted time.",
     tiers: {
-      t1: "Standard lead funnel integration (Quote forms to Email/CRM).",
-      t2: "Adds an Interactive Project Gallery (Filterable & location-tagged).",
-      t3: "Custom Interactive Paint Cost Calculator + Multi-step logic-based qualification funnels."
+      t1: "Smart quote request forms that capture quality leads and route them straight to your inbox or CRM.",
+      t2: "Adds a visual project gallery that shows off your best work. Homeowners see your quality before they call, so they show up pre-sold.",
+      t3: "Custom cost calculator plus multi-step qualification that pre-sells your premium pricing. Tire-kickers drop off. Serious buyers book."
     }
   }
 }
@@ -92,14 +92,14 @@ export const ComparisonTable = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24">
           <div className="max-w-3xl">
             <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Feature Comparison</FadeIn>
-            <TextReveal 
-              text="SIDE BY SIDE." 
+            <TextReveal
+              text="NO SURPRISES."
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8"
             />
           </div>
           <Parallax offset={20}>
             <FadeIn className="text-xl text-brand-charcoal/50 max-w-sm mb-4 lg:text-right font-medium">
-              See exactly what each tier includes so you can pick with confidence. Click the info icons for a deep dive.
+              Every feature. Every tier. Zero guesswork. Tap the info icons to see exactly what you get.
             </FadeIn>
           </Parallax>
         </div>
