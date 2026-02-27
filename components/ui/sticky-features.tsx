@@ -148,13 +148,18 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
             </p>
             <button 
               onClick={onOpenModal}
-              className={`mt-auto px-6 py-3 font-sora font-extrabold text-sm uppercase tracking-widest border-2 rounded-full transition-colors ${
+              className={`relative mt-auto px-6 py-3 font-sora font-extrabold text-sm uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-105 group ${
                 textColor === 'text-brand-ivory' 
                   ? 'border-brand-mustard text-brand-mustard hover:bg-brand-mustard hover:text-brand-charcoal' 
                   : 'border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-brand-mustard'
               }`}
             >
-              See Tier Details +
+              {/* Outer pulsing glow */}
+              <span className={`absolute inset-0 rounded-full animate-ping opacity-20 ${textColor === 'text-brand-ivory' ? 'bg-brand-mustard' : 'bg-brand-charcoal'}`}></span>
+              {/* Inner subtle continuous glow on hover */}
+              <span className={`absolute inset-0 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300 ${textColor === 'text-brand-ivory' ? 'bg-brand-mustard' : 'bg-brand-charcoal'}`}></span>
+              
+              <span className="relative z-10">See Tier Details +</span>
             </button>
           </div>
           <div className="lg:w-1/3 flex justify-end">
