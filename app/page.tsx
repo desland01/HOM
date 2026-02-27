@@ -8,6 +8,7 @@ import { StickyFeatures } from '@/components/ui/sticky-features'
 import { ComparisonTable } from '@/components/sections/comparison-table'
 import { Guarantees } from '@/components/sections/guarantees'
 import { AddOnsAndBundles } from '@/components/sections/add-ons-and-bundles'
+import { PortfolioViewports } from '@/components/sections/portfolio-viewports'
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true)
@@ -190,6 +191,8 @@ export default function Home() {
           <StickyFeatures />
         </div>
       </section>
+
+      <PortfolioViewports />
 
       {/* TIERS — STICKY SCROLL */}
       <section id="tiers" className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-ivory relative">

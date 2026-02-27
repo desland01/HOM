@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Portfolio Viewports (portfolio-viewports.tsx, page.tsx):** Added a new "Proven Results" section directly above "Pilot Packages" featuring macOS-style browser window components. These windows embed scrollable iframes showcasing sample high-performance websites built for painters. The section employs Framer Motion for entrance animations (`ScaleReveal`) and subtle hover interactions, matching the overarching "machined" brand aesthetic.
+
 ### Changed
 - **Mobile CRO (page.tsx):** Changed the fixed bottom CTA background color on mobile from Charcoal (`bg-brand-charcoal` / `text-brand-ivory`) to Mustard (`bg-brand-mustard` / `text-brand-charcoal`) for higher contrast and click-through visibility.
 - **Sticky Features Styling (sticky-features.tsx, tailwind.config.ts):** Refined the `animate-ember` glow on the "See Tier Details +" buttons. Increased the animation speed by 50% (3s to 1.5s), increased the base/peak opacity by ~20%, and adjusted the glow positioning (`inset-[-2px] border-2`) so it emits directly from the button's border rather than filling the background space.
