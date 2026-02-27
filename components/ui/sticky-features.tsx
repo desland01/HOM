@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { FeatureModal, FeatureDetail } from '@/components/ui/feature-modal'
 
 const featureDetails: Record<string, FeatureDetail> = {
@@ -44,13 +44,7 @@ const featureDetails: Record<string, FeatureDetail> = {
 }
 
 export const StickyFeatures = () => {
-  const containerRef = useRef<HTMLDivElement>(null)
   const [selectedFeature, setSelectedFeature] = useState<FeatureDetail | null>(null)
-  
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end']
-  })
 
   const features = [
     {
@@ -88,21 +82,23 @@ export const StickyFeatures = () => {
   ]
 
   return (
-    <div ref={containerRef} className="relative bg-transparent" style={{ height: `${features.length * 100}vh` }}>
+    <div className="relative w-full pb-[10dvh]">
       <FeatureModal 
         isOpen={!!selectedFeature} 
         onClose={() => setSelectedFeature(null)} 
         feature={selectedFeature} 
       />
 
-      <div className="sticky top-0 h-[100dvh] w-full overflow-hidden">
+      {/* 
+        This is a pure CSS sticky stacking implementation.
+        Zero JavaScript scroll tracking, zero layout thrashing.
+      */}
+      <div className="flex flex-col w-full">
         {features.map((feature, i) => (
           <Card 
             key={i} 
             i={i} 
             {...feature} 
-            progress={scrollYProgress} 
-            total={features.length}
             onOpenModal={() => setSelectedFeature(featureDetails[feature.featureKey])}
           />
         ))}
@@ -118,82 +114,63 @@ interface CardProps {
   color: string
   textColor: string
   number: string
-  progress: MotionValue<number>
-  total: number
   onOpenModal: () => void
 }
 
-const Card = ({ i, title, description, color, textColor, number, progress, total, onOpenModal }: CardProps) => {
-  const entranceStart = i === 0 ? 0 : (i - 1) / (total - 1)
-  const entranceEnd = i === 0 ? 0 : i / (total - 1)
-
-  // Move the wrapper up from 120% to 0% to slide the card in.
-  const y = useTransform(
-    progress,
-    [entranceStart, entranceEnd],
-    [i === 0 ? '0%' : '120%', '0%']
-  )
-
-  // Shrink the inner card as subsequent cards slide over it
-  const targetScale = 1 - (total - i - 1) * 0.05
-  const scale = useTransform(
-    progress,
-    [entranceEnd, 1],
-    [1, targetScale]
-  )
-
+const Card = ({ i, title, description, color, textColor, number, onOpenModal }: CardProps) => {
   return (
-    <motion.div 
-      style={{ 
-        y, 
-        willChange: "transform",
-        zIndex: i 
-      }} 
-      className="absolute inset-0 flex items-center justify-center px-4 sm:px-12 pointer-events-none"
-    >
+    // The spacer track that gives the user scroll distance. 130dvh gives 30dvh of 'stuck' reading time before the next card overlaps it.
+    <div className="relative w-full h-[130dvh]">
       <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="sticky w-full px-4 sm:px-12 flex items-start justify-center"
         style={{ 
-          scale,
-          willChange: "transform",
-          // Calculate stagger offset for visual stacking
-          top: `${i * 1.5}vh` 
+          // Staggers the cards visually down as they stack
+          top: `calc(5dvh + ${i * 16}px)`, 
+          zIndex: i 
         }}
-        className={`relative flex flex-col p-6 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] max-h-[90dvh] border border-black/10 shadow-2xl overflow-hidden pointer-events-auto ${color} ${textColor}`}
       >
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 w-full h-full overflow-y-auto">
-          <div className="lg:w-2/3 flex flex-col items-start w-full h-full">
-            <div className={`text-base sm:text-sm font-sora font-extrabold tracking-[0.3em] sm:tracking-[0.2em] mb-4 sm:mb-8 shrink-0 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
-            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-sora font-extrabold leading-[1.1] sm:leading-[0.9] tracking-tighter-extreme uppercase mb-4 sm:mb-8 shrink-0">{title}</h3>
-            <p className={`text-lg sm:text-xl lg:text-2xl leading-relaxed font-medium mb-6 sm:mb-10 shrink-0 ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
-              {description}
-            </p>
-            
-            <div className="flex-grow min-h-4"></div>
-
-            <button
-              onClick={onOpenModal}
-              aria-label={`See tier details for ${title}`}
-              className={`relative shrink-0 mt-auto w-full sm:w-auto px-6 py-4 min-h-[48px] lg:px-8 lg:py-4 lg:min-h-[56px] font-sora font-extrabold text-sm lg:text-base uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-95 group ${
-                textColor === 'text-brand-ivory'
-                  ? 'border-brand-mustard text-brand-mustard hover:bg-brand-mustard hover:text-brand-charcoal'
-                  : 'border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-brand-mustard'
-              }`}
-            >
-              {/* Soft, pulsing ember glow emitting from the border */}
-              <span className={`absolute inset-[-2px] rounded-full border-2 animate-ember ${textColor === 'text-brand-ivory' ? 'border-brand-mustard' : 'border-brand-charcoal'}`}></span>
-              {/* Inner subtle continuous glow on hover to intensify the ember tight to the border */}
-              <span className={`absolute inset-[-2px] rounded-full border-2 blur-sm opacity-0 group-hover:opacity-50 transition-opacity duration-300 scale-105 ${textColor === 'text-brand-ivory' ? 'border-brand-mustard' : 'border-brand-charcoal'}`}></span>
+        <div 
+          className={`relative flex flex-col p-6 sm:p-10 lg:p-20 w-full max-w-[1000px] h-[85dvh] sm:h-[80dvh] rounded-3xl sm:rounded-[2.5rem] border border-black/10 shadow-[0_-15px_40px_rgba(0,0,0,0.25)] overflow-hidden ${color} ${textColor}`}
+        >
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 w-full h-full overflow-y-auto">
+            <div className="lg:w-2/3 flex flex-col items-start w-full h-full">
+              <div className={`text-base sm:text-sm font-sora font-extrabold tracking-[0.3em] sm:tracking-[0.2em] mb-4 sm:mb-8 shrink-0 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
+              <h3 className="text-4xl sm:text-5xl lg:text-6xl font-sora font-extrabold leading-[1.1] sm:leading-[0.9] tracking-tighter-extreme uppercase mb-4 sm:mb-8 shrink-0">{title}</h3>
+              <p className={`text-lg sm:text-xl lg:text-2xl leading-relaxed font-medium mb-6 sm:mb-10 shrink-0 ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
+                {description}
+              </p>
               
-              <span className="relative z-10">See Tier Details +</span>
-            </button>
-          </div>
-          <div className="hidden sm:flex lg:w-1/3 justify-end shrink-0">
-            <div className={`text-[6rem] sm:text-[8rem] lg:text-[12rem] leading-none font-sora font-extrabold opacity-10 tracking-tighter-extreme`}>
-              {number}
+              <div className="flex-grow min-h-4"></div>
+
+              <button
+                onClick={onOpenModal}
+                aria-label={`See tier details for ${title}`}
+                className={`relative shrink-0 mt-auto w-full sm:w-auto px-6 py-4 min-h-[48px] lg:px-8 lg:py-4 lg:min-h-[56px] font-sora font-extrabold text-sm lg:text-base uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-95 group ${
+                  textColor === 'text-brand-ivory'
+                    ? 'border-brand-mustard text-brand-mustard hover:bg-brand-mustard hover:text-brand-charcoal'
+                    : 'border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-brand-mustard'
+                }`}
+              >
+                {/* Soft, pulsing ember glow emitting from the border */}
+                <span className={`absolute inset-[-2px] rounded-full border-2 animate-ember ${textColor === 'text-brand-ivory' ? 'border-brand-mustard' : 'border-brand-charcoal'}`}></span>
+                {/* Inner subtle continuous glow on hover to intensify the ember tight to the border */}
+                <span className={`absolute inset-[-2px] rounded-full border-2 blur-sm opacity-0 group-hover:opacity-50 transition-opacity duration-300 scale-105 ${textColor === 'text-brand-ivory' ? 'border-brand-mustard' : 'border-brand-charcoal'}`}></span>
+                
+                <span className="relative z-10">See Tier Details +</span>
+              </button>
+            </div>
+            <div className="hidden sm:flex lg:w-1/3 justify-end shrink-0">
+              <div className={`text-[6rem] sm:text-[8rem] lg:text-[12rem] leading-none font-sora font-extrabold opacity-10 tracking-tighter-extreme`}>
+                {number}
+              </div>
             </div>
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </div>
   )
 }
