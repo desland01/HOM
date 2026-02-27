@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated `components/sections/add-ons-and-bundles.tsx` to explicitly state that the Enterprise Takeover tier indexes 50 pages at once for max start velocity.
 
 ### Added
+- Created `docs/core-message.md` to formalize the brand's unique selling propositions, positioning strategy, and pricing funnel (speed over commodity).
 - Added `components/sections/add-ons-and-bundles.tsx` to showcase optional upgrades like Website Maintenance, SEO Growth Plans, AI Tools, Bundles, and A La Carte services.
 - Created `docs/offer-options.md` synthesizing all components of the "Pilot Offer" from existing project documents (Next.js build details, 90-day proof period, and pricing tiers).
 - Copied `docs/offer-options.md` to `~/.claude/` to serve as a shared global context.
