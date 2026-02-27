@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FadeIn, TextReveal, Parallax, Magnetic, ScaleReveal } from '@/components/ui/animations'
@@ -166,15 +166,7 @@ export default function Home() {
               { title: "Slow Site, Lost Leads", desc: "Your site takes 5+ seconds to load. By then the homeowner already called your competitor.", icon: "x" },
               { title: "Brochure, Not a Closer", desc: "Your site is a digital business card. It does not qualify leads, show pricing, or give homeowners a reason to pick you.", icon: "x" }
             ].map((item, i) => (
-              <ScaleReveal 
-                key={i}
-                delay={i * 0.1}
-                className="group p-10 bg-brand-ivory hover:bg-brand-charcoal transition-colors duration-500 h-full"
-              >
-                <div className="text-4xl font-sora font-extrabold text-brand-mustard mb-12 group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
-                <h4 className="text-2xl font-sora font-extrabold text-brand-charcoal group-hover:text-brand-ivory mb-4 uppercase tracking-tight">{item.title}</h4>
-                <p className="text-brand-charcoal/60 group-hover:text-brand-ivory/60 leading-relaxed font-medium">{item.desc}</p>
-              </ScaleReveal>
+              <ProblemCard key={i} item={item} i={i} />
             ))}
           </div>
         </div>
@@ -410,3 +402,27 @@ function TierCard({ name, title, revenue, save, original, price, buildFeatures, 
     </div>
   )
 }
+
+function ProblemCard({ item, i }: { item: { title: string, desc: string, icon: string }, i: number }) {
+  const ref = useRef<HTMLDivElement>(null)
+  // Triggers when the card crosses the middle 40% of the viewport.
+  // On desktop, we still use group-hover so the user can hover around freely.
+  const isInView = useInView(ref, { margin: "-30% 0px -30% 0px", amount: "some" })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
+      className={`group p-10 transition-colors duration-500 h-full cursor-pointer
+        ${isInView ? 'bg-brand-charcoal text-brand-ivory' : 'bg-brand-ivory text-brand-charcoal lg:hover:bg-brand-charcoal lg:hover:text-brand-ivory'}`}
+    >
+      <div className={`text-4xl font-sora font-extrabold mb-12 transition-transform duration-500 ${isInView ? 'scale-110 text-brand-mustard' : 'text-brand-mustard lg:group-hover:scale-110'}`}>{item.icon}</div>
+      <h4 className="text-2xl font-sora font-extrabold mb-4 uppercase tracking-tight">{item.title}</h4>
+      <p className={`leading-relaxed font-medium transition-colors duration-500 ${isInView ? 'text-brand-ivory/60' : 'text-brand-charcoal/60 lg:group-hover:text-brand-ivory/60'}`}>{item.desc}</p>
+    </motion.div>
+  )
+}
+

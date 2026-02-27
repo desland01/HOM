@@ -134,13 +134,6 @@ const Card = ({ i, title, description, color, textColor, number, progress, total
     [i === 0 ? '0%' : '120%', '0%']
   )
 
-  // Fade in during the slide
-  const opacity = useTransform(
-    progress,
-    [entranceStart, entranceEnd],
-    [i === 0 ? 1 : 0, 1]
-  )
-
   // Shrink the inner card as subsequent cards slide over it
   const targetScale = 1 - (total - i - 1) * 0.05
   const scale = useTransform(
@@ -153,8 +146,7 @@ const Card = ({ i, title, description, color, textColor, number, progress, total
     <motion.div 
       style={{ 
         y, 
-        opacity,
-        willChange: "transform, opacity",
+        willChange: "transform",
         zIndex: i 
       }} 
       className="absolute inset-0 flex items-center justify-center px-4 sm:px-12 pointer-events-none"
@@ -164,21 +156,24 @@ const Card = ({ i, title, description, color, textColor, number, progress, total
           scale,
           willChange: "transform",
           // Calculate stagger offset for visual stacking
-          marginTop: `${i * 20 - 40}px` 
+          top: `${i * 1.5}vh` 
         }}
-        className={`relative flex flex-col items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85dvh] sm:min-h-[60dvh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden pointer-events-auto ${color} ${textColor}`}
+        className={`relative flex flex-col p-6 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] max-h-[90dvh] border border-black/10 shadow-2xl overflow-hidden pointer-events-auto ${color} ${textColor}`}
       >
-        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 w-full h-full flex-grow">
-          <div className="lg:w-2/3 flex flex-col items-start w-full h-full flex-grow">
-            <div className={`text-base sm:text-sm font-sora font-extrabold tracking-[0.3em] sm:tracking-[0.2em] mb-8 sm:mb-8 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
-            <h3 className="text-5xl sm:text-6xl font-sora font-extrabold leading-[1.1] sm:leading-[0.9] tracking-tighter-extreme uppercase mb-8 sm:mb-8">{title}</h3>
-            <p className={`text-xl sm:text-2xl leading-loose sm:leading-relaxed font-medium flex-grow mb-6 sm:mb-10 ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 w-full h-full overflow-y-auto">
+          <div className="lg:w-2/3 flex flex-col items-start w-full h-full">
+            <div className={`text-base sm:text-sm font-sora font-extrabold tracking-[0.3em] sm:tracking-[0.2em] mb-4 sm:mb-8 shrink-0 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
+            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-sora font-extrabold leading-[1.1] sm:leading-[0.9] tracking-tighter-extreme uppercase mb-4 sm:mb-8 shrink-0">{title}</h3>
+            <p className={`text-lg sm:text-xl lg:text-2xl leading-relaxed font-medium mb-6 sm:mb-10 shrink-0 ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
               {description}
             </p>
+            
+            <div className="flex-grow min-h-4"></div>
+
             <button
               onClick={onOpenModal}
               aria-label={`See tier details for ${title}`}
-              className={`relative mt-auto w-full sm:w-auto px-6 py-4 min-h-[48px] lg:px-8 lg:py-4 lg:min-h-[56px] font-sora font-extrabold text-sm lg:text-base uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-95 group ${
+              className={`relative shrink-0 mt-auto w-full sm:w-auto px-6 py-4 min-h-[48px] lg:px-8 lg:py-4 lg:min-h-[56px] font-sora font-extrabold text-sm lg:text-base uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-95 group ${
                 textColor === 'text-brand-ivory'
                   ? 'border-brand-mustard text-brand-mustard hover:bg-brand-mustard hover:text-brand-charcoal'
                   : 'border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-brand-mustard'
@@ -192,7 +187,7 @@ const Card = ({ i, title, description, color, textColor, number, progress, total
               <span className="relative z-10">See Tier Details +</span>
             </button>
           </div>
-          <div className="hidden sm:flex lg:w-1/3 justify-end">
+          <div className="hidden sm:flex lg:w-1/3 justify-end shrink-0">
             <div className={`text-[6rem] sm:text-[8rem] lg:text-[12rem] leading-none font-sora font-extrabold opacity-10 tracking-tighter-extreme`}>
               {number}
             </div>

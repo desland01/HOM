@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- **Mobile Problem Cards Hover (page.tsx):** Replaced static desktop `hover` classes with Framer Motion's `useInView` to automatically trigger the dark/light card transition on mobile devices when a card scrolls into the middle 40% of the viewport. Preserved standard hover interactions on desktop viewports.
+- **Mobile Sticky Feature Overlaps (sticky-features.tsx):** Fixed a critical mobile layout bug in the "The Solution" section where the cards became translucent while sliding up, causing text from previous cards to bleed through. Removed the entrance `opacity` fade. Refactored the internal flexbox structure (removed `flex-grow` and `h-full` from text elements, replaced `mt-auto` with a spacer `div`, added `shrink-0` to headers and buttons, and added `overflow-y-auto`) to prevent the card contents from collapsing and visually overlapping each other on shorter mobile screens.
+
+### Fixed
 - **Mobile Animation Architecture (animations.tsx, sticky-features.tsx, layout.tsx):** Rebuilt the scroll-linked animations to resolve mobile judder and layout thrashing. Removed `snap-y snap-proximity` from `layout.tsx` and replaced CSS scroll snapping (`snap-start`) in `sticky-features.tsx` with a Framer Motion "Scroll Track" pattern driven purely by `transform` (GPU). Replaced CPU-bound `useSpring` in `Parallax` with direct `y` transforms to prevent scroll lag. Added explicit `willChange: "transform, opacity"` hardware acceleration tags to all global animation wrappers (`FadeIn`, `ScaleReveal`, `TextReveal`).
 
 ### Fixed
