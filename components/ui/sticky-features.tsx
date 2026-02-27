@@ -99,13 +99,14 @@ export const StickyFeatures = () => {
         const targetScale = 1 - (features.length - i) * 0.05
         
         return (
-          <Card 
-            key={i} 
-            i={i} 
-            {...feature} 
-            progress={scrollYProgress} 
-            range={[i * 0.25, 1]} 
+          <Card
+            key={i}
+            i={i}
+            {...feature}
+            progress={scrollYProgress}
+            range={[i * 0.25, 1]}
             targetScale={targetScale}
+            totalCards={features.length}
             onOpenModal={() => setSelectedFeature(featureDetails[feature.featureKey])}
           />
         )
@@ -124,12 +125,14 @@ interface CardProps {
   progress: MotionValue<number>
   range: [number, number]
   targetScale: number
+  totalCards: number
   onOpenModal: () => void
 }
 
-const Card = ({ i, title, description, color, textColor, number, progress, range, targetScale, onOpenModal }: CardProps) => {
+const Card = ({ i, title, description, color, textColor, number, progress, range, targetScale, totalCards, onOpenModal }: CardProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
-  
+  const isLast = i === totalCards - 1
+
   // Track this specific card's entrance
   const { scrollYProgress: cardScrollProgress } = useScroll({
     target: containerRef,
@@ -138,10 +141,21 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
 
   // The shrink effect driven by the parent container as subsequent cards stack
   const shrinkScale = useTransform(progress, range, [1, targetScale])
-  
+
   // The entrance zoom effect driven by the card itself
   const entranceScale = useTransform(cardScrollProgress, [0, 1], [0.6, 1])
-  const opacity = useTransform(cardScrollProgress, [0, 1], [0, 1])
+  const fadeIn = useTransform(cardScrollProgress, [0, 1], [0, 1])
+
+  // Fade out as the next card enters (last card never fades out)
+  const nextCardEntry = (i + 1) / totalCards
+  const fadeOut = useTransform(
+    progress,
+    isLast ? [0, 1] : [nextCardEntry - 0.03, nextCardEntry + 0.08],
+    isLast ? [1, 1] : [1, 0]
+  )
+
+  // Combined opacity: fade in on entrance × fade out as next card stacks
+  const opacity = useTransform(() => fadeIn.get() * fadeOut.get())
 
   // Combine the scales: it zooms in on entrance, then shrinks as others stack
   const scale = useTransform(() => shrinkScale.get() * entranceScale.get())
