@@ -94,7 +94,7 @@ export function AddOnsAndBundles() {
             text="STACK THE DECK."
             className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8"
           />
-          <FadeIn className="text-xl text-brand-charcoal/50 font-medium max-w-2xl">
+          <FadeIn className="text-xl text-brand-charcoal/60 font-medium max-w-2xl">
             Your site is the foundation. These tools turn it into a lead machine that works while you are on the job.
           </FadeIn>
         </div>
@@ -112,7 +112,7 @@ export function AddOnsAndBundles() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {MAINTENANCE_PLANS.map((plan, i) => (
                   <ScaleReveal key={i} delay={i * 0.1} className={`p-8 border-2 ${plan.isPopular ? 'border-brand-charcoal bg-white' : 'border-brand-charcoal/5 bg-white/50'} relative flex flex-col`}>
-                    {plan.isPopular && <div className="absolute -top-3 right-6 bg-brand-mustard text-brand-charcoal text-[10px] font-sora font-extrabold tracking-widest uppercase px-3 py-1">Recommended</div>}
+                    {plan.isPopular && <div className="absolute -top-3 right-6 bg-brand-mustard text-brand-charcoal text-xs font-sora font-extrabold tracking-widest uppercase px-3 py-1.5">Recommended</div>}
                     <div className="text-sm font-sora font-extrabold tracking-widest uppercase text-brand-charcoal/40 mb-2">{plan.title}</div>
                     <div className="mb-8"><span className="text-4xl font-sora font-extrabold tracking-tighter">{plan.price}</span><span className="text-brand-charcoal/40 font-bold">{plan.period}</span></div>
                     <ul className="space-y-3 flex-grow">
@@ -136,12 +136,12 @@ export function AddOnsAndBundles() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {SEO_PLANS.map((plan, i) => (
                   <ScaleReveal key={i} delay={i * 0.1} className={`p-8 border-2 ${plan.isPopular ? 'border-brand-charcoal bg-white' : 'border-brand-charcoal/5 bg-white/50'} relative flex flex-col`}>
-                    {plan.isPopular && <div className="absolute -top-3 right-6 bg-brand-mustard text-brand-charcoal text-[10px] font-sora font-extrabold tracking-widest uppercase px-3 py-1">Recommended</div>}
+                    {plan.isPopular && <div className="absolute -top-3 right-6 bg-brand-mustard text-brand-charcoal text-xs font-sora font-extrabold tracking-widest uppercase px-3 py-1.5">Recommended</div>}
                     <div className="text-sm font-sora font-extrabold tracking-widest uppercase text-brand-charcoal/40 mb-2 h-10">{plan.title}</div>
                     <div className="mb-8"><span className="text-4xl font-sora font-extrabold tracking-tighter">{plan.price}</span><span className="text-brand-charcoal/40 font-bold">{plan.period}</span></div>
                     <ul className="space-y-3 flex-grow">
                       {plan.features.map((f, j) => (
-                        <li key={j} className="flex items-start gap-3 text-xs font-medium">
+                        <li key={j} className="flex items-start gap-3 text-sm font-medium">
                           <span className="text-brand-mustard font-sora font-extrabold leading-none mt-0.5">/</span>
                           <span className="text-brand-charcoal/80">{f}</span>
                         </li>
@@ -164,7 +164,7 @@ export function AddOnsAndBundles() {
                       <div className="font-sora font-extrabold uppercase tracking-tight text-sm pr-4">{item.name}</div>
                       <div className="font-sora font-extrabold text-brand-mustard">{item.price}</div>
                     </div>
-                    <div className="text-xs font-medium text-brand-charcoal/60">{item.desc}</div>
+                    <div className="text-sm font-medium text-brand-charcoal/70">{item.desc}</div>
                   </ScaleReveal>
                 ))}
               </div>
@@ -174,7 +174,7 @@ export function AddOnsAndBundles() {
 
           {/* RIGHT COLUMN: AI & Bundles (Sticky) */}
           <div className="lg:col-span-5 relative">
-            <div className="lg:sticky lg:top-40 space-y-16">
+            <div className="lg:sticky lg:top-24 space-y-16">
               
               {/* 3. AI Tools */}
               <div>
@@ -185,7 +185,7 @@ export function AddOnsAndBundles() {
                   {AI_TOOLS.map((tool, i) => (
                     <FadeIn key={i} delay={i * 0.1} className="p-8 bg-brand-charcoal text-brand-ivory border border-brand-charcoal flex flex-col group hover:border-brand-mustard transition-colors">
                       <div className="flex justify-between items-end mb-4">
-                        <div className="text-lg font-sora font-extrabold tracking-widest uppercase text-brand-mustard">{tool.title}</div>
+                        <div className="text-base sm:text-lg font-sora font-extrabold tracking-wider sm:tracking-widest uppercase text-brand-mustard">{tool.title}</div>
                         <div className="text-right"><span className="text-3xl font-sora font-extrabold tracking-tighter">{tool.price}</span><span className="text-brand-ivory/40 text-sm font-bold">{tool.period}</span></div>
                       </div>
                       <p className="text-brand-ivory/60 text-sm font-medium leading-relaxed">{tool.desc}</p>
@@ -196,7 +196,7 @@ export function AddOnsAndBundles() {
 
               {/* 4. Save with Bundles */}
               <div className="bg-brand-mustard p-8 sm:p-10 border-2 border-brand-charcoal relative">
-                <div className="absolute -top-4 -right-4 bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-widest uppercase px-4 py-2 rotate-3 shadow-xl">
+                <div className="absolute -top-4 right-4 bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-widest uppercase px-4 py-2 rotate-3 shadow-xl">
                   Best Value
                 </div>
                 <FadeIn className="mb-8">
@@ -210,14 +210,14 @@ export function AddOnsAndBundles() {
                       <div className="flex justify-between items-start mb-3">
                         <div>
                           <div className="text-sm font-sora font-extrabold tracking-widest uppercase text-brand-charcoal">{bundle.title}</div>
-                          <div className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mt-1">Save {bundle.savings}/mo</div>
+                          <div className="text-xs font-bold uppercase tracking-widest text-emerald-600 mt-1">Save {bundle.savings}/mo</div>
                         </div>
                         <div className="text-right">
-                          <div className="text-xs font-sora font-bold line-through text-brand-charcoal/30">{bundle.originalPrice}</div>
+                          <div className="text-sm font-sora font-bold line-through text-brand-charcoal/50">{bundle.originalPrice}</div>
                           <div><span className="text-2xl font-sora font-extrabold tracking-tighter">{bundle.price}</span><span className="text-brand-charcoal/40 text-xs font-bold">{bundle.period}</span></div>
                         </div>
                       </div>
-                      <p className="text-brand-charcoal/70 text-xs font-medium leading-relaxed mt-4 border-t border-brand-charcoal/10 pt-4">{bundle.desc}</p>
+                      <p className="text-brand-charcoal/70 text-sm font-medium leading-relaxed mt-4 border-t border-brand-charcoal/10 pt-4">{bundle.desc}</p>
                     </ScaleReveal>
                   ))}
                 </div>
