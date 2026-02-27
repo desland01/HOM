@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- **Pilot Packages (page.tsx):** Removed the revenue qualifier (e.g., "Painters doing $250k - $500k") from the `TierCard` components and updated the layout margin to maintain proper spacing.
 - **Problem Cards Layout (page.tsx):** Updated the `ProblemCard` component to use a flex layout, placing the "x" icon inline with the title to reduce dead space and create a tighter, more cohesive card structure.
 
 ### Fixed

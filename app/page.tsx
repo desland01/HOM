@@ -199,7 +199,7 @@ export default function Home() {
           <div className="lg:w-7/12 flex flex-col gap-12">
             <FadeIn>
               <TierCard 
-                name="Tier 01" title="Neighborhood Pro" revenue="Painters doing $250k - $500k"
+                name="Tier 01" title="Neighborhood Pro"
                 save="$2,250" original="$4,500" price="$2,250"
                 buildFeatures={[
                   "Premium custom website that screams quality",
@@ -219,7 +219,7 @@ export default function Home() {
 
             <FadeIn>
               <TierCard 
-                name="Tier 02" title="City Dominator" revenue="Painters doing $500k - $1.5M"
+                name="Tier 02" title="City Dominator"
                 save="$3,400" original="$6,800" price="$3,400" isPopular
                 buildFeatures={[
                   "Show up in 3 surrounding cities, not just one",
@@ -238,7 +238,7 @@ export default function Home() {
 
             <FadeIn>
               <TierCard 
-                name="Tier 03" title="Metro Takeover" revenue="Painters doing $1.5M+"
+                name="Tier 03" title="Metro Takeover"
                 save="$5,250" original="$10,500" price="$5,250"
                 buildFeatures={[
                   "Dominate 6 cities across your entire metro area",
@@ -335,7 +335,7 @@ export default function Home() {
   )
 }
 
-function TierCard({ name, title, revenue, save, original, price, buildFeatures, monthlyFeatures, isPopular }: any) {
+function TierCard({ name, title, save, original, price, buildFeatures, monthlyFeatures, isPopular }: any) {
   return (
     <div className={`relative p-10 lg:p-12 border-2 ${isPopular ? 'bg-brand-charcoal text-brand-ivory border-brand-charcoal' : 'bg-white text-brand-charcoal border-brand-charcoal/5'} flex flex-col h-full group hover:-translate-y-2 transition-transform duration-500`}>
       {isPopular && (
@@ -346,11 +346,9 @@ function TierCard({ name, title, revenue, save, original, price, buildFeatures, 
 
       <div className="mb-12">
         <div className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase opacity-40 mb-2">{name}</div>
-        <h3 className="text-3xl font-sora font-extrabold mb-4 uppercase tracking-tight">{title}</h3>
-        <div className={`text-sm font-medium ${isPopular ? 'text-brand-ivory/50' : 'text-brand-charcoal/50'} mb-10`}>{revenue}</div>
-        
-        <div className="flex flex-col gap-1">
-          <div className="flex items-baseline gap-3">
+        <h3 className="text-3xl font-sora font-extrabold mb-10 uppercase tracking-tight">{title}</h3>
+
+        <div className="flex flex-col gap-1">          <div className="flex items-baseline gap-3">
             <span className={`text-sm font-sora font-extrabold uppercase tracking-widest ${isPopular ? 'text-brand-mustard' : 'text-brand-mustard'}`}>SAVE {save}</span>
             <span className={`text-xl font-sora font-extrabold line-through opacity-20`}>{original}</span>
           </div>
