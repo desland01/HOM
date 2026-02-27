@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Created `docs/offer-options.md` synthesizing all components of the "Pilot Offer" from existing project documents (Next.js build details, 90-day proof period, and pricing tiers).
+- Copied `docs/offer-options.md` to `~/.claude/` to serve as a shared global context.
 
 ### Changed
 - Rewrote `docs/offer-options.md` with a non-technical TLDR, detailed component explainers, market-comparable pricing tiers, and explicit ownership/buyout clauses.
