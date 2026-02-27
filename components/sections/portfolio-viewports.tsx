@@ -63,21 +63,6 @@ export function PortfolioViewports() {
                 whileHover={{ y: -10, borderColor: "rgba(201,162,39,0.3)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                {/* Browser Header */}
-                <div className="h-8 sm:h-10 bg-[#1A1A1A] flex items-center px-4 gap-4 border-b border-brand-ivory/10 shrink-0">
-                  <div className="flex gap-1.5 sm:gap-2">
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF5F56] border border-black/10"></div>
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E] border border-black/10"></div>
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27C93F] border border-black/10"></div>
-                  </div>
-                  <div className="flex-1 flex justify-center">
-                    <div className="bg-black/30 px-4 sm:px-6 py-1 sm:py-1.5 rounded-md text-[8px] sm:text-[10px] font-sora font-medium text-brand-ivory/40 tracking-widest truncate max-w-full border border-white/5 group-hover:text-brand-ivory/80 transition-colors">
-                      {site.url}
-                    </div>
-                  </div>
-                  <div className="w-[42px] sm:w-[52px]"></div> {/* Spacer to balance dots */}
-                </div>
-                
                 {/* Scrollable Iframe Area */}
                 <div className="flex-1 bg-white relative w-full overflow-hidden group/iframe">
                   <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] z-10" />
