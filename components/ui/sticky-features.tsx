@@ -16,7 +16,7 @@ const featureDetails: Record<string, FeatureDetail> = {
   },
   "proof-engine": {
     title: "90-Day Proof Engine & Management",
-    description: "We don't do 12-month lock-ins. Your initial investment covers the entire build and 90 days of aggressive SEO management. We prove the system works, and you only sign a growth contract once you've seen the leads.",
+    description: "You are paying for speed and precision. Your initial investment covers the entire build and 90 days of aggressive management. We prove the system works, and then transition you into a 12-month growth plan.",
     tiers: {
       t1: "2 blog posts/mo + Monthly GBP sync + DataForSEO tracking.",
       t2: "4 blog posts/mo + Weekly GBP optimization + Review responses.",
@@ -62,8 +62,8 @@ export const StickyFeatures = () => {
       featureKey: "geo-silos"
     },
     {
-      title: "12-Month Contracts Are A Scam",
-      description: "Agencies get paid whether you grow or not. We do the opposite. We build it in 14 days, run the engine for 90 days, and you only sign a long-term deal after you've seen the leads.",
+      title: "Speed Out Of The Gate",
+      description: "You are paying for immediate momentum. We build your system in 14 days, run the engine for 90 days, and then lock in a recurring 12-month plan to dominate your local market.",
       color: "bg-brand-mustard",
       textColor: "text-brand-charcoal",
       number: "02",

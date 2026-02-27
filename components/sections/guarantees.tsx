@@ -26,11 +26,11 @@ const guaranteeDetails: Record<string, FeatureDetail> = {
   },
   "risk-free": {
     title: "Risk-Free 90-Day Proof Period",
-    description: "Agencies want you to sign a 12-month retainer based on a pitch deck. We don't. Your upfront investment covers the complete build of your Geo-Silo site AND the first 90 days of active SEO management. We prove it works before you commit.",
+    description: "Your upfront investment covers the complete build of your high-performance Geo-Silo site AND the first 90 days of active management. We deliver speed, prove it works, and then set you up for recurring dominance.",
     tiers: {
       s1: { title: "Month 1: The Build", content: "We design, write, and deploy your entire high-performance Geo-Silo website and connect your Google Business Profile in just 14 days." },
       s2: { title: "Months 2-3: The Proof", content: "We actively run your SEO engine—publishing reverse-silo content, optimizing your GBP, and tracking keyword movement using DataForSEO. You watch the leads start coming in." },
-      s3: { title: "Month 4: The Choice", content: "At the end of 90 days, you look at the results. Only then do we offer you a long-term growth contract. If you don't like the results, you walk away." }
+      s3: { title: "Month 4: The Commitment", content: "At the end of 90 days, we lock in a 12-month recurring plan to protect your momentum and continue scaling." }
     }
   },
   "walk-away": {
@@ -74,8 +74,8 @@ export const Guarantees = () => {
     },
     {
       id: "risk-free",
-      title: "Leads First. Contracts Later.",
-      desc: "Your upfront covers the build and 90 days of management. See the leads before you sign a long-term deal.",
+      title: "Speed First. Long-Term Growth Later.",
+      desc: "Your upfront fee reflects the speed to build and connect everything, covering your first 90 days of management.",
       tiersText: "All Tiers"
     },
     {

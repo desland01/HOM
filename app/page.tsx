@@ -79,7 +79,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-end">
               <FadeIn delay={0.4} className="lg:col-span-6">
                 <p className="text-xl sm:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-10">
-                  How to dominate your local painting market without signing a 12-month contract. We build the site in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove it for <span className="text-brand-charcoal font-extrabold">90 days</span>, and you only commit when the phone rings.
+                  How to dominate your local painting market with maximum velocity. You're paying for speed and precision. We build the system in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove its impact for <span className="text-brand-charcoal font-extrabold">90 days</span>, and set the foundation for long-term growth.
                 </p>
                 <Magnetic strength={10}>
                   <Link href="#tiers" className="group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-xl uppercase tracking-widest">
@@ -153,7 +153,7 @@ export default function Home() {
 
           <div className="lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-px bg-brand-charcoal/5 border border-brand-charcoal/5">
             {[
-              { title: "12-Month Contracts", desc: "Locked in before a single lead. Agencies get paid whether you grow or not.", icon: "×" },
+              { title: "Unfocused Strategy", desc: "Trying to be everything to everyone instead of dominating specific local neighborhoods.", icon: "×" },
               { title: "Cookie-Cutter Sites", desc: "Template websites that look like every other painter in your city. Google ignores them.", icon: "×" },
               { title: "Vague Reporting", desc: "Monthly PDFs full of impressions and clicks. Zero clarity on actual booked jobs.", icon: "×" },
               { title: "Slow Timelines", desc: "3-6 months before anything happens. Meanwhile you're still paying.", icon: "×" },
@@ -201,7 +201,7 @@ export default function Home() {
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8" 
             />
             <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
-              Here is exactly what you get. No hidden fees. No 12-month lock-ins. Pick the system that matches your ambition.
+              The upfront fee reflects the build and the speed to connect everything. Pick the system that matches your ambition, then scale up your recurrence when you're ready.
             </FadeIn>
           </div>
 

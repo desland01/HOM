@@ -36,7 +36,7 @@ const SEO_PLANS = [
     title: "Enterprise Takeover",
     price: "$1,999",
     period: "/mo",
-    features: ["8 Authority Articles/mo", "Automated Review Sequences", "Competitor Gap Analysis", "Dedicated Slack Channel"]
+    features: ["Max impact: 50 pages indexed at once", "Impact fades without Ultimate Arsenal", "Automated Review Sequences", "Competitor Gap Analysis"]
   }
 ]
 

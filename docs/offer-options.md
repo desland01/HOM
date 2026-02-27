@@ -45,9 +45,9 @@ We build you a world-class, high-performance website in **14 days**. You pay **$
 
 ---
 
-## 3. Ownership & Exit Options
+## 3. Recurring Commitments & Exit Options
 
-We believe in earned loyalty, not "hostage" contracts. You have two ways to own your digital asset outright:
+We focus on delivering speed and immediate momentum. After the initial 90-day proof engine period, recurring plans must lock into a contract for a minimum of 12 months to maintain the infrastructure and continued growth velocity. 
 
 ### The "Full Ownership" Upfront Option
 If you prefer to own the asset immediately without a 90-day proof period or monthly commitment:
@@ -55,7 +55,7 @@ If you prefer to own the asset immediately without a 90-day proof period or mont
 *   **Benefit:** Immediate transfer of all code, assets, and hosting. No monthly marketing fees required.
 
 ### The "Contract Buyout" Clause (Take the Site With You)
-If you are in a growth contract (Month 4+) and want to leave while keeping the website:
+If you are in a 12-month growth contract and want to leave while keeping the website:
 *   **Formula:** Remaining months on contract × 50% + a **$1,500 Technical Transfer Fee**.
 *   **Terms:** We hand over the keys to the Next.js repository and Vercel hosting. We handle the technical migration to your own accounts to ensure nothing breaks.
 
