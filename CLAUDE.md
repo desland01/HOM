@@ -65,6 +65,24 @@ The project utilizes standard Next.js npm scripts:
 - **Production build:** `npm run build`
 - **Start production server:** `npm run start`
 
+## Deployment Verification (MANDATORY)
+
+Every push MUST be followed by deployment verification before considering a task complete:
+
+1. **Run `npm run build` locally** — if the build fails, fix it before pushing.
+2. **After pushing, verify deployment with Vercel CLI:**
+   ```bash
+   vercel ls --token "$VERCEL_TOKEN" | head -20
+   ```
+   Check that the latest deployment status is "Ready" (not "Error" or "Building").
+3. **If deployment status is "Error", pull the build logs:**
+   ```bash
+   vercel inspect <deployment-url> --token "$VERCEL_TOKEN"
+   ```
+   Fix the issue, commit, push, and re-verify.
+4. **A task is NOT complete until the Vercel deployment is confirmed "Ready".**
+5. **If `VERCEL_TOKEN` is not set**, warn the user immediately and do not mark the task as done until deployment is verified by other means (e.g., user confirms the live site).
+
 ## Development Conventions
 
 - Use Tailwind for all styling. Rely heavily on grid layouts and thick borders to maintain the "machined" vibe.
