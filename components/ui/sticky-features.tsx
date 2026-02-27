@@ -147,22 +147,22 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
   const scale = useTransform(() => shrinkScale.get() * entranceScale.get())
 
   return (
-    <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-6 sm:px-12 snap-start">
+    <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-4 sm:px-12 snap-start">
       <motion.div 
         style={{ scale, opacity, top: `calc(-10vh + ${i * 25}px)` }} 
-        className={`relative flex flex-col items-start p-6 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
+        className={`relative flex flex-col items-start p-6 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85dvh] sm:min-h-[60dvh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden flex-grow ${color} ${textColor}`}
       >
-        <div className="flex flex-col lg:flex-row justify-between gap-12 w-full">
-          <div className="lg:w-2/3 flex flex-col items-start">
-            <div className={`text-sm font-sora font-extrabold tracking-[0.2em] mb-8 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
-            <h3 className="text-4xl sm:text-6xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-6">{title}</h3>
-            <p className={`text-lg sm:text-2xl font-medium leading-relaxed mb-10 ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
+        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 w-full h-full flex-grow">
+          <div className="lg:w-2/3 flex flex-col items-start w-full h-full flex-grow">
+            <div className={`text-sm font-sora font-extrabold tracking-[0.2em] mb-4 sm:mb-8 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
+            <h3 className="text-4xl sm:text-6xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-4 sm:mb-6">{title}</h3>
+            <p className={`text-lg sm:text-2xl font-medium leading-relaxed mb-8 sm:mb-10 flex-grow ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
               {description}
             </p>
             <button
               onClick={onOpenModal}
               aria-label={`See tier details for ${title}`}
-              className={`relative mt-auto px-6 py-3 min-h-[48px] lg:px-8 lg:py-4 lg:min-h-[56px] font-sora font-extrabold text-sm lg:text-base uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-105 group ${
+              className={`relative mt-auto w-full sm:w-auto px-6 py-4 min-h-[48px] lg:px-8 lg:py-4 lg:min-h-[56px] font-sora font-extrabold text-sm lg:text-base uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-95 group ${
                 textColor === 'text-brand-ivory'
                   ? 'border-brand-mustard text-brand-mustard hover:bg-brand-mustard hover:text-brand-charcoal'
                   : 'border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-brand-mustard'

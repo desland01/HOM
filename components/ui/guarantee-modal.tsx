@@ -106,7 +106,7 @@ export const GuaranteeModal = ({ isOpen, onClose, feature }: GuaranteeModalProps
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-2xl bg-brand-ivory rounded-none border-2 border-brand-charcoal shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]"
+            className="relative w-full max-w-2xl bg-brand-ivory rounded-none border-2 border-brand-charcoal shadow-2xl overflow-hidden z-10 flex flex-col max-h-[85dvh] sm:max-h-[90dvh]"
           >
             {/* Header */}
             <div className="flex justify-between items-center p-6 sm:p-8 border-b border-brand-charcoal/10 bg-white shrink-0">
@@ -115,7 +115,7 @@ export const GuaranteeModal = ({ isOpen, onClose, feature }: GuaranteeModalProps
               </h3>
               <button 
                 onClick={onClose}
-                className="absolute right-6 top-6 sm:top-8 w-8 h-8 flex items-center justify-center text-brand-charcoal text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity"
+                className="absolute right-4 top-4 sm:right-6 sm:top-6 md:top-8 w-12 h-12 flex items-center justify-center text-brand-charcoal text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity"
                 aria-label="Close modal"
               >
                 ×
@@ -165,7 +165,7 @@ export const GuaranteeModal = ({ isOpen, onClose, feature }: GuaranteeModalProps
                       className={`absolute inset-0 w-full h-full p-8 sm:p-10 border-2 ${pages[currentPage].theme} rounded-sm flex flex-col justify-center cursor-grab active:cursor-grabbing origin-center shadow-lg overflow-hidden`}
                     >
                       {pages[currentPage].tag && (
-                        <div className="absolute top-0 right-0 bg-brand-mustard text-brand-charcoal text-[10px] font-sora font-bold uppercase tracking-widest px-3 py-1">
+                        <div className="absolute top-0 right-0 bg-brand-mustard text-brand-charcoal text-xs font-sora font-bold uppercase tracking-widest px-3 py-1">
                           {pages[currentPage].tag}
                         </div>
                       )}
@@ -217,7 +217,7 @@ export const GuaranteeModal = ({ isOpen, onClose, feature }: GuaranteeModalProps
                   <button 
                     onClick={() => paginate(-1)}
                     disabled={currentPage === 0}
-                    className="text-sm font-sora font-extrabold uppercase tracking-widest text-brand-charcoal/50 hover:text-brand-charcoal disabled:opacity-20 transition-colors px-4 py-2"
+                    className="text-sm font-sora font-extrabold uppercase tracking-widest text-brand-charcoal/50 hover:text-brand-charcoal disabled:opacity-20 transition-colors px-4 py-3 min-h-[48px] flex items-center"
                   >
                     ← Prev
                   </button>
@@ -229,7 +229,7 @@ export const GuaranteeModal = ({ isOpen, onClose, feature }: GuaranteeModalProps
                         onClose()
                       }
                     }}
-                    className="text-sm font-sora font-extrabold uppercase tracking-widest text-brand-mustard hover:text-brand-charcoal transition-colors px-6 py-3 border-2 border-transparent hover:border-brand-mustard rounded-full"
+                    className="text-sm font-sora font-extrabold uppercase tracking-widest text-brand-mustard hover:text-brand-charcoal transition-colors px-6 py-3 min-h-[48px] flex items-center border-2 border-transparent hover:border-brand-mustard rounded-full"
                   >
                     {currentPage === pages.length - 1 ? 'Finish' : 'Next →'}
                   </button>

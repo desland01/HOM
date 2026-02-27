@@ -36,10 +36,20 @@ export const FeatureModal = ({ isOpen, onClose, feature }: FeatureModalProps) =>
     } else {
       document.body.style.overflow = 'unset'
     }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown)
+    }
+
     return () => {
       document.body.style.overflow = 'unset'
+      document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [isOpen])
+  }, [isOpen, onClose])
 
   if (!feature) return null
 
@@ -60,7 +70,7 @@ export const FeatureModal = ({ isOpen, onClose, feature }: FeatureModalProps) =>
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-2xl bg-brand-ivory rounded-none border-2 border-brand-charcoal shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]"
+            className="relative w-full max-w-2xl bg-brand-ivory rounded-none border-2 border-brand-charcoal shadow-2xl overflow-hidden z-10 flex flex-col max-h-[85dvh]"
           >
             <div className="flex justify-between items-center p-6 sm:p-8 border-b border-brand-charcoal/10 bg-white">
               <h3 className="text-2xl sm:text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal pr-8">
@@ -90,7 +100,7 @@ export const FeatureModal = ({ isOpen, onClose, feature }: FeatureModalProps) =>
                   </div>
                   
                   <div className="p-5 border-2 border-brand-mustard bg-brand-mustard/5 rounded-sm relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-brand-mustard text-brand-charcoal text-[10px] font-sora font-bold uppercase tracking-widest px-2 py-1">Popular</div>
+                    <div className="absolute top-0 right-0 bg-brand-mustard text-brand-charcoal text-xs font-sora font-bold uppercase tracking-widest px-2 py-1">Popular</div>
                     <div className="text-xs font-sora font-extrabold uppercase tracking-widest text-brand-mustard mb-2">Tier 2: Territory Dominator</div>
                     <div className="font-medium text-brand-charcoal">{feature.tiers.t2}</div>
                   </div>
