@@ -48,7 +48,7 @@ export function PortfolioViewports() {
 
         <div 
           ref={containerRef}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full"
         >
           {websites.map((site, index) => (
             <ScaleReveal key={index} delay={index * 0.1} className="flex flex-col">
