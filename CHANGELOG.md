@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- **Problem Cards Layout (page.tsx):** Updated the `ProblemCard` component to use a flex layout, placing the "x" icon inline with the title to reduce dead space and create a tighter, more cohesive card structure.
+
 ### Fixed
 - **Problem Cards Transition (page.tsx):** Refactored the "Your Website is costing you money" cards to use a centralized scroll event listener (`ProblemCardsList`). Replaced individual `useInView` triggers with a unified system that calculates distance to the viewport center, ensuring that **only one card** transitions to the active/dark state at a time, creating a smoother reading experience.
 

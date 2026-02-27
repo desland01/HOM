@@ -459,11 +459,17 @@ const ProblemCard = forwardRef<HTMLDivElement, { item: { title: string, desc: st
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-      className={`group p-10 transition-colors duration-500 h-full cursor-pointer
+      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer
         ${isActive ? 'bg-brand-charcoal text-brand-ivory' : 'bg-brand-ivory text-brand-charcoal lg:hover:bg-brand-charcoal lg:hover:text-brand-ivory'}`}
     >
-      <div className={`text-4xl font-sora font-extrabold mb-12 transition-transform duration-500 ${isActive ? 'scale-110 text-brand-mustard' : 'text-brand-mustard lg:group-hover:scale-110'}`}>{item.icon}</div>
-      <h4 className="text-2xl font-sora font-extrabold mb-4 uppercase tracking-tight">{item.title}</h4>
+      <div className="flex items-start gap-5 mb-4">
+        <div className={`text-4xl font-sora font-extrabold leading-none transition-transform duration-500 ${isActive ? 'scale-110 text-brand-mustard' : 'text-brand-mustard lg:group-hover:scale-110'}`}>
+          {item.icon}
+        </div>
+        <h4 className="text-xl sm:text-2xl font-sora font-extrabold uppercase tracking-tight leading-tight mt-1">
+          {item.title}
+        </h4>
+      </div>
       <p className={`leading-relaxed font-medium transition-colors duration-500 ${isActive ? 'text-brand-ivory/60' : 'text-brand-charcoal/60 lg:group-hover:text-brand-ivory/60'}`}>{item.desc}</p>
     </motion.div>
   )
