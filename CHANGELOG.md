@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
-- **Sticky Features Styling (sticky-features.tsx):** Added a persistent, subtle pulsing background glow (`animate-ping`) and a hover-activated scale/blur effect to the "See Tier Details +" button to increase click-through visibility.
+- **Sticky Features Styling (sticky-features.tsx, tailwind.config.ts):** Replaced the sharp radar ping on the "See Tier Details +" buttons with a custom, slow-breathing `animate-ember` soft glow effect. This provides a warmer, more premium interaction feel that intensifies on hover.
 - **Sticky Features Layout (page.tsx):** Increased the spacing between the "LOOK LIKE THE BEST" section header and the start of the `StickyFeatures` component (from `mb-12` to `mb-24 lg:mb-40`). This ensures the first card has the same isolated viewpoint dominance as the rest of the cards when it snaps into place, rather than overlapping with the section title.
 - **Sticky Features Scroll Snapping (layout.tsx, sticky-features.tsx):** Implemented native CSS scroll snapping. Added `snap-y snap-proximity` to the global `html` layout and `snap-start` to each "The Solution" card wrapper. This creates a persistent scroll that auto-stops perfectly when the user scrolls a card into its sticky position.
 - **Copy Update (page.tsx):** Updated the Solution section heading from "LOOK LIKE THE BEST. CHARGE LIKE THE BEST." to "LOOK LIKE THE BEST - CHARGE LIKE THE BEST." per the user's request.

@@ -29,11 +29,16 @@ const config: Config = {
       },
       animation: {
         'marquee': 'marquee 25s linear infinite',
+        'ember': 'ember 3s ease-in-out infinite',
       },
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' },
+        },
+        ember: {
+          '0%, 100%': { opacity: '0.3', filter: 'blur(10px)', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', filter: 'blur(14px)', transform: 'scale(1.1)' },
         }
       }
     },

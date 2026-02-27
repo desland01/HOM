@@ -154,9 +154,9 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
                   : 'border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-brand-mustard'
               }`}
             >
-              {/* Outer pulsing glow */}
-              <span className={`absolute inset-0 rounded-full animate-ping opacity-20 ${textColor === 'text-brand-ivory' ? 'bg-brand-mustard' : 'bg-brand-charcoal'}`}></span>
-              {/* Inner subtle continuous glow on hover */}
+              {/* Soft, pulsing ember glow */}
+              <span className={`absolute inset-0 rounded-full animate-ember ${textColor === 'text-brand-ivory' ? 'bg-brand-mustard' : 'bg-brand-charcoal'}`}></span>
+              {/* Inner subtle continuous glow on hover to intensify the ember when interacted with */}
               <span className={`absolute inset-0 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300 ${textColor === 'text-brand-ivory' ? 'bg-brand-mustard' : 'bg-brand-charcoal'}`}></span>
               
               <span className="relative z-10">See Tier Details +</span>
