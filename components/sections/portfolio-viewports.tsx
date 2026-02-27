@@ -52,10 +52,16 @@ export function PortfolioViewports() {
         >
           {websites.map((site, index) => (
             <ScaleReveal key={index} delay={index * 0.1} className="flex flex-col">
-              <div className="text-sm font-sora font-extrabold uppercase tracking-widest mb-4 flex items-center gap-3">
-                <span className="text-brand-mustard text-lg leading-none">/</span>
+              <a 
+                href={site.src} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm font-sora font-extrabold uppercase tracking-widest mb-4 flex items-center gap-3 w-fit group/link hover:text-brand-mustard transition-colors"
+              >
+                <span className="text-brand-mustard text-lg leading-none group-hover/link:translate-x-1 transition-transform">/</span>
                 {site.name}
-              </div>
+                <span className="opacity-0 -ml-2 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all">↗</span>
+              </a>
               
               {/* Browser Viewport Window */}
               <motion.div 
