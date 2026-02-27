@@ -91,7 +91,7 @@ export default function Home() {
                   <Link href="#tiers" className="group relative inline-flex items-center justify-center px-8 py-4 lg:px-10 lg:py-5 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-base lg:text-lg uppercase tracking-widest">
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-brand-charcoal via-brand-charcoal to-brand-mustard opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                     <span className="relative z-10 flex items-center gap-4">
-                      See If You Qualify <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
+                      Check Availability <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
                     </span>
                   </Link>
                 </Magnetic>
@@ -305,7 +305,7 @@ export default function Home() {
                 <Magnetic strength={10}>
                   <Link href="mailto:hello@homeownermarketers.com?subject=Pilot%20Partner%20Application" className="group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-xl uppercase tracking-widest">
                     <span className="relative z-10 flex items-center gap-4">
-                      Let's Talk <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
+                      Check Availability <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
                     </span>
                   </Link>
                 </Magnetic>
@@ -343,7 +343,7 @@ export default function Home() {
             className="fixed bottom-0 left-0 right-0 p-4 z-50 lg:hidden"
           >
             <Link href="#tiers" className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform">
-              See If You Qualify ↓
+              Check Availability ↓
             </Link>
           </motion.div>
         )}
