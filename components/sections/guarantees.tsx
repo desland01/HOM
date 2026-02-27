@@ -8,56 +8,56 @@ import { GuaranteeModal } from '@/components/ui/guarantee-modal'
 const guaranteeDetails: Record<string, FeatureDetail> = {
   "top-3": {
     title: "Top 3 Ranking Or We Work Free",
-    description: "We don't get paid to give you excuses. We get paid to get you seen. For our top two tiers, we guarantee your business will rank in the Top 3 of the Google Map Pack for a primary target keyword within 90 days. If we miss the mark, we manage your entire SEO engine for free until you are in the top 3.",
+    description: "When a homeowner searches 'painter near me,' the top 3 results on Google Maps get 80% of the calls. We guarantee your business lands in that top 3 for your primary keyword within 90 days. If we miss? We keep working for free until you are there. You pay nothing extra. Period.",
     tiers: {
-      s1: { title: "Phase 1: The Setup", content: "We start by auditing your Google Business Profile, resolving any NAP (Name, Address, Phone) inconsistencies, and structuring your local citations to establish immediate trust with Google's algorithm." },
-      s2: { title: "Phase 2: The Engine", content: "We deploy our GBP management engine involving weekly geo-tagged photo uploads, rigorous review-response management, and publishing highly localized updates to signal active operation." },
-      s3: { title: "Phase 3: The Guarantee", content: "If you aren't ranking in the Top 3 of the Map Pack for a primary service keyword by day 90, we waive all management fees. We keep working, you stop paying, until you hit the top 3." }
+      s1: { title: "Step 1: We Map Your Market", content: "We study every competitor ranking in your area right now. We find the gaps they are leaving wide open. Then we build a plan to take their spot in the Map Pack, city by city, keyword by keyword." },
+      s2: { title: "Step 2: We Do The Work", content: "Every week, we update your Google Business Profile with real photos, respond to reviews, and publish local content that tells Google you are the most active painter in town. You run your crew. We run your rankings." },
+      s3: { title: "Step 3: The Penalty If We Miss", content: "If you are not in the top 3 of the Google Map Pack by day 90, we waive all management fees. We keep doing the work on our dime until you get there. You stop paying. We keep grinding. That is the deal." }
     }
   },
   "pagespeed": {
     title: "90+ PageSpeed Guarantee",
-    description: "A slow website kills both your Google rankings and your conversion rate. We build exclusively on high-performance architecture and host on a global edge network. We guarantee that your site will score 90 or above on Google PageSpeed Insights for both mobile and desktop.",
+    description: "Homeowners bounce in 3 seconds if your site loads slow. Most painter websites fail this test. Yours will not. We guarantee a 90+ score on Google PageSpeed Insights for both mobile and desktop. If it falls short, we fix it at zero cost to you.",
     tiers: {
-      s1: { title: "Step 1: High-Performance Architecture", content: "We completely ditch bloated, slow platforms like WordPress. Your site is built using modern frameworks that generate pages for instantaneous loading." },
-      s2: { title: "Step 2: Instant Edge Hosting", content: "Your site doesn't live on a single slow server. It's deployed to an edge network, meaning it gets served from the data center physically closest to your customer, resulting in sub-second load times." },
-      s3: { title: "Step 3: The Penalty", content: "After launch, we run a live Google PageSpeed Insights audit. If it scores below a 90 on mobile or desktop, our engineering team works for free to optimize the code until it passes." }
+      s1: { title: "Step 1: We Build It Fast From Day One", content: "We skip the bloated website builders that slow everyone else down. Your site is built on the same technology used by the fastest sites on the internet. Speed is baked in from the first line, not bolted on later." },
+      s2: { title: "Step 2: We Test It In Front Of You", content: "Before launch, we run your site through Google PageSpeed Insights right on the call with you. You see the score with your own eyes. No tricks, no staging-only numbers. The real site, the real score." },
+      s3: { title: "Step 3: If It Fails, We Fix It Free", content: "If your live site scores below 90 on mobile or desktop after launch, we fix it at no charge. We do not send you an invoice for 'optimization.' We just fix it. You do not pay another dime until it passes." }
     }
   },
   "risk-free": {
     title: "Risk-Free 90-Day Proof Period",
-    description: "Your upfront investment covers the complete build of your high-performance Geo-Silo site AND the first 90 days of active management. We deliver speed, prove it works, and then set you up for recurring dominance.",
+    description: "You pay once. That covers your custom site build AND 90 full days of us running the marketing engine. You watch the leads come in. You see the rankings climb. Then, and only then, do we talk about what comes next.",
     tiers: {
-      s1: { title: "Month 1: The Build", content: "We design, write, and deploy your entire high-performance Geo-Silo website and connect your Google Business Profile in just 14 days." },
-      s2: { title: "Months 2-3: The Proof", content: "We actively run your SEO engine—publishing reverse-silo content, optimizing your GBP, and tracking keyword movement using DataForSEO. You watch the leads start coming in." },
-      s3: { title: "Month 4: The Commitment", content: "At the end of 90 days, we lock in a 12-month recurring plan to protect your momentum and continue scaling." }
+      s1: { title: "Month 1: We Build Your Machine", content: "In the first 14 days, your custom site goes live. The remaining weeks, we connect your Google Business Profile, set up your local pages, and start feeding Google the signals that put you on the map." },
+      s2: { title: "Months 2-3: We Prove It Works", content: "This is where the phone starts ringing. We publish local content, manage your reviews, and push your rankings higher every week. You track everything in a live dashboard. No guessing. Just results you can see." },
+      s3: { title: "Month 4: You Decide", content: "After 90 days of proof, you choose. If the leads are rolling in and you want to keep growing, we lock in a 12-month plan to protect your momentum. If not, you walk away clean. The choice is 100% yours." }
     }
   },
   "walk-away": {
     title: "The Walk-Away Clause",
-    description: "What happens if you aren't blown away after the 90-day proof period? You walk away with zero friction. We believe in earning your business, not holding it hostage.",
+    description: "Most agencies lock you into contracts and hold your website hostage. We do the opposite. If you want out after 90 days, you leave with everything. Your domain, your content, your SEO gains. No hostage games. No guilt trips.",
     tiers: {
-      s1: { title: "Step 1: You Call It", content: "If you decide our system isn't for you at the end of the 90-day proof period, you just say the word. No uncomfortable negotiations, no legal threats." },
-      s2: { title: "Step 2: The Reconnection", content: "We will seamlessly point your domain back to your old website. You always retain 100% ownership of your domain and your brand." },
-      s3: { title: "Step 3: SEO Protection", content: "We set up all necessary 301 redirects to ensure any SEO juice we built during the 90 days flows back to your original setup. We part as friends." }
+      s1: { title: "Step 1: You Say The Word", content: "At the end of your 90-day proof period, if you are not happy, just tell us. One email. One phone call. No awkward negotiations. No cancellation fees. No legal fine print designed to trap you." },
+      s2: { title: "Step 2: We Hand Everything Back", content: "We point your domain back to wherever you want it. You keep 100% ownership of your domain, your brand, and every piece of content we created. Nothing is held back. Nothing is deleted." },
+      s3: { title: "Step 3: We Protect What We Built", content: "Before we go, we set up redirects so every ounce of ranking power we built during those 90 days flows back to your site. We leave your SEO better than we found it. We part as friends, not enemies." }
     }
   },
   "delivery": {
     title: "14-Day Delivery Guarantee",
-    description: "We don't do endless \"discovery\" phases or months of wireframing. We know what works for painting companies. From kickoff to launch, your site goes live in exactly 14 days.",
+    description: "Other agencies take 3 to 6 months to launch a website. We do it in 14 days. Not a template. Not a placeholder. A fully custom, high-performance site built for your painting business. If we miss the deadline, you get 20% off. Automatically.",
     tiers: {
-      s1: { title: "Day 1: Kickoff & Strategy", content: "We map your competitors, define your target municipalities, and outline the Geo-Silo architecture required to dominate your local territory." },
-      s2: { title: "Days 2-13: Deep Work", content: "Our team builds the custom Next.js web application, writes the localized copy, configures the JSON-LD schema, and integrates your lead funnels." },
-      s3: { title: "Day 14: Launch Or Discount", content: "We present the staging link for your approval. If we miss this 14-day deadline by even a single day, we immediately take 20% off your upfront investment." }
+      s1: { title: "Day 1: Strategy and Gameplan", content: "We jump on a call, map out your service area, study your competitors, and lock in the cities and keywords we are going after. By the end of day one, you know exactly what we are building and why." },
+      s2: { title: "Days 2-13: We Build The Whole Thing", content: "Our team writes the copy, designs the pages, builds your lead forms, and sets up every local page for your service area. You do not lift a finger. You run your crew. We build your site." },
+      s3: { title: "Day 14: Launch Or You Save 20%", content: "On day 14, we show you the finished site. If we are even one day late, we take 20% off your total cost. No excuses, no exceptions. We put our money where our mouth is." }
     }
   },
   "approval": {
     title: "Pay Only Upon Approval",
-    description: "We take on the risk, not you. We build out your complete, high-performance website before you ever pay us. You review every page and only pay when you say 'go'.",
+    description: "We build the entire site before you pay a single dollar. You see it. You test it. You click every button. Only when you say 'this is exactly what I want' do we send the invoice. If you do not love it, you do not pay.",
     tiers: {
-      s1: { title: "Step 1: The Build Phase", content: "We execute the entire 14-day build without asking for a deposit. We construct the site, write the copy, and set up the conversion architecture on our dime." },
-      s2: { title: "Step 2: Private Staging Review", content: "We send you a private link to the fully functional staging site. You review it on your phone, test the lead forms, and request any final changes." },
-      s3: { title: "Step 3: Approved Launch", content: "Only after you say 'I love it, let's take it live' do we send the invoice for the upfront investment. If you don't love it, you don't pay. Zero risk." }
+      s1: { title: "Step 1: We Build On Our Dime", content: "We invest our own time and resources to build your complete custom site. No deposit. No 50% upfront. We take the financial risk because we know the work speaks for itself." },
+      s2: { title: "Step 2: You Review Everything", content: "We send you a private link to the finished site. Pull it up on your phone. Test the contact forms. Show it to your spouse. Take your time. Ask for changes. We do not rush you into a decision." },
+      s3: { title: "Step 3: You Pay Only When You Love It", content: "When you look at the site and say 'let us go live,' that is when we send the invoice. Not before. If something feels off, we fix it first. If you walk away, you owe us nothing. Zero." }
     }
   }
 }
@@ -68,32 +68,32 @@ export const Guarantees = () => {
   const guarantees = [
     {
       id: "pagespeed",
-      title: "Sub-Second Or It's Free",
-      desc: "We guarantee a 90+ score on Google PageSpeed. If it's slow, we fix it for free. Fast sites print money.",
+      title: "Blazing Fast Or We Fix It Free",
+      desc: "Your site scores 90+ on Google PageSpeed or we fix it at zero cost. Slow sites lose leads. Yours will not.",
       tiersText: "All Tiers"
     },
     {
       id: "risk-free",
-      title: "Speed First. Long-Term Growth Later.",
-      desc: "Your upfront fee reflects the speed to build and connect everything, covering your first 90 days of management.",
+      title: "90 Days To Prove It Works",
+      desc: "Your one payment covers the build and 90 days of us running the engine. Watch the leads come in before you commit to anything long-term.",
       tiersText: "All Tiers"
     },
     {
       id: "walk-away",
-      title: "The 'Part As Friends' Clause",
-      desc: "If you want out after 90 days, we'll reconnect your old site and set up redirects. You keep your domain.",
+      title: "Leave Anytime. Keep Everything.",
+      desc: "Not happy after 90 days? Walk away with your domain, your content, and your SEO gains. No hostage games. Ever.",
       tiersText: "All Tiers"
     },
     {
       id: "delivery",
-      title: "Live In 14 Days (Or 20% Off)",
-      desc: "No 6-month build times. Your custom site goes live in exactly 14 days, or we eat 20% of the cost.",
+      title: "Live In 14 Days Or 20% Off",
+      desc: "Your custom site launches in exactly 14 days. If we miss by even one day, you save 20%. Automatically.",
       tiersText: "All Tiers"
     },
     {
       id: "approval",
-      title: "Don't Pay Until You Love It",
-      desc: "We build the whole thing on staging. You review it. You don't pay a dime until you approve the launch.",
+      title: "Do Not Pay Until You Love It",
+      desc: "We build the entire site before you spend a dollar. You review it, test it, and only pay when you are ready to go live.",
       tiersText: "All Tiers"
     },
     {
@@ -131,7 +131,7 @@ export const Guarantees = () => {
           </span>
         </>
       ),
-      desc: "We get you ranked in the top 3 of the Map Pack for a target keyword in 90 days, or we work for free until you are.",
+      desc: "Top 3 of the Google Map Pack in 90 days for your primary keyword. If we miss, we work for free until you are there. You stop paying. We keep working.",
       tiersText: "Top 2 Tiers"
     }
   ]
@@ -149,9 +149,9 @@ export const Guarantees = () => {
       <div className="max-w-[1440px] mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24">
           <div className="max-w-3xl">
-            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Our Promises</FadeIn>
-            <TextReveal 
-              text="THE 'NO B.S.' GUARANTEE STACK." 
+            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">You Risk Nothing</FadeIn>
+            <TextReveal
+              text="SIX GUARANTEES. ZERO RISK. ALL YOURS."
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8"
             />
           </div>
