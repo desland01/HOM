@@ -66,9 +66,9 @@ export const FeatureModal = ({ isOpen, onClose, feature }: FeatureModalProps) =>
               <h3 className="text-2xl sm:text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal pr-8">
                 {feature.title}
               </h3>
-              <button 
+              <button
                 onClick={onClose}
-                className="absolute right-6 top-6 sm:top-8 w-8 h-8 flex items-center justify-center text-brand-charcoal text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity"
+                className="absolute right-4 top-4 sm:right-6 sm:top-6 w-12 h-12 flex items-center justify-center text-brand-charcoal text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity"
                 aria-label="Close modal"
               >
                 ×

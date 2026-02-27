@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FadeIn, TextReveal, ScaleReveal } from '@/components/ui/animations'
 
 const websites = [
@@ -20,14 +20,6 @@ const websites = [
 export function PortfolioViewports() {
   const containerRef = useRef<HTMLDivElement>(null)
   
-  // Optional horizontal scroll effect for larger screens
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  })
-  
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
-
   return (
     <section className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-charcoal text-brand-ivory relative overflow-hidden border-t border-brand-ivory/10">
       <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--brand-mustard)_0%,_transparent_40%)] opacity-[0.03] pointer-events-none" />
@@ -41,7 +33,7 @@ export function PortfolioViewports() {
             text="SEE THE DIFFERENCE." 
             className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8"
           />
-          <FadeIn className="text-xl text-brand-ivory/50 font-medium max-w-2xl">
+          <FadeIn className="text-xl text-brand-ivory/50 font-medium max-w-2xl leading-relaxed text-left">
             We do not build digital brochures. We build high-performance conversion engines. Scroll through some of the premium sites we have built for painters.
           </FadeIn>
         </div>
@@ -56,7 +48,7 @@ export function PortfolioViewports() {
                 href={site.src} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-sm font-sora font-extrabold uppercase tracking-widest mb-4 flex items-center gap-3 w-fit group/link hover:text-brand-mustard transition-colors"
+                className="text-sm font-sora font-extrabold uppercase tracking-widest mb-4 flex items-center gap-3 w-fit group/link hover:text-brand-mustard transition-colors py-3"
               >
                 <span className="text-brand-mustard text-lg leading-none group-hover/link:translate-x-1 transition-transform">/</span>
                 {site.name}
@@ -82,7 +74,7 @@ export function PortfolioViewports() {
                   />
                   
                   {/* Overlay prompt to scroll */}
-                  <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 bg-brand-charcoal text-brand-mustard px-4 py-2 rounded-full text-[8px] sm:text-[10px] font-sora font-extrabold uppercase tracking-widest shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 flex items-center gap-2 border border-brand-mustard/20">
+                  <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 bg-brand-charcoal text-brand-mustard px-4 py-2 rounded-full text-xs font-sora font-extrabold uppercase tracking-widest shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 flex items-center gap-2 border border-brand-mustard/20">
                     <span className="animate-bounce">↓</span> Scroll Site
                   </div>
                 </div>

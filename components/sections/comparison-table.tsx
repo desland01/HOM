@@ -104,8 +104,9 @@ export const ComparisonTable = () => {
           </Parallax>
         </div>
 
-        <FadeIn delay={0.2} className="w-full overflow-x-auto pb-8">
-          <table className="w-full min-w-[900px] border-collapse border border-brand-charcoal/10 font-medium">
+        <FadeIn delay={0.2} className="w-full relative">
+          <div className="overflow-x-auto pb-8">
+            <table className="w-full min-w-[900px] border-collapse border border-brand-charcoal/10 font-medium">
             <thead>
               <tr className="bg-brand-ivory border-b border-brand-charcoal/10 text-left text-sm uppercase tracking-[0.1em] font-sora font-extrabold text-brand-charcoal/50">
                 <th className="p-6 lg:p-8 min-w-[320px]">Feature</th>
@@ -159,29 +160,44 @@ export const ComparisonTable = () => {
               <TableRow title="Conversion Architecture" t1={check} t2={check} t3={check} isPop borderBottom={false} />
 
             </tbody>
-          </table>
+            </table>
+          </div>
+          <div className="absolute right-0 top-0 bottom-8 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none lg:hidden" aria-hidden="true" />
         </FadeIn>
       </div>
     </section>
   )
 }
 
-const TableRow = ({ title, t1, t2, t3, isPop, borderBottom = true, onInfo }: any) => (
-  <tr className={`hover:bg-brand-charcoal/[0.02] transition-colors ${borderBottom ? 'border-b border-brand-charcoal/5' : ''}`}>
-    <td className="p-5 lg:p-6 pl-6 lg:pl-8 text-[15px] flex items-center gap-3">
+interface TableRowProps {
+  title: string
+  t1: React.ReactNode
+  t2: React.ReactNode
+  t3: React.ReactNode
+  isPop?: boolean
+  borderBottom?: boolean
+  onInfo?: () => void
+}
+
+const TableRow = ({ title, t1, t2, t3, isPop, borderBottom = true, onInfo }: TableRowProps) => (
+  <tr className={`hover:bg-brand-charcoal/[0.04] transition-colors ${borderBottom ? 'border-b border-brand-charcoal/5' : ''}`}>
+    <td className="p-5 lg:p-6 pl-6 lg:pl-8 text-base flex items-center gap-3">
       {title}
       {onInfo && (
-        <button 
+        <button
           onClick={onInfo}
-          className="w-5 h-5 rounded-full border border-brand-charcoal/30 flex items-center justify-center text-[10px] font-bold text-brand-charcoal/50 hover:bg-brand-mustard hover:text-brand-charcoal hover:border-brand-mustard transition-colors flex-shrink-0"
+          className="w-12 h-12 -m-3.5 rounded-full flex items-center justify-center flex-shrink-0 group"
           title="Learn more"
+          aria-label="Learn more"
         >
-          i
+          <span className="w-5 h-5 rounded-full border border-brand-charcoal/30 flex items-center justify-center text-[10px] font-bold text-brand-charcoal/50 group-hover:bg-brand-mustard group-hover:text-brand-charcoal group-hover:border-brand-mustard transition-colors">
+            i
+          </span>
         </button>
       )}
     </td>
-    <td className="p-5 lg:p-6 text-center text-[15px]">{t1}</td>
-    <td className={`p-5 lg:p-6 text-center text-[15px] ${isPop ? 'bg-brand-mustard/[0.02] font-semibold' : ''}`}>{t2}</td>
-    <td className="p-5 lg:p-6 text-center text-[15px]">{t3}</td>
+    <td className="p-5 lg:p-6 text-center text-base">{t1}</td>
+    <td className={`p-5 lg:p-6 text-center text-base ${isPop ? 'bg-brand-mustard/[0.02] font-semibold' : ''}`}>{t2}</td>
+    <td className="p-5 lg:p-6 text-center text-base">{t3}</td>
   </tr>
 )

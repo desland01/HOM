@@ -161,7 +161,7 @@ export const Guarantees = () => {
           {guarantees.map((item, i) => (
             <ScaleReveal 
               key={i} 
-              delay={i * 0.1}
+              delay={i * 0.06}
               className="h-full"
             >
               <button
@@ -174,7 +174,7 @@ export const Guarantees = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <div className="w-8 h-8 rounded-full border border-brand-ivory/20 flex items-center justify-center text-brand-ivory/50 group-hover:bg-brand-mustard group-hover:text-brand-charcoal group-hover:border-brand-mustard transition-colors">
+                  <div className="w-10 h-10 rounded-full border border-brand-ivory/20 flex items-center justify-center text-brand-ivory/50 group-hover:bg-brand-mustard group-hover:text-brand-charcoal group-hover:border-brand-mustard transition-colors">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                     </svg>
@@ -182,7 +182,7 @@ export const Guarantees = () => {
                 </div>
                 <div className="text-xs font-sora font-extrabold tracking-[0.2em] uppercase text-brand-mustard mb-3">{item.tiersText}</div>
                 <h4 className="text-2xl font-sora font-extrabold mb-4 uppercase tracking-tight group-hover:text-brand-mustard transition-colors">{item.title}</h4>
-                <p className="text-brand-ivory/60 leading-relaxed font-medium mt-auto group-hover:text-brand-ivory/80 transition-colors">{item.desc}</p>
+                <p className="text-lg text-brand-ivory/70 leading-relaxed font-medium mt-auto group-hover:text-brand-ivory/90 transition-colors">{item.desc}</p>
               </button>
             </ScaleReveal>
           ))}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 import { FeatureModal, FeatureDetail } from '@/components/ui/feature-modal'
 
 const featureDetails: Record<string, FeatureDetail> = {
@@ -114,7 +114,20 @@ export const StickyFeatures = () => {
   )
 }
 
-const Card = ({ i, title, description, color, textColor, number, progress, range, targetScale, onOpenModal }: any) => {
+interface CardProps {
+  i: number
+  title: string
+  description: string
+  color: string
+  textColor: string
+  number: string
+  progress: MotionValue<number>
+  range: [number, number]
+  targetScale: number
+  onOpenModal: () => void
+}
+
+const Card = ({ i, title, description, color, textColor, number, progress, range, targetScale, onOpenModal }: CardProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   
   // Track this specific card's entrance
@@ -137,7 +150,7 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
     <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-6 sm:px-12 snap-start">
       <motion.div 
         style={{ scale, opacity, top: `calc(-10vh + ${i * 25}px)` }} 
-        className={`relative flex flex-col items-start p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
+        className={`relative flex flex-col items-start p-6 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
       >
         <div className="flex flex-col lg:flex-row justify-between gap-12 w-full">
           <div className="lg:w-2/3 flex flex-col items-start">
@@ -146,11 +159,12 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
             <p className={`text-lg sm:text-2xl font-medium leading-relaxed mb-10 ${textColor === 'text-brand-ivory' ? 'text-brand-ivory/70' : 'text-brand-charcoal/70'}`}>
               {description}
             </p>
-            <button 
+            <button
               onClick={onOpenModal}
-              className={`relative mt-auto px-6 py-3 font-sora font-extrabold text-sm uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-105 group ${
-                textColor === 'text-brand-ivory' 
-                  ? 'border-brand-mustard text-brand-mustard hover:bg-brand-mustard hover:text-brand-charcoal' 
+              aria-label={`See tier details for ${title}`}
+              className={`relative mt-auto px-6 py-3 min-h-[48px] lg:px-8 lg:py-4 lg:min-h-[56px] font-sora font-extrabold text-sm lg:text-base uppercase tracking-widest border-2 rounded-full transition-all duration-300 hover:scale-105 group ${
+                textColor === 'text-brand-ivory'
+                  ? 'border-brand-mustard text-brand-mustard hover:bg-brand-mustard hover:text-brand-charcoal'
                   : 'border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-brand-mustard'
               }`}
             >
@@ -162,8 +176,8 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
               <span className="relative z-10">See Tier Details +</span>
             </button>
           </div>
-          <div className="lg:w-1/3 flex justify-end">
-            <div className={`text-[12rem] leading-none font-sora font-extrabold opacity-10 tracking-tighter-extreme`}>
+          <div className="hidden sm:flex lg:w-1/3 justify-end">
+            <div className={`text-[6rem] sm:text-[8rem] lg:text-[12rem] leading-none font-sora font-extrabold opacity-10 tracking-tighter-extreme`}>
               {number}
             </div>
           </div>

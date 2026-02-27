@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FadeIn, TextReveal, Parallax, Magnetic, ScaleReveal } from '@/components/ui/animations'
 import { StickyFeatures } from '@/components/ui/sticky-features'
 import { ComparisonTable } from '@/components/sections/comparison-table'
@@ -34,7 +35,7 @@ export default function Home() {
             </span>
             <button 
               onClick={() => setShowBanner(false)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-brand-charcoal text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-brand-charcoal text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity"
               aria-label="Close banner"
             >
               ×
@@ -44,16 +45,20 @@ export default function Home() {
       </AnimatePresence>
 
       {/* OVERSIZED HERO */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 px-6 sm:px-12 flex flex-col items-start overflow-hidden border-b border-brand-charcoal/5">
+      <section className={`relative ${showBanner ? 'pt-32' : 'pt-16'} pb-24 ${showBanner ? 'lg:pt-48' : 'lg:pt-32'} lg:pb-40 px-6 sm:px-12 flex flex-col items-start overflow-hidden border-b border-brand-charcoal/5 transition-[padding] duration-300`}>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015] pointer-events-none" />
         
         <div className="w-full max-w-[1440px] mx-auto relative z-10">
           <div className="flex flex-col items-start">
             <FadeIn delay={0.1} className="flex items-center gap-4 mb-12 sm:mb-16">
-              <img 
-                src="/HM-Logo.png" 
-                alt="Homeowner Marketers" 
+              <Image
+                src="/HM-Logo.png"
+                alt="Homeowner Marketers"
+                width={240}
+                height={80}
+                priority
+                sizes="(max-width: 640px) 48px, 80px"
                 className="h-12 sm:h-20 w-auto object-contain invert"
               />
               <div className="h-6 w-px bg-brand-charcoal/10 hidden sm:block" />
@@ -78,7 +83,7 @@ export default function Home() {
             />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-end">
-              <FadeIn delay={0.4} className="lg:col-span-6">
+              <FadeIn delay={0} className="lg:col-span-6">
                 <p className="text-xl sm:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-10">
                   Your website makes you look like every other painter in town. That is why you keep getting price shoppers. We build you a premium site in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove it pulls quality leads for <span className="text-brand-charcoal font-extrabold">90 days</span>, or you walk away with zero risk.
                 </p>
@@ -307,7 +312,7 @@ export default function Home() {
               </FadeIn>
               <FadeIn delay={0.4} className="lg:col-span-6 lg:text-right">
                 <div className="text-sm font-sora font-extrabold tracking-widest uppercase mb-4 opacity-50">Questions?</div>
-                <a href="mailto:hello@homeownermarketers.com" className="text-2xl sm:text-4xl font-sora font-extrabold hover:underline transition-all">hello@homeownermarketers.com</a>
+                <a href="mailto:hello@homeownermarketers.com" className="text-2xl sm:text-4xl font-sora font-extrabold hover:underline transition-all py-2 inline-block">hello@homeownermarketers.com</a>
               </FadeIn>
             </div>
           </div>
@@ -318,14 +323,14 @@ export default function Home() {
       <footer className="py-24 px-6 sm:px-12 bg-white border-t border-brand-charcoal/5">
         <FadeIn className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
           <div className="flex flex-col gap-6">
-            <img src="/HM-Logo.png" alt="Homeowner Marketers" className="h-12 sm:h-16 object-contain invert opacity-80 self-start" />
+            <Image src="/HM-Logo.png" alt="Homeowner Marketers" width={240} height={80} className="h-12 sm:h-16 w-auto object-contain invert opacity-80 self-start" />
             <p className="text-brand-charcoal/40 font-medium text-sm">&copy; 2026 Homeowner Marketers. Premium websites for painters who refuse to compete on price.</p>
           </div>
-          <div className="flex flex-wrap gap-8 text-xs font-sora font-extrabold uppercase tracking-[0.2em] text-brand-charcoal/60">
-            <a href="#" className="hover:text-brand-mustard transition-colors">How It Works</a>
-            <a href="#" className="hover:text-brand-mustard transition-colors">Results</a>
-            <a href="#" className="hover:text-brand-mustard transition-colors">Pricing</a>
-            <a href="#" className="hover:text-brand-mustard transition-colors">Contact</a>
+          <div className="flex flex-wrap gap-4 text-sm font-sora font-extrabold uppercase tracking-[0.2em] text-brand-charcoal/60">
+            <a href="#" className="hover:text-brand-mustard transition-colors py-3 px-2">How It Works</a>
+            <a href="#" className="hover:text-brand-mustard transition-colors py-3 px-2">Results</a>
+            <a href="#" className="hover:text-brand-mustard transition-colors py-3 px-2">Pricing</a>
+            <a href="#" className="hover:text-brand-mustard transition-colors py-3 px-2">Contact</a>
           </div>
         </FadeIn>
       </footer>
@@ -337,7 +342,7 @@ export default function Home() {
             initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }}
             className="fixed bottom-0 left-0 right-0 p-4 z-50 lg:hidden"
           >
-            <Link href="#tiers" className="flex items-center justify-center w-full py-5 bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform">
+            <Link href="#tiers" className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform">
               See If You Qualify ↓
             </Link>
           </motion.div>
@@ -398,7 +403,7 @@ function TierCard({ name, title, revenue, save, original, price, buildFeatures, 
       </div>
 
       <div className="mt-16">
-        <Link href="#tiers" className={`flex items-center justify-center w-full py-5 font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
+        <Link href="#tiers" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
           Get Started
         </Link>
       </div>
