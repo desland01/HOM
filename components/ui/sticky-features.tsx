@@ -116,17 +116,28 @@ export const StickyFeatures = () => {
 
 const Card = ({ i, title, description, color, textColor, number, progress, range, targetScale, onOpenModal }: any) => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
+  
+  // Track this specific card's entrance
+  const { scrollYProgress: cardScrollProgress } = useScroll({
     target: containerRef,
     offset: ['start end', 'start start']
   })
 
-  const scale = useTransform(progress, range, [1, targetScale])
+  // The shrink effect driven by the parent container as subsequent cards stack
+  const shrinkScale = useTransform(progress, range, [1, targetScale])
+  
+  // The entrance zoom effect driven by the card itself
+  const entranceScale = useTransform(cardScrollProgress, [0, 1], [0.8, 1])
+  const opacity = useTransform(cardScrollProgress, [0, 1], [0, 1])
+  const filter = useTransform(cardScrollProgress, [0, 1], ['blur(10px)', 'blur(0px)'])
+
+  // Combine the scales: it zooms in on entrance, then shrinks as others stack
+  const scale = useTransform(() => shrinkScale.get() * entranceScale.get())
 
   return (
     <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-6 sm:px-12">
       <motion.div 
-        style={{ scale, top: `calc(-10vh + ${i * 25}px)` }} 
+        style={{ scale, opacity, filter, top: `calc(-10vh + ${i * 25}px)` }} 
         className={`relative flex flex-col items-start p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
       >
         <div className="flex flex-col lg:flex-row justify-between gap-12 w-full">
