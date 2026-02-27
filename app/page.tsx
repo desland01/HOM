@@ -22,7 +22,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-[100dvh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip">
+    <main className="min-h-[100dvh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip pb-24 lg:pb-0">
       {/* STICKY TOP BANNER */}
       <AnimatePresence>
         {showBanner && (
@@ -45,7 +45,8 @@ export default function Home() {
       </AnimatePresence>
 
       {/* OVERSIZED HERO */}
-      <section className={`relative ${showBanner ? 'pt-20' : 'pt-8'} pb-8 ${showBanner ? 'lg:pt-20' : 'lg:pt-16'} lg:pb-6 px-6 sm:px-12 flex flex-col items-start overflow-hidden border-b border-brand-charcoal/5 transition-[padding] duration-300`}>
+      {/* Hero top padding = banner h-14 (56px) + 16px gap = 72px when banner shown */}
+      <section className={`relative ${showBanner ? 'pt-[72px]' : 'pt-6'} pb-8 ${showBanner ? 'lg:pt-24' : 'lg:pt-16'} lg:pb-6 px-6 sm:px-12 flex flex-col items-start overflow-hidden border-b border-brand-charcoal/5 transition-[padding] duration-300`}>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015] pointer-events-none" />
         

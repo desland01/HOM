@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Mobile Banner Overlap (layout.tsx, page.tsx):** Fixed the top promotional banner overlapping hero content on mobile. Removed the static `pt-12` body padding from `layout.tsx` that didn't respond to banner state and consolidated all banner clearance into the hero section's dynamic padding (`pt-[72px]` when banner shown, `pt-6` when hidden). Also added `pb-24 lg:pb-0` to `<main>` so the fixed bottom "Check Availability" CTA no longer overlaps footer content on mobile.
+
 ### Changed
 - **Pilot Packages (page.tsx):** Removed the revenue qualifier (e.g., "Painters doing $250k - $500k") from the `TierCard` components and updated the layout margin to maintain proper spacing.
 - **Problem Cards Layout (page.tsx):** Updated the `ProblemCard` component to use a flex layout, placing the "x" icon inline with the title to reduce dead space and create a tighter, more cohesive card structure.
