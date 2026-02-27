@@ -181,7 +181,7 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-12 mb-12 relative z-10 text-center">
           <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Solution</FadeIn>
           <TextReveal 
-            text="LOOK LIKE THE BEST. CHARGE LIKE THE BEST." 
+            text="LOOK LIKE THE BEST - CHARGE LIKE THE BEST." 
             className="text-5xl sm:text-7xl lg:text-9xl font-sora font-extrabold leading-[0.85] tracking-tighter-extreme uppercase justify-center" 
           />
         </div>
