@@ -127,9 +127,8 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
   const shrinkScale = useTransform(progress, range, [1, targetScale])
   
   // The entrance zoom effect driven by the card itself
-  const entranceScale = useTransform(cardScrollProgress, [0, 1], [0.8, 1])
+  const entranceScale = useTransform(cardScrollProgress, [0, 1], [0.6, 1])
   const opacity = useTransform(cardScrollProgress, [0, 1], [0, 1])
-  const filter = useTransform(cardScrollProgress, [0, 1], ['blur(10px)', 'blur(0px)'])
 
   // Combine the scales: it zooms in on entrance, then shrinks as others stack
   const scale = useTransform(() => shrinkScale.get() * entranceScale.get())
@@ -137,7 +136,7 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
   return (
     <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-6 sm:px-12">
       <motion.div 
-        style={{ scale, opacity, filter, top: `calc(-10vh + ${i * 25}px)` }} 
+        style={{ scale, opacity, top: `calc(-10vh + ${i * 25}px)` }} 
         className={`relative flex flex-col items-start p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
       >
         <div className="flex flex-col lg:flex-row justify-between gap-12 w-full">
