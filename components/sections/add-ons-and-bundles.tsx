@@ -7,13 +7,13 @@ const MAINTENANCE_PLANS = [
     title: "Essential Care",
     price: "$99",
     period: "/mo",
-    features: ["Daily Automated Backups", "24/7 Uptime Monitoring", "Core & Plugin Updates", "1 hr/mo Content Updates"]
+    features: ["Your site stays online 24/7. Zero downtime.", "Nightly backups so you never lose a single page", "Software stays current without you lifting a finger", "1 hour of fresh content updates every month"]
   },
   {
     title: "Performance Care",
     price: "$199",
     period: "/mo",
-    features: ["Everything in Essential", "Monthly Speed Audits", "Priority Email Support", "3 hrs/mo Content Updates"],
+    features: ["Everything in Essential, plus faster load times", "Monthly speed checks so homeowners never bounce", "Priority support when you need something changed now", "3 hours of content updates to keep your site sharp"],
     isPopular: true
   }
 ]
@@ -23,20 +23,20 @@ const SEO_PLANS = [
     title: "Local Foundation",
     price: "$499",
     period: "/mo",
-    features: ["2 Local Blog Posts/mo", "GBP Post Synchronization", "Basic Keyword Tracking", "Quarterly Strategy Report"]
+    features: ["2 blog posts per month that bring homeowners to you", "Your Google Business Profile stays active and visible", "We track your rankings so you see real progress", "Quarterly game plan so you always know the next move"]
   },
   {
     title: "Market Dominator",
     price: "$999",
     period: "/mo",
-    features: ["4 Authority Articles/mo", "Weekly GBP Optimization", "Advanced Rank Tracking", "Monthly Strategy Call"],
+    features: ["4 authority articles that make Google trust you more", "Weekly Google Profile updates that keep leads flowing", "Advanced rank tracking across every keyword that matters", "Monthly strategy call so we scale together"],
     isPopular: true
   },
   {
-    title: "Enterprise Takeover",
+    title: "Total Takeover",
     price: "$1,999",
     period: "/mo",
-    features: ["Max impact: 50 pages indexed at once", "Impact fades without Ultimate Arsenal", "Automated Review Sequences", "Competitor Gap Analysis"]
+    features: ["50 pages indexed at once for fastest possible results", "Full content engine running while you focus on jobs", "Automated review sequences that build trust on autopilot", "We find every gap your competitors leave open and fill it"]
   }
 ]
 
@@ -45,13 +45,13 @@ const AI_TOOLS = [
     title: "Missed Call Text Back",
     price: "$149",
     period: "/mo",
-    desc: "Never lose a lead. AI instantly texts back anyone who calls while you're on the job, securing the lead before they call the next painter."
+    desc: "Every missed call is a $5,000 job walking straight to your competitor. This tool texts the homeowner back instantly while you are on the ladder. You never lose a hot lead again."
   },
   {
     title: "AI Booking Assistant",
     price: "$299",
     period: "/mo",
-    desc: "A custom-trained AI chatbot that qualifies leads, answers pricing questions, and books estimates 24/7 directly on your site."
+    desc: "Your own booking agent that works 24/7 while you sleep. It answers questions, qualifies the lead, and books the estimate right on your site. You wake up to a full calendar."
   }
 ]
 
@@ -61,7 +61,7 @@ const BUNDLES = [
     price: "$1,150",
     period: "/mo",
     originalPrice: "$1,347/mo",
-    desc: "Performance Care + Market Dominator SEO + Missed Call Text Back. Everything you need to scale your lead flow consistently.",
+    desc: "Your site stays fast, your Google rankings climb every month, and every missed call gets caught automatically. This is the system that turns a good painting business into a booked-out one.",
     savings: "$197"
   },
   {
@@ -69,16 +69,16 @@ const BUNDLES = [
     price: "$2,250",
     period: "/mo",
     originalPrice: "$2,646/mo",
-    desc: "Performance Care + Enterprise Takeover SEO + AI Booking Assistant + Missed Call Text Back. Total market domination.",
+    desc: "Everything in the Growth Stack plus a 50-page content engine and a 24/7 AI booking agent. Your competitors will not understand how you are everywhere at once. This is total market takeover.",
     savings: "$396"
   }
 ]
 
 const AL_CARTE = [
-  { name: "Custom Logo Design", price: "$499", desc: "Professional, high-contrast branding." },
-  { name: "Additional Service Page", price: "$250", desc: "1,000+ words, SEO optimized." },
-  { name: "Location Hub Page", price: "$350", desc: "Geo-targeted for a specific city." },
-  { name: "Google Business Profile Setup", price: "$199", desc: "Full optimization and entity creation." }
+  { name: "Custom Logo Design", price: "$499", desc: "A logo that makes homeowners trust you before they even call." },
+  { name: "Additional Service Page", price: "$250", desc: "One more page ranking on Google, pulling in leads you are not getting today." },
+  { name: "Location Hub Page", price: "$350", desc: "Own the search results in a new city without opening a second office." },
+  { name: "Google Profile Setup", price: "$199", desc: "Your Google listing fully built out so you show up in the map pack from day one." }
 ]
 
 export function AddOnsAndBundles() {
@@ -89,13 +89,13 @@ export function AddOnsAndBundles() {
         
         {/* Header */}
         <div className="mb-20 lg:mb-32">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Growth & Operations</FadeIn>
-          <TextReveal 
-            text="SCALE YOUR ARSENAL." 
-            className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8" 
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Add More Firepower</FadeIn>
+          <TextReveal
+            text="STACK THE DECK."
+            className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8"
           />
           <FadeIn className="text-xl text-brand-charcoal/50 font-medium max-w-2xl">
-            From essential maintenance to automated lead generation. Add the tools you need to dominate your market.
+            Your site is the foundation. These tools turn it into a lead machine that works while you are on the job.
           </FadeIn>
         </div>
 
@@ -107,7 +107,7 @@ export function AddOnsAndBundles() {
             {/* 1. Maintenance Care Plans */}
             <div>
               <FadeIn className="flex items-center gap-4 mb-10 border-b border-brand-charcoal/10 pb-6">
-                <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">Website Maintenance<br/><span className="text-brand-charcoal/40">Care Plans</span></h3>
+                <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">Keep It Running<br/><span className="text-brand-charcoal/40">Maintenance Plans</span></h3>
               </FadeIn>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {MAINTENANCE_PLANS.map((plan, i) => (
@@ -131,7 +131,7 @@ export function AddOnsAndBundles() {
             {/* 2. SEO + Content Growth Plans */}
             <div>
               <FadeIn className="flex items-center gap-4 mb-10 border-b border-brand-charcoal/10 pb-6">
-                <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">SEO + Content<br/><span className="text-brand-charcoal/40">Growth Plans</span></h3>
+                <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">Get Found First<br/><span className="text-brand-charcoal/40">SEO Growth Plans</span></h3>
               </FadeIn>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {SEO_PLANS.map((plan, i) => (
@@ -155,7 +155,7 @@ export function AddOnsAndBundles() {
             {/* 5. A La Carte */}
             <div>
               <FadeIn className="flex items-center gap-4 mb-10 border-b border-brand-charcoal/10 pb-6">
-                <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">A La Carte<br/><span className="text-brand-charcoal/40">Add-On Services</span></h3>
+                <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">Pick What You Need<br/><span className="text-brand-charcoal/40">One-Time Add-Ons</span></h3>
               </FadeIn>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {AL_CARTE.map((item, i) => (
@@ -179,7 +179,7 @@ export function AddOnsAndBundles() {
               {/* 3. AI Tools */}
               <div>
                 <FadeIn className="flex items-center gap-4 mb-8">
-                  <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">AI Automation<br/><span className="text-brand-charcoal/40">Lead Generation</span></h3>
+                  <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight">Never Miss A Lead<br/><span className="text-brand-charcoal/40">AI Automation</span></h3>
                 </FadeIn>
                 <div className="flex flex-col gap-4">
                   {AI_TOOLS.map((tool, i) => (
@@ -200,8 +200,8 @@ export function AddOnsAndBundles() {
                   Best Value
                 </div>
                 <FadeIn className="mb-8">
-                  <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal mb-2">Save With Bundles</h3>
-                  <p className="text-sm font-sora font-bold tracking-widest uppercase text-brand-charcoal/60">Recommended Packages</p>
+                  <h3 className="text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal mb-2">Bundle And Save</h3>
+                  <p className="text-sm font-sora font-bold tracking-widest uppercase text-brand-charcoal/60">Smart Painters Pick These</p>
                 </FadeIn>
                 
                 <div className="flex flex-col gap-6">
