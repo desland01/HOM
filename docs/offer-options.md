@@ -1,69 +1,63 @@
-# Homeowner Marketers: Pilot Offer Options
+# Homeowner Marketers: The "Prove It First" Pilot Offer
 
-This document outlines the components, pricing, and structures of the current "Prove It First, Dominate Later" pilot offer for painting contractors.
-
----
-
-## 1. Core Value Proposition: "The Proof Period"
-The central pillar of the offer is a **90-Day Proof Period** where the technical and marketing engine is built and run to prove ROI before any long-term commitment.
-
-*   **14-Day Build:** Complete delivery of a high-performance Geo-Silo website.
-*   **90-Day Prove:** Aggressive SEO and GBP management included in the upfront investment.
-*   **Performance Guarantee:** 90+ Google PageSpeed score (Mobile & Desktop).
-*   **Zero Upfront Risk:** Pay $0 until the site is approved and goes live.
-*   **Walk-Away Clause:** If leads don't materialize in 90 days, the client can walk away with no further obligation.
+## TLDR: Zero-Risk Digital Dominance
+We build you a world-class, high-performance website in **14 days**. You pay **$0 upfront** until you approve the work. Once live, we run your marketing for **90 days** to prove we can generate a return. If you don't see the value after 90 days, you walk away with zero further obligation. It’s our way of proving we’re the best in the industry before you commit a dime of your long-term budget.
 
 ---
 
-## 2. Pilot Pricing Tiers (50% OFF)
-*Limited to the first 5 Pilot Partners.*
+## 1. The Component Explainer
 
-| Feature | Tier 1: Local Authority | Tier 2: Territory Dominator | Tier 3: Enterprise Takeover |
-| :--- | :--- | :--- | :--- |
-| **Target Revenue** | $250k - $500k | $500k - $1.5M | $1.5M+ |
-| **Pilot Price** | **$2,250** (was $4,500) | **$3,400** (was $6,800) | **$5,250** (was $10,500) |
-| **Build Delivery** | 14 Days | 14 Days | 14 Days |
-| **Location Hubs** | 1 Primary City | 1 Primary + 3 Secondary | 1 Primary + 6 Metro Hubs |
-| **Service Pages** | 4 Core Services | 4 Core + 12 Nested | Unlimited |
-| **Monthly Content** | 2 Blog Posts / mo | 4 Blog Posts / mo | 8 Blog Posts / mo |
-| **Strategy Calls** | Quarterly | Bi-Monthly | Monthly |
+### The 14-Day High-Speed Sprint (The Build)
+*   **What it does:** We build a custom, "machined" website designed specifically for high-end painting contractors in just two weeks.
+*   **Why it matters:** Most agencies take 3-6 months. We get you in front of customers while your competitors are still waiting on "first drafts."
+*   **Tech Specs:** Built on **Next.js** and hosted on the **Vercel Edge Network** for sub-second load times globally.
 
----
+### The Local Neighborhood Map (The Geo-Silo Structure)
+*   **What it does:** We build dedicated "hubs" for every city and neighborhood you service so you show up for "Painter in [City Name]" searches.
+*   **Why it matters:** It forces Google to see you as the local authority in every specific town you work in, not just your main office location.
+*   **Tech Specs:** **Geo-Silo URL Architecture** with automated **JSON-LD LocalBusiness Schema** mapping for every service area.
 
-## 3. Technical Build Components (Included in All Tiers)
-*   **Framework:** Custom Next.js Web Application (Astro alternative documented).
-*   **Hosting:** Vercel Edge Network for sub-second load times.
-*   **Architecture:** "Geo-Silo" model (Location-first URL structures).
-*   **Schema:** Full PaintingContractor + LocalBusiness JSON-LD mapping.
-*   **Conversion:** Sticky mobile CTAs, micro-animations, lead funnel integration.
-*   **Advanced Features:** 
-    *   **T2/T3:** Interactive Project Gallery (Filterable, location-tagged).
-    *   **T3 only:** Custom Paint Cost Calculator, Multi-step qualification funnels.
+### The Authority Engine (Monthly SEO & Content)
+*   **What it does:** We write professional articles and manage your Google Business Profile to keep you at the top of search results.
+*   **Why it matters:** A website is a Ferrari; SEO is the fuel. This ensures your site doesn't just look good but actually gets found by homeowners.
+*   **Tech Specs:** **Reverse-Silo Content Strategy** using **DataForSEO** API integration for real-time keyword tracking.
+
+### The Speed Shield (Performance Guarantee)
+*   **What it does:** We guarantee your site will load faster than 90% of the internet on both phones and computers.
+*   **Why it matters:** Homeowners leave slow sites in 3 seconds. Fast sites convert more visitors into leads and rank higher on Google.
+*   **Tech Specs:** Guaranteed **90+ Google PageSpeed Insights** score across all core web vitals.
 
 ---
 
-## 4. Monthly Marketing Engine (First 90 Days Included)
-*   **GBP Management:** Entity synchronization and monthly optimization.
-*   **SEO:** Reverse-Silo blog posts to build topical authority.
-*   **Tracking:** DataForSEO keyword tracking and transparent reporting.
-*   **GBP Optimization (T2/T3):** Weekly geo-tagged photo updates and review response management.
-*   **Advanced Support (T3 only):** Automated review generation sequences, dedicated Slack channel, and competitor gap analysis.
+## 2. Pilot Pricing Tiers & Market Comparables
+*Limited to the first 5 Pilot Partners. All prices reflect a 50% discount.*
+
+| Tier | Name | Pilot Investment | Retail Value | Market Comparable |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tier 1** | **Local Authority** | **$2,250** | $4,500 | $6k - $8k (Generic Agencies) |
+| **Tier 2** | **Territory Dominator** | **$3,400** | $6,800 | $10k - $15k (Specialized SEO) |
+| **Tier 3** | **Enterprise Takeover** | **$5,250** | $10,500 | $20k+ (Custom Enterprise) |
+
+### Tier Breakdown
+*   **Tier 1:** Best for $250k-$500k companies. Focuses on 1 city and 4 core services.
+*   **Tier 2:** Best for $500k-$1.5M companies. Covers a primary city + 3 surrounding towns with 16 dedicated pages.
+*   **Tier 3:** Best for $1.5M+ companies. Full metro-area takeover, unlimited pages, and a custom "Paint Cost Calculator" to capture high-intent leads.
 
 ---
 
-## 5. Post-Proof Growth Contracts (Month 4+)
-Clients choose their long-term growth path after the 90-day proof period.
+## 3. Ownership & Exit Options
 
-| Commitment | Tier 1 | Tier 2 | Tier 3 |
-| :--- | :--- | :--- | :--- |
-| **6 Months** | $850/mo | $1,400/mo | $2,500/mo |
-| **12 Months** | $750/mo | $1,250/mo | $2,250/mo |
-| **24 Months** | $650/mo | $1,100/mo | $2,000/mo |
+We believe in earned loyalty, not "hostage" contracts. You have two ways to own your digital asset outright:
 
----
+### The "Full Ownership" Upfront Option
+If you prefer to own the asset immediately without a 90-day proof period or monthly commitment:
+*   **Price:** 1.5x the Retail Value of your chosen tier (e.g., $6,750 for Tier 1).
+*   **Benefit:** Immediate transfer of all code, assets, and hosting. No monthly marketing fees required.
 
-## 6. Immutable Guarantees
-1.  **90+ PageSpeed:** If the site doesn't score 90+ on mobile/desktop, we fix it free.
-2.  **14-Day Build:** If we miss the 14-day delivery window, the client gets 20% off.
-3.  **Approval-First Payment:** No money changes hands until the client approves the build.
-4.  **The Exit Clause:** After 90 days, if not satisfied, we handle redirects back to the old site and part ways.
+### The "Contract Buyout" Clause (Take the Site With You)
+If you are in a growth contract (Month 4+) and want to leave while keeping the website:
+*   **Formula:** Remaining months on contract × 50% + a **$1,500 Technical Transfer Fee**.
+*   **Terms:** We hand over the keys to the Next.js repository and Vercel hosting. We handle the technical migration to your own accounts to ensure nothing breaks.
+
+### The "90-Day Walkaway" (Zero Cost Exit)
+*   If leads don't materialize during the 90-day Proof Period, you pay nothing more. We point your domain back to your old site, and we part ways as friends.
