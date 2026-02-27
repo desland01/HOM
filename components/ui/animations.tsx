@@ -12,6 +12,7 @@ export const FadeIn = ({ children, delay = 0, className = "" }: { children: Reac
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay }}
       className={className}
+      style={{ willChange: "transform, opacity" }}
     >
       {children}
     </motion.div>
@@ -53,6 +54,7 @@ export const TextReveal = ({ text, className = "", delay = 0 }: { text: string, 
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
+      style={{ willChange: "transform, opacity" }}
     >
       {words.map((word, index) => (
         <motion.span variants={child} key={index} className="mr-[0.25em] inline-block">
@@ -72,10 +74,9 @@ export const Parallax = ({ children, offset = 50, className = "" }: { children: 
   })
   
   const y = useTransform(scrollYProgress, [0, 1], [-offset, offset])
-  const springY = useSpring(y, { stiffness: 100, damping: 30, restDelta: 0.001 })
 
   return (
-    <motion.div ref={ref} style={{ y: springY }} className={className}>
+    <motion.div ref={ref} style={{ y, willChange: "transform" }} className={className}>
       {children}
     </motion.div>
   )
@@ -122,6 +123,7 @@ export const ScaleReveal = ({ children, delay = 0, className = "" }: { children:
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay }}
       className={className}
+      style={{ willChange: "transform, opacity" }}
     >
       {children}
     </motion.div>

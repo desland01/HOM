@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth snap-y snap-proximity">
+    <html lang="en" className="scroll-smooth">
       <body className={`${sora.variable} ${inter.variable} font-inter bg-brand-ivory text-brand-charcoal antialiased pt-12`}>
         {children}
       </body>

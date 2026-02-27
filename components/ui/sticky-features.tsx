@@ -88,28 +88,25 @@ export const StickyFeatures = () => {
   ]
 
   return (
-    <div ref={containerRef} className="relative pb-[10vh]">
+    <div ref={containerRef} className="relative bg-transparent" style={{ height: `${features.length * 100}vh` }}>
       <FeatureModal 
         isOpen={!!selectedFeature} 
         onClose={() => setSelectedFeature(null)} 
         feature={selectedFeature} 
       />
 
-      {features.map((feature, i) => {
-        const targetScale = 1 - (features.length - i) * 0.05
-        
-        return (
+      <div className="sticky top-0 h-[100dvh] w-full overflow-hidden">
+        {features.map((feature, i) => (
           <Card 
             key={i} 
             i={i} 
             {...feature} 
             progress={scrollYProgress} 
-            range={[i * 0.25, 1]} 
-            targetScale={targetScale}
+            total={features.length}
             onOpenModal={() => setSelectedFeature(featureDetails[feature.featureKey])}
           />
-        )
-      })}
+        ))}
+      </div>
     </div>
   )
 }
@@ -122,35 +119,54 @@ interface CardProps {
   textColor: string
   number: string
   progress: MotionValue<number>
-  range: [number, number]
-  targetScale: number
+  total: number
   onOpenModal: () => void
 }
 
-const Card = ({ i, title, description, color, textColor, number, progress, range, targetScale, onOpenModal }: CardProps) => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  
-  // Track this specific card's entrance
-  const { scrollYProgress: cardScrollProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'start start']
-  })
+const Card = ({ i, title, description, color, textColor, number, progress, total, onOpenModal }: CardProps) => {
+  const entranceStart = i === 0 ? 0 : (i - 1) / (total - 1)
+  const entranceEnd = i === 0 ? 0 : i / (total - 1)
 
-  // The shrink effect driven by the parent container as subsequent cards stack
-  const shrinkScale = useTransform(progress, range, [1, targetScale])
-  
-  // The entrance zoom effect driven by the card itself
-  const entranceScale = useTransform(cardScrollProgress, [0, 1], [0.6, 1])
-  const opacity = useTransform(cardScrollProgress, [0, 1], [0, 1])
+  // Move the wrapper up from 120% to 0% to slide the card in.
+  const y = useTransform(
+    progress,
+    [entranceStart, entranceEnd],
+    [i === 0 ? '0%' : '120%', '0%']
+  )
 
-  // Combine the scales: it zooms in on entrance, then shrinks as others stack
-  const scale = useTransform(() => shrinkScale.get() * entranceScale.get())
+  // Fade in during the slide
+  const opacity = useTransform(
+    progress,
+    [entranceStart, entranceEnd],
+    [i === 0 ? 1 : 0, 1]
+  )
+
+  // Shrink the inner card as subsequent cards slide over it
+  const targetScale = 1 - (total - i - 1) * 0.05
+  const scale = useTransform(
+    progress,
+    [entranceEnd, 1],
+    [1, targetScale]
+  )
 
   return (
-    <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-4 sm:px-12 snap-start">
+    <motion.div 
+      style={{ 
+        y, 
+        opacity,
+        willChange: "transform, opacity",
+        zIndex: i 
+      }} 
+      className="absolute inset-0 flex items-center justify-center px-4 sm:px-12 pointer-events-none"
+    >
       <motion.div 
-        style={{ scale, opacity, top: `calc(-10vh + ${i * 25}px)` }} 
-        className={`relative flex flex-col flex-grow items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85dvh] sm:min-h-[60dvh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
+        style={{ 
+          scale,
+          willChange: "transform",
+          // Calculate stagger offset for visual stacking
+          marginTop: `${i * 20 - 40}px` 
+        }}
+        className={`relative flex flex-col items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85dvh] sm:min-h-[60dvh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden pointer-events-auto ${color} ${textColor}`}
       >
         <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 w-full h-full flex-grow">
           <div className="lg:w-2/3 flex flex-col items-start w-full h-full flex-grow">
@@ -183,6 +199,6 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
           </div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
