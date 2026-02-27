@@ -154,10 +154,10 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
                   : 'border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-brand-mustard'
               }`}
             >
-              {/* Soft, pulsing ember glow hugging the border */}
-              <span className={`absolute inset-0 rounded-full animate-ember ${textColor === 'text-brand-ivory' ? 'bg-brand-mustard' : 'bg-brand-charcoal'}`}></span>
+              {/* Soft, pulsing ember glow emitting from the border */}
+              <span className={`absolute inset-[-2px] rounded-full border-2 animate-ember ${textColor === 'text-brand-ivory' ? 'border-brand-mustard' : 'border-brand-charcoal'}`}></span>
               {/* Inner subtle continuous glow on hover to intensify the ember tight to the border */}
-              <span className={`absolute inset-0 rounded-full blur-sm opacity-0 group-hover:opacity-40 transition-opacity duration-300 scale-105 ${textColor === 'text-brand-ivory' ? 'bg-brand-mustard' : 'bg-brand-charcoal'}`}></span>
+              <span className={`absolute inset-[-2px] rounded-full border-2 blur-sm opacity-0 group-hover:opacity-50 transition-opacity duration-300 scale-105 ${textColor === 'text-brand-ivory' ? 'border-brand-mustard' : 'border-brand-charcoal'}`}></span>
               
               <span className="relative z-10">See Tier Details +</span>
             </button>

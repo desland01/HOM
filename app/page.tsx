@@ -334,7 +334,7 @@ export default function Home() {
             initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }}
             className="fixed bottom-0 left-0 right-0 p-4 z-50 lg:hidden"
           >
-            <Link href="#tiers" className="flex items-center justify-center w-full py-5 bg-brand-charcoal text-brand-ivory font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform">
+            <Link href="#tiers" className="flex items-center justify-center w-full py-5 bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform">
               See If You Qualify ↓
             </Link>
           </motion.div>

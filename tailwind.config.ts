@@ -29,7 +29,7 @@ const config: Config = {
       },
       animation: {
         'marquee': 'marquee 25s linear infinite',
-        'ember': 'ember 3s ease-in-out infinite',
+        'ember': 'ember 1.5s ease-in-out infinite',
       },
       keyframes: {
         marquee: {
@@ -37,8 +37,8 @@ const config: Config = {
           '100%': { transform: 'translateX(-100%)' },
         },
         ember: {
-          '0%, 100%': { opacity: '0.1', filter: 'blur(4px)', transform: 'scale(1.02)' },
-          '50%': { opacity: '0.5', filter: 'blur(6px)', transform: 'scale(1.05)' },
+          '0%, 100%': { opacity: '0.12', filter: 'blur(4px)', transform: 'scale(1.02)' },
+          '50%': { opacity: '0.6', filter: 'blur(6px)', transform: 'scale(1.05)' },
         }
       }
     },
