@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- Restructured `docs/core-message.md` into a formal brand messaging architecture, highlighting de-commoditization, Agentic Engineering USPs, and the funnel architecture.
 - **Messaging Pivot:** Shifted core offer messaging from "no 12-month lock-ins" to "paying for speed and precision." Emphasized that 90-day proof engine transitions into a mandatory 12-month recurring growth plan.
 - Updated `components/sections/add-ons-and-bundles.tsx` to explicitly state that the Enterprise Takeover tier indexes 50 pages at once for max start velocity.
 
