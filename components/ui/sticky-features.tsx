@@ -7,11 +7,11 @@ import { FeatureModal, FeatureDetail } from '@/components/ui/feature-modal'
 const featureDetails: Record<string, FeatureDetail> = {
   "geo-silos": {
     title: "Your City, Your Territory",
-    description: "When a homeowner in your area searches for a painter, your name should be the first one they see. We build your site so both Google and the new AI search engines treat you as the go-to authority in every neighborhood you serve.",
+    description: "When a homeowner in your area searches for a painter -- whether on Google or asking ChatGPT -- your name should be the first one they see. We build your site with G.E.O. optimization so both traditional and AI search engines treat you as the go-to authority in every neighborhood you serve.",
     tiers: {
-      t1: "Locks down your primary city. Your core services rank in the one market that matters most to your bottom line right now.",
-      t2: "Expands into 3 surrounding suburbs where high-value homeowners live. You show up in every search across your real service area.",
-      t3: "Full metro takeover. Every city, every suburb, every neighborhood in your region points back to you. Your competitors fight over scraps."
+      t1: "Locks down your primary city on Google. Your core services rank in the one market that matters most to your bottom line right now. Includes traditional search optimization -- AI citation optimization is not included at this tier.",
+      t2: "Expands into 3 surrounding suburbs where high-value homeowners live. Includes basic G.E.O. -- your site gets optimized with answer capsules and schema markup so AI search engines like ChatGPT and Google AI start recommending you alongside your traditional Google rankings.",
+      t3: "Full metro takeover with the complete G.E.O. suite. Every city and suburb ranks on Google, plus advanced AI citation optimization across all platforms, competitive AI monitoring, and cross-platform presence strategy. Your competitors fight over scraps while AI search engines recommend you by name."
     }
   },
   "proof-engine": {
@@ -55,7 +55,7 @@ export const StickyFeatures = () => {
   const features = [
     {
       title: "Own Your City",
-      description: "Google is not the only search engine anymore. ChatGPT, Google AI, and Siri are all recommending painters now. Your site will be built so every single one of them sends homeowners to you first.",
+      description: "Google is not the only search engine anymore. When homeowners ask ChatGPT or Google AI for a painter recommendation, our G.E.O. (Generative Engine Optimization) makes sure your site is the one that gets cited. We optimize for every search engine -- traditional and AI -- so they all send homeowners to you first.",
       color: "bg-brand-charcoal",
       textColor: "text-brand-ivory",
       number: "01",

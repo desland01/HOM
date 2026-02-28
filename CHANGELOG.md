@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **G.E.O. Optimization Feature (comparison-table.tsx, sticky-features.tsx, page.tsx):** Added Generative Engine Optimization (G.E.O.) as a tiered feature across the landing page. Tier 2 gets basic AI search optimization (answer capsules, core schema markup). Tier 3 gets the full G.E.O. suite (advanced schema, cross-platform presence, AI bot optimization, competitive monitoring). New "AI Optimization" section in the comparison table with 2 rows and an educational modal explaining how we optimize client sites for LLM citation by ChatGPT, Google AI, and Perplexity. Updated Feature 01 "Own Your City" sticky card to explicitly reference G.E.O. methodology.
+
 ### Fixed
 - **iOS Mobile Scroll Lag (layout.tsx, page.tsx, sticky-features.tsx):** Resolved jerky scroll and layout thrashing on iOS devices caused by the native address bar expanding/collapsing. Changed `scroll-smooth` to `md:scroll-smooth` in `layout.tsx` to prevent CSS smooth scroll from conflicting with iOS momentum scroll. Replaced dynamic `dvh` units with static `svh` units (`min-h-[100svh]`, `min-h-[85svh]`, `min-h-[60svh]`) across main layouts and sticky wrappers to prevent browser resize events from forcing Framer Motion to recalculate layout mid-scroll. Removed `snap-start` from sticky cards to decouple from native snapping behavior.
 - **Sticky Card Position Drift on Mobile (sticky-features.tsx):** Replaced per-card top offset (`calc(-10vh + ${i * 25}px)`) with a fixed value (`calc(-10vh + 75px)`) so all 4 cards stop at the same viewport position. Compressed fade-out to 40% of step duration to eliminate previous-card text bleed-through. Last card now keeps full scale (no shrink). Increased container bottom padding from `pb-[10vh]` to `pb-[30vh]` for a clean push-out exit.

@@ -225,7 +225,8 @@ export default function Home() {
                   "Show up in 3 surrounding cities, not just one",
                   "12 pages targeting every service homeowners search for",
                   "Photo gallery that makes your best jobs sell for you",
-                  "Areas We Serve page so locals know you cover their town"
+                  "Areas We Serve page so locals know you cover their town",
+                  "G.E.O. optimization so AI search engines recommend you too"
                 ]}
                 monthlyFeatures={[
                   "4 blog posts per month driving local search traffic",
@@ -243,6 +244,7 @@ export default function Home() {
                 buildFeatures={[
                   "Dominate 6 cities across your entire metro area",
                   "Unlimited service pages for every job type you do",
+                  "Full G.E.O. suite so ChatGPT, Perplexity, and Google AI all cite your site",
                   "Online paint cost calculator that pre-qualifies leads",
                   "Multi-step intake form that filters out budget shoppers",
                   "Trust badges, reviews, and proof that close on autopilot"

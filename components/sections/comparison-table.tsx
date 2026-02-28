@@ -58,6 +58,15 @@ const featureDetails: Record<string, FeatureDetail> = {
       t2: "Adds a visual project gallery that shows off your best work. Homeowners see your quality before they call, so they show up pre-sold.",
       t3: "Custom cost calculator plus multi-step qualification that pre-sells your premium pricing. Tire-kickers drop off. Serious buyers book."
     }
+  },
+  "geo-optimization": {
+    title: "G.E.O. -- Built for AI Search",
+    description: "When homeowners ask ChatGPT, Google AI, or Perplexity for a painter recommendation, those tools pull their answers from websites. G.E.O. (Generative Engine Optimization) is how we make sure YOUR site is the one they recommend. We structure your content, add the right data signals, and keep everything fresh so AI search engines see you as the top local authority -- not your competitor down the street.",
+    tiers: {
+      t1: "G.E.O. is not included at this tier. Your site still ranks on traditional Google search, but AI-powered search engines will not prioritize your business. Upgrade to Tier 2 to start showing up in AI recommendations.",
+      t2: "We add answer-ready content blocks to your key pages so AI tools can pull direct quotes about your services. Your site gets foundational schema markup (LocalBusiness + BreadcrumbList) that tells AI exactly who you are, where you work, and what you do. Content stays fresh with regular updates so AI engines keep coming back.",
+      t3: "The full G.E.O. suite. Everything in Tier 2 plus advanced schema for FAQs, services, how-to guides, and reviews. We build an expert attribution strategy so AI cites you by name. Cross-platform presence amplification puts your brand on the 4+ platforms AI tools scan most. Includes AI bot crawl optimization, a dedicated llms.txt endpoint, and competitive monitoring so you always know where you stand in AI search results."
+    }
   }
 }
 
@@ -148,6 +157,14 @@ export const ComparisonTable = () => {
               <TableRow title="Keyword Rank Tracking" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
               <TableRow title="Strategy Calls" t1="Quarterly" t2="Bi-Monthly" t3="Monthly" isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
               <TableRow title="Dedicated Slack Channel" t1={xmark} t2={xmark} t3={check} isPop borderBottom />
+
+              {/* AI OPTIMIZATION */}
+              <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
+                <td colSpan={4} className="p-4 lg:px-8">AI Optimization</td>
+              </tr>
+
+              <TableRow title="G.E.O. Optimization" t1={xmark} t2="Basic" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['geo-optimization'])} />
+              <TableRow title="AI Search Schema Markup" t1={xmark} t2="Core" t3="Advanced" isPop onInfo={() => setSelectedFeature(featureDetails['geo-optimization'])} borderBottom />
 
               {/* TECHNICAL */}
               <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
