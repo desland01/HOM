@@ -22,7 +22,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-[100dvh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip pb-24 lg:pb-0">
+    <main className="min-h-[100svh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip pb-24 lg:pb-0">
       {/* STICKY TOP BANNER */}
       <AnimatePresence>
         {showBanner && (

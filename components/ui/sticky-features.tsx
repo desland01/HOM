@@ -163,10 +163,10 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
   const scale = useTransform(() => shrinkScale.get() * entranceScale.get())
 
   return (
-    <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-4 sm:px-12 snap-start">
+    <div ref={containerRef} className="h-[100svh] flex items-center justify-center sticky top-0 px-4 sm:px-12">
       <motion.div 
         style={{ scale, opacity, top: 'calc(-10vh + 75px)' }} 
-        className={`relative flex flex-col flex-grow items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85dvh] sm:min-h-[60dvh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
+        className={`relative flex flex-col flex-grow items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85svh] sm:min-h-[60svh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
       >
         <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 w-full h-full flex-grow">
           <div className="lg:w-2/3 flex flex-col items-start w-full h-full flex-grow">
