@@ -129,17 +129,17 @@ export default function Home() {
 
       {/* INFINITE MARQUEE STRIP */}
       <section className="py-6 bg-brand-charcoal text-brand-mustard border-b-4 border-brand-mustard overflow-hidden flex whitespace-nowrap">
-        <div className="animate-marquee flex gap-12 text-xl font-sora font-extrabold uppercase tracking-widest min-w-full justify-around items-center">
-          <span>Built in 14 Days</span> <span className="text-brand-ivory/20">•</span>
-          <span>5 Spots Left</span> <span className="text-brand-ivory/20">•</span>
-          <span>90-Day Proof or Walk Away</span> <span className="text-brand-ivory/20">•</span>
-          <span>Attract Higher-Paying Jobs</span> <span className="text-brand-ivory/20">•</span>
+        <div className="animate-marquee flex shrink-0 gap-12 text-xl font-sora font-extrabold uppercase tracking-widest items-center">
+          <span className="shrink-0">Built in 14 Days</span> <span className="shrink-0 text-brand-ivory/20">•</span>
+          <span className="shrink-0">5 Spots Left</span> <span className="shrink-0 text-brand-ivory/20">•</span>
+          <span className="shrink-0">90-Day Proof or Walk Away</span> <span className="shrink-0 text-brand-ivory/20">•</span>
+          <span className="shrink-0">Attract Higher-Paying Jobs</span> <span className="shrink-0 text-brand-ivory/20">•</span>
         </div>
-        <div className="animate-marquee flex gap-12 text-xl font-sora font-extrabold uppercase tracking-widest min-w-full justify-around items-center ml-12" aria-hidden="true">
-          <span>Built in 14 Days</span> <span className="text-brand-ivory/20">•</span>
-          <span>5 Spots Left</span> <span className="text-brand-ivory/20">•</span>
-          <span>90-Day Proof or Walk Away</span> <span className="text-brand-ivory/20">•</span>
-          <span>Attract Higher-Paying Jobs</span> <span className="text-brand-ivory/20">•</span>
+        <div className="animate-marquee flex shrink-0 gap-12 text-xl font-sora font-extrabold uppercase tracking-widest items-center" aria-hidden="true">
+          <span className="shrink-0">Built in 14 Days</span> <span className="shrink-0 text-brand-ivory/20">•</span>
+          <span className="shrink-0">5 Spots Left</span> <span className="shrink-0 text-brand-ivory/20">•</span>
+          <span className="shrink-0">90-Day Proof or Walk Away</span> <span className="shrink-0 text-brand-ivory/20">•</span>
+          <span className="shrink-0">Attract Higher-Paying Jobs</span> <span className="shrink-0 text-brand-ivory/20">•</span>
         </div>
       </section>
 
