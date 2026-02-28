@@ -88,7 +88,7 @@ export const StickyFeatures = () => {
   ]
 
   return (
-    <div ref={containerRef} className="relative pb-[10vh]">
+    <div ref={containerRef} className="relative pb-[30vh]">
       <FeatureModal 
         isOpen={!!selectedFeature} 
         onClose={() => setSelectedFeature(null)} 
@@ -96,7 +96,7 @@ export const StickyFeatures = () => {
       />
 
       {features.map((feature, i) => {
-        const targetScale = 1 - (features.length - i) * 0.05
+        const targetScale = i === features.length - 1 ? 1 : 1 - (features.length - i) * 0.05
         
         return (
           <Card
@@ -149,7 +149,7 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
   // Fade out as the next card stacks on top (last card never fades out)
   const step = 1 / totalCards
   const fadeOutStart = (i + 1) * step
-  const fadeOutEnd = Math.min(fadeOutStart + step, 1)
+  const fadeOutEnd = fadeOutStart + step * 0.4
   const fadeOut = useTransform(progress, [fadeOutStart, fadeOutEnd], [1, 0])
 
   // Combine fade-in and fade-out into a single opacity value
@@ -165,7 +165,7 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
   return (
     <div ref={containerRef} className="h-[100dvh] flex items-center justify-center sticky top-0 px-4 sm:px-12 snap-start">
       <motion.div 
-        style={{ scale, opacity, top: `calc(-10vh + ${i * 25}px)` }} 
+        style={{ scale, opacity, top: 'calc(-10vh + 75px)' }} 
         className={`relative flex flex-col flex-grow items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85dvh] sm:min-h-[60dvh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
       >
         <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 w-full h-full flex-grow">
