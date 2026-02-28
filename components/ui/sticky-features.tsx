@@ -88,7 +88,7 @@ export const StickyFeatures = () => {
   ]
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative pb-[50vh]">
       <FeatureModal 
         isOpen={!!selectedFeature} 
         onClose={() => setSelectedFeature(null)} 
@@ -162,27 +162,12 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
   // Combine the scales: it zooms in on entrance, then shrinks as others stack
   const scale = useTransform(() => shrinkScale.get() * entranceScale.get())
 
-  // For the last card, we use a 100svh outer wrapper to ensure the parent container extends to the bottom of the screen.
-  // The inner div is sticky, allowing it to slide down within that 100svh outer wrapper.
-  // The next section will exactly track the bottom of the 100svh wrapper, meaning it will slide up and touch the
-  // bottom of the sticky card right as the sticky constraint ends, flawlessly pushing it out of view.
-  const wrapperClasses = isLast 
-    ? "h-[100svh] w-full flex flex-col justify-start relative px-4 sm:px-12" 
-    : "h-[100svh] flex items-center justify-center sticky top-0 px-4 sm:px-12"
-    
-  const innerStickyClasses = isLast 
-    ? "sticky top-[5vh] sm:top-[10vh] lg:top-[15vh] h-fit w-full flex justify-center z-10" 
-    : "w-full flex justify-center"
-
-  const motionTop = isLast ? '0px' : 'calc(-10vh + 75px)'
-
   return (
-    <div ref={containerRef} className={wrapperClasses}>
-      <div className={innerStickyClasses}>
-        <motion.div 
-          style={{ scale, opacity, top: motionTop }} 
-          className={`relative flex flex-col flex-grow items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85svh] sm:min-h-[60svh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
-        >
+    <div ref={containerRef} className="h-[100svh] flex items-center justify-center sticky top-0 px-4 sm:px-12">
+      <motion.div 
+        style={{ scale, opacity, top: 'calc(-10vh + 75px)' }} 
+        className={`relative flex flex-col flex-grow items-start p-8 sm:p-10 lg:p-20 rounded-3xl origin-top w-full max-w-[1000px] min-h-[85svh] sm:min-h-[60svh] lg:min-h-0 border border-black/10 shadow-2xl overflow-hidden ${color} ${textColor}`}
+      >
         <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 w-full h-full flex-grow">
           <div className="lg:w-2/3 flex flex-col items-start w-full h-full flex-grow">
             <div className={`text-base sm:text-sm font-sora font-extrabold tracking-[0.3em] sm:tracking-[0.2em] mb-8 sm:mb-8 ${textColor === 'text-brand-ivory' ? 'text-brand-mustard' : 'text-brand-charcoal/50'}`}>Feature {number}</div>
@@ -214,7 +199,6 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
           </div>
         </div>
       </motion.div>
-      </div>
     </div>
   )
 }
