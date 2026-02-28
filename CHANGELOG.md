@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+- **Sticky Features Mobile Lock-In Fix (sticky-features.tsx):** Completely redesigned the final sticky card tracking mechanism. Reverted the wrapper to `h-[100svh]` to give the containing block the necessary scroll space, and moved the `sticky` property down to the inner card wrapper. Removed the generic padding (`pb-[50vh]`) from the main section container. This creates a perfect native CSS interaction where the last card remains solidly locked in place while the "Proven Results" section physically slides up to touch its bottom edge before seamlessly pushing it out of the viewport.
+
 
 ### Added
 - **G.E.O. Optimization Feature (comparison-table.tsx, sticky-features.tsx, page.tsx):** Added Generative Engine Optimization (G.E.O.) as a tiered feature across the landing page. Tier 2 gets basic AI search optimization (answer capsules, core schema markup). Tier 3 gets the full G.E.O. suite (advanced schema, cross-platform presence, AI bot optimization, competitive monitoring). New "AI Optimization" section in the comparison table with 2 rows and an educational modal explaining how we optimize client sites for LLM citation by ChatGPT, Google AI, and Perplexity. Updated Feature 01 "Own Your City" sticky card to explicitly reference G.E.O. methodology.
