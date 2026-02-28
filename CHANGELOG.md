@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Mobile Banner Overlap (layout.tsx, page.tsx):** Removed static `pt-12` from body and moved clearance into the hero section with proper banner-aware padding (`pt-[72px]` when banner shown, `pt-6` when hidden; `lg:pt-24`/`lg:pt-16` on desktop). Eliminates the 8px gap between the 56px fixed banner and the old 48px body padding, and responds dynamically when the banner is dismissed.
+- **Footer Overlap from Fixed CTA (page.tsx):** Added `pb-24 lg:pb-0` to `<main>` so the fixed bottom "Check Availability" bar no longer covers footer content on mobile.
+- **Sticky Card Text Bleed-Through (sticky-features.tsx):** Added scroll-driven fade-out so each stacking card's text disappears as the next card overlaps it. Split the single `opacity` into `fadeIn` (entrance) x `fadeOut` (exit driven by parent scroll progress). Last card never fades out.
+
 ### Changed
 - **Pilot Packages (page.tsx):** Removed the revenue qualifier (e.g., "Painters doing $250k - $500k") from the `TierCard` components and updated the layout margin to maintain proper spacing.
 - **Problem Cards Layout (page.tsx):** Updated the `ProblemCard` component to use a flex layout, placing the "x" icon inline with the title to reduce dead space and create a tighter, more cohesive card structure.
