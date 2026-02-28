@@ -149,7 +149,7 @@ const Card = ({ i, title, description, color, textColor, number, progress, range
   // Fade out as the next card stacks on top (last card never fades out)
   const step = 1 / totalCards
   const fadeOutStart = (i + 1) * step
-  const fadeOutEnd = fadeOutStart + step * (0.2 + i * 0.1)
+  const fadeOutEnd = fadeOutStart + step * (0.1 + i * 0.1)
   const fadeOut = useTransform(progress, [fadeOutStart, fadeOutEnd], [1, 0])
 
   // Combine fade-in and fade-out into a single opacity value
