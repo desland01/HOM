@@ -88,7 +88,7 @@ export const StickyFeatures = () => {
   ]
 
   return (
-    <div ref={containerRef} className="relative pb-[30vh]">
+    <div ref={containerRef} className="relative pb-[50vh]">
       <FeatureModal 
         isOpen={!!selectedFeature} 
         onClose={() => setSelectedFeature(null)} 
