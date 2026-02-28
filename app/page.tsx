@@ -164,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* THE SOLUTION — STICKY STACKING CARDS */}
-      <section className="py-24 lg:py-40 bg-brand-charcoal text-brand-ivory relative overflow-visible">
+      <section className="pt-24 lg:pt-40 bg-brand-charcoal text-brand-ivory relative overflow-visible">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05] pointer-events-none" />
         
         <div className="max-w-[1440px] mx-auto px-6 sm:px-12 mb-24 lg:mb-40 relative z-10 text-center">

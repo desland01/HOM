@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Hero Bottom Overlap on Mobile (page.tsx):** The 50% OFF card's transformed shadow elements (`translate-y-8` + `blur-xl` = ~56px visual overflow) bled into the marquee strip below. Increased hero bottom padding from `pb-8` (32px) to `pb-20` (80px) on mobile. Changed `overflow-hidden` to `overflow-clip` to prevent Safari from letting CSS-transformed elements escape the clipping boundary.
 
 ### Changed
+- **Sticky Features to Portfolio Transition (page.tsx):** Removed bottom padding (`pb-24 lg:pb-40`) from "The Solution" section so the following "Proven Results" (Portfolio) section seamlessly slides up and physically pushes the final "Instant Load Speed" sticky card out of the viewport. Eliminates the previous blank gap and creates a continuous scrolling narrative.
 - **Pilot Packages (page.tsx):** Removed the revenue qualifier (e.g., "Painters doing $250k - $500k") from the `TierCard` components and updated the layout margin to maintain proper spacing.
 - **Problem Cards Layout (page.tsx):** Updated the `ProblemCard` component to use a flex layout, placing the "x" icon inline with the title to reduce dead space and create a tighter, more cohesive card structure.
 
