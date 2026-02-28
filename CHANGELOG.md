@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- **Sticky Card Position Drift on Mobile (sticky-features.tsx):** Replaced per-card top offset (`calc(-10vh + ${i * 25}px)`) with a fixed value (`calc(-10vh + 75px)`) so all 4 cards stop at the same viewport position. Compressed fade-out to 40% of step duration to eliminate previous-card text bleed-through. Last card now keeps full scale (no shrink). Increased container bottom padding from `pb-[10vh]` to `pb-[30vh]` for a clean push-out exit.
 - **Marquee Text Overlap on Mobile (page.tsx):** Replaced `min-w-full justify-around` with `shrink-0` on both track divs and all span items so marquee text never compresses on narrow viewports. Removed `ml-12` from the duplicate track. Fixes text overlapping at 375px and eliminates the snap-back loop artifact.
 - **Mobile Banner Overlap (layout.tsx, page.tsx):** Removed static `pt-12` from body and moved clearance into the hero section with proper banner-aware padding (`pt-[72px]` when banner shown, `pt-6` when hidden; `lg:pt-24`/`lg:pt-16` on desktop). Eliminates the 8px gap between the 56px fixed banner and the old 48px body padding, and responds dynamically when the banner is dismissed.
 - **Footer Overlap from Fixed CTA (page.tsx):** Added `pb-24 lg:pb-0` to `<main>` so the fixed bottom "Check Availability" bar no longer covers footer content on mobile.
