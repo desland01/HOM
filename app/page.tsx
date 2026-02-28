@@ -206,6 +206,7 @@ export default function Home() {
                   "Your #1 city shows up when homeowners search",
                   "4 service pages that sell your best work",
                   "Built to rank on Google and AI search engines",
+                  "Basic G.E.O. so AI search engines can find and recommend you",
                   "Lead capture form that filters out tire-kickers"
                 ]}
                 monthlyFeatures={[
@@ -226,7 +227,7 @@ export default function Home() {
                   "12 pages targeting every service homeowners search for",
                   "Photo gallery that makes your best jobs sell for you",
                   "Areas We Serve page so locals know you cover their town",
-                  "G.E.O. optimization so AI search engines recommend you too"
+                  "Advanced G.E.O. with expert citations and rich schema for AI search"
                 ]}
                 monthlyFeatures={[
                   "4 blog posts per month driving local search traffic",

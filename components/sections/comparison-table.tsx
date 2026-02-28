@@ -63,9 +63,9 @@ const featureDetails: Record<string, FeatureDetail> = {
     title: "G.E.O. -- Built for AI Search",
     description: "When homeowners ask ChatGPT, Google AI, or Perplexity for a painter recommendation, those tools pull their answers from websites. G.E.O. (Generative Engine Optimization) is how we make sure YOUR site is the one they recommend. We structure your content, add the right data signals, and keep everything fresh so AI search engines see you as the top local authority -- not your competitor down the street.",
     tiers: {
-      t1: "G.E.O. is not included at this tier. Your site still ranks on traditional Google search, but AI-powered search engines will not prioritize your business. Upgrade to Tier 2 to start showing up in AI recommendations.",
-      t2: "We add answer-ready content blocks to your key pages so AI tools can pull direct quotes about your services. Your site gets foundational schema markup (LocalBusiness + BreadcrumbList) that tells AI exactly who you are, where you work, and what you do. Content stays fresh with regular updates so AI engines keep coming back.",
-      t3: "The full G.E.O. suite. Everything in Tier 2 plus advanced schema for FAQs, services, how-to guides, and reviews. We build an expert attribution strategy so AI cites you by name. Cross-platform presence amplification puts your brand on the 4+ platforms AI tools scan most. Includes AI bot crawl optimization, a dedicated llms.txt endpoint, and competitive monitoring so you always know where you stand in AI search results."
+      t1: "Your key pages get answer-ready content blocks so AI tools like ChatGPT and Google AI can pull direct quotes about your services. We add core schema markup (LocalBusiness + BreadcrumbList) that tells AI exactly who you are, where you work, and what you do. Content stays fresh with regular updates so AI engines keep coming back to your site.",
+      t2: "Everything in the basic tier plus richer schema for FAQs and services that tells AI exactly what you offer in each city. We build an expert attribution strategy so AI cites you by name -- not just your business. Your site gets AI bot crawl optimization and a dedicated llms.txt endpoint so every AI search engine can read your content fast.",
+      t3: "The full G.E.O. suite. Everything in the advanced tier plus schema for how-to guides, reviews, and video content. Cross-platform presence amplification puts your brand on the 4+ platforms AI tools scan most. Includes competitive AI citation monitoring across all platforms so you always know where you stand -- and where your competitors do not."
     }
   }
 }
@@ -163,8 +163,8 @@ export const ComparisonTable = () => {
                 <td colSpan={4} className="p-4 lg:px-8">AI Optimization</td>
               </tr>
 
-              <TableRow title="G.E.O. Optimization" t1={xmark} t2="Basic" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['geo-optimization'])} />
-              <TableRow title="AI Search Schema Markup" t1={xmark} t2="Core" t3="Advanced" isPop onInfo={() => setSelectedFeature(featureDetails['geo-optimization'])} borderBottom />
+              <TableRow title="G.E.O. Optimization" t1="Basic" t2="Advanced" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['geo-optimization'])} />
+              <TableRow title="AI Search Schema Markup" t1="Core" t2="Extended" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['geo-optimization'])} borderBottom />
 
               {/* TECHNICAL */}
               <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
