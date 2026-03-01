@@ -1,72 +1,201 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
+import { FadeIn, TextReveal, ScaleReveal } from '@/components/ui/animations'
+import { ThreeFlashPreview } from '@/components/ui/three-flash-preview'
 
-import { StoryHero } from '@/components/sections/story-hero'
-import { StoryTrustBar } from '@/components/sections/story-trust-bar'
-import { StoryVillain } from '@/components/sections/story-villain'
-import { StoryEpiphany } from '@/components/sections/story-epiphany'
-import { StoryPlan } from '@/components/sections/story-plan'
-import { PortfolioViewports } from '@/components/sections/portfolio-viewports'
-import { StoryUrgency } from '@/components/sections/story-urgency'
-import { StoryMicDrop } from '@/components/sections/story-mic-drop'
+const TIERS = [
+  {
+    id: 'foundation',
+    name: 'Local Foundation',
+    price: '$2,250',
+    desc: 'Best for single-city dominance.',
+    subject: 'Pilot Application - Tier 1 Foundation'
+  },
+  {
+    id: 'expansion',
+    name: 'Territory Expansion',
+    price: '$3,400',
+    desc: 'Capture 4 surrounding suburbs.',
+    subject: 'Pilot Application - Tier 2 Expansion',
+    isPopular: true
+  },
+  {
+    id: 'takeover',
+    name: 'Enterprise Takeover',
+    price: '$5,250',
+    desc: 'Total metro area saturation.',
+    subject: 'Pilot Application - Tier 3 Takeover'
+  }
+]
 
-export default function GetStartedPage() {
-  const [scrolled, setScrolled] = useState(false)
+export default function GetStartedFunnel() {
+  const [selectedTier, setSelectedTier] = useState<string | null>(null)
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 200)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  const activeTier = TIERS.find(t => t.id === selectedTier)
+  const mailtoLink = activeTier 
+    ? `mailto:hello@homeownermarketers.com?subject=${encodeURIComponent(activeTier.subject)}&body=${encodeURIComponent("I'm interested in the " + activeTier.name + " package. My territory is: [Insert Your City]")}`
+    : '#'
 
   return (
-    <main className="min-h-[100svh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip">
-      {/* Sections in scroll order */}
-      <StoryHero />
-      <StoryTrustBar />
-      <StoryVillain />
-      <StoryEpiphany />
-      <StoryPlan />
+    <main className="min-h-[100svh] bg-brand-charcoal selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip text-brand-ivory font-medium">
+      
+      {/* MINIMAL HEADER */}
+      <nav className="w-full p-6 sm:px-12 flex justify-center border-b border-brand-ivory/10 bg-brand-charcoal/50 backdrop-blur-md sticky top-0 z-50">
+        <Link href="/" className="pointer-events-auto">
+          <Image
+            src="/HM-Logo.png"
+            alt="Homeowner Marketers"
+            width={200}
+            height={60}
+            priority
+            className="h-8 sm:h-10 w-auto object-contain invert grayscale brightness-200 opacity-80 hover:opacity-100 transition-opacity"
+          />
+        </Link>
+      </nav>
 
-      {/* Social proof -- reuse existing component */}
-      <PortfolioViewports />
-
-      {/* Stat bar between portfolio and urgency */}
-      <section className="py-12 lg:py-16 px-6 sm:px-12 bg-brand-charcoal text-brand-ivory border-t border-brand-ivory/10">
-        <div className="max-w-[1440px] mx-auto text-center">
-          <p className="text-3xl sm:text-4xl lg:text-5xl font-sora font-extrabold tracking-tighter-extreme">
-            <span className="text-brand-mustard">14</span> new estimate requests per month
-          </p>
-          <p className="text-sm sm:text-base text-brand-ivory/40 font-sora font-extrabold uppercase tracking-widest mt-4">
-            Average client result within 90 days
-          </p>
+      <article className="max-w-[1000px] mx-auto px-6 py-20 sm:py-32">
+        
+        {/* THE HOOK */}
+        <div className="flex flex-col items-center text-center mb-24 lg:mb-32">
+          <FadeIn className="text-brand-mustard font-sora font-extrabold tracking-[0.4em] uppercase text-xs sm:text-sm mb-8">
+            Confidential Territory Invite
+          </FadeIn>
+          <div className="max-w-[15ch]">
+            <TextReveal 
+              text="YOUR COMPETITION IS PROBABLY READING THIS TOO." 
+              className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8"
+            />
+          </div>
         </div>
-      </section>
 
-      <StoryUrgency />
-      <StoryMicDrop />
+        {/* 3-FLASH PREVIEW */}
+        <ThreeFlashPreview />
 
-      {/* MOBILE CRO: FIXED BOTTOM CTA */}
-      <AnimatePresence>
-        {scrolled && (
-          <motion.div
-            initial={{ y: 100 }}
-            animate={{ y: 0 }}
-            exit={{ y: 100 }}
-            className="fixed bottom-0 left-0 right-0 p-4 z-50 lg:hidden"
-          >
-            <Link
-              href="/get-started/build-your-plan"
-              className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform"
-            >
-              Check Territory Availability
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* THE STORY (SB7 HERO JOURNEY) */}
+        <div className="max-w-3xl mx-auto space-y-12 lg:space-y-20 mb-32">
+          
+          <FadeIn className="space-y-6">
+            <p className="text-xl sm:text-2xl font-medium leading-relaxed text-brand-ivory/90">
+              You are the hero of your own business. You've built it through sweat, late nights, and doing the job right when others cut corners.
+            </p>
+            <p className="text-lg sm:text-xl text-brand-ivory/60 leading-relaxed">
+              But the way you get customers right now? It feels like you're fighting an uphill battle with one hand tied behind your back. You're relying on a marketing model that hasn't changed in 10 years, hoping the phone rings while bloated SEO agencies charge you $1,500 a month to do... <span className="italic text-brand-mustard">absolutely nothing</span>.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.1} className="space-y-6 pt-12 border-t border-brand-ivory/10">
+            <h3 className="text-2xl sm:text-3xl font-sora font-extrabold text-white uppercase tracking-tight">The Generational Shift</h3>
+            <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed">
+              We are not another agency pitching you the same tired "we'll write two blogs a month" retainer. We are your guide to what comes next.
+            </p>
+            <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed">
+              Right now, there is a generational transition happening in technology. We have a 6-month head start on the entire industry because we deploy agentic AI tech the moment it leaves the labs. In AI-time, 6 months is a decade.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.2} className="space-y-6 pt-12 border-t border-brand-ivory/10">
+            <h3 className="text-2xl sm:text-3xl font-sora font-extrabold text-white uppercase tracking-tight">No Bloat. Just Speed.</h3>
+            <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed">
+              The other guys are weighed down by massive overhead. They have account managers, junior copywriters, and a 10-person chain of command that takes three weeks to approve a simple website update. 
+            </p>
+            <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed">
+              Our model was built natively on this new technology. We turn the work of one web developer into twenty. We deploy full metropolitan SEO architectures in days, not months. We don't ask for permission to move fast.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.3} className="space-y-6 pt-12 border-t border-brand-ivory/10 bg-brand-mustard/5 p-8 -mx-8 rounded-2xl border border-brand-mustard/20">
+            <h3 className="text-2xl sm:text-3xl font-sora font-extrabold text-brand-mustard uppercase tracking-tight">The DeLorean Is Idling</h3>
+            <p className="text-lg sm:text-xl text-brand-ivory/90 leading-relaxed">
+              This is your opportunity to leave your competition stuck in a 10-year-old marketing model, while you jump in our DeLorean and zoom off to the future. 
+            </p>
+            <p className="text-lg sm:text-xl text-brand-ivory/90 font-bold leading-relaxed">
+              But there's a catch: We only take ONE painting company per territory. Once a city is locked, it's locked.
+            </p>
+            <p className="text-lg sm:text-xl text-brand-ivory/60 leading-relaxed">
+              We refuse to compete against our own clients. And since we publish our exact methodology online, it is only a matter of time before your biggest competitor finds out we exist. 
+            </p>
+          </FadeIn>
+
+        </div>
+
+        {/* CLICK-FUNNEL STEP: PACKAGE SELECTION */}
+        <section id="selection" className="py-24 border-t border-brand-ivory/10">
+          <div className="text-center mb-16">
+            <FadeIn>
+              <h2 className="text-4xl sm:text-5xl font-sora font-extrabold text-white uppercase tracking-tight mb-4">Choose Your Velocity</h2>
+              <p className="text-lg text-brand-ivory/50">Select the build tier you want to secure for your territory.</p>
+            </FadeIn>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+            {TIERS.map((tier, i) => (
+              <ScaleReveal key={tier.id} delay={i * 0.1}>
+                <button
+                  onClick={() => setSelectedTier(tier.id)}
+                  className={`w-full text-left p-8 border-2 transition-all duration-500 relative group
+                    ${selectedTier === tier.id 
+                      ? 'border-brand-mustard bg-brand-mustard/10 shadow-[0_0_30px_rgba(201,162,39,0.2)]' 
+                      : 'border-brand-ivory/10 bg-white/5 hover:border-brand-ivory/30'}`}
+                >
+                  {tier.isPopular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-mustard text-brand-charcoal text-[10px] font-sora font-extrabold uppercase tracking-widest">
+                      Most Scalable
+                    </div>
+                  )}
+                  <div className={`text-xs font-sora font-extrabold uppercase tracking-widest mb-4 transition-colors ${selectedTier === tier.id ? 'text-brand-mustard' : 'text-brand-ivory/40'}`}>
+                    Tier 0{i + 1}
+                  </div>
+                  <h4 className="text-xl font-sora font-extrabold uppercase mb-2">{tier.name}</h4>
+                  <div className="text-3xl font-sora font-extrabold text-brand-mustard mb-4">{tier.price}</div>
+                  <p className="text-sm text-brand-ivory/60 leading-relaxed">{tier.desc}</p>
+                  
+                  {/* Radio indicator */}
+                  <div className={`mt-8 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${selectedTier === tier.id ? 'border-brand-mustard' : 'border-brand-ivory/20 group-hover:border-brand-ivory/40'}`}>
+                    {selectedTier === tier.id && <div className="w-2.5 h-2.5 rounded-full bg-brand-mustard shadow-[0_0_10px_var(--brand-mustard)]" />}
+                  </div>
+                </button>
+              </ScaleReveal>
+            ))}
+          </div>
+
+          {/* DYNAMIC CTA */}
+          <div className="flex flex-col items-center">
+            <AnimatePresence mode="wait">
+              {selectedTier ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="w-full flex flex-col items-center"
+                >
+                  <Link 
+                    href={mailtoLink}
+                    className="group relative inline-flex items-center justify-center px-12 py-6 overflow-hidden font-sora font-extrabold text-brand-charcoal bg-brand-mustard transition-all duration-300 ease-out hover:scale-[1.05] active:scale-95 shadow-[0_0_50px_rgba(201,162,39,0.4)] text-xl uppercase tracking-widest w-full sm:w-auto"
+                  >
+                    <span className="relative z-10 flex items-center gap-4">
+                      Lock In My Territory <span className="text-3xl group-hover:translate-x-2 transition-transform duration-300">→</span>
+                    </span>
+                  </Link>
+                  <p className="text-brand-ivory/40 text-xs mt-6 font-medium uppercase tracking-[0.2em]">
+                    Btw... we built this entire funnel in 20 minutes.
+                  </p>
+                </motion.div>
+              ) : (
+                <div className="h-[104px] flex items-center">
+                  <p className="text-brand-ivory/30 font-sora font-extrabold uppercase tracking-widest animate-pulse">
+                    Select a tier to continue
+                  </p>
+                </div>
+              )}
+            </AnimatePresence>
+          </div>
+        </section>
+
+      </article>
     </main>
   )
 }

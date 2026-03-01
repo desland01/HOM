@@ -410,7 +410,7 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
       </div>
 
       <div className="mt-16">
-        <Link href="/get-started/build-your-plan" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
+        <Link href="/get-started" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
           Get Started
         </Link>
       </div>
