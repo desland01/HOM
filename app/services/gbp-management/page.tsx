@@ -22,16 +22,21 @@ export default function GBPManagementPage() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 px-6 sm:px-12 relative border-b border-brand-charcoal/5">
-        <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015] pointer-events-none" />
-        <div className="max-w-[1000px] mx-auto relative z-10">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Service Deep Dive</FadeIn>
-          <TextReveal 
-            text="OWN THE GOOGLE MAP PACK." 
-            className="text-5xl sm:text-7xl lg:text-9xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme uppercase mb-12" 
-          />
+      <section className="min-h-[100svh] flex flex-col justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 px-6 sm:px-12 relative border-b border-brand-charcoal/5">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015] pointer-events-none" />
+        
+        <div className="max-w-[1440px] mx-auto w-full relative z-10">
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-8">Service Deep Dive</FadeIn>
           
-          <FadeIn delay={0.2} className="prose prose-lg sm:prose-xl text-brand-charcoal/80 font-medium">
+          <FadeIn delay={0.3} className="max-w-[25ch] mb-4 sm:mb-6">
+            <TextReveal 
+              text="OWN THE GOOGLE MAP PACK." 
+              className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase block" 
+            />
+          </FadeIn>
+          
+          <FadeIn delay={0.4} className="prose prose-lg sm:prose-xl text-brand-charcoal/80 font-medium max-w-3xl mt-12">
             <p className="text-2xl sm:text-3xl font-sora font-bold text-brand-charcoal leading-tight mb-8">
               "If you are not in the top 3 on Google Maps, you do not exist to homeowners."
             </p>
