@@ -75,10 +75,10 @@ const BUNDLES = [
 ]
 
 const AL_CARTE = [
-  { name: "Citation Clean-Up", price: "$499", desc: "A full audit and repair of your messy online citations so Google trusts you again." },
+  { name: "Citation Clean-Up", price: "$699", desc: "Done by a human. We don't just pay a data aggregator or leave this one to AI. If your citations are a mess, it takes a human touch. One-time fee, not necessary if you're just starting out." },
   { name: "Additional Service Page", price: "$250", desc: "One more page ranking on Google, pulling in leads you are not getting today." },
   { name: "Location Hub Page", price: "$350", desc: "Own the search results in a new city without opening a second office." },
-  { name: "Google Profile Setup", price: "$199", desc: "Your Google listing fully built out so you show up in the map pack from day one." }
+  { name: "Additional Google Profile", price: "$199", desc: "For additional locations. Your primary Google listing is already included in your build plan." }
 ]
 
 export function AddOnsAndBundles() {
