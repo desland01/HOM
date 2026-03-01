@@ -11,7 +11,7 @@ const featureDetails: Record<string, any> = {
     tiers: {
       t1: "1 city hub + 5 nested service pages. Perfect for securing your home base.",
       t2: "4 location hubs + 20 service pages. Capture wealthy surrounding suburbs.",
-      t3: "10 city hubs + 70 service pages. Total saturation of your metropolitan area."
+      t3: "10 city hubs + 70 service pages. Total metro coverage area."
     }
   },
   "aeo": {
@@ -28,7 +28,7 @@ const featureDetails: Record<string, any> = {
     description: "Every article we publish answers a real question homeowners are typing into Google. We intercept them at the moment of intent and lead them directly to your calendar.",
     tiers: {
       t1: "1 targeted monthly blog post. Building authority.",
-      t2: "5 total posts per month. Aggressive growth mode.",
+      t2: "5 total posts per month. High-velocity growth mode.",
       t3: "9 total posts per month + 4 how-to videos & FAQ pages. Absolute authority."
     }
   },
@@ -55,8 +55,8 @@ const featureDetails: Record<string, any> = {
     description: "No more vague PDFs. You see exactly where you rank, how many people found you, and what we are doing next.",
     tiers: {
       t1: "Keyword Rank Tracking. You see where you rank for every keyword.",
-      t2: "Adds Competitor Gap Analysis. We spot trends and steal their traffic.",
-      t3: "Full competitive intelligence plus monthly war-room strategy calls."
+      t2: "Adds Competitor Gap Analysis. We spot trends and serve the market faster.",
+      t3: "Full competitive intelligence plus monthly growth strategy calls."
     }
   },
   "ai-web-apps": {

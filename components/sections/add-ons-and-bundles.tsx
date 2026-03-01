@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { FadeIn, TextReveal, ScaleReveal } from '@/components/ui/animations'
-import Link from 'next/link'
+import { UnifiedModal, PlaybookModalContent, FlashCardData } from '@/components/ui/modals'
 
 const MAINTENANCE_PLANS = [
   {
@@ -42,14 +43,51 @@ const SEO_PLANS = [
 ]
 
 const AL_CARTE = [
-  { name: "Citation Clean-Up", price: "$699", desc: "Done by a human. We don't just pay a data aggregator or leave this one to AI. If your citations are a mess, it takes a human touch. One-time fee, not necessary if you're just starting out.", link: "/services/citation-cleanup" },
-  { name: "Additional Google Profile", price: "$199/mo", desc: "For businesses with multiple GBP locations or those expanding into a new territory. Your primary Google listing is already included in your build plan.", link: "/services/gbp-management" }
+  { 
+    id: "cleanup", 
+    name: "Citation Clean-Up", 
+    price: "$699", 
+    desc: "Done by a human. We don't just pay a data aggregator or leave this one to AI. If your citations are a mess, it takes a human touch. One-time fee, not necessary if you're just starting out.",
+    modalTitle: "The Manual Clean-Up",
+    modalContent: [
+      { step: "Step 01", title: "The NAP Audit", content: "We start by running a comprehensive audit across hundreds of local directories, data aggregators, and maps (Yelp, YellowPages, Bing, Apple Maps, etc.). We hunt down every instance of your Name, Address, and Phone Number (NAP) to find exactly where the discrepancies are hiding.", details: "Software aggregators often fail to find hidden duplicates or outdated listings on legacy directories. Our manual audit uses 12 different search vectors to map out the 'broken internet' foundation before we begin the repair process." },
+      { step: "Step 02", title: "Human Negotiation", content: "Most agencies use software to push data. We use humans to claim and permanently alter records. Once we fix a citation, it stays fixed forever.", details: "Automated tools rely on APIs that can be rejected or overwritten. Our team manually verifies every change, often corresponding with directory support directly. This creates a permanent, verified record that won't revert when a software subscription ends." },
+      { step: "Step 03", title: "The Authority Sync", content: "Once the internet is clean, we sync this pristine data back to your Google profile. Trust spikes, and you rise in the rankings.", details: "Consistency is Google's primary verification signal. When 40+ high-authority sources all provide the exact same NAP data, Google's confidence in your business entity reaches 100%. This is the silent fuel behind Map Pack rankings." }
+    ]
+  },
+  { 
+    id: "gbp", 
+    name: "Additional Google Profile", 
+    price: "$199/mo", 
+    desc: "For businesses with multiple GBP locations or those expanding into a new territory. Your primary Google listing is already included in your build plan.",
+    modalTitle: "Multi-Location Engine",
+    modalContent: [
+      { step: "Part 01", title: "Review Velocity", content: "We tie our AI reputation platform into your CRM to automate review requests for every location.", details: "Review velocity isn't just about total count—it's about frequency. Our system triggers requests immediately upon job completion, ensuring a steady stream of 5-star signals that Google uses to determine local relevance." },
+      { step: "Part 02", title: "Location Activity", content: "We post weekly updates and geotagged photos for every additional location to prove you are active in that market.", details: "Google treats dead profiles as dead businesses. We syndicate photo updates and monthly 'Offers' to every location hub, creating the signals Google needs to push each branch into its local top 3." },
+      { step: "Part 03", title: "Syndicated Authority", content: "We broadcast every new location's data to the top 40 local directories, ensuring consistency from day one.", details: "Every location needs its own unique citation footprint. We audit and build the specific NAP web required for each address, preventing data overlap and ensuring each city hub builds its own independent authority." }
+    ]
+  }
 ]
 
 export function AddOnsAndBundles() {
+  const [activeModalId, setActiveModalId] = useState<string | null>(null)
+  
+  const activeItem = AL_CARTE.find(i => i.id === activeModalId)
+
   return (
     <section className="py-24 lg:py-40 bg-brand-ivory relative text-brand-charcoal border-t border-brand-charcoal/5 overflow-hidden">
       <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015] pointer-events-none" />
+      
+      {/* MODAL SYSTEM */}
+      <UnifiedModal 
+        isOpen={!!activeModalId} 
+        onClose={() => setActiveModalId(null)} 
+        type="flashcard" 
+        title={activeItem?.modalTitle || ''}
+      >
+        {activeItem?.modalContent && <PlaybookModalContent cards={activeItem.modalContent as any} />}
+      </UnifiedModal>
+
       <div className="max-w-[1440px] mx-auto px-6 sm:px-12 relative z-10 text-left">
         
         {/* Header */}
@@ -133,11 +171,14 @@ export function AddOnsAndBundles() {
                       <div className="font-sora font-extrabold text-brand-mustard text-left">{item.price}</div>
                     </div>
                     <div className="text-sm font-medium text-brand-charcoal/70 mb-6 text-left">{item.desc}</div>
-                    {item.link && (
+                    {item.modalTitle && (
                       <div className="mt-auto text-left">
-                        <Link href={item.link} className="text-xs font-sora font-extrabold uppercase tracking-widest text-brand-mustard hover:text-brand-charcoal transition-colors underline underline-offset-4 decoration-brand-charcoal/20 hover:decoration-brand-mustard text-left">
+                        <button 
+                          onClick={() => setActiveModalId(item.id)}
+                          className="text-xs font-sora font-extrabold uppercase tracking-widest text-brand-mustard hover:text-brand-charcoal transition-colors underline underline-offset-4 decoration-brand-charcoal/20 hover:decoration-brand-mustard text-left"
+                        >
                           Learn more →
-                        </Link>
+                        </button>
                       </div>
                     )}
                   </ScaleReveal>

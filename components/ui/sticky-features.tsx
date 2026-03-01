@@ -11,16 +11,16 @@ const featureDetails: Record<string, FeatureDetail> = {
     tiers: {
       t1: "Locks down your primary city on Google. Your site gets answer capsules and core schema markup so AI search engines like ChatGPT and Google AI can find and recommend you in your home market. The foundation every painter needs to show up in both traditional and AI search.",
       t2: "Expands into 3 surrounding suburbs where high-value homeowners live. Includes advanced A.E.O. -- richer schema for FAQs and services, expert attribution so AI cites you by name, and AI bot crawl optimization on top of the basics. Traditional and AI search engines both send you leads.",
-      t3: "Full metro takeover with the complete A.E.O. suite. Every city and suburb ranks on Google, plus cross-platform presence amplification across 4+ platforms and competitive AI citation monitoring. Your competitors fight over scraps while every AI search engine recommends you by name."
+      t3: "Full metro presence with the complete A.E.O. suite. Every city and suburb ranks on Google, plus cross-platform presence amplification across 4+ platforms and competitive AI citation monitoring. While others settle for scraps, every AI search engine recommends you by name."
     }
   },
   "proof-engine": {
     title: "Built Fast, Proven In 90 Days",
-    description: "Your site goes live in 14 days. Then we run the engine hard for 90 days to prove it works. If the phone does not ring, we hand you your old site back and part as friends. Zero risk.",
+    description: "Your site goes live in 14 days. Then we run the engine for 90 days to prove it works. If the phone does not ring, we hand you your old site back and part as friends. Zero risk.",
     tiers: {
       t1: "Foundational growth engine. 2 fresh content pieces per month, monthly Google profile updates, and full lead tracking so you see exactly where calls come from.",
-      t2: "Aggressive growth mode. 4 content pieces per month, weekly Google profile optimization, and active review management to build your reputation fast.",
-      t3: "Total market saturation. 8 content pieces per month, automated review outreach, and competitor gap reports showing you exactly where to take their leads."
+      t2: "High-velocity growth mode. 4 content pieces per month, weekly Google profile optimization, and active signals to build your reputation fast.",
+      t3: "Total market coverage. 8 content pieces per month, automated outreach, and competitor gap reports showing you where homeowners are waiting for you."
     }
   },
   "ai-web-apps": {

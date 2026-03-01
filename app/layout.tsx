@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Sora, Inter } from 'next/font/google'
 import { Footer } from '@/components/layout/footer'
+import { ModalProvider } from '@/components/ui/modal-context'
 import './globals.css'
 
 const sora = Sora({
@@ -16,7 +17,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Homeowner Marketers - Prove It First, Dominate Later',
+  title: 'Homeowner Marketers - Prove It First, Scale Later',
   description: 'Premium websites and SEO built exclusively for painting companies.',
 }
 
@@ -28,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="md:scroll-smooth">
       <body className={`${sora.variable} ${inter.variable} font-inter bg-brand-ivory text-brand-charcoal antialiased flex flex-col min-h-screen`}>
-        <div className="flex-grow">
-          {children}
-        </div>
-        <Footer />
+        <ModalProvider>
+          <div className="flex-grow">
+            {children}
+          </div>
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   )

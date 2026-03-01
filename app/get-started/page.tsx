@@ -11,23 +11,23 @@ const TIERS = [
     id: 'foundation',
     name: 'Local Foundation',
     price: '$2,250',
-    desc: 'Best for single-city dominance.',
+    desc: 'Best for securing your home base.',
     subject: 'Pilot Application - Tier 1 Foundation'
   },
   {
     id: 'expansion',
     name: 'Territory Expansion',
     price: '$3,400',
-    desc: 'Capture 4 surrounding suburbs.',
+    desc: 'Capture 4 surrounding wealthy suburbs.',
     subject: 'Pilot Application - Tier 2 Expansion',
     isPopular: true
   },
   {
     id: 'takeover',
-    name: 'Enterprise Takeover',
+    name: 'Metro Build',
     price: '$5,250',
-    desc: 'Total metro area saturation.',
-    subject: 'Pilot Application - Tier 3 Takeover'
+    desc: 'Total metropolitan coverage.',
+    subject: 'Pilot Application - Tier 3 Metro'
   }
 ]
 

@@ -12,13 +12,20 @@ import { PortfolioViewports } from '@/components/sections/portfolio-viewports'
 import { UnifiedModal, PlaybookModalContent } from '@/components/ui/modals'
 import { Configurator } from '@/components/sections/configurator'
 import { AddOnsAndBundles } from '@/components/sections/add-ons-and-bundles'
+import { useModals } from '@/components/ui/modal-context'
+
+function ArrowRight({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+    </svg>
+  )
+}
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true)
   const [scrolled, setScrolled] = useState(false)
-  
-  // MODAL STATES
-  const [activeModal, setActiveModal] = useState<string | null>(null)
+  const { activeModalId, openModal, closeModal } = useModals()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 200)
@@ -53,17 +60,47 @@ export default function Home() {
     }
   ]
 
+  const cleanupContent = [
+    { step: "Step 01", title: "The NAP Audit", content: "We start by running a comprehensive audit across hundreds of local directories, data aggregators, and maps (Yelp, YellowPages, Bing, Apple Maps, etc.). We hunt down every instance of your Name, Address, and Phone Number (NAP) to find exactly where the discrepancies are hiding.", details: "Software aggregators often fail to find hidden duplicates or outdated listings on legacy directories. Our manual audit uses 12 different search vectors to map out the 'broken internet' foundation before we begin the repair process." },
+    { step: "Step 02", title: "Human Negotiation", content: "Most agencies use software to push data. We use humans to claim and permanently alter records. Once we fix a citation, it stays fixed forever.", details: "Automated tools rely on APIs that can be rejected or overwritten. Our team manually verifies every change, often corresponding with directory support directly. This creates a permanent, verified record that won't revert when a software subscription ends." },
+    { step: "Step 03", title: "The Authority Sync", content: "Once the internet is clean, we sync this pristine data back to your Google profile. Trust spikes, and you rise in the rankings.", details: "Consistency is Google's primary verification signal. When 40+ high-authority sources all provide the exact same NAP data, Google's confidence in your business entity reaches 100%. This is the silent fuel behind Map Pack rankings." }
+  ]
+
+  const gbpContent = [
+    { step: "Part 01", title: "Review Velocity", content: "We tie our AI reputation platform into your CRM to automate review requests for every location.", details: "Review velocity isn't just about total count—it's about frequency. Our system triggers requests immediately upon job completion, ensuring a steady stream of 5-star signals that Google uses to determine local relevance." },
+    { step: "Part 02", title: "Location Activity", content: "We post weekly updates and geotagged photos for every additional location to prove you are active in that market.", details: "Google treats dead profiles as dead businesses. We syndicate photo updates and monthly 'Offers' to every location hub, creating the signals Google needs to push each branch into its local top 3." },
+    { step: "Part 03", title: "Syndicated Authority", content: "We broadcast every new location's data to the top 40 local directories, ensuring consistency from day one.", details: "Every location needs its own unique citation footprint. We audit and build the specific NAP web required for each address, preventing data overlap and ensuring each city hub builds its own independent authority." }
+  ]
+
   return (
     <main className="min-h-[100svh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip text-center sm:text-left">
       
       {/* MODAL SYSTEM INTEGRATION */}
       <UnifiedModal 
-        isOpen={activeModal === 'agentic-strategy'} 
-        onClose={() => setActiveModal(null)} 
+        isOpen={activeModalId === 'agentic-strategy'} 
+        onClose={closeModal} 
         type="flashcard" 
         title="The Methodology Playbook"
       >
         <PlaybookModalContent cards={playbookCards} />
+      </UnifiedModal>
+
+      <UnifiedModal 
+        isOpen={activeModalId === 'cleanup'} 
+        onClose={closeModal} 
+        type="flashcard" 
+        title="The Manual Clean-Up"
+      >
+        <PlaybookModalContent cards={cleanupContent} />
+      </UnifiedModal>
+
+      <UnifiedModal 
+        isOpen={activeModalId === 'gbp'} 
+        onClose={closeModal} 
+        type="flashcard" 
+        title="Multi-Location Engine"
+      >
+        <PlaybookModalContent cards={gbpContent} />
       </UnifiedModal>
 
       {/* STICKY TOP BANNER */}
@@ -117,8 +154,8 @@ export default function Home() {
               className="text-4xl sm:text-7xl lg:text-7xl xl:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme mb-4 lg:mb-4 max-w-[15ch] lg:max-w-[25ch] text-left" 
             />
             
-            <div className="grid grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-6 w-full items-center mt-8">
-              <FadeIn delay={0} className="col-span-2 lg:col-span-6">
+            <div className="grid grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-6 w-full items-center mt-8 text-left">
+              <FadeIn delay={0} className="col-span-2 lg:col-span-6 text-left">
                 <p className="text-lg sm:text-xl lg:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-8 text-left">
                   Your website defines your reputation. We build you an asset that attracts high-value homeowners who appreciate your craft, so you can stop fighting for scraps and finally provide the life your team deserves.
                 </p>
@@ -183,7 +220,7 @@ export default function Home() {
       <section className="py-24 lg:py-40 px-6 sm:px-12 bg-white relative">
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-start text-left">
           <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit text-left">
-            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-left">The Trap</FadeIn>
+            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-left text-left">The Trap</FadeIn>
             <TextReveal 
               text="YOUR WEBSITE IS COSTING YOU MONEY." 
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8 text-left"
@@ -221,7 +258,7 @@ export default function Home() {
       {/* RADICAL TRANSPARENCY: THE LOGIC */}
       <section className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-charcoal text-brand-ivory relative border-t border-brand-charcoal/5 overflow-hidden text-center">
         <div className="max-w-[1440px] mx-auto relative z-10 text-center">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-center">Radical Transparency</FadeIn>
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-center text-center">Radical Transparency</FadeIn>
           <TextReveal 
             text="THEY KNOW WHAT WE DO. THEY JUST CANNOT KEEP UP." 
             className="text-4xl sm:text-6xl lg:text-7xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8 text-center" 
@@ -231,7 +268,7 @@ export default function Home() {
           </FadeIn>
           <div className="flex flex-col sm:flex-row justify-center gap-6 text-center">
             <button 
-              onClick={() => setActiveModal('agentic-strategy')}
+              onClick={() => openModal('agentic-strategy')}
               className="group relative inline-flex items-center justify-center px-8 py-4 font-sora font-extrabold text-brand-charcoal bg-brand-mustard rounded-none transition-all hover:scale-[1.02] active:scale-95 shadow-xl text-base uppercase tracking-widest text-center"
             >
               Learn Our Strategy →
@@ -263,7 +300,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="lg:w-7/12 flex flex-col gap-12 text-left">
+          <div className="lg:w-7/12 flex flex-col gap-12 text-left text-left">
             <FadeIn>
               <TierCard 
                 name="Tier 01" title="Foundation Build"
@@ -312,7 +349,7 @@ export default function Home() {
                 buildFeatures={[
                   "Everything in Expansion, PLUS:",
                   "10 location hubs (Strategic 3-stage deployment)",
-                  "Up to 70 total nested service pages (Total saturation)",
+                  "Up to 70 total nested service pages (Total metro coverage)",
                   "AI Chat Widget integration (Unlimited conversations)",
                   "Pre-qualifying automations and premium trust badges"
                 ]}
@@ -321,7 +358,7 @@ export default function Home() {
                   "4 monthly how-to videos & 4 nested service FAQ pages",
                   "4 additional blog posts closing the competitor gap",
                   "1 high-DA backlink + 2 local business guest posts per month",
-                  "Monthly war-room strategy calls to scale your crew"
+                  "Monthly growth strategy calls to scale your crew"
                 ]}
               />
             </FadeIn>
@@ -337,11 +374,11 @@ export default function Home() {
       <Configurator />
 
       {/* FOOTER */}
-      <footer className="py-24 px-6 sm:px-12 bg-white border-t border-brand-charcoal/5 text-center sm:text-left">
+      <footer className="py-24 px-6 sm:px-12 bg-white border-t border-brand-charcoal/5">
         <FadeIn className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 text-center sm:text-left">
           <div className="flex flex-col gap-6 w-full lg:w-auto items-center lg:items-start text-center sm:text-left">
             <Image src="/HM-Logo.png" alt="Homeowner Marketers" width={240} height={80} className="h-12 sm:h-16 w-auto object-contain invert opacity-80" />
-            <p className="text-brand-charcoal/40 font-medium text-sm text-center sm:text-left">&copy; 2026 Homeowner Marketers. Assets for painters who refuse to compete on price.</p>
+            <p className="text-brand-charcoal/40 font-medium text-sm text-center sm:text-left text-center sm:text-left">&copy; 2026 Homeowner Marketers. Assets for painters who refuse to compete on price.</p>
           </div>
         </FadeIn>
       </footer>
@@ -353,7 +390,7 @@ export default function Home() {
             initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }}
             className="fixed bottom-0 left-0 right-0 p-4 z-50 lg:hidden"
           >
-            <Link href="#configurator" className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform text-center">
+            <Link href="#configurator" className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform text-center text-center">
               Build Your Engine ↓
             </Link>
           </motion.div>
@@ -363,15 +400,8 @@ export default function Home() {
   )
 }
 
-function ArrowRight({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-    </svg>
-  )
-}
-
 function TierCard({ name, title, save, original, price, buildFeatures, monthlyFeatures, isPopular }: any) {
+  const { openModal } = useModals()
   return (
     <div className={`relative p-10 lg:p-12 border-2 ${isPopular ? 'bg-brand-charcoal text-brand-ivory border-brand-charcoal' : 'bg-white text-brand-charcoal border-brand-charcoal/5'} flex flex-col h-full group hover:-translate-y-2 transition-transform duration-500 text-left`}>
       {isPopular && (
@@ -381,25 +411,25 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
       )}
 
       <div className="mb-12 text-left">
-        <div className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase opacity-40 mb-2 text-left">{name}</div>
-        <h3 className="text-3xl font-sora font-extrabold mb-10 uppercase tracking-tight text-left">{title}</h3>
+        <div className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase opacity-40 mb-2 text-left text-left">{name}</div>
+        <h3 className="text-3xl font-sora font-extrabold mb-10 uppercase tracking-tight text-left text-left">{title}</h3>
 
-        <div className="flex flex-col gap-1 text-left">
-          <div className="flex items-baseline gap-3 text-left">
+        <div className="flex flex-col gap-1 text-left text-left">
+          <div className="flex items-baseline gap-3 text-left text-left">
             <span className="text-sm font-sora font-extrabold uppercase tracking-widest text-brand-mustard">SAVE {save}</span>
             <span className="text-xl font-sora font-extrabold line-through opacity-20">{original}</span>
           </div>
-          <div className="text-5xl sm:text-6xl font-sora font-extrabold tracking-tighter-extreme text-left">{price}</div>
-          <div className={`text-xs font-bold uppercase tracking-widest mt-2 text-left ${isPopular ? 'text-brand-ivory/40' : 'text-brand-charcoal/40'}`}>Initial Investment</div>
+          <div className="text-5xl sm:text-6xl font-sora font-extrabold tracking-tighter-extreme text-left text-left">{price}</div>
+          <div className={`text-xs font-bold uppercase tracking-widest mt-2 text-left text-left ${isPopular ? 'text-brand-ivory/40' : 'text-brand-charcoal/40'}`}>Initial Investment</div>
         </div>
       </div>
 
-      <div className="space-y-12 flex-grow text-left">
+      <div className="space-y-12 flex-grow text-left text-left">
         <div>
-          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b text-left ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Build Asset (Owned)</div>
-          <ul className="space-y-4 text-left">
+          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b text-left text-left ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Build Asset (Owned)</div>
+          <ul className="space-y-4 text-left text-left">
             {buildFeatures.map((f: string, i: number) => (
-              <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed text-left">
+              <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed text-left text-left text-left">
                 <span className="text-brand-mustard font-sora font-extrabold text-lg leading-none">/</span>
                 <span className={isPopular ? 'text-brand-ivory/80' : 'text-brand-charcoal/80'}>{f}</span>
               </li>
@@ -408,10 +438,10 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
         </div>
 
         <div>
-          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b text-left ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Pilot Engine (90 Days)</div>
-          <ul className="space-y-4 text-left">
+          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b text-left text-left ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Pilot Engine (90 Days)</div>
+          <ul className="space-y-4 text-left text-left">
             {monthlyFeatures.map((f: string, i: number) => (
-              <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed text-left">
+              <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed text-left text-left text-left">
                 <span className="text-brand-mustard font-sora font-extrabold text-lg leading-none">/</span>
                 <span className={isPopular ? 'text-brand-ivory/80' : 'text-brand-charcoal/80'}>{f}</span>
               </li>
@@ -420,8 +450,8 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
         </div>
       </div>
 
-      <div className="mt-16 text-left">
-        <Link href="#configurator" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
+      <div className="mt-16 text-left text-left">
+        <Link href="#configurator" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal text-center'}`}>
           Secure Territory
         </Link>
       </div>
@@ -464,8 +494,8 @@ function ProblemCardsList() {
   }, [activeIndex])
 
   const items = [
-    { title: "The Price Shopper Loop", desc: "Your phone rings, but it's another person asking for your 'best price.' You're fighting for low-margin work that barely covers overhead.", icon: "x" },
-    { title: "No Margin for People", desc: "Because jobs are won on price, you can't afford healthcare, PTO, or competitive wages for your best workers. The talent leaves.", icon: "x" },
+    { title: "The Price Shopper Loop", desc: "Your phone rings, but it's another person asking for your 'best price.' You're stuck with low-margin work that barely covers overhead.", icon: "x" },
+    { title: "No Margin for People", desc: "When jobs are won on price, you can't afford healthcare, PTO, or competitive wages for your best workers. The talent leaves.", icon: "x" },
     { title: "The Agency Anchor", desc: "You're paying $1,500/mo for 'maintenance' and 'SEO' that doesn't actually fill your calendar with high-value jobs.", icon: "x" },
     { title: "Ghost-Town Web Presence", desc: "Your site is a digital brochure. It doesn't build trust, it doesn't pre-qualify, and it doesn't sell your quality.", icon: "x" },
     { title: "Inefficient Estimating", desc: "You spend your nights driving to 'estimate' jobs for people who were never going to pay your premium rates anyway.", icon: "x" },
@@ -489,18 +519,18 @@ const ProblemCard = forwardRef<HTMLDivElement, { item: { title: string, desc: st
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer bg-brand-ivory text-brand-charcoal md:hover:bg-brand-charcoal md:hover:text-brand-ivory text-left
+      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer bg-brand-ivory text-brand-charcoal md:hover:bg-brand-charcoal md:hover:text-brand-ivory text-left text-left
         ${isActive ? 'max-md:bg-brand-charcoal max-md:text-brand-ivory' : ''}`}
     >
-      <div className="flex items-start gap-5 mb-4 text-left">
+      <div className="flex items-start gap-5 mb-4 text-left text-left">
         <div className={`text-4xl font-sora font-extrabold leading-none transition-transform duration-500 text-brand-mustard md:group-hover:scale-110 ${isActive ? 'max-md:scale-110' : ''}`}>
           {item.icon}
         </div>
-        <h4 className="text-xl sm:text-2xl font-sora font-extrabold uppercase tracking-tight leading-tight mt-1 text-left">
+        <h4 className="text-xl sm:text-2xl font-sora font-extrabold uppercase tracking-tight leading-tight mt-1 text-left text-left">
           {item.title}
         </h4>
       </div>
-      <p className={`leading-relaxed font-medium transition-colors duration-500 text-brand-charcoal/60 md:group-hover:text-brand-ivory/60 text-left ${isActive ? 'max-md:text-brand-ivory/60' : ''}`}>{item.desc}</p>
+      <p className={`leading-relaxed font-medium transition-colors duration-500 text-brand-charcoal/60 md:group-hover:text-brand-ivory/60 text-left text-left ${isActive ? 'max-md:text-brand-ivory/60' : ''}`}>{item.desc}</p>
     </motion.div>
   )
 })
