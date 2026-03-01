@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **Story Selling Funnel Landing Page (/get-started):** Built a StoryBrand-driven narrative page with 8 scroll sections: full-viewport hero with "6-Month Head Start" hook, mustard marquee trust bar, 3-level villain (invisible on Google, feeling invisible, great craftsmen deserve to be found), founder epiphany origin story, 3-step plan cards, portfolio social proof with stat bar (14 estimates/month), territory urgency grid with claimed/open city visualization, and mic-drop fourth-wall break ("we built this page in 20 minutes"). Mobile sticky CTA bar appears after scroll. All CTAs funnel to /get-started/build-your-plan.
+- **Multi-Step Decision Funnel (/get-started/build-your-plan):** Built a 4-step conversion funnel using a client-side state machine: Step 1 territory input, Step 2 growth goal selection (fill/dominate/takeover mapped to tiers), Step 3 package recommendation with pre-highlighted tier based on goal, Step 4 contact form with territory personalization. Completion state confirms territory hold on mustard background. AnimatePresence directional slide transitions between steps.
+- **Funnel UI Primitives (components/ui/):** Created funnel-step.tsx (directional enter/exit AnimatePresence wrapper), progress-bar.tsx (animated 4-step indicator with light/dark variants), selection-card.tsx (accessible tappable card with SVG checkmark and aria-pressed).
+- **7 Story Section Components (components/sections/story-*.tsx):** story-hero, story-trust-bar, story-villain, story-epiphany, story-plan, story-urgency, story-mic-drop -- all using existing animation library (FadeIn, TextReveal, Parallax, Magnetic, ScaleReveal).
+
+### Changed
+- **CTA Links Rewired (page.tsx, footer.tsx):** Updated hero CTA, final CTA, mobile sticky CTA, and TierCard "Get Started" buttons to link to /get-started and /get-started/build-your-plan instead of #tiers or mailto. Footer "View Pilot Packages" now links to /get-started.
+
 - **Service Deep Dive Pages (app/services/*):** Created three new long-form service breakdown pages following a progressive disclosure pattern:
   - `/services/gbp-management`: Explains the math of the Google Map Pack, review velocity engines, and constant activity strategies.
   - `/services/ai-automations`: Details the Missed Call Text Back, AI web chat, and automated booking infrastructure.

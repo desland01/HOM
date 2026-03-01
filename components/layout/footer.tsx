@@ -61,7 +61,7 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <Link href="/#tiers" className="text-brand-ivory/70 hover:text-brand-mustard transition-colors font-medium">
+              <Link href="/get-started" className="text-brand-ivory/70 hover:text-brand-mustard transition-colors font-medium">
                 View Pilot Packages
               </Link>
             </li>

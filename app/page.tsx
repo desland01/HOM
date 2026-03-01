@@ -88,7 +88,7 @@ export default function Home() {
                   Your website makes you look like every other painter in town. That is why you keep getting price shoppers. We build you a premium site in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove it pulls quality leads for <span className="text-brand-charcoal font-extrabold">90 days</span>, or you walk away with zero risk.
                 </p>
                 <Magnetic strength={10}>
-                  <Link href="#tiers" className="group relative inline-flex items-center justify-center px-8 py-4 lg:px-10 lg:py-5 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-base lg:text-lg uppercase tracking-widest">
+                  <Link href="/get-started" className="group relative inline-flex items-center justify-center px-8 py-4 lg:px-10 lg:py-5 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-base lg:text-lg uppercase tracking-widest">
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-brand-charcoal via-brand-charcoal to-brand-mustard opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                     <span className="relative z-10 flex items-center gap-4">
                       Check Availability <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
@@ -312,7 +312,7 @@ export default function Home() {
                   <span className="opacity-50 text-brand-charcoal/70 font-medium normal-case text-xl block mt-4">We build it first. You see it live before you pay a dime. No risk.</span>
                 </p>
                 <Magnetic strength={10}>
-                  <Link href="mailto:hello@homeownermarketers.com?subject=Pilot%20Partner%20Application" className="group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-xl uppercase tracking-widest">
+                  <Link href="/get-started" className="group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-xl uppercase tracking-widest">
                     <span className="relative z-10 flex items-center gap-4">
                       Check Availability <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
                     </span>
@@ -351,7 +351,7 @@ export default function Home() {
             initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }}
             className="fixed bottom-0 left-0 right-0 p-4 z-50 lg:hidden"
           >
-            <Link href="#tiers" className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform">
+            <Link href="/get-started" className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform">
               Check Availability ↓
             </Link>
           </motion.div>
@@ -410,7 +410,7 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
       </div>
 
       <div className="mt-16">
-        <Link href="#tiers" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
+        <Link href="/get-started/build-your-plan" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
           Get Started
         </Link>
       </div>
