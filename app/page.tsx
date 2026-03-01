@@ -424,6 +424,12 @@ function ProblemCardsList() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Only run scroll calculation on mobile viewports (<1024px)
+      if (window.innerWidth >= 1024) {
+        if (activeIndex !== null) setActiveIndex(null)
+        return
+      }
+
       const windowCenterY = window.innerHeight / 2
       let minDistance = Infinity
       let newActiveIndex = null
@@ -434,7 +440,7 @@ function ProblemCardsList() {
         // Calculate the center of the element
         const elementCenterY = rect.top + rect.height / 2
         const distance = Math.abs(windowCenterY - elementCenterY)
-        
+
         // Threshold: Must be somewhat near the center to be active
         if (distance < minDistance && distance < window.innerHeight / 1.5) {
           minDistance = distance
@@ -446,11 +452,14 @@ function ProblemCardsList() {
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll, { passive: true })
     handleScroll() // initial check
 
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
+  }, [activeIndex])
   const items = [
     { title: "You Look Cheap Online", desc: "Your site looks like every other painter on page one. A homeowner cannot tell you apart from the guy working out of his garage.", icon: "x" },
     { title: "Price Shoppers Only", desc: "Your inbox is full of people asking 'what is your cheapest price?' because nothing on your site says premium.", icon: "x" },
@@ -483,18 +492,18 @@ const ProblemCard = forwardRef<HTMLDivElement, { item: { title: string, desc: st
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer
-        ${isActive ? 'bg-brand-charcoal text-brand-ivory' : 'bg-brand-ivory text-brand-charcoal lg:hover:bg-brand-charcoal lg:hover:text-brand-ivory'}`}
+      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer bg-brand-ivory text-brand-charcoal lg:hover:bg-brand-charcoal lg:hover:text-brand-ivory
+        ${isActive ? 'max-lg:bg-brand-charcoal max-lg:text-brand-ivory' : ''}`}
     >
       <div className="flex items-start gap-5 mb-4">
-        <div className={`text-4xl font-sora font-extrabold leading-none transition-transform duration-500 ${isActive ? 'scale-110 text-brand-mustard' : 'text-brand-mustard lg:group-hover:scale-110'}`}>
+        <div className={`text-4xl font-sora font-extrabold leading-none transition-transform duration-500 text-brand-mustard lg:group-hover:scale-110 ${isActive ? 'max-lg:scale-110' : ''}`}>
           {item.icon}
         </div>
         <h4 className="text-xl sm:text-2xl font-sora font-extrabold uppercase tracking-tight leading-tight mt-1">
           {item.title}
         </h4>
       </div>
-      <p className={`leading-relaxed font-medium transition-colors duration-500 ${isActive ? 'text-brand-ivory/60' : 'text-brand-charcoal/60 lg:group-hover:text-brand-ivory/60'}`}>{item.desc}</p>
+      <p className={`leading-relaxed font-medium transition-colors duration-500 text-brand-charcoal/60 lg:group-hover:text-brand-ivory/60 ${isActive ? 'max-lg:text-brand-ivory/60' : ''}`}>{item.desc}</p>
     </motion.div>
   )
 })
