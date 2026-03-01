@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **Service Deep Dive Pages (app/services/*):** Created three new long-form service breakdown pages following a progressive disclosure pattern:
+  - `/services/gbp-management`: Explains the math of the Google Map Pack, review velocity engines, and constant activity strategies.
+  - `/services/ai-automations`: Details the Missed Call Text Back, AI web chat, and automated booking infrastructure.
+  - `/services/citation-cleanup`: Highlights the human-led NAP data audit and syndication process.
+- **Global Footer (components/layout/footer.tsx):** Implemented a new site-wide footer providing persistent navigation to the core methodology playbook and the new service deep-dive pages. Added standard brand contact information and a copyright bar. Included via `app/layout.tsx`.
+- **Progressive Disclosure Links:** Integrated smart nested links throughout the marketing copy to push interested users towards the new service pages. Added contextual links to the `PlaybookPage` ("View Citation Strategy", "View Reputation Engine") and the `AddOnsAndBundles` component cards.
+
+### Changed
 - **Methodology Playbook Page (app/playbook/page.tsx):** Created a dedicated, long-form manual page (`/playbook`) breaking down the exact SEO methodologies (Geo-Silos, A.E.O., Reverse Silos, Automations, Edge Hosting). Designed with the "machined" brand aesthetic and utilizing the Hormozi-Sanchez copywriting framework to explain the agentic unfair advantage.
+- **Root Layout Constraint (app/layout.tsx):** Updated body structure to `flex flex-col min-h-screen` and wrapped `children` in a `flex-grow` container to ensure the new global footer always rests at the bottom of the viewport, even on short pages like the new service manuals.
+- **Removed Main Wrapper Padding (app/page.tsx):** Removed the previous mobile-only padding (`pb-24 lg:pb-0`) from the `<main>` tag, as the global footer now inherently provides the necessary clearance for the fixed bottom CTA.
 - **Transparency Policy Section (page.tsx):** Added a new prominent section right before the Pilot Packages detailing our Unfair Advantage strategy. The CTA now directs users to the full playbook page instead of a modal.
 
 ### Changed

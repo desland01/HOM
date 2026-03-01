@@ -94,7 +94,11 @@ export default function PlaybookPage() {
               <h3 className="text-2xl sm:text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal mb-6">Automated Citation & Reputation Engines</h3>
               <div className="prose prose-lg text-brand-charcoal/70 font-medium max-w-none">
                 <p>The Google Map Pack is driven by two things: NAP Consistency (Name, Address, Phone) and review velocity. We don't do this manually.</p>
-                <p>We integrate enterprise-grade tools to audit, clean, and blast your business information across the top 40+ local directories. Then, we hook into your CRM to automatically request, catch, and respond to Google reviews the moment a job is marked complete. Your reputation scales while you sleep.</p>
+                <p>We integrate enterprise-grade tools to audit, clean, and broadcast your business information across the top 40+ local directories. Then, we hook into your CRM to automatically request, catch, and respond to Google reviews the moment a job is marked complete. Your reputation scales while you sleep.</p>
+                <div className="mt-6 flex flex-wrap gap-4 text-sm font-sora font-bold uppercase tracking-widest text-brand-mustard">
+                  <Link href="/services/citation-cleanup" className="hover:text-brand-charcoal transition-colors underline underline-offset-4 decoration-brand-charcoal/20 hover:decoration-brand-mustard">View Citation Strategy →</Link>
+                  <Link href="/services/gbp-management" className="hover:text-brand-charcoal transition-colors underline underline-offset-4 decoration-brand-charcoal/20 hover:decoration-brand-mustard">View Reputation Engine →</Link>
+                </div>
               </div>
             </ScaleReveal>
 

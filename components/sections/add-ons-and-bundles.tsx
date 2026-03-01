@@ -1,6 +1,7 @@
 'use client'
 
 import { FadeIn, TextReveal, ScaleReveal } from '@/components/ui/animations'
+import Link from 'next/link'
 
 const MAINTENANCE_PLANS = [
   {
@@ -45,13 +46,15 @@ const AI_TOOLS = [
     title: "Missed Call Text Back",
     price: "$149",
     period: "/mo",
-    desc: "Every missed call is a $5,000 job walking straight to your competitor. This automated tool texts the homeowner back instantly while you are on the ladder. You never lose a hot lead again."
+    desc: "Every missed call is a $5,000 job walking straight to your competitor. This automated tool texts the homeowner back instantly while you are on the ladder. You never lose a hot lead again.",
+    link: "/services/ai-automations"
   },
   {
     title: "AI Booking Assistant",
     price: "$299",
     period: "/mo",
-    desc: "Your own AI booking agent that works 24/7 while you sleep. It answers questions via web chat-bot, qualifies the lead, and books the estimate right onto your calendar."
+    desc: "Your own AI booking agent that works 24/7 while you sleep. It answers questions via web chat-bot, qualifies the lead, and books the estimate right onto your calendar.",
+    link: "/services/ai-automations"
   }
 ]
 
@@ -75,10 +78,10 @@ const BUNDLES = [
 ]
 
 const AL_CARTE = [
-  { name: "Citation Clean-Up", price: "$699", desc: "Done by a human. We don't just pay a data aggregator or leave this one to AI. If your citations are a mess, it takes a human touch. One-time fee, not necessary if you're just starting out." },
+  { name: "Citation Clean-Up", price: "$699", desc: "Done by a human. We don't just pay a data aggregator or leave this one to AI. If your citations are a mess, it takes a human touch. One-time fee, not necessary if you're just starting out.", link: "/services/citation-cleanup" },
   { name: "Additional Service Page", price: "$250", desc: "One more page ranking on Google, pulling in leads you are not getting today." },
   { name: "Location Hub Page", price: "$350", desc: "Own the search results in a new city without opening a second office." },
-  { name: "Additional Google Profile", price: "$199", desc: "For additional locations. Your primary Google listing is already included in your build plan." }
+  { name: "Additional Google Profile", price: "$199", desc: "For additional locations. Your primary Google listing is already included in your build plan.", link: "/services/gbp-management" }
 ]
 
 export function AddOnsAndBundles() {
@@ -165,6 +168,13 @@ export function AddOnsAndBundles() {
                       <div className="font-sora font-extrabold text-brand-mustard">{item.price}</div>
                     </div>
                     <div className="text-sm font-medium text-brand-charcoal/70">{item.desc}</div>
+                    {item.link && (
+                      <div className="mt-4">
+                        <Link href={item.link} className="text-xs font-sora font-extrabold uppercase tracking-widest text-brand-mustard hover:text-brand-charcoal transition-colors underline underline-offset-4 decoration-brand-charcoal/20 hover:decoration-brand-mustard">
+                          Learn more →
+                        </Link>
+                      </div>
+                    )}
                   </ScaleReveal>
                 ))}
               </div>
@@ -189,6 +199,13 @@ export function AddOnsAndBundles() {
                         <div className="text-right"><span className="text-3xl font-sora font-extrabold tracking-tighter">{tool.price}</span><span className="text-brand-ivory/40 text-sm font-bold">{tool.period}</span></div>
                       </div>
                       <p className="text-brand-ivory/60 text-sm font-medium leading-relaxed">{tool.desc}</p>
+                      {tool.link && (
+                        <div className="mt-6">
+                          <Link href={tool.link} className="text-xs font-sora font-extrabold uppercase tracking-widest text-brand-mustard hover:text-white transition-colors underline underline-offset-4 decoration-brand-mustard/30 hover:decoration-white">
+                            See how it works →
+                          </Link>
+                        </div>
+                      )}
                     </FadeIn>
                   ))}
                 </div>
