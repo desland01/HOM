@@ -36,9 +36,9 @@ const featureDetails: Record<string, FeatureDetail> = {
     title: "Get Into the Google Map Pack",
     description: "When homeowners search 'painters near me,' Google shows a map with 3 businesses. We keep your Google Business Profile optimized, active, and loaded with reviews.",
     tiers: {
-      t1: "White-labeled BrightLocal citation starter. GBP optimization and Top 40 citations audited for NAP consistency.",
-      t2: "White-labeled BrightLocal Pro. Weekly optimization with 2x/week fresh photos and monthly Offers.",
-      t3: "White-labeled GHL automation. Premium review management and web chat-bot creates a flywheel of 5-star signals."
+      t1: "Essential local citation engine. GBP optimization and Top 40 citations audited for NAP consistency.",
+      t2: "Advanced local citation engine. Weekly optimization with 2x/week fresh photos and monthly Offers.",
+      t3: "Automated reputation engine. Premium review management and web chat-bot creates a flywheel of 5-star signals."
     }
   },
   "reports": {
@@ -56,7 +56,7 @@ const featureDetails: Record<string, FeatureDetail> = {
     tiers: {
       t1: "Multi-Step Contact Form that filters out budget shoppers and routes quality leads to your inbox.",
       t2: "Multi-Step Contact Form that filters out budget shoppers and routes quality leads to your inbox.",
-      t3: "AI Chat Widget integration (GHL) directly into website and CRM. Trained to warm up prospects and book them onto your calendar instantly."
+      t3: "AI Chat Widget integration directly into website and CRM. Trained to warm up prospects and book them onto your calendar instantly."
     }
   },
   "backlinks": {

@@ -13,7 +13,7 @@ const MAINTENANCE_PLANS = [
     title: "Performance Care",
     price: "$199",
     period: "/mo",
-    features: ["Everything in Essential, plus guaranteed speed checks", "Priority support when you need something changed yesterday", "WhiteSpark Citation Clean-Up to fix messy NAP data", "3 hours of manual content updates to keep your site sharp"],
+    features: ["Everything in Essential, plus guaranteed speed checks", "Priority support when you need something changed yesterday", "Comprehensive Citation Clean-Up to fix messy NAP data", "3 hours of manual content updates to keep your site sharp"],
     isPopular: true
   }
 ]
@@ -23,20 +23,20 @@ const SEO_PLANS = [
     title: "Local Foundation",
     price: "$499",
     period: "/mo",
-    features: ["BrightLocal Citation Builder Starter for local dominance", "1 blog post per month targeting local geo-modifiers", "We track your rankings so you see the real ROI", "Quarterly game plan so you always know the next move"]
+    features: ["Core Citation Builder for local dominance", "1 blog post per month targeting local geo-modifiers", "We track your rankings so you see the real ROI", "Quarterly game plan so you always know the next move"]
   },
   {
     title: "Market Dominator",
     price: "$999",
     period: "/mo",
-    features: ["BrightLocal Pro: 2x/week updates and monthly Offers", "5 monthly articles targeting competitors' exact gaps", "Advanced local link building (directories & associations)", "Bi-weekly strategy calls to steal more market share"],
+    features: ["Pro Citation Builder: 2x/week updates and monthly Offers", "5 monthly articles targeting competitors' exact gaps", "Advanced local link building (directories & associations)", "Bi-weekly strategy calls to steal more market share"],
     isPopular: true
   },
   {
     title: "Total Takeover",
     price: "$1,999",
     period: "/mo",
-    features: ["Premium GHL Review Management & automated responses", "9 monthly articles + 4 how-to videos pushing competitors off page 1", "1 High-DA backlink + 3 local guest posts per month", "We deploy the full AI content engine while you focus on jobs"]
+    features: ["Premium AI Review Management & automated responses", "9 monthly articles + 4 how-to videos pushing competitors off page 1", "1 High-DA backlink + 3 local guest posts per month", "We deploy the full AI content engine while you focus on jobs"]
   }
 ]
 
@@ -45,7 +45,7 @@ const AI_TOOLS = [
     title: "Missed Call Text Back",
     price: "$149",
     period: "/mo",
-    desc: "Every missed call is a $5,000 job walking straight to your competitor. This GHL tool texts the homeowner back instantly while you are on the ladder. You never lose a hot lead again."
+    desc: "Every missed call is a $5,000 job walking straight to your competitor. This automated tool texts the homeowner back instantly while you are on the ladder. You never lose a hot lead again."
   },
   {
     title: "AI Booking Assistant",
@@ -61,7 +61,7 @@ const BUNDLES = [
     price: "$1,150",
     period: "/mo",
     originalPrice: "$1,347/mo",
-    desc: "Your site stays fast, your Google rankings climb every month with BrightLocal, and every missed call gets caught automatically. This is the system that turns a good painting business into a booked-out one.",
+    desc: "Your site stays fast, your Google rankings climb every month with our local citation engine, and every missed call gets caught automatically. This is the system that turns a good painting business into a booked-out one.",
     savings: "$197"
   },
   {
@@ -75,7 +75,7 @@ const BUNDLES = [
 ]
 
 const AL_CARTE = [
-  { name: "WhiteSpark Clean-Up", price: "$499", desc: "A full audit and repair of your messy online citations so Google trusts you again." },
+  { name: "Citation Clean-Up", price: "$499", desc: "A full audit and repair of your messy online citations so Google trusts you again." },
   { name: "Additional Service Page", price: "$250", desc: "One more page ranking on Google, pulling in leads you are not getting today." },
   { name: "Location Hub Page", price: "$350", desc: "Own the search results in a new city without opening a second office." },
   { name: "Google Profile Setup", price: "$199", desc: "Your Google listing fully built out so you show up in the map pack from day one." }

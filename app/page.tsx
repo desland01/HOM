@@ -235,7 +235,7 @@ export default function Home() {
                   "Lightning fast 14-day delivery speed"
                 ]}
                 monthlyFeatures={[
-                  "Fully optimized Google Business Profile (White-labeled BrightLocal)",
+                  "Fully optimized Google Business Profile (Automated Local Citations)",
                   "Audit Top 40 citations for NAP consistency",
                   "1 targeted monthly blog post with local geo-modifiers",
                   "Keyword Rank Tracking so you see exact progress"
@@ -274,7 +274,7 @@ export default function Home() {
                   "Pre-qualifying automations and premium trust badges"
                 ]}
                 monthlyFeatures={[
-                  "Premium Review Management & web chat-bot (GHL)",
+                  "Premium Review Management & web chat-bot (AI Automated)",
                   "4 monthly how-to videos & 4 nested service FAQ pages",
                   "4 additional blog posts closing the competitor gap",
                   "1 high-DA backlink + 3 local business guest posts per month",

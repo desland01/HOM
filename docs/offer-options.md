@@ -47,17 +47,17 @@ A one-time fee to construct the Ferrari. You own this.
 The fuel that makes the asset perform.
 
 ### Tier 1: Local Authority
-- **GBP Management:** Fully optimized Google Business Profile. (White-labeled BrightLocal Citation Builder Starter).
-- **Citations:** Audit Top 40 citations for NAP consistency. (If messy, white-labeled WhiteSpark Clean Up).
+- **GBP Management:** Fully optimized Google Business Profile. (Automated Local Citation Engine).
+- **Citations:** Audit Top 40 citations for NAP consistency. (If messy, comprehensive Citation Clean Up).
 - **Content:** 1 targeted monthly blog post based on trending keywords with geo-modifiers.
 - **Reporting:** Keyword Rank Tracking.
 
 ### Tier 2: Market Dominator
-- **GBP Management:** Upgraded engagement (White-labeled BrightLocal Pro). We post 2x per week (updates/photos) plus monthly Offers to keep Google feeding your listing.
+- **GBP Management:** Upgraded engagement (Pro Citation Engine). We post 2x per week (updates/photos) plus monthly Offers to keep Google feeding your listing.
 - **Content:** 4 additional monthly blog posts targeting competitors' top-ranking pages.
 
 ### Tier 3: Total Saturation
-- **GBP Management:** Premium management + automated review and chat systems (White-labeled GHL).
+- **GBP Management:** Premium management + automated review and chat systems (Proprietary AI Platform).
 - **Content:** 4 monthly how-to videos, 4 nested service FAQ pages, and 4 more blog posts closing the competitor gap.
 - **AI Automation:** Web chat-bot, review management sequences, and automated lead nurturing.
 
