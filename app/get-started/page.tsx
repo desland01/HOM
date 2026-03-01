@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FadeIn, TextReveal, ScaleReveal } from '@/components/ui/animations'
-import { ThreeFlashPreview } from '@/components/ui/three-flash-preview'
 
 const TIERS = [
   {
@@ -71,9 +70,6 @@ export default function GetStartedFunnel() {
             />
           </div>
         </div>
-
-        {/* 3-FLASH PREVIEW */}
-        <ThreeFlashPreview />
 
         {/* THE STORY (IMPLIED HERO JOURNEY) */}
         <div className="max-w-3xl mx-auto space-y-12 lg:space-y-20 mb-32">
