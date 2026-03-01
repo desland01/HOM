@@ -204,9 +204,9 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05] pointer-events-none" />
         
         <div className="max-w-[1440px] mx-auto px-6 sm:px-12 mb-24 lg:mb-40 relative z-10 text-center">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-center">The Escape</FadeIn>
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-center">The Solution</FadeIn>
           <TextReveal 
-            text="UNCONFUSE GOOGLE. UNLOCK ABUNDANCE." 
+            text="LOOK LIKE THE BEST - CHARGE LIKE THE BEST." 
             className="text-5xl sm:text-7xl lg:text-9xl font-sora font-extrabold leading-[0.85] tracking-tighter-extreme uppercase justify-center" 
           />
         </div>
