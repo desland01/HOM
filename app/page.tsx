@@ -54,7 +54,7 @@ export default function Home() {
   ]
 
   return (
-    <main className="min-h-[100svh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip">
+    <main className="min-h-[100svh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip text-center sm:text-left">
       
       {/* MODAL SYSTEM INTEGRATION */}
       <UnifiedModal 
@@ -87,12 +87,12 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* HERO: THE ABUNDANCE VISION */}
+      {/* OVERSIZED HERO */}
       <section className={`relative ${showBanner ? 'pt-[72px]' : 'pt-6'} pb-20 ${showBanner ? 'lg:pt-24' : 'lg:pt-16'} lg:pb-6 px-6 sm:px-12 flex flex-col items-start overflow-clip border-b border-brand-charcoal/5 transition-[padding] duration-300`}>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015] pointer-events-none" />
         
-        <div className="w-full max-w-[1440px] mx-auto relative z-10">
+        <div className="w-full max-w-[1440px] mx-auto relative z-10 text-left">
           <div className="flex flex-col items-start">
             <FadeIn delay={0.1} className="flex items-center gap-4 mb-4 sm:mb-6">
               <Image src="/HM-Logo.png" alt="Homeowner Marketers" width={240} height={80} priority className="h-12 sm:h-20 w-auto object-contain invert" />
@@ -102,6 +102,16 @@ export default function Home() {
               </div>
             </FadeIn>
             
+            <FadeIn delay={0.2} className="flex flex-col items-start gap-2 mb-3">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-mustard/30 bg-brand-mustard/5 text-brand-mustard text-xs sm:text-sm font-sora font-extrabold uppercase tracking-widest">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mustard opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-mustard"></span>
+                </span>
+                Only 5 Pilot Spots Open
+              </div>
+            </FadeIn>
+
             <TextReveal 
               text="STOP LOOKING CHEAP. START CHARGING MORE." 
               className="text-4xl sm:text-7xl lg:text-7xl xl:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme mb-4 lg:mb-4 max-w-[15ch] lg:max-w-[25ch] text-left" 
@@ -109,12 +119,12 @@ export default function Home() {
             
             <div className="grid grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-6 w-full items-center mt-8">
               <FadeIn delay={0} className="col-span-2 lg:col-span-6">
-                <p className="text-lg sm:text-xl lg:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-8">
+                <p className="text-lg sm:text-xl lg:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-8 text-left">
                   Your website defines your reputation. We build you an asset that attracts high-value homeowners who appreciate your craft, so you can stop fighting for scraps and finally provide the life your team deserves.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Magnetic strength={10}>
-                    <Link href="#configurator" className="group relative inline-flex items-center justify-center px-8 py-4 lg:px-10 lg:py-5 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl text-base lg:text-lg uppercase tracking-widest text-center text-center">
+                    <Link href="#configurator" className="group relative inline-flex items-center justify-center px-8 py-4 lg:px-10 lg:py-5 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl text-base lg:text-lg uppercase tracking-widest text-center">
                       <span className="relative z-10 flex items-center gap-4">
                         Build Your Engine <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                       </span>
@@ -171,14 +181,14 @@ export default function Home() {
 
       {/* THE PROBLEM — STICKY SCROLL */}
       <section className="py-24 lg:py-40 px-6 sm:px-12 bg-white relative">
-        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-start">
-          <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit">
-            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Trap</FadeIn>
+        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-start text-left">
+          <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit text-left">
+            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-left">The Trap</FadeIn>
             <TextReveal 
               text="YOUR WEBSITE IS COSTING YOU MONEY." 
-              className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8"
+              className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8 text-left"
             />
-            <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
+            <FadeIn className="text-xl text-brand-charcoal/50 font-medium text-left">
               Right now, you're fighting for "scraps"—low-budget jobs where homeowners only care about the bottom line. It leaves zero margin for error, and zero margin to take care of your people.
             </FadeIn>
           </div>
@@ -194,7 +204,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05] pointer-events-none" />
         
         <div className="max-w-[1440px] mx-auto px-6 sm:px-12 mb-24 lg:mb-40 relative z-10 text-center">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Escape</FadeIn>
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-center">The Escape</FadeIn>
           <TextReveal 
             text="UNCONFUSE GOOGLE. UNLOCK ABUNDANCE." 
             className="text-5xl sm:text-7xl lg:text-9xl font-sora font-extrabold leading-[0.85] tracking-tighter-extreme uppercase justify-center" 
@@ -210,8 +220,8 @@ export default function Home() {
 
       {/* RADICAL TRANSPARENCY: THE LOGIC */}
       <section className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-charcoal text-brand-ivory relative border-t border-brand-charcoal/5 overflow-hidden text-center">
-        <div className="max-w-[1440px] mx-auto relative z-10">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Radical Transparency</FadeIn>
+        <div className="max-w-[1440px] mx-auto relative z-10 text-center">
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-center">Radical Transparency</FadeIn>
           <TextReveal 
             text="THEY KNOW WHAT WE DO. THEY JUST CANNOT KEEP UP." 
             className="text-4xl sm:text-6xl lg:text-7xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8 text-center" 
@@ -222,13 +232,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center gap-6 text-center">
             <button 
               onClick={() => setActiveModal('agentic-strategy')}
-              className="group relative inline-flex items-center justify-center px-8 py-4 font-sora font-extrabold text-brand-charcoal bg-brand-mustard rounded-none transition-all hover:scale-[1.02] active:scale-95 shadow-xl text-base uppercase tracking-widest"
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-sora font-extrabold text-brand-charcoal bg-brand-mustard rounded-none transition-all hover:scale-[1.02] active:scale-95 shadow-xl text-base uppercase tracking-widest text-center"
             >
               Learn Our Strategy →
             </button>
             <Link 
               href="#configurator"
-              className="group relative inline-flex items-center justify-center px-8 py-4 font-sora font-extrabold text-brand-ivory border-2 border-brand-ivory/20 rounded-none transition-all hover:bg-brand-ivory hover:text-brand-charcoal text-base uppercase tracking-widest"
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-sora font-extrabold text-brand-ivory border-2 border-brand-ivory/20 rounded-none transition-all hover:bg-brand-ivory hover:text-brand-charcoal text-base uppercase tracking-widest text-center"
             >
               Build Your Engine
             </Link>
@@ -241,19 +251,19 @@ export default function Home() {
 
       {/* TIERS — STICKY SCROLL */}
       <section id="tiers" className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-ivory relative border-t border-brand-charcoal/5">
-        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-start">
-          <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit">
-            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Pilot Packages</FadeIn>
+        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-start text-left">
+          <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit text-left">
+            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6 text-left text-left">Pilot Packages</FadeIn>
             <TextReveal 
               text="CHOOSE YOUR ENGINE." 
-              className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8" 
+              className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8 text-left" 
             />
-            <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
+            <FadeIn className="text-xl text-brand-charcoal/50 font-medium text-left">
               Your upfront cost covers a high-performance build plus 90 days of growth to prove the ROI. Scale your crew with confidence.
             </FadeIn>
           </div>
 
-          <div className="lg:w-7/12 flex flex-col gap-12">
+          <div className="lg:w-7/12 flex flex-col gap-12 text-left">
             <FadeIn>
               <TierCard 
                 name="Tier 01" title="Foundation Build"
@@ -321,17 +331,17 @@ export default function Home() {
 
       <AddOnsAndBundles />
 
+      <Guarantees />
+
       {/* THE CONFIGURATOR */}
       <Configurator />
 
-      <Guarantees />
-
       {/* FOOTER */}
-      <footer className="py-24 px-6 sm:px-12 bg-white border-t border-brand-charcoal/5">
-        <FadeIn className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+      <footer className="py-24 px-6 sm:px-12 bg-white border-t border-brand-charcoal/5 text-center sm:text-left">
+        <FadeIn className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 text-center sm:text-left">
           <div className="flex flex-col gap-6 w-full lg:w-auto items-center lg:items-start text-center sm:text-left">
             <Image src="/HM-Logo.png" alt="Homeowner Marketers" width={240} height={80} className="h-12 sm:h-16 w-auto object-contain invert opacity-80" />
-            <p className="text-brand-charcoal/40 font-medium text-sm">&copy; 2026 Homeowner Marketers. Assets for painters who refuse to compete on price.</p>
+            <p className="text-brand-charcoal/40 font-medium text-sm text-center sm:text-left">&copy; 2026 Homeowner Marketers. Assets for painters who refuse to compete on price.</p>
           </div>
         </FadeIn>
       </footer>
@@ -363,33 +373,33 @@ function ArrowRight({ className }: { className?: string }) {
 
 function TierCard({ name, title, save, original, price, buildFeatures, monthlyFeatures, isPopular }: any) {
   return (
-    <div className={`relative p-10 lg:p-12 border-2 ${isPopular ? 'bg-brand-charcoal text-brand-ivory border-brand-charcoal' : 'bg-white text-brand-charcoal border-brand-charcoal/5'} flex flex-col h-full group hover:-translate-y-2 transition-transform duration-500`}>
+    <div className={`relative p-10 lg:p-12 border-2 ${isPopular ? 'bg-brand-charcoal text-brand-ivory border-brand-charcoal' : 'bg-white text-brand-charcoal border-brand-charcoal/5'} flex flex-col h-full group hover:-translate-y-2 transition-transform duration-500 text-left`}>
       {isPopular && (
         <div className="absolute -top-4 left-10 bg-brand-mustard text-brand-charcoal text-xs font-sora font-extrabold tracking-[0.2em] uppercase px-4 py-2 rounded-none shadow-xl">
           Most Scalable
         </div>
       )}
 
-      <div className="mb-12">
-        <div className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase opacity-40 mb-2">{name}</div>
-        <h3 className="text-3xl font-sora font-extrabold mb-10 uppercase tracking-tight">{title}</h3>
+      <div className="mb-12 text-left">
+        <div className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase opacity-40 mb-2 text-left">{name}</div>
+        <h3 className="text-3xl font-sora font-extrabold mb-10 uppercase tracking-tight text-left">{title}</h3>
 
-        <div className="flex flex-col gap-1">
-          <div className="flex items-baseline gap-3">
+        <div className="flex flex-col gap-1 text-left">
+          <div className="flex items-baseline gap-3 text-left">
             <span className="text-sm font-sora font-extrabold uppercase tracking-widest text-brand-mustard">SAVE {save}</span>
             <span className="text-xl font-sora font-extrabold line-through opacity-20">{original}</span>
           </div>
-          <div className="text-5xl sm:text-6xl font-sora font-extrabold tracking-tighter-extreme">{price}</div>
-          <div className={`text-xs font-bold uppercase tracking-widest mt-2 ${isPopular ? 'text-brand-ivory/40' : 'text-brand-charcoal/40'}`}>Initial Investment</div>
+          <div className="text-5xl sm:text-6xl font-sora font-extrabold tracking-tighter-extreme text-left">{price}</div>
+          <div className={`text-xs font-bold uppercase tracking-widest mt-2 text-left ${isPopular ? 'text-brand-ivory/40' : 'text-brand-charcoal/40'}`}>Initial Investment</div>
         </div>
       </div>
 
-      <div className="space-y-12 flex-grow">
+      <div className="space-y-12 flex-grow text-left">
         <div>
-          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Build Asset (Owned)</div>
-          <ul className="space-y-4">
+          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b text-left ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Build Asset (Owned)</div>
+          <ul className="space-y-4 text-left">
             {buildFeatures.map((f: string, i: number) => (
-              <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed">
+              <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed text-left">
                 <span className="text-brand-mustard font-sora font-extrabold text-lg leading-none">/</span>
                 <span className={isPopular ? 'text-brand-ivory/80' : 'text-brand-charcoal/80'}>{f}</span>
               </li>
@@ -398,10 +408,10 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
         </div>
 
         <div>
-          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Pilot Engine (90 Days)</div>
-          <ul className="space-y-4">
+          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b text-left ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Pilot Engine (90 Days)</div>
+          <ul className="space-y-4 text-left">
             {monthlyFeatures.map((f: string, i: number) => (
-              <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed">
+              <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed text-left">
                 <span className="text-brand-mustard font-sora font-extrabold text-lg leading-none">/</span>
                 <span className={isPopular ? 'text-brand-ivory/80' : 'text-brand-charcoal/80'}>{f}</span>
               </li>
@@ -410,7 +420,7 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
         </div>
       </div>
 
-      <div className="mt-16">
+      <div className="mt-16 text-left">
         <Link href="#configurator" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
           Secure Territory
         </Link>
@@ -479,18 +489,18 @@ const ProblemCard = forwardRef<HTMLDivElement, { item: { title: string, desc: st
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer bg-brand-ivory text-brand-charcoal md:hover:bg-brand-charcoal md:hover:text-brand-ivory
+      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer bg-brand-ivory text-brand-charcoal md:hover:bg-brand-charcoal md:hover:text-brand-ivory text-left
         ${isActive ? 'max-md:bg-brand-charcoal max-md:text-brand-ivory' : ''}`}
     >
-      <div className="flex items-start gap-5 mb-4">
+      <div className="flex items-start gap-5 mb-4 text-left">
         <div className={`text-4xl font-sora font-extrabold leading-none transition-transform duration-500 text-brand-mustard md:group-hover:scale-110 ${isActive ? 'max-md:scale-110' : ''}`}>
           {item.icon}
         </div>
-        <h4 className="text-xl sm:text-2xl font-sora font-extrabold uppercase tracking-tight leading-tight mt-1">
+        <h4 className="text-xl sm:text-2xl font-sora font-extrabold uppercase tracking-tight leading-tight mt-1 text-left">
           {item.title}
         </h4>
       </div>
-      <p className={`leading-relaxed font-medium transition-colors duration-500 text-brand-charcoal/60 md:group-hover:text-brand-ivory/60 ${isActive ? 'max-md:text-brand-ivory/60' : ''}`}>{item.desc}</p>
+      <p className={`leading-relaxed font-medium transition-colors duration-500 text-brand-charcoal/60 md:group-hover:text-brand-ivory/60 text-left ${isActive ? 'max-md:text-brand-ivory/60' : ''}`}>{item.desc}</p>
     </motion.div>
   )
 })

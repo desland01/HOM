@@ -38,15 +38,9 @@ function CalendarIcon({ className }: { className?: string }) {
 }
 
 const BUILDS = [
-  { id: 'foundation', name: 'Foundation', price: 2250, desc: '1 Primary City Hub + 5 Service Pages.' },
-  { id: 'expansion', name: 'Expansion', price: 3400, desc: '4 Location Hubs + 20 Service Pages.', isPopular: true },
-  { id: 'takeover', name: 'Metro Build', price: 5250, desc: '10 Location Hubs + 70 Service Pages.' }
-]
-
-const GROWTH_PLANS = [
-  { id: 'local', name: 'Local Authority', price: 499, desc: 'Core citation building & 1 monthly article.' },
-  { id: 'market', name: 'Market Scaler', price: 999, desc: 'Pro citation engine & 5 monthly articles.', isPopular: true },
-  { id: 'total', name: 'Elite Growth', price: 1999, desc: 'Full AI content engine & local guest posts.' }
+  { id: 'foundation', name: 'Foundation', price: 2250, growthPrice: 499, growthName: 'Local Authority', desc: '1 Primary City Hub + 5 Service Pages.' },
+  { id: 'expansion', name: 'Expansion', price: 3400, growthPrice: 999, growthName: 'Market Scaler', desc: '4 Location Hubs + 20 Service Pages.', isPopular: true },
+  { id: 'takeover', name: 'Metro Build', price: 5250, growthPrice: 1999, growthName: 'Elite Growth', desc: '10 Location Hubs + 70 Service Pages.' }
 ]
 
 const ADD_ONS = [
@@ -59,22 +53,19 @@ export function Configurator() {
   const [step, setStep] = useState(1)
   const [selection, setSelected] = useState<{
     build: string | null
-    growth: string | null
     addons: string[]
   }>({
     build: 'expansion',
-    growth: 'market',
     addons: []
   })
 
-  const nextStep = () => setStep(s => Math.min(s + 1, 4))
+  const nextStep = () => setStep(s => Math.min(s + 1, 3))
   const prevStep = () => setStep(s => Math.max(s - 1, 1))
 
   const selectedBuild = BUILDS.find(b => b.id === selection.build)
-  const actualGrowth = GROWTH_PLANS.find(g => g.id === selection.growth)
   
   const buildPrice = selectedBuild?.price || 0
-  const growthPrice = actualGrowth?.price || 0
+  const growthPrice = selectedBuild?.growthPrice || 0
   const monthlyAddonsPrice = ADD_ONS.filter(a => selection.addons.includes(a.id) && a.type === 'monthly').reduce((acc, curr) => acc + (curr.price || 0), 0)
   const oneTimeAddonsPrice = ADD_ONS.filter(a => selection.addons.includes(a.id) && !a.type).reduce((acc, curr) => acc + (curr.price || 0), 0)
 
@@ -88,9 +79,9 @@ export function Configurator() {
       
       <div className="max-w-[1200px] mx-auto px-6 sm:px-12 relative z-10">
         <div className="flex flex-col items-center text-center mb-16 lg:mb-24">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Step {step} of 4</FadeIn>
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Step {step} of 3</FadeIn>
           <h2 className="text-4xl sm:text-6xl font-sora font-extrabold uppercase tracking-tighter-extreme mb-6">Build Your Engine</h2>
-          <p className="text-brand-ivory/50 max-w-2xl text-lg">Configure your 90-day pilot program. We build the asset that attracts abundance, you see the results, then you decide the future.</p>
+          <p className="text-brand-ivory/50 max-w-2xl text-lg text-center">Configure your 90-day pilot program. We build the asset that attracts abundance, you see the results, then you decide the future.</p>
         </div>
 
         <div className="min-h-[500px] flex flex-col">
@@ -99,7 +90,7 @@ export function Configurator() {
               <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8">
                 <div className="text-center mb-12">
                   <h3 className="text-2xl font-sora font-bold uppercase tracking-tight">1. Choose Your Build Asset</h3>
-                  <p className="text-brand-ivory/40 mt-2">The high-performance foundation you own forever.</p>
+                  <p className="text-brand-ivory/40 mt-2">The high-performance foundation you own forever. Includes 90 days of growth.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {BUILDS.map(b => (
@@ -108,6 +99,7 @@ export function Configurator() {
                       title={b.name} 
                       price={`$${b.price}`} 
                       desc={b.desc} 
+                      note={`Includes 90 days of ${b.growthName}`}
                       selected={selection.build === b.id} 
                       isPopular={b.isPopular}
                       onClick={() => setSelected({ ...selection, build: b.id })} 
@@ -118,31 +110,9 @@ export function Configurator() {
             )}
 
             {step === 2 && (
-              <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8">
+              <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-12">
                 <div className="text-center mb-12">
-                  <h3 className="text-2xl font-sora font-bold uppercase tracking-tight">2. Choose Your Growth Engine</h3>
-                  <p className="text-brand-ivory/40 mt-2">The monthly fuel that fills your calendar with people who appreciate your work.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {GROWTH_PLANS.map(g => (
-                    <SelectionCard 
-                      key={g.id} 
-                      title={g.name} 
-                      price={`$${g.price}/mo`} 
-                      desc={g.desc} 
-                      selected={selection.growth === g.id} 
-                      isPopular={g.isPopular}
-                      onClick={() => setSelected({ ...selection, growth: g.id })} 
-                    />
-                  ))}
-                </div>
-              </motion.div>
-            )}
-
-            {step === 3 && (
-              <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-12">
-                <div className="text-center mb-12">
-                  <h3 className="text-2xl font-sora font-bold uppercase tracking-tight">3. The 90-Day Roadmap</h3>
+                  <h3 className="text-2xl font-sora font-bold uppercase tracking-tight">2. The 90-Day Roadmap</h3>
                   <p className="text-brand-ivory/40 mt-2">Review your pilot program and add optional high-impact tools.</p>
                 </div>
                 
@@ -183,7 +153,7 @@ export function Configurator() {
                         <span>${buildPrice}</span>
                       </div>
                       <div className="flex justify-between font-bold">
-                        <span>{actualGrowth?.name} (x3 Mo)</span>
+                        <span>{selectedBuild?.growthName} (x3 Mo)</span>
                         <span>${growthPrice * 3}</span>
                       </div>
                       {selection.addons.length > 0 && (
@@ -210,20 +180,20 @@ export function Configurator() {
               </motion.div>
             )}
 
-            {step === 4 && (
-              <motion.div key="step4" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} className="flex flex-col items-center text-center py-12">
+            {step === 3 && (
+              <motion.div key="step3" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} className="flex flex-col items-center text-center py-12">
                 <div className="w-20 h-20 bg-brand-mustard rounded-full flex items-center justify-center mb-8 shadow-[0_0_40px_rgba(201,162,39,0.4)] animate-pulse">
                   <Check className="w-10 h-10 text-brand-charcoal" strokeWidth={3} />
                 </div>
-                <h3 className="text-3xl sm:text-5xl font-sora font-extrabold uppercase tracking-tight mb-6">Engine Configured.</h3>
-                <p className="text-xl text-brand-ivory/70 max-w-2xl leading-relaxed mb-12">
+                <h3 className="text-3xl sm:text-5xl font-sora font-extrabold uppercase tracking-tight mb-6 text-center">Engine Configured.</h3>
+                <p className="text-xl text-brand-ivory/70 max-w-2xl leading-relaxed mb-12 text-center">
                   At the 10-week mark, we'll review your ROI together. You'll choose to continue for 6, 12, or 24 months, or we part as friends with you owning every asset we built.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6 w-full max-w-2xl">
                   <Link 
-                    href={`mailto:hello@homeownermarketers.com?subject=Pilot%20Application&body=Build:%20${selectedBuild?.name}%0AGrowth:%20${actualGrowth?.name}%0AAddons:%20${selection.addons.join(',%20')}`}
-                    className="flex-1 group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-charcoal bg-brand-mustard transition-all duration-300 ease-out hover:scale-[1.05] active:scale-95 shadow-xl text-lg uppercase tracking-widest text-center"
+                    href={`mailto:hello@homeownermarketers.com?subject=Pilot%20Application&body=Build:%20${selectedBuild?.name}%0AGrowth:%20${selectedBuild?.growthName}%0AAddons:%20${selection.addons.join(',%20')}`}
+                    className="flex-1 group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-charcoal bg-brand-mustard transition-all duration-300 ease-out hover:scale-[1.05] active:scale-95 shadow-xl text-lg uppercase tracking-widest text-center text-center"
                   >
                     <span className="relative z-10 flex items-center gap-4">
                       Lock In Slot <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
@@ -238,7 +208,7 @@ export function Configurator() {
                     </span>
                   </Link>
                 </div>
-                <p className="text-brand-ivory/30 text-xs mt-12 font-medium uppercase tracking-[0.2em]">
+                <p className="text-brand-ivory/30 text-xs mt-12 font-medium uppercase tracking-[0.2em] text-center text-center">
                   Btw... we built this entire configurator in 20 minutes. Are you getting in?
                 </p>
               </motion.div>
@@ -246,7 +216,7 @@ export function Configurator() {
           </AnimatePresence>
 
           {/* Navigation */}
-          {step < 4 && (
+          {step < 3 && (
             <div className="mt-16 flex items-center justify-between border-t border-brand-ivory/10 pt-12">
               <button 
                 onClick={prevStep} 
@@ -257,7 +227,7 @@ export function Configurator() {
               </button>
               
               <div className="flex-1 flex justify-center gap-2">
-                {[1, 2, 3, 4].map(i => (
+                {[1, 2, 3].map(i => (
                   <div key={i} className={`h-1 rounded-full transition-all duration-500 ${step === i ? 'w-8 bg-brand-mustard' : 'w-2 bg-brand-ivory/20'}`} />
                 ))}
               </div>
@@ -273,7 +243,7 @@ export function Configurator() {
         </div>
 
         {/* UNSURE PATH */}
-        {step < 4 && (
+        {step < 3 && (
           <div className="mt-32 text-center border-t border-brand-ivory/5 pt-12">
             <p className="text-brand-ivory/40 mb-6 font-medium italic">Not sure which build size fits your current crew?</p>
             <Link 
@@ -289,7 +259,7 @@ export function Configurator() {
   )
 }
 
-function SelectionCard({ title, price, desc, selected, isPopular, onClick }: any) {
+function SelectionCard({ title, price, desc, note, selected, isPopular, onClick }: any) {
   return (
     <button
       onClick={onClick}
@@ -305,7 +275,8 @@ function SelectionCard({ title, price, desc, selected, isPopular, onClick }: any
         {selected && <div className="w-2.5 h-2.5 rounded-full bg-brand-mustard shadow-[0_0_10px_var(--brand-mustard)]" />}
       </div>
       <h4 className="text-lg font-sora font-extrabold uppercase mb-1">{title}</h4>
-      <div className="text-2xl font-sora font-extrabold text-brand-mustard mb-4">{price}</div>
+      <div className="text-2xl font-sora font-extrabold text-brand-mustard mb-2">{price}</div>
+      <p className="text-[10px] font-sora font-extrabold uppercase tracking-widest text-brand-mustard/60 mb-4">{note}</p>
       <p className="text-sm text-brand-ivory/50 font-medium leading-relaxed">{desc}</p>
     </button>
   )
