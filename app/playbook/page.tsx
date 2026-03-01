@@ -71,7 +71,7 @@ export default function PlaybookPage() {
             {/* PLAY 02 */}
             <ScaleReveal delay={0.1} className="p-8 sm:p-12 bg-white border border-brand-charcoal/10 relative group hover:border-brand-mustard transition-colors duration-500">
               <div className="absolute top-0 right-8 -translate-y-1/2 bg-brand-charcoal text-brand-mustard text-sm font-sora font-extrabold tracking-widest uppercase px-4 py-2">Play 02</div>
-              <h3 className="text-2xl sm:text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal mb-6">G.E.O. (Generative Engine Optimization)</h3>
+              <h3 className="text-2xl sm:text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal mb-6">A.E.O. (Answer Engine Optimization)</h3>
               <div className="prose prose-lg text-brand-charcoal/70 font-medium max-w-none">
                 <p>Google Search is changing. Homeowners are now asking ChatGPT, Perplexity, and Google AI for recommendations. If your site isn't structured for AI bots to read it, you don't exist.</p>
                 <p>We deploy advanced Schema Markup (LocalBusiness, Service, FAQ, Review) and dedicated <code>llms.txt</code> files that spoon-feed your data directly to AI engines. When a homeowner asks an AI "who is the best painter near me?", the AI cites your business by name.</p>

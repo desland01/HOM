@@ -7,11 +7,11 @@ import { FeatureModal, FeatureDetail } from '@/components/ui/feature-modal'
 const featureDetails: Record<string, FeatureDetail> = {
   "geo-silos": {
     title: "Your City, Your Territory",
-    description: "When a homeowner in your area searches for a painter -- whether on Google or asking ChatGPT -- your name should be the first one they see. We build your site with G.E.O. optimization so both traditional and AI search engines treat you as the go-to authority in every neighborhood you serve.",
+    description: "When a homeowner in your area searches for a painter -- whether on Google or asking ChatGPT -- your name should be the first one they see. We build your site with A.E.O. optimization so both traditional and AI search engines treat you as the go-to authority in every neighborhood you serve.",
     tiers: {
       t1: "Locks down your primary city on Google. Your site gets answer capsules and core schema markup so AI search engines like ChatGPT and Google AI can find and recommend you in your home market. The foundation every painter needs to show up in both traditional and AI search.",
-      t2: "Expands into 3 surrounding suburbs where high-value homeowners live. Includes advanced G.E.O. -- richer schema for FAQs and services, expert attribution so AI cites you by name, and AI bot crawl optimization on top of the basics. Traditional and AI search engines both send you leads.",
-      t3: "Full metro takeover with the complete G.E.O. suite. Every city and suburb ranks on Google, plus cross-platform presence amplification across 4+ platforms and competitive AI citation monitoring. Your competitors fight over scraps while every AI search engine recommends you by name."
+      t2: "Expands into 3 surrounding suburbs where high-value homeowners live. Includes advanced A.E.O. -- richer schema for FAQs and services, expert attribution so AI cites you by name, and AI bot crawl optimization on top of the basics. Traditional and AI search engines both send you leads.",
+      t3: "Full metro takeover with the complete A.E.O. suite. Every city and suburb ranks on Google, plus cross-platform presence amplification across 4+ platforms and competitive AI citation monitoring. Your competitors fight over scraps while every AI search engine recommends you by name."
     }
   },
   "proof-engine": {
@@ -55,7 +55,7 @@ export const StickyFeatures = () => {
   const features = [
     {
       title: "Own Your City",
-      description: "Google is not the only search engine anymore. When homeowners ask ChatGPT or Google AI for a painter recommendation, our G.E.O. (Generative Engine Optimization) makes sure your site is the one that gets cited. We optimize for every search engine -- traditional and AI -- so they all send homeowners to you first.",
+      description: "Google is not the only search engine anymore. When homeowners ask ChatGPT or Google AI for a painter recommendation, our A.E.O. (Answer Engine Optimization) makes sure your site is the one that gets cited. We optimize for every search engine -- traditional and AI -- so they all send homeowners to you first.",
       color: "bg-brand-charcoal",
       textColor: "text-brand-ivory",
       number: "01",
