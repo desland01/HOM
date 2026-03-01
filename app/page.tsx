@@ -424,8 +424,8 @@ function ProblemCardsList() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only run scroll calculation on mobile viewports (<1024px)
-      if (window.innerWidth >= 1024) {
+      // Only run scroll calculation on truly mobile viewports (<768px)
+      if (window.innerWidth >= 768) {
         if (activeIndex !== null) setActiveIndex(null)
         return
       }
@@ -492,18 +492,18 @@ const ProblemCard = forwardRef<HTMLDivElement, { item: { title: string, desc: st
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer bg-brand-ivory text-brand-charcoal lg:hover:bg-brand-charcoal lg:hover:text-brand-ivory
-        ${isActive ? 'max-lg:bg-brand-charcoal max-lg:text-brand-ivory' : ''}`}
+      className={`group p-8 sm:p-10 transition-colors duration-500 h-full cursor-pointer bg-brand-ivory text-brand-charcoal md:hover:bg-brand-charcoal md:hover:text-brand-ivory
+        ${isActive ? 'max-md:bg-brand-charcoal max-md:text-brand-ivory' : ''}`}
     >
       <div className="flex items-start gap-5 mb-4">
-        <div className={`text-4xl font-sora font-extrabold leading-none transition-transform duration-500 text-brand-mustard lg:group-hover:scale-110 ${isActive ? 'max-lg:scale-110' : ''}`}>
+        <div className={`text-4xl font-sora font-extrabold leading-none transition-transform duration-500 text-brand-mustard md:group-hover:scale-110 ${isActive ? 'max-md:scale-110' : ''}`}>
           {item.icon}
         </div>
         <h4 className="text-xl sm:text-2xl font-sora font-extrabold uppercase tracking-tight leading-tight mt-1">
           {item.title}
         </h4>
       </div>
-      <p className={`leading-relaxed font-medium transition-colors duration-500 text-brand-charcoal/60 lg:group-hover:text-brand-ivory/60 ${isActive ? 'max-lg:text-brand-ivory/60' : ''}`}>{item.desc}</p>
+      <p className={`leading-relaxed font-medium transition-colors duration-500 text-brand-charcoal/60 md:group-hover:text-brand-ivory/60 ${isActive ? 'max-md:text-brand-ivory/60' : ''}`}>{item.desc}</p>
     </motion.div>
   )
 })
