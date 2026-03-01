@@ -75,48 +75,48 @@ export default function GetStartedFunnel() {
         {/* 3-FLASH PREVIEW */}
         <ThreeFlashPreview />
 
-        {/* THE STORY (SB7 HERO JOURNEY) */}
+        {/* THE STORY (IMPLIED HERO JOURNEY) */}
         <div className="max-w-3xl mx-auto space-y-12 lg:space-y-20 mb-32">
           
           <FadeIn className="space-y-6">
-            <p className="text-xl sm:text-2xl font-medium leading-relaxed text-brand-ivory/90">
-              You are the hero of your own business. You've built it through sweat, late nights, and doing the job right when others cut corners.
+            <p className="text-xl sm:text-2xl font-medium leading-relaxed text-brand-ivory/90 font-sora">
+              The jobs you take on define your reputation. You've built a business on quality, sweat, and doing the job right when others cut corners.
             </p>
             <p className="text-lg sm:text-xl text-brand-ivory/60 leading-relaxed">
-              But the way you get customers right now? It feels like you're fighting an uphill battle with one hand tied behind your back. You're relying on a marketing model that hasn't changed in 10 years, hoping the phone rings while bloated SEO agencies charge you $1,500 a month to do... <span className="italic text-brand-mustard">absolutely nothing</span>.
+              But while you were mastering your trade, the world changed. The "old way" of getting leads—relying on a 10-year-old marketing playbook and hoping the phone rings—has hit an invisible wall. You're paying bloated agencies $1,500 a month to sit in meetings while your digital presence gathers dust. They call it "SEO." We call it an anchor.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.1} className="space-y-6 pt-12 border-t border-brand-ivory/10">
             <h3 className="text-2xl sm:text-3xl font-sora font-extrabold text-white uppercase tracking-tight">The Generational Shift</h3>
             <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed">
-              We are not another agency pitching you the same tired "we'll write two blogs a month" retainer. We are your guide to what comes next.
+              In the AI labs, things move in dog years. A "generational transition" used to take a decade; now it takes 90 days. We have a 6-month head start on the entire industry because we deploy tech the moment it leaves the lab.
             </p>
-            <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed">
-              Right now, there is a generational transition happening in technology. We have a 6-month head start on the entire industry because we deploy agentic AI tech the moment it leaves the labs. In AI-time, 6 months is a decade.
+            <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed font-bold text-brand-mustard">
+              In AI-time, 6 months is a decade. 
             </p>
           </FadeIn>
 
           <FadeIn delay={0.2} className="space-y-6 pt-12 border-t border-brand-ivory/10">
-            <h3 className="text-2xl sm:text-3xl font-sora font-extrabold text-white uppercase tracking-tight">No Bloat. Just Speed.</h3>
+            <h3 className="text-2xl sm:text-3xl font-sora font-extrabold text-white uppercase tracking-tight">No Bloat. Just Infrastructure.</h3>
             <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed">
-              The other guys are weighed down by massive overhead. They have account managers, junior copywriters, and a 10-person chain of command that takes three weeks to approve a simple website update. 
+              Our model was built natively on this new technology. We don't have a 10-person chain of command or junior copywriters waiting for approval. Our agentic development practices allow us to turn the work of one developer into twenty.
             </p>
             <p className="text-lg sm:text-xl text-brand-ivory/80 leading-relaxed">
-              Our model was built natively on this new technology. We turn the work of one web developer into twenty. We deploy full metropolitan SEO architectures in days, not months. We don't ask for permission to move fast.
+              We build entire metropolitan SEO architectures in days, not months. While your competition is still asking ChatGPT for relationship advice, we're deploying proprietary AI to write 50 pages and build advanced data files for every endpoint.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.3} className="space-y-6 pt-12 border-t border-brand-ivory/10 bg-brand-mustard/5 p-8 -mx-8 rounded-2xl border border-brand-mustard/20">
             <h3 className="text-2xl sm:text-3xl font-sora font-extrabold text-brand-mustard uppercase tracking-tight">The DeLorean Is Idling</h3>
             <p className="text-lg sm:text-xl text-brand-ivory/90 leading-relaxed">
-              This is your opportunity to leave your competition stuck in a 10-year-old marketing model, while you jump in our DeLorean and zoom off to the future. 
+              This is your opportunity to leave your competition stuck in the 2010s while you zoom off to the future. We've built the engine; you just need to turn the key.
             </p>
             <p className="text-lg sm:text-xl text-brand-ivory/90 font-bold leading-relaxed">
-              But there's a catch: We only take ONE painting company per territory. Once a city is locked, it's locked.
+              But there's a strict limit: We only take ONE painting company per territory. 
             </p>
             <p className="text-lg sm:text-xl text-brand-ivory/60 leading-relaxed">
-              We refuse to compete against our own clients. And since we publish our exact methodology online, it is only a matter of time before your biggest competitor finds out we exist. 
+              Once your city is locked, it's locked. We refuse to compete against our own clients. And since we are fully transparent about our methodology, it's only a matter of time before your biggest competitor finds our playbook.
             </p>
           </FadeIn>
 
@@ -181,7 +181,7 @@ export default function GetStartedFunnel() {
                     </span>
                   </Link>
                   <p className="text-brand-ivory/40 text-xs mt-6 font-medium uppercase tracking-[0.2em]">
-                    Btw... we built this entire funnel in 20 minutes.
+                    Btw... we built this entire funnel in 20 minutes. Are you getting in?
                   </p>
                 </motion.div>
               ) : (
