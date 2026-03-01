@@ -13,7 +13,6 @@ import { PortfolioViewports } from '@/components/sections/portfolio-viewports'
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true)
-  const [showPolicyModal, setShowPolicyModal] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -42,36 +41,6 @@ export default function Home() {
               ×
             </button>
           </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* POLICY MODAL */}
-      <AnimatePresence>
-        {showPolicyModal && (
-          <div className="fixed inset-0 z-[999] flex items-center justify-center px-4 sm:px-6 py-12">
-            <motion.div 
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              onClick={() => setShowPolicyModal(false)}
-              className="absolute inset-0 bg-brand-charcoal/80 backdrop-blur-sm cursor-pointer"
-            />
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-3xl bg-brand-ivory rounded-none border-2 border-brand-charcoal shadow-2xl overflow-hidden z-10 flex flex-col"
-            >
-              <div className="flex justify-between items-center p-6 sm:p-8 border-b border-brand-charcoal/10 bg-white">
-                <h3 className="text-2xl sm:text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal pr-8">
-                  The Agentic Unfair Advantage
-                </h3>
-                <button onClick={() => setShowPolicyModal(false)} className="absolute right-4 top-4 w-12 h-12 flex items-center justify-center text-brand-charcoal text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity">×</button>
-              </div>
-              <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-lg text-brand-charcoal/80 font-medium">
-                <p>We are 6 months ahead of the industry because we are using the latest development skills coming out of the AI labs the moment they are available.</p>
-                <p>What does that mean for you?</p>
-                <p>You get known techniques used by Fortune 500 companies but were just completely unfeasible only one year ago. Our agentic development practices allow us to turn the work of one web-developer into 20.</p>
-                <p>So while the other guys are promising you 20 pages and citation management, we are deploying teams of highly trained proprietary AI to write 50 pages, building advanced AI-readable files for every page, and filling your calendar while your competitor is still asking ChatGPT for relationship advice.</p>
-              </div>
-            </motion.div>
-          </div>
         )}
       </AnimatePresence>
 
@@ -217,23 +186,23 @@ export default function Home() {
       <section className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-charcoal text-brand-ivory relative border-t border-brand-charcoal/5 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
         <div className="max-w-[1440px] mx-auto flex flex-col items-center text-center relative z-10">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Our Transparency Policy</FadeIn>
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Radical Transparency</FadeIn>
           <TextReveal 
-            text="WE ARE 6 MONTHS AHEAD. THEY CANNOT KEEP UP." 
+            text="THEY KNOW WHAT WE DO. THEY JUST CANNOT KEEP UP." 
             className="text-4xl sm:text-6xl lg:text-7xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8 max-w-4xl" 
           />
           <FadeIn className="text-xl text-brand-ivory/70 font-medium max-w-3xl mb-12">
-            We are a fully transparent SEO business. We are not afraid of our competitors finding out what we do because the fact is, they already know. They just cannot execute it.
+            Most SEO agencies hide behind "proprietary algorithms" because their work is generic. We publish our exact methodology. We are operating 6 months ahead of the industry using agentic AI development—deploying enterprise-grade infrastructure in days, not months.
           </FadeIn>
           <FadeIn>
-            <button 
-              onClick={() => setShowPolicyModal(true)}
+            <Link 
+              href="/playbook"
               className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-sora font-extrabold text-brand-charcoal bg-brand-mustard rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-xl text-base uppercase tracking-widest"
             >
               <span className="relative z-10 flex items-center gap-4">
-                Look Under The Hood <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
+                Read The Playbook <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
               </span>
-            </button>
+            </Link>
           </FadeIn>
         </div>
       </section>
