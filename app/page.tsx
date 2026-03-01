@@ -9,7 +9,7 @@ import { StickyFeatures } from '@/components/ui/sticky-features'
 import { ComparisonTable } from '@/components/sections/comparison-table'
 import { Guarantees } from '@/components/sections/guarantees'
 import { PortfolioViewports } from '@/components/sections/portfolio-viewports'
-import { UnifiedModal, FlashCard, FlashCardCarousel } from '@/components/ui/modals'
+import { UnifiedModal, PlaybookModalContent } from '@/components/ui/modals'
 import { Configurator } from '@/components/sections/configurator'
 import { AddOnsAndBundles } from '@/components/sections/add-ons-and-bundles'
 
@@ -63,7 +63,7 @@ export default function Home() {
         type="flashcard" 
         title="The Methodology Playbook"
       >
-        <FlashCardCarousel cards={playbookCards} />
+        <PlaybookModalContent cards={playbookCards} />
       </UnifiedModal>
 
       {/* STICKY TOP BANNER */}
