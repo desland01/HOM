@@ -44,9 +44,8 @@ const BUILDS = [
 ]
 
 const ADD_ONS = [
-  { id: 'cleanup', name: 'Human Citation Clean-Up', price: 699, desc: 'One-time manual audit & fix.' },
-  { id: 'textback', name: 'Missed Call Text Back', price: 149, type: 'monthly', desc: 'Capture every lead instantly.' },
-  { id: 'booking', name: 'AI Booking Assistant', price: 299, type: 'monthly', desc: '24/7 automated scheduling.' }
+  { id: 'cleanup', name: 'Human Citation Clean-Up', price: 699, desc: 'One-time manual audit & fix. Recommended if your current listings are a mess.' },
+  { id: 'location', name: 'Additional Google Profile', price: 199, type: 'monthly', desc: 'For businesses with multiple GBP locations or those expanding into a new territory.' }
 ]
 
 export function Configurator() {
@@ -65,13 +64,12 @@ export function Configurator() {
   const selectedBuild = BUILDS.find(b => b.id === selection.build)
   
   const buildPrice = selectedBuild?.price || 0
-  const growthPrice = selectedBuild?.growthPrice || 0
   const monthlyAddonsPrice = ADD_ONS.filter(a => selection.addons.includes(a.id) && a.type === 'monthly').reduce((acc, curr) => acc + (curr.price || 0), 0)
   const oneTimeAddonsPrice = ADD_ONS.filter(a => selection.addons.includes(a.id) && !a.type).reduce((acc, curr) => acc + (curr.price || 0), 0)
 
-  const totalUpfront = buildPrice + oneTimeAddonsPrice
-  const totalMonthly = growthPrice + monthlyAddonsPrice
-  const total90DayInvestment = totalUpfront + (totalMonthly * 3)
+  // Total 90-day investment is now just the Build Price (which includes 3 months of the growth plan) + any Add-on costs
+  // Monthly add-ons are multiplied by 3 for the 90-day total
+  const total90DayInvestment = buildPrice + oneTimeAddonsPrice + (monthlyAddonsPrice * 3)
 
   return (
     <section id="configurator" className="py-24 lg:py-40 bg-brand-charcoal text-brand-ivory relative overflow-hidden">
@@ -90,7 +88,7 @@ export function Configurator() {
               <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8">
                 <div className="text-center mb-12">
                   <h3 className="text-2xl font-sora font-bold uppercase tracking-tight">1. Choose Your Build Asset</h3>
-                  <p className="text-brand-ivory/40 mt-2">The high-performance foundation you own forever. Includes 90 days of growth.</p>
+                  <p className="text-brand-ivory/40 mt-2">Price includes asset construction plus your first 90 days of active growth.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {BUILDS.map(b => (
@@ -113,7 +111,7 @@ export function Configurator() {
               <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-12">
                 <div className="text-center mb-12">
                   <h3 className="text-2xl font-sora font-bold uppercase tracking-tight">2. The 90-Day Roadmap</h3>
-                  <p className="text-brand-ivory/40 mt-2">Review your pilot program and add optional high-impact tools.</p>
+                  <p className="text-brand-ivory/40 mt-2">Review your pilot program and add optional high-impact infrastructure.</p>
                 </div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -149,12 +147,11 @@ export function Configurator() {
                     <h4 className="text-xs font-sora font-extrabold uppercase tracking-widest text-brand-charcoal/40 mb-8">Investment Summary</h4>
                     <div className="space-y-4 mb-8">
                       <div className="flex justify-between font-bold">
-                        <span>{selectedBuild?.name} Build</span>
+                        <span>{selectedBuild?.name} Pilot</span>
                         <span>${buildPrice}</span>
                       </div>
-                      <div className="flex justify-between font-bold">
-                        <span>{selectedBuild?.growthName} (x3 Mo)</span>
-                        <span>${growthPrice * 3}</span>
+                      <div className="text-[10px] text-brand-charcoal/40 uppercase font-bold italic -mt-2">
+                        *Includes Build + 90 Days of {selectedBuild?.growthName}
                       </div>
                       {selection.addons.length > 0 && (
                         <div className="pt-4 border-t border-brand-charcoal/10 space-y-2">
@@ -169,10 +166,10 @@ export function Configurator() {
                       )}
                     </div>
                     <div className="pt-8 border-t-2 border-brand-charcoal space-y-1">
-                      <div className="text-xs font-sora font-extrabold uppercase tracking-widest text-brand-mustard">Total 90-Day Pilot</div>
+                      <div className="text-xs font-sora font-extrabold uppercase tracking-widest text-brand-mustard">Total 90-Day Investment</div>
                       <div className="text-5xl font-sora font-extrabold tracking-tighter-extreme">${total90DayInvestment}</div>
                       <p className="text-[10px] uppercase font-bold text-brand-charcoal/40 mt-2 leading-tight italic">
-                        *Total investment over 3 months including all setup and active growth.
+                        *Full investment for the 90-day proof period.
                       </p>
                     </div>
                   </div>
@@ -192,7 +189,7 @@ export function Configurator() {
                 
                 <div className="flex flex-col sm:flex-row gap-6 w-full max-w-2xl">
                   <Link 
-                    href={`mailto:hello@homeownermarketers.com?subject=Pilot%20Application&body=Build:%20${selectedBuild?.name}%0AGrowth:%20${selectedBuild?.growthName}%0AAddons:%20${selection.addons.join(',%20')}`}
+                    href={`mailto:hello@homeownermarketers.com?subject=Pilot%20Application&body=Build:%20${selectedBuild?.name}%0AAddons:%20${selection.addons.join(',%20')}%0ATotal:%20$${total90DayInvestment}`}
                     className="flex-1 group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-charcoal bg-brand-mustard transition-all duration-300 ease-out hover:scale-[1.05] active:scale-95 shadow-xl text-lg uppercase tracking-widest text-center text-center"
                   >
                     <span className="relative z-10 flex items-center gap-4">
@@ -248,7 +245,7 @@ export function Configurator() {
             <p className="text-brand-ivory/40 mb-6 font-medium italic">Not sure which build size fits your current crew?</p>
             <Link 
               href="https://calendly.com/homeownermarketers" 
-              className="inline-flex items-center gap-3 text-brand-mustard font-sora font-extrabold uppercase tracking-widest text-xs hover:text-white transition-colors text-center"
+              className="inline-flex items-center gap-3 text-brand-mustard font-sora font-extrabold uppercase tracking-widest text-xs hover:text-white transition-colors text-center text-center"
             >
               <CalendarIcon className="w-4 h-4" /> Speak with an advisor directly
             </Link>
