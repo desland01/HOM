@@ -20,7 +20,7 @@ const featureDetails: Record<string, any> = {
     tiers: {
       t1: "Basic JSON-LD Schema markup for local business identification.",
       t2: "Extended Schema for services and FAQs plus AI bot crawl optimization.",
-      t3: "Full G.E.O. suite including llms.txt integration and expert attribution signals."
+      t3: "Full A.E.O. suite including llms.txt integration and expert attribution signals."
     }
   },
   "reverse-silos": {
@@ -161,10 +161,10 @@ export const ComparisonTable = () => {
               
               <TableRow title="Location Hubs" t1="1" t2="4" t3="10" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
               <TableRow title="Nested Service Pages" t1="5" t2="20" t3="70" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
-              <TableRow title="A.E.O. Optimization" t1="Basic" t2="Advanced" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['aeo'])} />
-              <TableRow title="Multi-Step Pre-Qualification" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
+              <TableRow title="Multi-Step Contact Form" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
               <TableRow title="Instant Edge Hosting" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
-              <TableRow title="AI Chat Widget" t1={xmark} t2="100 / Mo" t3="Unlimited" isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
+              <TableRow title="Local SEO Data Structure" t1={check} t2={check} t3={check} isPop />
+              <TableRow title="AI Chat Widget Integration" t1={xmark} t2="100 / Mo" t3="Unlimited" isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
               <TableRow title="Delivery Timeline" t1="14 Days" t2="14 Days" t3="14 Days" isPop borderBottom />
 
               {/* MONTHLY ENGINE */}
@@ -172,14 +172,16 @@ export const ComparisonTable = () => {
                 <td colSpan={4} className="p-4 lg:px-8">90-Day Growth Pilot (Included)</td>
               </tr>
 
-              <TableRow title="GBP Optimization" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
-              <TableRow title="Content Articles / Month" t1="1" t2="5" t3="9" isPop onInfo={() => setSelectedFeature(featureDetails['reverse-silos'])} />
+              <TableRow title="A.E.O. Optimization" t1="Basic" t2="Advanced" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['aeo'])} />
+              <TableRow title="GBP Sync & Top 40 Citations" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
+              <TableRow title="Blog Posts / Month" t1="1" t2="5" t3="9" isPop onInfo={() => setSelectedFeature(featureDetails['reverse-silos'])} />
               <TableRow title="Keyword Rank Tracking" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
               <TableRow title="GBP Photo & Offer Updates" t1="Monthly" t2="2 Updates + 2 Photos / Mo" t3="Premium Auto" isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
               <TableRow title="Competitor Gap Analysis" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
-              <TableRow title="Local Link Building" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
+              <TableRow title="Easy-Win Local Link Building" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
+              <TableRow title="How-To Videos & FAQ Pages" t1={xmark} t2={xmark} t3="4 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['reverse-silos'])} />
               <TableRow title="High DA Backlinks" t1={xmark} t2={xmark} t3="1 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
-              <TableRow title="Local Guest Posts" t1={xmark} t2={xmark} t3="2 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} borderBottom />
+              <TableRow title="Local Guest Post Backlinks" t1={xmark} t2={xmark} t3="2 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} borderBottom />
 
             </tbody>
             </table>
