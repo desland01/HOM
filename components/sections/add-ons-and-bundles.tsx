@@ -114,7 +114,7 @@ export function AddOnsAndBundles() {
               </FadeIn>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {MAINTENANCE_PLANS.map((plan, i) => (
-                  <ScaleReveal key={i} delay={i * 0.1} className={`p-8 border-2 ${plan.isPopular ? 'border-brand-charcoal bg-white' : 'border-brand-charcoal/5 bg-white/50 hover:border-brand-charcoal/20'} relative flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}>
+                  <ScaleReveal key={i} delay={i * 0.1} className={`p-8 border-2 ${plan.isPopular ? 'border-brand-charcoal bg-white' : 'border-brand-charcoal/5 bg-white/50 hover:border-brand-charcoal/20'} relative flex flex-col transition-all duration-300 hover:shadow-xl`}>
                     {plan.isPopular && <div className="absolute -top-3 right-6 bg-brand-mustard text-brand-charcoal text-xs font-sora font-extrabold tracking-widest uppercase px-3 py-1.5">Recommended</div>}
                     <div className="text-sm font-sora font-extrabold tracking-widest uppercase text-brand-charcoal/40 mb-2">{plan.title}</div>
                     <div className="mb-8"><span className="text-4xl font-sora font-extrabold tracking-tighter">{plan.price}</span><span className="text-brand-charcoal/40 font-bold">{plan.period}</span></div>
@@ -138,7 +138,7 @@ export function AddOnsAndBundles() {
               </FadeIn>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {SEO_PLANS.map((plan, i) => (
-                  <ScaleReveal key={i} delay={i * 0.1} className={`p-8 border-2 ${plan.isPopular ? 'border-brand-charcoal bg-white' : 'border-brand-charcoal/5 bg-white/50 hover:border-brand-charcoal/20'} relative flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}>
+                  <ScaleReveal key={i} delay={i * 0.1} className={`p-8 border-2 ${plan.isPopular ? 'border-brand-charcoal bg-white' : 'border-brand-charcoal/5 bg-white/50 hover:border-brand-charcoal/20'} relative flex flex-col transition-all duration-300 hover:shadow-xl`}>
                     {plan.isPopular && <div className="absolute -top-3 right-6 bg-brand-mustard text-brand-charcoal text-xs font-sora font-extrabold tracking-widest uppercase px-3 py-1.5">Recommended</div>}
                     <div className="text-sm font-sora font-extrabold tracking-widest uppercase text-brand-charcoal/40 mb-2 h-10">{plan.title}</div>
                     <div className="mb-8"><span className="text-4xl font-sora font-extrabold tracking-tighter">{plan.price}</span><span className="text-brand-charcoal/40 font-bold">{plan.period}</span></div>
@@ -162,7 +162,7 @@ export function AddOnsAndBundles() {
               </FadeIn>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {AL_CARTE.map((item, i) => (
-                  <ScaleReveal key={i} delay={i * 0.05} className="p-6 bg-white border border-brand-charcoal/5 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-brand-charcoal/20">
+                  <ScaleReveal key={i} delay={i * 0.05} className="p-6 bg-white border border-brand-charcoal/5 flex flex-col transition-all duration-300 hover:shadow-xl hover:border-brand-charcoal/20">
                     <div className="flex justify-between items-start mb-2">
                       <div className="font-sora font-extrabold uppercase tracking-tight text-sm pr-4">{item.name}</div>
                       <div className="font-sora font-extrabold text-brand-mustard">{item.price}</div>
@@ -193,7 +193,7 @@ export function AddOnsAndBundles() {
                 </FadeIn>
                 <div className="flex flex-col gap-4">
                   {AI_TOOLS.map((tool, i) => (
-                    <FadeIn key={i} delay={i * 0.1} className="p-8 bg-brand-charcoal text-brand-ivory border border-brand-charcoal flex flex-col group hover:border-brand-mustard transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <FadeIn key={i} delay={i * 0.1} className="p-8 bg-brand-charcoal text-brand-ivory border border-brand-charcoal flex flex-col group hover:border-brand-mustard transition-all duration-300 hover:shadow-2xl">
                       <div className="flex justify-between items-end mb-4">
                         <div className="text-base sm:text-lg font-sora font-extrabold tracking-wider sm:tracking-widest uppercase text-brand-mustard">{tool.title}</div>
                         <div className="text-right"><span className="text-3xl font-sora font-extrabold tracking-tighter">{tool.price}</span><span className="text-brand-ivory/40 text-sm font-bold">{tool.period}</span></div>
@@ -223,7 +223,7 @@ export function AddOnsAndBundles() {
                 
                 <div className="flex flex-col gap-6">
                   {BUNDLES.map((bundle, i) => (
-                    <ScaleReveal key={i} delay={i * 0.1} className="p-6 bg-white border-2 border-brand-charcoal transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-brand-mustard">
+                    <ScaleReveal key={i} delay={i * 0.1} className="p-6 bg-white border-2 border-brand-charcoal transition-all duration-300 hover:shadow-xl hover:border-brand-mustard">
                       <div className="flex justify-between items-start mb-3">
                         <div>
                           <div className="text-sm font-sora font-extrabold tracking-widest uppercase text-brand-charcoal">{bundle.title}</div>
