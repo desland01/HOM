@@ -8,12 +8,17 @@ import { FadeIn, TextReveal, Parallax, Magnetic, ScaleReveal } from '@/component
 import { StickyFeatures } from '@/components/ui/sticky-features'
 import { ComparisonTable } from '@/components/sections/comparison-table'
 import { Guarantees } from '@/components/sections/guarantees'
-import { AddOnsAndBundles } from '@/components/sections/add-ons-and-bundles'
 import { PortfolioViewports } from '@/components/sections/portfolio-viewports'
+import { UnifiedModal, FlashCard } from '@/components/ui/modals'
+import { Configurator } from '@/components/sections/configurator'
+import { AddOnsAndBundles } from '@/components/sections/add-ons-and-bundles'
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true)
   const [scrolled, setScrolled] = useState(false)
+  
+  // MODAL STATES
+  const [activeModal, setActiveModal] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 200)
@@ -23,6 +28,34 @@ export default function Home() {
 
   return (
     <main className="min-h-[100svh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip">
+      
+      {/* MODAL SYSTEM INTEGRATION */}
+      <UnifiedModal 
+        isOpen={activeModal === 'agentic-strategy'} 
+        onClose={() => setActiveModal(null)} 
+        type="flashcard" 
+        title="The Methodology Playbook"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <FlashCard 
+            index={0} step="Play 01" title="Geo-Silos & Hubs" 
+            content="Most local businesses have a single 'Services' page and hope Google figures out where they work. We build massive, interconnected architectures called Geo-Silos. We flood the zone for every city and service you offer." 
+          />
+          <FlashCard 
+            index={1} step="Play 02" title="A.E.O. (Answer Engine)" 
+            content="Homeowners are now asking ChatGPT and Google AI for recommendations. We deploy advanced Schema and llms.txt files that spoon-feed your data directly to AI engines so they cite you by name." 
+          />
+          <FlashCard 
+            index={2} step="Play 03" title="High-Velocity Content" 
+            content="We use AI to analyze search intent and generate targeted articles that answer homeowner questions. These 'Reverse Silos' drive ready-to-buy traffic straight to your quote form." 
+          />
+          <FlashCard 
+            index={3} step="Play 04" title="Edge Hosting" 
+            content="We build on Next.js and host on a global Edge Network. Your site lives on servers right next to your customers, loading instantly. Google rewards this speed with higher rankings." 
+          />
+        </div>
+      </UnifiedModal>
+
       {/* STICKY TOP BANNER */}
       <AnimatePresence>
         {showBanner && (
@@ -31,7 +64,7 @@ export default function Home() {
             className="fixed top-0 left-0 right-0 h-14 bg-brand-mustard flex items-center justify-center z-[100] px-12 border-b border-brand-charcoal/10"
           >
             <span className="text-brand-charcoal font-sora font-extrabold text-xs sm:text-sm tracking-[0.2em] uppercase text-center">
-              HALF OFF YOUR BUILD -- 5 PAINTER SPOTS LEFT
+              FREE UP YOUR CALENDAR -- 5 PILOT SPOTS LEFT
             </span>
             <button 
               onClick={() => setShowBanner(false)}
@@ -44,7 +77,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* OVERSIZED HERO */}
+      {/* HERO: THE ABUNDANCE VISION */}
       <section className={`relative ${showBanner ? 'pt-[72px]' : 'pt-6'} pb-20 ${showBanner ? 'lg:pt-24' : 'lg:pt-16'} lg:pb-6 px-6 sm:px-12 flex flex-col items-start overflow-clip border-b border-brand-charcoal/5 transition-[padding] duration-300`}>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015] pointer-events-none" />
@@ -52,49 +85,32 @@ export default function Home() {
         <div className="w-full max-w-[1440px] mx-auto relative z-10">
           <div className="flex flex-col items-start">
             <FadeIn delay={0.1} className="flex items-center gap-4 mb-4 sm:mb-6">
-              <Image
-                src="/HM-Logo.png"
-                alt="Homeowner Marketers"
-                width={240}
-                height={80}
-                priority
-                sizes="(max-width: 640px) 48px, 80px"
-                className="h-12 sm:h-20 w-auto object-contain invert"
-              />
+              <Image src="/HM-Logo.png" alt="Homeowner Marketers" width={240} height={80} priority className="h-12 sm:h-20 w-auto object-contain invert" />
               <div className="h-6 w-px bg-brand-charcoal/10 hidden sm:block" />
               <div className="text-xs sm:text-sm font-sora font-extrabold tracking-[0.3em] uppercase text-brand-charcoal/40 hidden sm:block">
-                Premium Websites for Painters
+                The Abundance Engine
               </div>
             </FadeIn>
             
-            <FadeIn delay={0.2} className="flex flex-col items-start gap-2 mb-3">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-mustard/30 bg-brand-mustard/5 text-brand-mustard text-xs sm:text-sm font-sora font-extrabold uppercase tracking-widest">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mustard opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-mustard"></span>
-                </span>
-                Only 5 Pilot Spots Open
-              </div>
-            </FadeIn>
-
             <TextReveal 
               text="STOP LOOKING CHEAP. START CHARGING MORE." 
               className="text-4xl sm:text-7xl lg:text-7xl xl:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.85] tracking-tighter-extreme mb-4 lg:mb-4 max-w-[15ch] lg:max-w-[25ch] text-left" 
             />
             
-            <div className="grid grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-6 w-full items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-6 w-full items-center mt-8">
               <FadeIn delay={0} className="col-span-2 lg:col-span-6">
-                <p className="text-lg sm:text-xl lg:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-4">
-                  Your website makes you look like every other painter in town. That is why you keep getting price shoppers. We build you a premium site in <span className="text-brand-charcoal font-extrabold">14 days</span>, prove it pulls quality leads for <span className="text-brand-charcoal font-extrabold">90 days</span>, or you walk away with zero risk.
+                <p className="text-lg sm:text-xl lg:text-2xl text-brand-charcoal/70 leading-relaxed max-w-2xl font-medium mb-8">
+                  Your website defines your reputation. We build you an asset that attracts high-value homeowners who appreciate your craft, so you can stop fighting for scraps and finally provide the life your team deserves.
                 </p>
-                <Magnetic strength={10}>
-                  <Link href="/get-started" className="group relative inline-flex items-center justify-center px-8 py-4 lg:px-10 lg:py-5 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-base lg:text-lg uppercase tracking-widest">
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-brand-charcoal via-brand-charcoal to-brand-mustard opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                    <span className="relative z-10 flex items-center gap-4">
-                      Check Availability <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
-                    </span>
-                  </Link>
-                </Magnetic>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Magnetic strength={10}>
+                    <Link href="#configurator" className="group relative inline-flex items-center justify-center px-8 py-4 lg:px-10 lg:py-5 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl text-base lg:text-lg uppercase tracking-widest text-center text-center">
+                      <span className="relative z-10 flex items-center gap-4">
+                        Build Your Engine <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                      </span>
+                    </Link>
+                  </Magnetic>
+                </div>
               </FadeIn>
 
               <FadeIn delay={0.6} className="col-span-2 lg:col-span-6 flex justify-start lg:justify-end">
@@ -132,13 +148,13 @@ export default function Home() {
         <div className="animate-marquee flex shrink-0 gap-12 text-xl font-sora font-extrabold uppercase tracking-widest items-center">
           <span className="shrink-0">Built in 14 Days</span> <span className="shrink-0 text-brand-ivory/20">•</span>
           <span className="shrink-0">5 Spots Left</span> <span className="shrink-0 text-brand-ivory/20">•</span>
-          <span className="shrink-0">90-Day Proof or Walk Away</span> <span className="shrink-0 text-brand-ivory/20">•</span>
+          <span className="shrink-0">90-Day Proof Phase</span> <span className="shrink-0 text-brand-ivory/20">•</span>
           <span className="shrink-0">Attract Higher-Paying Jobs</span> <span className="shrink-0 text-brand-ivory/20">•</span>
         </div>
         <div className="animate-marquee flex shrink-0 gap-12 text-xl font-sora font-extrabold uppercase tracking-widest items-center" aria-hidden="true">
           <span className="shrink-0">Built in 14 Days</span> <span className="shrink-0 text-brand-ivory/20">•</span>
           <span className="shrink-0">5 Spots Left</span> <span className="shrink-0 text-brand-ivory/20">•</span>
-          <span className="shrink-0">90-Day Proof or Walk Away</span> <span className="shrink-0 text-brand-ivory/20">•</span>
+          <span className="shrink-0">90-Day Proof Phase</span> <span className="shrink-0 text-brand-ivory/20">•</span>
           <span className="shrink-0">Attract Higher-Paying Jobs</span> <span className="shrink-0 text-brand-ivory/20">•</span>
         </div>
       </section>
@@ -147,13 +163,13 @@ export default function Home() {
       <section className="py-24 lg:py-40 px-6 sm:px-12 bg-white relative">
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-start">
           <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit">
-            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Problem</FadeIn>
+            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Trap</FadeIn>
             <TextReveal 
               text="YOUR WEBSITE IS COSTING YOU MONEY." 
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8"
             />
             <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
-              Right now, your online presence is pushing away the $15k+ jobs and attracting the "$500 to paint my shed" crowd. Here is why.
+              Right now, you're fighting for "scraps"—low-budget jobs where homeowners only care about the bottom line. It leaves zero margin for error, and zero margin to take care of your people.
             </FadeIn>
           </div>
 
@@ -168,9 +184,9 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05] pointer-events-none" />
         
         <div className="max-w-[1440px] mx-auto px-6 sm:px-12 mb-24 lg:mb-40 relative z-10 text-center">
-          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Solution</FadeIn>
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">The Escape</FadeIn>
           <TextReveal 
-            text="LOOK LIKE THE BEST - CHARGE LIKE THE BEST." 
+            text="UNCONFUSE GOOGLE. UNLOCK ABUNDANCE." 
             className="text-5xl sm:text-7xl lg:text-9xl font-sora font-extrabold leading-[0.85] tracking-tighter-extreme uppercase justify-center" 
           />
         </div>
@@ -182,49 +198,55 @@ export default function Home() {
 
       <PortfolioViewports />
 
-      {/* TRANSPARENCY POLICY */}
-      <section className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-charcoal text-brand-ivory relative border-t border-brand-charcoal/5 overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
-        <div className="max-w-[1440px] mx-auto flex flex-col items-center text-center relative z-10">
+      {/* RADICAL TRANSPARENCY: THE LOGIC */}
+      <section className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-charcoal text-brand-ivory relative border-t border-brand-charcoal/5 overflow-hidden text-center">
+        <div className="max-w-[1440px] mx-auto relative z-10">
           <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Radical Transparency</FadeIn>
           <TextReveal 
             text="THEY KNOW WHAT WE DO. THEY JUST CANNOT KEEP UP." 
-            className="text-4xl sm:text-6xl lg:text-7xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8 max-w-4xl" 
+            className="text-4xl sm:text-6xl lg:text-7xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8 text-center" 
           />
-          <FadeIn className="text-xl text-brand-ivory/70 font-medium max-w-3xl mb-12">
-            Most SEO agencies hide behind "proprietary algorithms" because their work is generic. We publish our exact methodology. We are operating 6 months ahead of the industry using agentic AI development—deploying enterprise-grade infrastructure in days, not months.
+          <FadeIn className="text-xl text-brand-ivory/70 font-medium max-w-3xl mx-auto mb-12 leading-relaxed text-center">
+            Most SEO agencies hide behind "proprietary algorithms" because their work is slow and manual. We operate 6 months ahead using agentic AI development—deploying enterprise infrastructure in days, not months. 
           </FadeIn>
-          <FadeIn>
-            <Link 
-              href="/playbook"
-              className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-sora font-extrabold text-brand-charcoal bg-brand-mustard rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-xl text-base uppercase tracking-widest"
+          <div className="flex flex-col sm:flex-row justify-center gap-6 text-center">
+            <button 
+              onClick={() => setActiveModal('agentic-strategy')}
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-sora font-extrabold text-brand-charcoal bg-brand-mustard rounded-none transition-all hover:scale-[1.02] active:scale-95 shadow-xl text-base uppercase tracking-widest"
             >
-              <span className="relative z-10 flex items-center gap-4">
-                Read The Playbook <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
-              </span>
+              Learn Our Strategy →
+            </button>
+            <Link 
+              href="#configurator"
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-sora font-extrabold text-brand-ivory border-2 border-brand-ivory/20 rounded-none transition-all hover:bg-brand-ivory hover:text-brand-charcoal text-base uppercase tracking-widest"
+            >
+              Build Your Engine
             </Link>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
+      {/* FEATURE COMPARISON */}
+      <ComparisonTable />
+
       {/* TIERS — STICKY SCROLL */}
-      <section id="tiers" className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-ivory relative">
+      <section id="tiers" className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-ivory relative border-t border-brand-charcoal/5">
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-start">
           <div className="lg:w-5/12 lg:sticky lg:top-40 h-fit">
             <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Pilot Packages</FadeIn>
             <TextReveal 
-              text="PICK YOUR GROWTH PLAN." 
+              text="CHOOSE YOUR ENGINE." 
               className="text-5xl sm:text-7xl lg:text-8xl font-sora font-extrabold text-brand-charcoal leading-[0.9] tracking-tighter-extreme uppercase mb-8" 
             />
             <FadeIn className="text-xl text-brand-charcoal/50 font-medium">
-              Your upfront cost covers a done-for-you site build plus 90 days of marketing to prove it works. Pick the plan that fits your business. Scale when you see results.
+              Your upfront cost covers a high-performance build plus 90 days of growth to prove the ROI. Scale your crew with confidence.
             </FadeIn>
           </div>
 
           <div className="lg:w-7/12 flex flex-col gap-12">
             <FadeIn>
               <TierCard 
-                name="Tier 01" title="Local Foundation"
+                name="Tier 01" title="Foundation Build"
                 save="$2,250" original="$4,500" price="$2,250"
                 buildFeatures={[
                   "Full A.E.O. (Answer Engine Optimization) structure",
@@ -245,12 +267,12 @@ export default function Home() {
 
             <FadeIn>
               <TierCard 
-                name="Tier 02" title="Territory Expansion"
+                name="Tier 02" title="Expansion Build"
                 save="$3,400" original="$6,800" price="$3,400" isPopular
                 buildFeatures={[
                   "Everything in Foundation, PLUS:",
                   "4 location hubs targeting your main city and wealthy suburbs",
-                  "Up to 5 nested service pages per hub (hyper-local targeting)",
+                  "Up to 20 total nested service pages (hyper-local targeting)",
                   "Competitor Gap Analysis (we target exactly what they're winning)",
                   "AI Chat Widget integration (Up to 100 conversations / mo)"
                 ]}
@@ -258,88 +280,48 @@ export default function Home() {
                   "GBP Pro: 1 monthly Offer + 2 updates and 2 photo uploads",
                   "4 additional monthly blog posts targeting competitor traffic",
                   "Easy-win local link building (industry directories & associations)",
-                  "Strategy call every 2 weeks to keep your pipeline full"
+                  "Strategy call every 2 weeks to keep your team busy"
                 ]}
               />
             </FadeIn>
 
             <FadeIn>
               <TierCard 
-                name="Tier 03" title="Enterprise Takeover"
+                name="Tier 03" title="Metro Build"
                 save="$5,250" original="$10,500" price="$5,250"
                 buildFeatures={[
                   "Everything in Expansion, PLUS:",
                   "10 location hubs (Strategic 3-stage deployment)",
-                  "Up to 7 service pages per hub (Targeting upstream intent)",
+                  "Up to 70 total nested service pages (Total saturation)",
                   "AI Chat Widget integration (Unlimited conversations)",
                   "Pre-qualifying automations and premium trust badges"
                 ]}
                 monthlyFeatures={[
-                  "Premium Review Management & web chat-bot (AI Automated)",
+                  "Premium Local Reputation signals & AI Automation",
                   "4 monthly how-to videos & 4 nested service FAQ pages",
                   "4 additional blog posts closing the competitor gap",
                   "1 high-DA backlink + 2 local business guest posts per month",
-                  "Monthly war-room strategy calls to scale your territory"
+                  "Monthly war-room strategy calls to scale your crew"
                 ]}
               />
             </FadeIn>
-          </div>        </div>
-      </section>
-
-      <AddOnsAndBundles />
-      <ComparisonTable />
-      <Guarantees />
-
-      {/* FINAL CTA — OVERSIZED */}
-      <section className="py-32 lg:py-64 px-6 sm:px-12 text-left bg-brand-mustard text-brand-charcoal relative overflow-hidden">
-        <Parallax offset={80} className="absolute bottom-0 right-0 text-[30rem] font-sora font-extrabold leading-none opacity-[0.03] select-none translate-y-1/4 translate-x-1/4 pointer-events-none">
-          50%
-        </Parallax>
-        
-        <div className="max-w-[1440px] mx-auto relative z-10">
-          <div>
-            <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-charcoal/50 mb-12">Only 5 Spots This Round</FadeIn>
-            
-            <TextReveal 
-              text="YOUR MOVE." 
-              className="text-5xl sm:text-8xl lg:text-11xl font-sora font-extrabold leading-[0.8] tracking-tighter-extreme uppercase mb-16 max-w-[10ch]" 
-            />
-            
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-              <FadeIn delay={0.2} className="lg:col-span-6">
-                <p className="text-2xl sm:text-3xl font-sora font-extrabold uppercase mb-12 leading-tight">
-                  5 painters. Half price. 14-day build. <br />
-                  <span className="opacity-50 text-brand-charcoal/70 font-medium normal-case text-xl block mt-4">We build it first. You see it live before you pay a dime. No risk.</span>
-                </p>
-                <Magnetic strength={10}>
-                  <Link href="/get-started" className="group relative inline-flex items-center justify-center px-10 py-6 overflow-hidden font-sora font-extrabold text-brand-ivory bg-brand-charcoal rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-2xl w-full sm:w-auto text-xl uppercase tracking-widest">
-                    <span className="relative z-10 flex items-center gap-4">
-                      Check Availability <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
-                    </span>
-                  </Link>
-                </Magnetic>
-              </FadeIn>
-              <FadeIn delay={0.4} className="lg:col-span-6 lg:text-right">
-                <div className="text-sm font-sora font-extrabold tracking-widest uppercase mb-4 opacity-50">Questions?</div>
-                <a href="mailto:hello@homeownermarketers.com" className="text-2xl sm:text-4xl font-sora font-extrabold hover:underline transition-all py-2 inline-block">hello@homeownermarketers.com</a>
-              </FadeIn>
-            </div>
           </div>
         </div>
       </section>
 
+      <AddOnsAndBundles />
+
+      {/* THE CONFIGURATOR */}
+      <Configurator />
+
+      <Guarantees />
+
       {/* FOOTER */}
       <footer className="py-24 px-6 sm:px-12 bg-white border-t border-brand-charcoal/5">
         <FadeIn className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
-          <div className="flex flex-col gap-6">
-            <Image src="/HM-Logo.png" alt="Homeowner Marketers" width={240} height={80} className="h-12 sm:h-16 w-auto object-contain invert opacity-80 self-start" />
-            <p className="text-brand-charcoal/40 font-medium text-sm">&copy; 2026 Homeowner Marketers. Premium websites for painters who refuse to compete on price.</p>
-          </div>
-          <div className="flex flex-wrap gap-4 text-sm font-sora font-extrabold uppercase tracking-[0.2em] text-brand-charcoal/60">
-            <a href="#" className="hover:text-brand-mustard transition-colors py-3 px-2">How It Works</a>
-            <a href="#" className="hover:text-brand-mustard transition-colors py-3 px-2">Results</a>
-            <a href="#" className="hover:text-brand-mustard transition-colors py-3 px-2">Pricing</a>
-            <a href="#" className="hover:text-brand-mustard transition-colors py-3 px-2">Contact</a>
+          <div className="flex flex-col gap-6 w-full lg:w-auto items-center lg:items-start text-center sm:text-left">
+            <Image src="/HM-Logo.png" alt="Homeowner Marketers" width={240} height={80} className="h-12 sm:h-16 w-auto object-contain invert opacity-80" />
+            <p className="text-brand-charcoal/40 font-medium text-sm">&copy; 2026 Homeowner Marketers. Assets for painters who refuse to compete on price.</p>
           </div>
         </FadeIn>
       </footer>
@@ -351,8 +333,8 @@ export default function Home() {
             initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }}
             className="fixed bottom-0 left-0 right-0 p-4 z-50 lg:hidden"
           >
-            <Link href="/get-started" className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform">
-              Check Availability ↓
+            <Link href="#configurator" className="flex items-center justify-center w-full py-5 min-h-[48px] bg-brand-mustard text-brand-charcoal font-sora font-extrabold uppercase tracking-widest shadow-2xl active:scale-[0.98] transition-transform text-center">
+              Build Your Engine ↓
             </Link>
           </motion.div>
         )}
@@ -361,12 +343,20 @@ export default function Home() {
   )
 }
 
+function ArrowRight({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+    </svg>
+  )
+}
+
 function TierCard({ name, title, save, original, price, buildFeatures, monthlyFeatures, isPopular }: any) {
   return (
     <div className={`relative p-10 lg:p-12 border-2 ${isPopular ? 'bg-brand-charcoal text-brand-ivory border-brand-charcoal' : 'bg-white text-brand-charcoal border-brand-charcoal/5'} flex flex-col h-full group hover:-translate-y-2 transition-transform duration-500`}>
       {isPopular && (
         <div className="absolute -top-4 left-10 bg-brand-mustard text-brand-charcoal text-xs font-sora font-extrabold tracking-[0.2em] uppercase px-4 py-2 rounded-none shadow-xl">
-          Most Popular
+          Most Scalable
         </div>
       )}
 
@@ -374,18 +364,19 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
         <div className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase opacity-40 mb-2">{name}</div>
         <h3 className="text-3xl font-sora font-extrabold mb-10 uppercase tracking-tight">{title}</h3>
 
-        <div className="flex flex-col gap-1">          <div className="flex items-baseline gap-3">
-            <span className={`text-sm font-sora font-extrabold uppercase tracking-widest ${isPopular ? 'text-brand-mustard' : 'text-brand-mustard'}`}>SAVE {save}</span>
-            <span className={`text-xl font-sora font-extrabold line-through opacity-20`}>{original}</span>
+        <div className="flex flex-col gap-1">
+          <div className="flex items-baseline gap-3">
+            <span className="text-sm font-sora font-extrabold uppercase tracking-widest text-brand-mustard">SAVE {save}</span>
+            <span className="text-xl font-sora font-extrabold line-through opacity-20">{original}</span>
           </div>
           <div className="text-5xl sm:text-6xl font-sora font-extrabold tracking-tighter-extreme">{price}</div>
-          <div className={`text-xs font-bold uppercase tracking-widest mt-2 ${isPopular ? 'text-brand-ivory/40' : 'text-brand-charcoal/40'}`}>Upfront Investment</div>
+          <div className={`text-xs font-bold uppercase tracking-widest mt-2 ${isPopular ? 'text-brand-ivory/40' : 'text-brand-charcoal/40'}`}>Initial Investment</div>
         </div>
       </div>
 
       <div className="space-y-12 flex-grow">
         <div>
-          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>14-Day Build</div>
+          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Build Asset (Owned)</div>
           <ul className="space-y-4">
             {buildFeatures.map((f: string, i: number) => (
               <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed">
@@ -397,7 +388,7 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
         </div>
 
         <div>
-          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>90-Day Engine</div>
+          <div className={`text-xs font-sora font-extrabold uppercase tracking-[0.2em] mb-6 pb-2 border-b ${isPopular ? 'border-brand-ivory/10' : 'border-brand-charcoal/10'}`}>Pilot Engine (90 Days)</div>
           <ul className="space-y-4">
             {monthlyFeatures.map((f: string, i: number) => (
               <li key={i} className="flex items-start gap-4 text-sm font-medium leading-relaxed">
@@ -410,8 +401,8 @@ function TierCard({ name, title, save, original, price, buildFeatures, monthlyFe
       </div>
 
       <div className="mt-16">
-        <Link href="/get-started" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
-          Get Started
+        <Link href="#configurator" className={`flex items-center justify-center w-full py-5 min-h-[48px] font-sora font-extrabold uppercase tracking-widest transition-all ${isPopular ? 'bg-brand-mustard text-brand-charcoal hover:bg-white' : 'bg-brand-charcoal text-brand-ivory hover:bg-brand-mustard hover:text-brand-charcoal'}`}>
+          Secure Territory
         </Link>
       </div>
     </div>
@@ -424,61 +415,47 @@ function ProblemCardsList() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only run scroll calculation on truly mobile viewports (<768px)
       if (window.innerWidth >= 768) {
         if (activeIndex !== null) setActiveIndex(null)
         return
       }
-
       const windowCenterY = window.innerHeight / 2
       let minDistance = Infinity
       let newActiveIndex = null
-
       cardRefs.current.forEach((el, index) => {
         if (!el) return
         const rect = el.getBoundingClientRect()
-        // Calculate the center of the element
         const elementCenterY = rect.top + rect.height / 2
         const distance = Math.abs(windowCenterY - elementCenterY)
-
-        // Threshold: Must be somewhat near the center to be active
         if (distance < minDistance && distance < window.innerHeight / 1.5) {
           minDistance = distance
           newActiveIndex = index
         }
       })
-
       setActiveIndex(newActiveIndex)
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('resize', handleScroll, { passive: true })
-    handleScroll() // initial check
-
+    handleScroll()
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleScroll)
     }
   }, [activeIndex])
+
   const items = [
-    { title: "You Look Cheap Online", desc: "Your site looks like every other painter on page one. A homeowner cannot tell you apart from the guy working out of his garage.", icon: "x" },
-    { title: "Price Shoppers Only", desc: "Your inbox is full of people asking 'what is your cheapest price?' because nothing on your site says premium.", icon: "x" },
-    { title: "Agency Black Hole", desc: "You pay $1,500 a month and have no idea what they do. They say 'SEO takes time' while your phone stays quiet.", icon: "x" },
-    { title: "6 Months to Launch", desc: "Your last agency took half a year to build a basic site. You lost thousands in jobs while they 'finalized the design.'", icon: "x" },
-    { title: "Slow Site, Lost Leads", desc: "Your site takes 5+ seconds to load. By then the homeowner already called your competitor.", icon: "x" },
-    { title: "Brochure, Not a Closer", desc: "Your site is a digital business card. It does not qualify leads, show pricing, or give homeowners a reason to pick you.", icon: "x" }
+    { title: "The Price Shopper Loop", desc: "Your phone rings, but it's another person asking for your 'best price.' You're fighting for low-margin work that barely covers overhead.", icon: "x" },
+    { title: "No Margin for People", desc: "Because jobs are won on price, you can't afford healthcare, PTO, or competitive wages for your best workers. The talent leaves.", icon: "x" },
+    { title: "The Agency Anchor", desc: "You're paying $1,500/mo for 'maintenance' and 'SEO' that doesn't actually fill your calendar with high-value jobs.", icon: "x" },
+    { title: "Ghost-Town Web Presence", desc: "Your site is a digital brochure. It doesn't build trust, it doesn't pre-qualify, and it doesn't sell your quality.", icon: "x" },
+    { title: "Inefficient Estimating", desc: "You spend your nights driving to 'estimate' jobs for people who were never going to pay your premium rates anyway.", icon: "x" },
+    { title: "The Competition Trap", desc: "You look exactly like the guy working out of a pickup truck. There's no reason for a homeowner to pay you more.", icon: "x" }
   ]
 
   return (
     <>
       {items.map((item, i) => (
-        <ProblemCard 
-          key={i} 
-          item={item} 
-          i={i} 
-          isActive={activeIndex === i} 
-          ref={(el) => { cardRefs.current[i] = el }} 
-        />
+        <ProblemCard key={i} item={item} i={i} isActive={activeIndex === i} ref={(el) => { cardRefs.current[i] = el }} />
       ))}
     </>
   )
@@ -508,4 +485,3 @@ const ProblemCard = forwardRef<HTMLDivElement, { item: { title: string, desc: st
   )
 })
 ProblemCard.displayName = 'ProblemCard'
-

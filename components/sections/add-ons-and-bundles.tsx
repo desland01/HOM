@@ -21,20 +21,20 @@ const MAINTENANCE_PLANS = [
 
 const SEO_PLANS = [
   {
-    title: "Local Foundation",
+    title: "Local Authority",
     price: "$499",
     period: "/mo",
-    features: ["Core Citation Builder for local dominance", "1 blog post per month targeting local geo-modifiers", "We track your rankings so you see the real ROI", "Quarterly game plan so you always know the next move"]
+    features: ["Core Citation Builder for local authority", "1 blog post per month targeting local geo-modifiers", "We track your rankings so you see the real ROI", "Quarterly game plan so you always know the next move"]
   },
   {
-    title: "Market Dominator",
+    title: "Market Scaler",
     price: "$999",
     period: "/mo",
     features: ["Pro Citation Builder: 1 monthly Offer + 2 updates and 2 photo uploads", "5 monthly articles targeting competitors' exact gaps", "Advanced local link building (directories & associations)", "Bi-weekly strategy calls to steal more market share"],
     isPopular: true
   },
   {
-    title: "Total Takeover",
+    title: "Elite Growth",
     price: "$1,999",
     period: "/mo",
     features: ["Premium AI Review Management & automated responses", "9 monthly articles + 4 how-to videos pushing competitors off page 1", "1 High-DA backlink + 2 local guest posts per month", "We deploy the full AI content engine while you focus on jobs"]
