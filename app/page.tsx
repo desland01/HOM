@@ -9,7 +9,7 @@ import { StickyFeatures } from '@/components/ui/sticky-features'
 import { ComparisonTable } from '@/components/sections/comparison-table'
 import { Guarantees } from '@/components/sections/guarantees'
 import { PortfolioViewports } from '@/components/sections/portfolio-viewports'
-import { UnifiedModal, FlashCard } from '@/components/ui/modals'
+import { UnifiedModal, FlashCard, FlashCardCarousel } from '@/components/ui/modals'
 import { Configurator } from '@/components/sections/configurator'
 import { AddOnsAndBundles } from '@/components/sections/add-ons-and-bundles'
 
@@ -26,6 +26,33 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const playbookCards = [
+    {
+      step: "Play 01",
+      title: "Geo-Silos & Hubs",
+      content: "We build dedicated hubs for every city and service you offer. We flood the zone so you're the only choice.",
+      details: "Unlike standard sites that have a single 'Services' page, we build a matrix. If you serve 10 cities with 5 services, we deploy 50 optimized endpoints. This architectural dominance tells Google you aren't just a painter—you are the definitive authority for that specific square mile."
+    },
+    {
+      step: "Play 02",
+      title: "A.E.O. (Answer Engine)",
+      content: "Homeowners are now asking ChatGPT and Google AI for recommendations. We make sure they cite you.",
+      details: "We deploy advanced JSON-LD Schema and 'llms.txt' files. These are invisible to humans but serve as a 'cheat sheet' for AI bots. When an LLM scans the web to answer 'Who is the best cabinet painter in [City]?', your business data is the easiest for it to read, verify, and recommend."
+    },
+    {
+      step: "Play 03",
+      title: "High-Velocity Content",
+      content: "We use AI to generate targeted articles that answer homeowner questions and drive ready-to-buy traffic.",
+      details: "We analyze high-intent search queries like 'cost to paint 2000 sq ft house' or 'best exterior colors for resale'. Our AI agents then generate long-form, expert-level articles that solve these problems. These articles act as a 'Reverse Silo,' funneling trust and traffic directly to your quote form."
+    },
+    {
+      step: "Play 04",
+      title: "Edge Hosting",
+      content: "Your site lives on a global Edge Network, loading instantly. Google rewards this speed with higher rankings.",
+      details: "We don't use WordPress or shared servers. We build on Next.js and deploy to a global edge network. This means your website's code is physically closer to your customer's phone. Sub-second load times aren't just for 'vibe'—they are a core ranking signal that separates the professionals from the amateurs."
+    }
+  ]
+
   return (
     <main className="min-h-[100svh] bg-brand-ivory selection:bg-brand-mustard selection:text-brand-charcoal overflow-clip">
       
@@ -36,24 +63,7 @@ export default function Home() {
         type="flashcard" 
         title="The Methodology Playbook"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <FlashCard 
-            index={0} step="Play 01" title="Geo-Silos & Hubs" 
-            content="Most local businesses have a single 'Services' page and hope Google figures out where they work. We build massive, interconnected architectures called Geo-Silos. We flood the zone for every city and service you offer." 
-          />
-          <FlashCard 
-            index={1} step="Play 02" title="A.E.O. (Answer Engine)" 
-            content="Homeowners are now asking ChatGPT and Google AI for recommendations. We deploy advanced Schema and llms.txt files that spoon-feed your data directly to AI engines so they cite you by name." 
-          />
-          <FlashCard 
-            index={2} step="Play 03" title="High-Velocity Content" 
-            content="We use AI to analyze search intent and generate targeted articles that answer homeowner questions. These 'Reverse Silos' drive ready-to-buy traffic straight to your quote form." 
-          />
-          <FlashCard 
-            index={3} step="Play 04" title="Edge Hosting" 
-            content="We build on Next.js and host on a global Edge Network. Your site lives on servers right next to your customers, loading instantly. Google rewards this speed with higher rankings." 
-          />
-        </div>
+        <FlashCardCarousel cards={playbookCards} />
       </UnifiedModal>
 
       {/* STICKY TOP BANNER */}
