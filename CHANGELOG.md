@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- **Get Started Funnel Page (app/get-started/page.tsx):** Created a dedicated Story-Selling funnel page for users who click "Get Started" on the pricing tiers. The page removes standard navigation to eliminate distractions and uses aggressive, narrative-driven copy (focusing on the "Generational Shift" in AI tech, our lack of bloated departments, and the "DeLorean" advantage) to convert high-intent users.
 - **Service Deep Dive Pages (app/services/*):** Created three new long-form service breakdown pages following a progressive disclosure pattern:
   - `/services/gbp-management`: Explains the math of the Google Map Pack, review velocity engines, and constant activity strategies.
   - `/services/ai-automations`: Details the Missed Call Text Back, AI web chat, and automated booking infrastructure.
