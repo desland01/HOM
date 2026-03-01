@@ -14,6 +14,15 @@ const featureDetails: Record<string, any> = {
       t3: "10 city hubs + 70 service pages. Total saturation of your metropolitan area."
     }
   },
+  "aeo": {
+    title: "A.E.O. — Answer Engine Optimization",
+    description: "Google is changing. Homeowners now ask ChatGPT and Google AI for recommendations. If your site isn't structured for AI bots to read, you don't exist.",
+    tiers: {
+      t1: "Basic JSON-LD Schema markup for local business identification.",
+      t2: "Extended Schema for services and FAQs plus AI bot crawl optimization.",
+      t3: "Full G.E.O. suite including llms.txt integration and expert attribution signals."
+    }
+  },
   "reverse-silos": {
     title: "High-Velocity Content Engine",
     description: "Every article we publish answers a real question homeowners are typing into Google. We intercept them at the moment of intent and lead them directly to your calendar.",
@@ -32,6 +41,24 @@ const featureDetails: Record<string, any> = {
       t3: "Premium citation syndication + maximum profile activity signals."
     }
   },
+  "page-speed": {
+    title: "Sub-Second Edge Hosting",
+    description: "A slow site bleeds money. Every second of delay drops conversion by 20%. We build on Next.js and host on a global Edge Network.",
+    tiers: {
+      t1: "Instant Edge Hosting with full Conversion Rate Optimized Architecture.",
+      t2: "Instant Edge Hosting with full Conversion Rate Optimized Architecture.",
+      t3: "Instant Edge Hosting with full Conversion Rate Optimized Architecture."
+    }
+  },
+  "reports": {
+    title: "Abundance Tracking & Intelligence",
+    description: "No more vague PDFs. You see exactly where you rank, how many people found you, and what we are doing next.",
+    tiers: {
+      t1: "Keyword Rank Tracking. You see where you rank for every keyword.",
+      t2: "Adds Competitor Gap Analysis. We spot trends and steal their traffic.",
+      t3: "Full competitive intelligence plus monthly war-room strategy calls."
+    }
+  },
   "ai-web-apps": {
     title: "Pre-Qualified Estimating",
     description: "Stop wasting nights driving to estimates for price shoppers. Our multi-step forms and AI chat bots qualify every lead before they reach your inbox.",
@@ -39,6 +66,15 @@ const featureDetails: Record<string, any> = {
       t1: "Multi-Step Contact Form. Filters budget shoppers instantly.",
       t2: "AI Chat Widget (100 convos/mo). Captures after-hours leads automatically.",
       t3: "AI Chat Widget (UNLIMITED). Fully autonomous pre-qualification and booking."
+    }
+  },
+  "backlinks": {
+    title: "Authority Link Building",
+    description: "Google trusts websites that other authoritative websites link to. We do the hard work of getting real, local businesses to point to you.",
+    tiers: {
+      t1: "Natural foundation building through directory citations.",
+      t2: "Easy-win local link building sourcing industry-specific directories.",
+      t3: "1 new high-DA backlink + 2 local guest posts per month."
     }
   }
 }
@@ -125,8 +161,9 @@ export const ComparisonTable = () => {
               
               <TableRow title="Location Hubs" t1="1" t2="4" t3="10" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
               <TableRow title="Nested Service Pages" t1="5" t2="20" t3="70" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
+              <TableRow title="A.E.O. Optimization" t1="Basic" t2="Advanced" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['aeo'])} />
               <TableRow title="Multi-Step Pre-Qualification" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
-              <TableRow title="Instant Edge Hosting" t1={check} t2={check} t3={check} isPop />
+              <TableRow title="Instant Edge Hosting" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
               <TableRow title="AI Chat Widget" t1={xmark} t2="100 / Mo" t3="Unlimited" isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
               <TableRow title="Delivery Timeline" t1="14 Days" t2="14 Days" t3="14 Days" isPop borderBottom />
 
@@ -137,12 +174,12 @@ export const ComparisonTable = () => {
 
               <TableRow title="GBP Optimization" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
               <TableRow title="Content Articles / Month" t1="1" t2="5" t3="9" isPop onInfo={() => setSelectedFeature(featureDetails['reverse-silos'])} />
-              <TableRow title="Keyword Rank Tracking" t1={check} t2={check} t3={check} isPop />
+              <TableRow title="Keyword Rank Tracking" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
               <TableRow title="GBP Photo & Offer Updates" t1="Monthly" t2="2 Updates + 2 Photos / Mo" t3="Premium Auto" isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
-              <TableRow title="Competitor Gap Analysis" t1={xmark} t2={check} t3={check} isPop />
-              <TableRow title="Local Link Building" t1={xmark} t2={check} t3={check} isPop />
-              <TableRow title="High DA Backlinks" t1={xmark} t2={xmark} t3="1 / Month" isPop />
-              <TableRow title="Local Guest Posts" t1={xmark} t2={xmark} t3="2 / Month" isPop borderBottom />
+              <TableRow title="Competitor Gap Analysis" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
+              <TableRow title="Local Link Building" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
+              <TableRow title="High DA Backlinks" t1={xmark} t2={xmark} t3="1 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
+              <TableRow title="Local Guest Posts" t1={xmark} t2={xmark} t3="2 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} borderBottom />
 
             </tbody>
             </table>
