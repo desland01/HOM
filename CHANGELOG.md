@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Transparency Policy Section (page.tsx):** Added a new prominent section right before the Pilot Packages detailing our Unfair Advantage strategy. The CTA now directs users to the full playbook page instead of a modal.
 
 ### Changed
+- **AI Chat Widget Tier Adjustment (page.tsx, comparison-table.tsx, offer-options.md):** Added AI Chat Widget integration to Tier 2 with a usage cap of 100 conversations per month to help mid-tier businesses capture after-hours leads. Updated Tier 3 to explicitly emphasize "UNLIMITED" chat widget conversations.
 - **Location Hubs Naming Convention (page.tsx, comparison-table.tsx, offer-options.md):** Combined "Primary City Hub" and "Secondary Location Hubs" into a single unified "Location Hubs" term across all marketing materials and documentation. Updated Tier 2 count from "3 additional" to "4 total (main city + 3 additional hubs)" for clarity.
 - **A La Carte Pricing & Descriptions (add-ons-and-bundles.tsx):** Updated "Citation Clean-Up" price to $699 and revised the description to emphasize it requires a human touch and is only needed for messy citations. Renamed "Google Profile Setup" to "Additional Google Profile" and clarified that the first location is already included in the build plan.
 - **Removed Policy Modal (page.tsx):** Removed the progressive disclosure modal for the transparency policy, opting instead for the dedicated `/playbook` page to provide a more comprehensive "manual-style" reading experience.

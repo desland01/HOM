@@ -30,13 +30,14 @@ A one-time fee to construct the Ferrari. You own this.
 - Up to 5 nested service pages *for each hub* (hyper-local geo-modifiers).
 - Competitor Gap Analysis (we target the exact keywords they are winning).
 - Easy-win local link building (industry directories, local associations) to build domain authority.
+- AI Chat Widget integration (Capped at 100 conversations / month).
 
 ### Tier 3: Enterprise Takeover
 *Best for $1.5M+ companies looking to monopolize a metro area.*
 - **Everything in Tier 2, PLUS:**
 - 10 location hubs with nested services (Strategic 3-stage deployment).
 - Up to 7 service pages per hub (Targets upstream search intent like "drywall repair", "water damage", "pressure washing" before they even look for a painter).
-- AI Chat Widget integration (website and CRM) trained to warm up prospects and book them instantly.
+- AI Chat Widget integration (website and CRM) with UNLIMITED usage. Trained to warm up prospects and book them instantly.
 - 1 new high-DA backlink from a reputable source (No PBNs).
 - 3 local backlinks through guest posts (We pitch local, non-competing businesses).
 

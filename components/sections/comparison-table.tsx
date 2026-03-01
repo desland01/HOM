@@ -55,8 +55,8 @@ const featureDetails: Record<string, FeatureDetail> = {
     description: "A basic contact form loses most of your visitors. We build smart tools that keep homeowners engaged, filter out the tire-kickers, and capture details.",
     tiers: {
       t1: "Multi-Step Contact Form that filters out budget shoppers and routes quality leads to your inbox.",
-      t2: "Multi-Step Contact Form that filters out budget shoppers and routes quality leads to your inbox.",
-      t3: "AI Chat Widget integration directly into website and CRM. Trained to warm up prospects and book them onto your calendar instantly."
+      t2: "Multi-Step Contact Form plus AI Chat Widget integration (up to 100 conversations / month) to capture after-hours leads.",
+      t3: "AI Chat Widget integration directly into website and CRM with UNLIMITED conversations. Trained to warm up prospects and book them onto your calendar instantly."
     }
   },
   "backlinks": {
@@ -136,7 +136,7 @@ export const ComparisonTable = () => {
               <TableRow title="Multi-Step Contact Form" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
               <TableRow title="Instant Edge Hosting" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
               <TableRow title="Local SEO Data Structure" t1={check} t2={check} t3={check} isPop />
-              <TableRow title="AI Chat Widget Integration" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
+              <TableRow title="AI Chat Widget Integration" t1={xmark} t2="100 / Mo" t3="Unlimited" isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
               <TableRow title="Delivery Timeline" t1="14 Days" t2="14 Days" t3="14 Days" isPop borderBottom />
 
               {/* MONTHLY ENGINE */}

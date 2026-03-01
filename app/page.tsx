@@ -251,7 +251,8 @@ export default function Home() {
                   "Everything in Foundation, PLUS:",
                   "4 location hubs targeting your main city and wealthy suburbs",
                   "Up to 5 nested service pages per hub (hyper-local targeting)",
-                  "Competitor Gap Analysis (we target exactly what they're winning)"
+                  "Competitor Gap Analysis (we target exactly what they're winning)",
+                  "AI Chat Widget integration (Up to 100 conversations / mo)"
                 ]}
                 monthlyFeatures={[
                   "GBP Pro: 1 monthly Offer + 2 updates and 2 photo uploads",
@@ -270,7 +271,7 @@ export default function Home() {
                   "Everything in Expansion, PLUS:",
                   "10 location hubs (Strategic 3-stage deployment)",
                   "Up to 7 service pages per hub (Targeting upstream intent)",
-                  "AI Chat Widget integration (website and CRM)",
+                  "AI Chat Widget integration (Unlimited conversations)",
                   "Pre-qualifying automations and premium trust badges"
                 ]}
                 monthlyFeatures={[
