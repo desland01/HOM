@@ -37,7 +37,7 @@ const featureDetails: Record<string, FeatureDetail> = {
     description: "When homeowners search 'painters near me,' Google shows a map with 3 businesses. We keep your Google Business Profile optimized, active, and loaded with reviews.",
     tiers: {
       t1: "Essential local citation engine. GBP optimization and Top 40 citations audited for NAP consistency.",
-      t2: "Advanced local citation engine. Weekly optimization with 2x/week fresh photos and monthly Offers.",
+      t2: "Advanced local citation engine. 1 monthly Offer + 2 updates and 2 photo uploads a month.",
       t3: "Automated reputation engine. Premium review management and web chat-bot creates a flywheel of 5-star signals."
     }
   },
@@ -148,7 +148,7 @@ export const ComparisonTable = () => {
               <TableRow title="GBP Sync & Top 40 Citations" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
               <TableRow title="Blog Posts / Month" t1="1" t2="5" t3="9" isPop onInfo={() => setSelectedFeature(featureDetails['reverse-silos'])} />
               <TableRow title="Keyword Rank Tracking" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
-              <TableRow title="GBP Photo & Offer Updates" t1="Monthly" t2="2x / Week" t3="Premium Auto" isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
+              <TableRow title="GBP Photo & Offer Updates" t1="Monthly" t2="2 Updates + 2 Photos / Mo" t3="Premium Auto" isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
               <TableRow title="Competitor Gap Analysis" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
               <TableRow title="Easy-Win Local Link Building" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
               <TableRow title="How-To Videos & FAQ Pages" t1={xmark} t2={xmark} t3="4 / Month" isPop />

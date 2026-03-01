@@ -53,7 +53,7 @@ The fuel that makes the asset perform.
 - **Reporting:** Keyword Rank Tracking.
 
 ### Tier 2: Market Dominator
-- **GBP Management:** Upgraded engagement (Pro Citation Engine). We post 2x per week (updates/photos) plus monthly Offers to keep Google feeding your listing.
+- **GBP Management:** Upgraded engagement (Pro Citation Engine). 1 monthly Offer + 2 updates and 2 photo uploads a month to keep Google feeding your listing.
 - **Content:** 4 additional monthly blog posts targeting competitors' top-ranking pages.
 
 ### Tier 3: Total Saturation

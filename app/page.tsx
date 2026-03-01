@@ -254,7 +254,7 @@ export default function Home() {
                   "Competitor Gap Analysis (we target exactly what they're winning)"
                 ]}
                 monthlyFeatures={[
-                  "GBP Pro: 2x/week photo updates + monthly Offers",
+                  "GBP Pro: 1 monthly Offer + 2 updates and 2 photo uploads",
                   "4 additional monthly blog posts targeting competitor traffic",
                   "Easy-win local link building (industry directories & associations)",
                   "Strategy call every 2 weeks to keep your pipeline full"

@@ -29,7 +29,7 @@ const SEO_PLANS = [
     title: "Market Dominator",
     price: "$999",
     period: "/mo",
-    features: ["Pro Citation Builder: 2x/week updates and monthly Offers", "5 monthly articles targeting competitors' exact gaps", "Advanced local link building (directories & associations)", "Bi-weekly strategy calls to steal more market share"],
+    features: ["Pro Citation Builder: 1 monthly Offer + 2 updates and 2 photo uploads", "5 monthly articles targeting competitors' exact gaps", "Advanced local link building (directories & associations)", "Bi-weekly strategy calls to steal more market share"],
     isPopular: true
   },
   {
