@@ -7,65 +7,65 @@ import { FeatureModal, FeatureDetail } from '@/components/ui/feature-modal'
 const featureDetails: Record<string, FeatureDetail> = {
   "geo-silos": {
     title: "Own Your City on Google",
-    description: "Most painters have one generic website that tries to rank everywhere and ends up ranking nowhere. We build dedicated pages for every city and service you offer so Google knows exactly where you work and what you do. More pages means more chances to show up when homeowners search.",
+    description: "Most painters have one generic website that tries to rank everywhere and ends up ranking nowhere. We build dedicated hubs for every city and service you offer so Google knows exactly where you work.",
     tiers: {
-      t1: "Your home city locked down. 1 city hub + 4 service pages so you own the search results where you already work.",
-      t2: "Expands into 3 wealthy surrounding suburbs with 12 dedicated service pages. You start pulling jobs from the high-value neighborhoods next door.",
-      t3: "Full metro domination. 6 city hubs with unlimited service pages. Your competitors cannot show up without seeing your name first."
+      t1: "Your home city locked down. 1 city hub + up to 5 nested service pages so you own the search results where you already work.",
+      t2: "Expands into 3 wealthy surrounding suburbs with 5 nested service pages per hub. You start pulling jobs from the high-value neighborhoods next door.",
+      t3: "Full metro domination. 10 city hubs with up to 7 service pages each. Your competitors cannot show up without seeing your name first."
     }
   },
   "reverse-silos": {
     title: "Blog Content That Brings in Leads",
-    description: "Every blog post we write answers a real question homeowners are typing into Google right now. Things like 'how much does it cost to paint a house in [your city]' or 'best exterior paint colors for resale.' Each post points readers straight back to your service pages so they call you, not your competitor.",
+    description: "Every blog post we write answers a real question homeowners are typing into Google right now. Things like 'how much does it cost to paint a house in [your city]'.",
     tiers: {
-      t1: "2 posts per month. Builds your foundation so Google starts seeing you as the local painting authority.",
-      t2: "4 posts per month. Aggressive growth mode. You start ranking for 'painters near me' and long-tail searches that bring ready-to-buy homeowners.",
-      t3: "8 posts per month. Market saturation. Your content pushes competitors off page 1 and makes you the obvious choice in your entire metro."
+      t1: "1 post per month. Builds your foundation so Google starts seeing you as the local painting authority.",
+      t2: "5 total posts per month. Aggressive growth mode targeting competitors' gaps and long-tail searches that bring ready-to-buy homeowners.",
+      t3: "9 total posts per month + 4 how-to videos & 4 FAQ pages. Market saturation. Your content pushes competitors off page 1."
     }
   },
   "page-speed": {
     title: "A Website That Loads Instantly",
-    description: "Homeowners bounce in 3 seconds if your site is slow. Every lost visitor is a lost estimate. We build your site on the fastest hosting available and guarantee a 90+ speed score so you never lose a lead to a loading spinner.",
+    description: "Homeowners bounce in 3 seconds if your site is slow. Every lost visitor is a lost estimate. We build your site on the fastest hosting available.",
     tiers: {
-      t1: "Premium hosting, optimized images, and a guaranteed 90+ speed score. Your site loads fast on every device.",
-      t2: "Everything in Tier 1 plus advanced caching, automatic image compression, and priority support if your scores ever dip.",
-      t3: "Everything in Tier 2 plus real-time performance monitoring, automatic optimization, and a dedicated speed engineer on call for your site."
+      t1: "Instant Edge Hosting with full Conversion Rate Optimized Architecture. Guaranteed speed.",
+      t2: "Instant Edge Hosting with full Conversion Rate Optimized Architecture. Guaranteed speed.",
+      t3: "Instant Edge Hosting with full Conversion Rate Optimized Architecture. Guaranteed speed."
     }
   },
   "gbp-management": {
     title: "Get Into the Google Map Pack",
-    description: "When homeowners search 'painters near me,' Google shows a map with 3 businesses. That is the Map Pack, and it gets more clicks than anything else on the page. We keep your Google Business Profile optimized, active, and loaded with reviews so you stay in those top 3 spots.",
+    description: "When homeowners search 'painters near me,' Google shows a map with 3 businesses. We keep your Google Business Profile optimized, active, and loaded with reviews.",
     tiers: {
-      t1: "Monthly updates keep your listing accurate and active. Your business info stays consistent everywhere Google looks.",
-      t2: "Weekly optimization with fresh photos and review responses. Builds momentum so Google sees you as the most engaged painter in your area.",
-      t3: "Automated review generation creates a flywheel of 5-star signals. More reviews means more trust, more clicks, and more estimates booked."
+      t1: "White-labeled BrightLocal citation starter. GBP optimization and Top 40 citations audited for NAP consistency.",
+      t2: "White-labeled BrightLocal Pro. Weekly optimization with 2x/week fresh photos and monthly Offers.",
+      t3: "White-labeled GHL automation. Premium review management and web chat-bot creates a flywheel of 5-star signals."
     }
   },
   "reports": {
     title: "Know Exactly Where You Rank",
-    description: "No more vague PDFs or 'trust us, it is working.' You see the real numbers: where you rank, how many people found you, and what we are doing next. Complete transparency so you always know your money is working.",
+    description: "No more vague PDFs or 'trust us, it is working.' You see the real numbers: where you rank, how many people found you, and what we are doing next.",
     tiers: {
-      t1: "You see where you rank for every keyword. Quarterly strategy calls to review progress and plan the next push.",
-      t2: "Deeper data with bi-monthly calls. We spot trends faster and pivot your strategy before your competitors even notice.",
-      t3: "Full competitive intelligence plus monthly war-room calls. You get a dedicated communication channel so nothing slows us down."
+      t1: "Keyword Rank Tracking. You see where you rank for every keyword.",
+      t2: "Adds Competitor Gap Analysis. We spot trends faster and pivot your strategy to steal their traffic.",
+      t3: "Full competitive intelligence plus monthly war-room strategy calls to scale your territory."
     }
   },
   "ai-web-apps": {
     title: "Turn Visitors Into Booked Estimates",
-    description: "A basic contact form loses most of your visitors. We build smart tools that keep homeowners engaged, filter out the tire-kickers, and capture the details you need before they ever pick up the phone. Better leads, less wasted time.",
+    description: "A basic contact form loses most of your visitors. We build smart tools that keep homeowners engaged, filter out the tire-kickers, and capture details.",
     tiers: {
-      t1: "Smart quote request forms that capture quality leads and route them straight to your inbox or CRM.",
-      t2: "Adds a visual project gallery that shows off your best work. Homeowners see your quality before they call, so they show up pre-sold.",
-      t3: "Custom cost calculator plus multi-step qualification that pre-sells your premium pricing. Tire-kickers drop off. Serious buyers book."
+      t1: "Multi-Step Contact Form that filters out budget shoppers and routes quality leads to your inbox.",
+      t2: "Multi-Step Contact Form that filters out budget shoppers and routes quality leads to your inbox.",
+      t3: "AI Chat Widget integration (GHL) directly into website and CRM. Trained to warm up prospects and book them onto your calendar instantly."
     }
   },
-  "geo-optimization": {
-    title: "G.E.O. -- Built for AI Search",
-    description: "When homeowners ask ChatGPT, Google AI, or Perplexity for a painter recommendation, those tools pull their answers from websites. G.E.O. (Generative Engine Optimization) is how we make sure YOUR site is the one they recommend. We structure your content, add the right data signals, and keep everything fresh so AI search engines see you as the top local authority -- not your competitor down the street.",
+  "backlinks": {
+    title: "Authority Link Building",
+    description: "Google trusts websites that other authoritative websites link to. We do the hard work of getting real, local businesses to point to you.",
     tiers: {
-      t1: "Your key pages get answer-ready content blocks so AI tools like ChatGPT and Google AI can pull direct quotes about your services. We add core schema markup (LocalBusiness + BreadcrumbList) that tells AI exactly who you are, where you work, and what you do. Content stays fresh with regular updates so AI engines keep coming back to your site.",
-      t2: "Everything in the basic tier plus richer schema for FAQs and services that tells AI exactly what you offer in each city. We build an expert attribution strategy so AI cites you by name -- not just your business. Your site gets AI bot crawl optimization and a dedicated llms.txt endpoint so every AI search engine can read your content fast.",
-      t3: "The full G.E.O. suite. Everything in the advanced tier plus schema for how-to guides, reviews, and video content. Cross-platform presence amplification puts your brand on the 4+ platforms AI tools scan most. Includes competitive AI citation monitoring across all platforms so you always know where you stand -- and where your competitors do not."
+      t1: "Natural foundation building through directory citations.",
+      t2: "Easy-win local link building sourcing industry-specific directories and associations.",
+      t3: "1 new high-DA backlink + 3 local backlinks through guest posts. We reach out to non-competing businesses in your area to build real local trust."
     }
   }
 }
@@ -119,8 +119,8 @@ export const ComparisonTable = () => {
             <thead>
               <tr className="bg-brand-ivory border-b border-brand-charcoal/10 text-left text-sm uppercase tracking-[0.1em] font-sora font-extrabold text-brand-charcoal/50">
                 <th className="p-6 lg:p-8 min-w-[320px]">Feature</th>
-                <th className="p-6 lg:p-8 text-center text-brand-charcoal w-1/4">Local Authority</th>
-                <th className="p-6 lg:p-8 text-center text-brand-mustard bg-brand-mustard/5 w-1/4">Territory Dominator</th>
+                <th className="p-6 lg:p-8 text-center text-brand-charcoal w-1/4">Local Foundation</th>
+                <th className="p-6 lg:p-8 text-center text-brand-mustard bg-brand-mustard/5 w-1/4">Territory Expansion</th>
                 <th className="p-6 lg:p-8 text-center text-brand-charcoal w-1/4">Enterprise Takeover</th>
               </tr>
             </thead>
@@ -128,53 +128,32 @@ export const ComparisonTable = () => {
               
               {/* THE BUILD */}
               <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
-                <td colSpan={4} className="p-4 lg:px-8">The Build</td>
+                <td colSpan={4} className="p-4 lg:px-8">The Initial Build</td>
               </tr>
               
               <TableRow title="Primary City Hub" t1="1" t2="1" t3="1" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
-              <TableRow title="Secondary Location Hubs" t1={xmark} t2="3" t3="6" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
-              <TableRow title="Core Service Pages" t1="4" t2="4" t3="Unlimited" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
-              <TableRow title="Nested Service Pages" t1={xmark} t2="12" t3="Unlimited" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
-              <TableRow title="Custom High-Performance Site" t1={check} t2={check} t3={check} isPop />
-              <TableRow title="Interactive Project Gallery" t1={xmark} t2={check} t3={check} isPop />
-              <TableRow title="Interlinking Matrix" t1={xmark} t2={check} t3={check} isPop />
-              <TableRow title="Paint Cost Calculator" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
-              <TableRow title="Multi-Step Funnels" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
-              <TableRow title="Advanced Trust Signals" t1={xmark} t2={xmark} t3={check} isPop />
+              <TableRow title="Secondary Location Hubs" t1={xmark} t2="3" t3="10" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
+              <TableRow title="Nested Service Pages (Per Hub)" t1="Up to 5" t2="Up to 5" t3="Up to 7" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
+              <TableRow title="Multi-Step Contact Form" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
+              <TableRow title="Instant Edge Hosting" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
+              <TableRow title="Local SEO Data Structure" t1={check} t2={check} t3={check} isPop />
+              <TableRow title="AI Chat Widget Integration" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
               <TableRow title="Delivery Timeline" t1="14 Days" t2="14 Days" t3="14 Days" isPop borderBottom />
 
               {/* MONTHLY ENGINE */}
               <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
-                <td colSpan={4} className="p-4 lg:px-8">Monthly Engine</td>
+                <td colSpan={4} className="p-4 lg:px-8">Monthly Growth Engine</td>
               </tr>
 
-              <TableRow title="GBP Sync + Management" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
-              <TableRow title="Blog Posts / Month" t1="2" t2="4" t3="8" isPop onInfo={() => setSelectedFeature(featureDetails['reverse-silos'])} />
-              <TableRow title="Weekly GBP Optimization" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
-              <TableRow title="Review Response Management" t1={xmark} t2={check} t3={check} isPop />
-              <TableRow title="Automated Review Sequences" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
-              <TableRow title="Competitor Gap Analysis" t1={xmark} t2={xmark} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
+              <TableRow title="GBP Sync & Top 40 Citations" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
+              <TableRow title="Blog Posts / Month" t1="1" t2="5" t3="9" isPop onInfo={() => setSelectedFeature(featureDetails['reverse-silos'])} />
               <TableRow title="Keyword Rank Tracking" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
-              <TableRow title="Strategy Calls" t1="Quarterly" t2="Bi-Monthly" t3="Monthly" isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
-              <TableRow title="Dedicated Slack Channel" t1={xmark} t2={xmark} t3={check} isPop borderBottom />
-
-              {/* AI OPTIMIZATION */}
-              <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
-                <td colSpan={4} className="p-4 lg:px-8">AI Optimization</td>
-              </tr>
-
-              <TableRow title="G.E.O. Optimization" t1="Basic" t2="Advanced" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['geo-optimization'])} />
-              <TableRow title="AI Search Schema Markup" t1="Core" t2="Extended" t3="Full Suite" isPop onInfo={() => setSelectedFeature(featureDetails['geo-optimization'])} borderBottom />
-
-              {/* TECHNICAL */}
-              <tr className="bg-brand-charcoal text-brand-ivory text-xs font-sora font-extrabold tracking-[0.3em] uppercase">
-                <td colSpan={4} className="p-4 lg:px-8">Technical</td>
-              </tr>
-              
-              <TableRow title="90+ PageSpeed Guarantee" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
-              <TableRow title="Instant Edge Hosting" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />
-              <TableRow title="Local SEO Data Structure" t1="Basic" t2="Advanced" t3="Full Suite" isPop />
-              <TableRow title="Conversion Architecture" t1={check} t2={check} t3={check} isPop borderBottom={false} />
+              <TableRow title="GBP Photo & Offer Updates" t1="Monthly" t2="2x / Week" t3="Premium Auto" isPop onInfo={() => setSelectedFeature(featureDetails['gbp-management'])} />
+              <TableRow title="Competitor Gap Analysis" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['reports'])} />
+              <TableRow title="Easy-Win Local Link Building" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
+              <TableRow title="How-To Videos & FAQ Pages" t1={xmark} t2={xmark} t3="4 / Month" isPop />
+              <TableRow title="High DA Backlinks" t1={xmark} t2={xmark} t3="1 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
+              <TableRow title="Local Guest Post Backlinks" t1={xmark} t2={xmark} t3="3 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} borderBottom />
 
             </tbody>
             </table>

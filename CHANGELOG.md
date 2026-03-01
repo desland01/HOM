@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- **Transparency Policy Section (page.tsx):** Added a new prominent section right before the Pilot Packages detailing our Unfair Advantage strategy using AI labs techniques. Used a progressive disclosure modal to explain the depth of the operations (turning one dev into twenty) using the Hormozi/Sanchez persuasive framework.
+
+### Changed
+- **Offer Tiers and Add-ons Restructure (offer-options.md, page.tsx, comparison-table.tsx, add-ons-and-bundles.tsx):** Decoupled the initial one-time build fee from monthly growth engines. Rewrote all tier and pricing logic to emphasize the flexibility of choosing a build tier and pairing it with an appropriate recurring package. Upgraded the underlying integrations (now prominently featuring BrightLocal for citations and GHL for AI chat/review management).
 - **Sticky Features Mobile Lock-In Fix (sticky-features.tsx):** Completely redesigned the final sticky card tracking mechanism. Reverted the wrapper to `h-[100svh]` to give the containing block the necessary scroll space, and moved the `sticky` property down to the inner card wrapper. Removed the generic padding (`pb-[50vh]`) from the main section container. This creates a perfect native CSS interaction where the last card remains solidly locked in place while the "Proven Results" section physically slides up to touch its bottom edge before seamlessly pushing it out of the viewport.
 
 

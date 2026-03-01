@@ -11,6 +11,7 @@ This project operates on a **Vibe Coding** model.
 2. **Changelog Maintenance:** You MUST automatically update `CHANGELOG.md` with your changes before making a git commit. The user will not do this.
 3. **Version Control:** Stage, commit (with descriptive messages), and push your work to git when a task is completed.
 4. **Proactive Polish:** Apply the "Webflow Vibe" and "Mobile CRO" guidelines automatically to any new component you create. Do not wait to be asked to make things look good or work on mobile.
+5. **Build It Right:** Code from first principles. Don't use a band-aid if it needs to be amputated and rewritten. Build it right, not for right now.
 
 ## Project Overview
 

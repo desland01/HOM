@@ -13,6 +13,7 @@ import { PortfolioViewports } from '@/components/sections/portfolio-viewports'
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true)
+  const [showPolicyModal, setShowPolicyModal] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -41,6 +42,36 @@ export default function Home() {
               ×
             </button>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* POLICY MODAL */}
+      <AnimatePresence>
+        {showPolicyModal && (
+          <div className="fixed inset-0 z-[999] flex items-center justify-center px-4 sm:px-6 py-12">
+            <motion.div 
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setShowPolicyModal(false)}
+              className="absolute inset-0 bg-brand-charcoal/80 backdrop-blur-sm cursor-pointer"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-3xl bg-brand-ivory rounded-none border-2 border-brand-charcoal shadow-2xl overflow-hidden z-10 flex flex-col"
+            >
+              <div className="flex justify-between items-center p-6 sm:p-8 border-b border-brand-charcoal/10 bg-white">
+                <h3 className="text-2xl sm:text-3xl font-sora font-extrabold uppercase tracking-tight text-brand-charcoal pr-8">
+                  The Agentic Unfair Advantage
+                </h3>
+                <button onClick={() => setShowPolicyModal(false)} className="absolute right-4 top-4 w-12 h-12 flex items-center justify-center text-brand-charcoal text-2xl font-bold opacity-50 hover:opacity-100 transition-opacity">×</button>
+              </div>
+              <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-lg text-brand-charcoal/80 font-medium">
+                <p>We are 6 months ahead of the industry because we are using the latest development skills coming out of the AI labs the moment they are available.</p>
+                <p>What does that mean for you?</p>
+                <p>You get known techniques used by Fortune 500 companies but were just completely unfeasible only one year ago. Our agentic development practices allow us to turn the work of one web-developer into 20.</p>
+                <p>So while the other guys are promising you 20 pages and citation management, we are deploying teams of highly trained proprietary AI to write 50 pages, building advanced AI-readable files for every page, and filling your calendar while your competitor is still asking ChatGPT for relationship advice.</p>
+              </div>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
@@ -182,6 +213,31 @@ export default function Home() {
 
       <PortfolioViewports />
 
+      {/* TRANSPARENCY POLICY */}
+      <section className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-charcoal text-brand-ivory relative border-t border-brand-charcoal/5 overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,_var(--brand-mustard)_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
+        <div className="max-w-[1440px] mx-auto flex flex-col items-center text-center relative z-10">
+          <FadeIn className="text-xs font-sora font-extrabold tracking-[0.4em] uppercase text-brand-mustard mb-6">Our Transparency Policy</FadeIn>
+          <TextReveal 
+            text="WE ARE 6 MONTHS AHEAD. THEY CANNOT KEEP UP." 
+            className="text-4xl sm:text-6xl lg:text-7xl font-sora font-extrabold leading-[0.9] tracking-tighter-extreme uppercase mb-8 max-w-4xl" 
+          />
+          <FadeIn className="text-xl text-brand-ivory/70 font-medium max-w-3xl mb-12">
+            We are a fully transparent SEO business. We are not afraid of our competitors finding out what we do because the fact is, they already know. They just cannot execute it.
+          </FadeIn>
+          <FadeIn>
+            <button 
+              onClick={() => setShowPolicyModal(true)}
+              className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-sora font-extrabold text-brand-charcoal bg-brand-mustard rounded-none transition-all duration-300 ease-out hover:scale-[1.02] active:scale-95 shadow-xl text-base uppercase tracking-widest"
+            >
+              <span className="relative z-10 flex items-center gap-4">
+                Look Under The Hood <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">→</span>
+              </span>
+            </button>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* TIERS — STICKY SCROLL */}
       <section id="tiers" className="py-24 lg:py-40 px-6 sm:px-12 bg-brand-ivory relative">
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-start">
@@ -199,40 +255,39 @@ export default function Home() {
           <div className="lg:w-7/12 flex flex-col gap-12">
             <FadeIn>
               <TierCard 
-                name="Tier 01" title="Neighborhood Pro"
+                name="Tier 01" title="Local Foundation"
                 save="$2,250" original="$4,500" price="$2,250"
                 buildFeatures={[
-                  "Premium custom website that screams quality",
-                  "Your #1 city shows up when homeowners search",
-                  "4 service pages that sell your best work",
-                  "Built to rank on Google and AI search engines",
-                  "Basic G.E.O. so AI search engines can find and recommend you",
-                  "Lead capture form that filters out tire-kickers"
+                  "Full A.E.O. (Answer Engine Optimization) structure",
+                  "Instant Edge Hosting & Conversion Optimized Architecture",
+                  "Up to 5 nested Service Pages built to rank",
+                  "Multi-Step Contact Form to filter tire-kickers",
+                  "Mobile-First Optimization & Local SEO Data Structure",
+                  "Lightning fast 14-day delivery speed"
                 ]}
                 monthlyFeatures={[
-                  "Google Business Profile kept fresh and optimized",
-                  "2 blog posts per month that bring in local traffic",
-                  "Clear ranking reports you can actually understand",
-                  "Quarterly strategy call to plan your next move"
+                  "Fully optimized Google Business Profile (White-labeled BrightLocal)",
+                  "Audit Top 40 citations for NAP consistency",
+                  "1 targeted monthly blog post with local geo-modifiers",
+                  "Keyword Rank Tracking so you see exact progress"
                 ]}
               />
             </FadeIn>
 
             <FadeIn>
               <TierCard 
-                name="Tier 02" title="City Dominator"
+                name="Tier 02" title="Territory Expansion"
                 save="$3,400" original="$6,800" price="$3,400" isPopular
                 buildFeatures={[
-                  "Show up in 3 surrounding cities, not just one",
-                  "12 pages targeting every service homeowners search for",
-                  "Photo gallery that makes your best jobs sell for you",
-                  "Areas We Serve page so locals know you cover their town",
-                  "Advanced G.E.O. with expert citations and rich schema for AI search"
+                  "Everything in Foundation, PLUS:",
+                  "3 additional location hubs targeting wealthy suburbs",
+                  "Up to 5 nested service pages per hub (hyper-local targeting)",
+                  "Competitor Gap Analysis (we target exactly what they're winning)"
                 ]}
                 monthlyFeatures={[
-                  "4 blog posts per month driving local search traffic",
-                  "Weekly Google Business Profile updates and posts",
-                  "We respond to your reviews so you look professional",
+                  "GBP Pro: 2x/week photo updates + monthly Offers",
+                  "4 additional monthly blog posts targeting competitor traffic",
+                  "Easy-win local link building (industry directories & associations)",
                   "Strategy call every 2 weeks to keep your pipeline full"
                 ]}
               />
@@ -240,27 +295,25 @@ export default function Home() {
 
             <FadeIn>
               <TierCard 
-                name="Tier 03" title="Metro Takeover"
+                name="Tier 03" title="Enterprise Takeover"
                 save="$5,250" original="$10,500" price="$5,250"
                 buildFeatures={[
-                  "Dominate 6 cities across your entire metro area",
-                  "Unlimited service pages for every job type you do",
-                  "Full G.E.O. suite so ChatGPT, Perplexity, and Google AI all cite your site",
-                  "Online paint cost calculator that pre-qualifies leads",
-                  "Multi-step intake form that filters out budget shoppers",
-                  "Trust badges, reviews, and proof that close on autopilot"
+                  "Everything in Expansion, PLUS:",
+                  "10 location hubs (Strategic 3-stage deployment)",
+                  "Up to 7 service pages per hub (Targeting upstream intent)",
+                  "AI Chat Widget integration (website and CRM)",
+                  "Pre-qualifying automations and premium trust badges"
                 ]}
                 monthlyFeatures={[
-                  "8 blog posts per month flooding your area with content",
-                  "Automated review requests after every completed job",
-                  "We track what your competitors rank for and beat them",
-                  "Direct Slack channel with your dedicated team",
-                  "Monthly strategy calls to scale your territory"
+                  "Premium Review Management & web chat-bot (GHL)",
+                  "4 monthly how-to videos & 4 nested service FAQ pages",
+                  "4 additional blog posts closing the competitor gap",
+                  "1 high-DA backlink + 3 local business guest posts per month",
+                  "Monthly war-room strategy calls to scale your territory"
                 ]}
               />
             </FadeIn>
-          </div>
-        </div>
+          </div>        </div>
       </section>
 
       <AddOnsAndBundles />

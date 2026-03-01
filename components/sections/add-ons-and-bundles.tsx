@@ -7,13 +7,13 @@ const MAINTENANCE_PLANS = [
     title: "Essential Care",
     price: "$99",
     period: "/mo",
-    features: ["Your site stays online 24/7. Zero downtime.", "Nightly backups so you never lose a single page", "Software stays current without you lifting a finger", "1 hour of fresh content updates every month"]
+    features: ["Instant Edge Hosting so your site never goes down", "Nightly backups so you never lose a single page", "Security patches applied without you lifting a finger", "1 hour of manual content updates every month"]
   },
   {
     title: "Performance Care",
     price: "$199",
     period: "/mo",
-    features: ["Everything in Essential, plus faster load times", "Monthly speed checks so homeowners never bounce", "Priority support when you need something changed now", "3 hours of content updates to keep your site sharp"],
+    features: ["Everything in Essential, plus guaranteed speed checks", "Priority support when you need something changed yesterday", "WhiteSpark Citation Clean-Up to fix messy NAP data", "3 hours of manual content updates to keep your site sharp"],
     isPopular: true
   }
 ]
@@ -23,20 +23,20 @@ const SEO_PLANS = [
     title: "Local Foundation",
     price: "$499",
     period: "/mo",
-    features: ["2 blog posts per month that bring homeowners to you", "Your Google Business Profile stays active and visible", "We track your rankings so you see real progress", "Quarterly game plan so you always know the next move"]
+    features: ["BrightLocal Citation Builder Starter for local dominance", "1 blog post per month targeting local geo-modifiers", "We track your rankings so you see the real ROI", "Quarterly game plan so you always know the next move"]
   },
   {
     title: "Market Dominator",
     price: "$999",
     period: "/mo",
-    features: ["4 authority articles that make Google trust you more", "Weekly Google Profile updates that keep leads flowing", "Advanced rank tracking across every keyword that matters", "Monthly strategy call so we scale together"],
+    features: ["BrightLocal Pro: 2x/week updates and monthly Offers", "5 monthly articles targeting competitors' exact gaps", "Advanced local link building (directories & associations)", "Bi-weekly strategy calls to steal more market share"],
     isPopular: true
   },
   {
     title: "Total Takeover",
     price: "$1,999",
     period: "/mo",
-    features: ["50 pages indexed at once for fastest possible results", "Full content engine running while you focus on jobs", "Automated review sequences that build trust on autopilot", "We find every gap your competitors leave open and fill it"]
+    features: ["Premium GHL Review Management & automated responses", "9 monthly articles + 4 how-to videos pushing competitors off page 1", "1 High-DA backlink + 3 local guest posts per month", "We deploy the full AI content engine while you focus on jobs"]
   }
 ]
 
@@ -45,13 +45,13 @@ const AI_TOOLS = [
     title: "Missed Call Text Back",
     price: "$149",
     period: "/mo",
-    desc: "Every missed call is a $5,000 job walking straight to your competitor. This tool texts the homeowner back instantly while you are on the ladder. You never lose a hot lead again."
+    desc: "Every missed call is a $5,000 job walking straight to your competitor. This GHL tool texts the homeowner back instantly while you are on the ladder. You never lose a hot lead again."
   },
   {
     title: "AI Booking Assistant",
     price: "$299",
     period: "/mo",
-    desc: "Your own booking agent that works 24/7 while you sleep. It answers questions, qualifies the lead, and books the estimate right on your site. You wake up to a full calendar."
+    desc: "Your own AI booking agent that works 24/7 while you sleep. It answers questions via web chat-bot, qualifies the lead, and books the estimate right onto your calendar."
   }
 ]
 
@@ -61,7 +61,7 @@ const BUNDLES = [
     price: "$1,150",
     period: "/mo",
     originalPrice: "$1,347/mo",
-    desc: "Your site stays fast, your Google rankings climb every month, and every missed call gets caught automatically. This is the system that turns a good painting business into a booked-out one.",
+    desc: "Your site stays fast, your Google rankings climb every month with BrightLocal, and every missed call gets caught automatically. This is the system that turns a good painting business into a booked-out one.",
     savings: "$197"
   },
   {
@@ -69,13 +69,13 @@ const BUNDLES = [
     price: "$2,250",
     period: "/mo",
     originalPrice: "$2,646/mo",
-    desc: "Everything in the Growth Stack plus a 50-page content engine and a 24/7 AI booking agent. Your competitors will not understand how you are everywhere at once. This is total market takeover.",
+    desc: "Everything in the Growth Stack plus a 9-article content engine and a 24/7 AI booking agent. Your competitors will not understand how you are everywhere at once. This is total market takeover.",
     savings: "$396"
   }
 ]
 
 const AL_CARTE = [
-  { name: "Custom Logo Design", price: "$499", desc: "A logo that makes homeowners trust you before they even call." },
+  { name: "WhiteSpark Clean-Up", price: "$499", desc: "A full audit and repair of your messy online citations so Google trusts you again." },
   { name: "Additional Service Page", price: "$250", desc: "One more page ranking on Google, pulling in leads you are not getting today." },
   { name: "Location Hub Page", price: "$350", desc: "Own the search results in a new city without opening a second office." },
   { name: "Google Profile Setup", price: "$199", desc: "Your Google listing fully built out so you show up in the map pack from day one." }
