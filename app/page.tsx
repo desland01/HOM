@@ -278,7 +278,7 @@ export default function Home() {
                   "Premium Review Management & web chat-bot (AI Automated)",
                   "4 monthly how-to videos & 4 nested service FAQ pages",
                   "4 additional blog posts closing the competitor gap",
-                  "1 high-DA backlink + 3 local business guest posts per month",
+                  "1 high-DA backlink + 2 local business guest posts per month",
                   "Monthly war-room strategy calls to scale your territory"
                 ]}
               />

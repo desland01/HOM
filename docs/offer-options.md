@@ -39,7 +39,7 @@ A one-time fee to construct the Ferrari. You own this.
 - Up to 7 service pages per hub (Targets upstream search intent like "drywall repair", "water damage", "pressure washing" before they even look for a painter).
 - AI Chat Widget integration (website and CRM) with UNLIMITED usage. Trained to warm up prospects and book them instantly.
 - 1 new high-DA backlink from a reputable source (No PBNs).
-- 3 local backlinks through guest posts (We pitch local, non-competing businesses).
+- 2 local backlinks through guest posts (We pitch local, non-competing businesses).
 
 ---
 

@@ -65,7 +65,7 @@ const featureDetails: Record<string, FeatureDetail> = {
     tiers: {
       t1: "Natural foundation building through directory citations.",
       t2: "Easy-win local link building sourcing industry-specific directories and associations.",
-      t3: "1 new high-DA backlink + 3 local backlinks through guest posts. We reach out to non-competing businesses in your area to build real local trust."
+      t3: "1 new high-DA backlink + 2 local backlinks through guest posts. We reach out to non-competing businesses in your area to build real local trust."
     }
   }
 }
@@ -152,7 +152,7 @@ export const ComparisonTable = () => {
               <TableRow title="Easy-Win Local Link Building" t1={xmark} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
               <TableRow title="How-To Videos & FAQ Pages" t1={xmark} t2={xmark} t3="4 / Month" isPop />
               <TableRow title="High DA Backlinks" t1={xmark} t2={xmark} t3="1 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} />
-              <TableRow title="Local Guest Post Backlinks" t1={xmark} t2={xmark} t3="3 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} borderBottom />
+              <TableRow title="Local Guest Post Backlinks" t1={xmark} t2={xmark} t3="2 / Month" isPop onInfo={() => setSelectedFeature(featureDetails['backlinks'])} borderBottom />
 
             </tbody>
             </table>

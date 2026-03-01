@@ -36,7 +36,7 @@ const SEO_PLANS = [
     title: "Total Takeover",
     price: "$1,999",
     period: "/mo",
-    features: ["Premium AI Review Management & automated responses", "9 monthly articles + 4 how-to videos pushing competitors off page 1", "1 High-DA backlink + 3 local guest posts per month", "We deploy the full AI content engine while you focus on jobs"]
+    features: ["Premium AI Review Management & automated responses", "9 monthly articles + 4 how-to videos pushing competitors off page 1", "1 High-DA backlink + 2 local guest posts per month", "We deploy the full AI content engine while you focus on jobs"]
   }
 ]
 
