@@ -131,8 +131,7 @@ export const ComparisonTable = () => {
                 <td colSpan={4} className="p-4 lg:px-8">The Initial Build</td>
               </tr>
               
-              <TableRow title="Primary City Hub" t1="1" t2="1" t3="1" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
-              <TableRow title="Secondary Location Hubs" t1={xmark} t2="3" t3="10" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
+              <TableRow title="Location Hubs" t1="1" t2="4" t3="10" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
               <TableRow title="Nested Service Pages (Per Hub)" t1="Up to 5" t2="Up to 5" t3="Up to 7" isPop onInfo={() => setSelectedFeature(featureDetails['geo-silos'])} />
               <TableRow title="Multi-Step Contact Form" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['ai-web-apps'])} />
               <TableRow title="Instant Edge Hosting" t1={check} t2={check} t3={check} isPop onInfo={() => setSelectedFeature(featureDetails['page-speed'])} />

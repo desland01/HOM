@@ -26,7 +26,7 @@ A one-time fee to construct the Ferrari. You own this.
 ### Tier 2: Territory Expansion
 *Best for capturing high-value neighborhoods next door.*
 - **Everything in Tier 1, PLUS:**
-- 3 additional location hubs.
+- 4 location hubs total (main city + 3 additional hubs).
 - Up to 5 nested service pages *for each hub* (hyper-local geo-modifiers).
 - Competitor Gap Analysis (we target the exact keywords they are winning).
 - Easy-win local link building (industry directories, local associations) to build domain authority.

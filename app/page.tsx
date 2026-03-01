@@ -249,7 +249,7 @@ export default function Home() {
                 save="$3,400" original="$6,800" price="$3,400" isPopular
                 buildFeatures={[
                   "Everything in Foundation, PLUS:",
-                  "3 additional location hubs targeting wealthy suburbs",
+                  "4 location hubs targeting your main city and wealthy suburbs",
                   "Up to 5 nested service pages per hub (hyper-local targeting)",
                   "Competitor Gap Analysis (we target exactly what they're winning)"
                 ]}
